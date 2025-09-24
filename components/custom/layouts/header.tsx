@@ -1,11 +1,11 @@
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Coffee } from "lucide-react";
 import Image from "next/image";
-import { Coffee, Globe, Moon } from "lucide-react";
+import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 mt-8">
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 mt-4">
       <div className="container flex h-16 items-center justify-between px-4 mx-auto">
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-3">

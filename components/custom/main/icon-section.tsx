@@ -37,15 +37,15 @@ const IconSection = () => {
           return (
             <Card key={index} className="text-center border-0 shadow-none">
               <CardContent className="p-5 space-y-4">
-                <div className="flex justify-center">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                <div className="flex flex-col items-center justify-center">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center">
                     <IconComponent size={48} className="text-primary" />
                   </div>
-                </div>
-                <div className="space-y-2">
                   <h3 className="text-xl font-semibold text-foreground">
                     {feature.title}
                   </h3>
+                </div>
+                <div className="space-y-2">
                   <p className="text-muted-foreground text-xs leading-relaxed">
                     {feature.description}
                   </p>

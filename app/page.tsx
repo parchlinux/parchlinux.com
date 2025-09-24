@@ -1,10 +1,17 @@
+import HeadSection from "@/components/custom/main/head-section";
+import HeroSection from "@/components/custom/main/hero-section";
 import IconSection from "@/components/custom/main/icon-section";
 import LinkSection from "@/components/custom/main/link-section";
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col gap-6 h-full">
+      <HeadSection />
+      <HeroSection />
+      <HeroSection reverse />
+      <HeroSection />
+      <HeroSection reverse />
+      <HeroSection />
       <IconSection />
       <LinkSection />
     </div>

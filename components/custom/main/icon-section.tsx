@@ -39,7 +39,7 @@ const IconSection = () => {
               <CardContent className="p-5 space-y-4">
                 <div className="flex flex-col items-center justify-center">
                   <div className="w-16 h-16 rounded-full flex items-center justify-center">
-                    <IconComponent size={48} className="text-primary" />
+                    <IconComponent size={48} />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">
                     {feature.title}

@@ -17,7 +17,7 @@ const HeroSection = ({
           className={cn("col-span-6", reverse ? "order-1" : "order-2")}
         ></div>
         <div className={cn("col-span-6", reverse ? "order-2" : "order-1")}>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col xl:gap-3 gap-1">
             {title}
             {description}
           </div>

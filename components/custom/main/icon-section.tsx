@@ -45,8 +45,8 @@ const IconSection = () => {
                     {feature.title}
                   </h3>
                 </div>
-                <div className="space-y-2">
-                  <p className="text-muted-foreground text-xs leading-relaxed">
+                <div className="space-y-2 ">
+                  <p className="text-muted-foreground text-xs mx-auto leading-relaxed xl:max-w-[250px] max-w-[200px]">
                     {feature.description}
                   </p>
                 </div>

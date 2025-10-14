@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Link } from "lucide-react";
 
-const EventSection = () => {
+const BlogSection = () => {
   return (
     <div className="container max-w-7xl mx-auto">
       <div className="flex flex-col items-center gap-10">
@@ -30,13 +30,18 @@ const EventSection = () => {
             </CardHeader>
             <CardContent>
               <p className="text-lg font-bold mb-1">
-                Parch summer release - webinar
+                How play game on Parch with steam?
               </p>
             </CardContent>
             <CardFooter>
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry...
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s...
               </p>
             </CardFooter>
           </Card>
@@ -61,8 +66,13 @@ const EventSection = () => {
             </CardContent>
             <CardFooter>
               <p>
-                Join our annual meetup for product updates, networking, and
-                more...
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s...
               </p>
             </CardFooter>
           </Card>
@@ -86,8 +96,13 @@ const EventSection = () => {
             </CardContent>
             <CardFooter>
               <p>
-                Experts discuss the latest trends in UX and UI design for
-                2025...
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s...
               </p>
             </CardFooter>
           </Card>
@@ -97,4 +112,4 @@ const EventSection = () => {
   );
 };
 
-export default EventSection;
+export default BlogSection;

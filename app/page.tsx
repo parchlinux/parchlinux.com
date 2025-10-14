@@ -1,3 +1,4 @@
+import BlogSection from "@/components/custom/main/blog-section";
 import DownloadSection from "@/components/custom/main/download-section";
 import EventSection from "@/components/custom/main/event-section";
 import HeadSection from "@/components/custom/main/head-section";
@@ -12,7 +13,7 @@ export default function Home() {
       <div className="flex flex-col gap-24">
         <HeroSection
           title={
-            <h2 className="text-[2.8rem] font-bold leading-14">
+            <h2 className="xl:text-[2.8rem] text-[1.8rem] font-bold xl:leading-14">
               Do your daily <span className="text-parch">work</span> easily
             </h2>
           }
@@ -28,7 +29,7 @@ export default function Home() {
         />
         <HeroSection
           title={
-            <h2 className="text-[2.8rem] font-bold leading-14">
+            <h2 className="xl:text-[2.8rem] text-[1.8rem] font-bold xl:leading-14">
               <span className="text-parch">Coding</span> like a geek!
             </h2>
           }
@@ -43,7 +44,7 @@ export default function Home() {
         />
         <HeroSection
           title={
-            <h2 className="text-[2.8rem] font-bold leading-14">
+            <h2 className="xl:text-[2.8rem] text-[1.8rem] font-bold xl:leading-14">
               Choose which one you want!{" "}
               <span className="text-parch">Gnome</span> or{" "}
               <span className="text-parch">Plasma</span>?
@@ -61,7 +62,7 @@ export default function Home() {
         />
         <HeroSection
           title={
-            <h2 className="text-[2.8rem] font-bold leading-14">
+            <h2 className="xl:text-[2.8rem] text-[1.8rem] font-bold xl:leading-14">
               Always stay <span className="text-parch">up to date</span>!
             </h2>
           }
@@ -77,7 +78,7 @@ export default function Home() {
 
         <HeroSection
           title={
-            <h2 className="text-[2.8rem] font-bold leading-14">
+            <h2 className="xl:text-[2.8rem] text-[1.8rem] font-bold xl:leading-14">
               Now you have <span className="text-parch">AUR*</span> power!
             </h2>
           }
@@ -102,7 +103,7 @@ export default function Home() {
 
         <HeroSection
           title={
-            <h2 className="text-[2.8rem] font-bold leading-14">
+            <h2 className="xl:text-[2.8rem] text-[1.8rem] font-bold xl:leading-14">
               <span className="text-parch">Pacman</span> is ready to install
               your packages!{" "}
             </h2>
@@ -117,11 +118,10 @@ export default function Home() {
           }
         />
       </div>
-
       <IconSection />
       <LinkSection />
       <EventSection />
-      <EventSection />
+      <BlogSection />
       <DownloadSection />
     </div>
   );

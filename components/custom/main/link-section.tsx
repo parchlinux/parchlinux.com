@@ -4,7 +4,7 @@ import React from "react";
 
 const LinkSection = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto p-6">
+    <div className="w-full max-w-6xl mx-auto px-6 pt-48 pb-64">
       <div className="flex flex-col gap-8">
         <div className="xl:text-5xl text-4xl text-center font-bold">
           Parch is open-source and free for everyone

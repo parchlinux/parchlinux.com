@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Saira } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/custom/layouts/header";
+import Footer from "@/components/custom/layouts/footer";
 
 const sairaSans = Saira({
   variable: "--font-saira-sans",
@@ -25,6 +26,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

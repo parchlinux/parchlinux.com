@@ -11,7 +11,7 @@ const HeadSection = () => {
               We have a <span className="text-parch">ready-to-go</span> OS!
             </h1>
             <div className="grid grid-cols-4 xl:gap-4 gap-2 mb-4 xl:order-2 order-last">
-              <div className="flex flex-col items-center bg-secondary rounded-lg py-4 gap-3">
+              <div className="flex flex-col items-center bg-gray-100 rounded-lg py-4 gap-3">
                 <Image
                   src={"/images/install.png"}
                   width={30}
@@ -20,7 +20,7 @@ const HeadSection = () => {
                 />
                 <h3 className="text-xs">Easy installation</h3>
               </div>
-              <div className="flex flex-col items-center bg-secondary rounded-lg py-4 gap-3">
+              <div className="flex flex-col items-center bg-gray-100 rounded-lg py-4 gap-3">
                 <Image
                   src={"/images/rocket.png"}
                   width={30}
@@ -30,7 +30,7 @@ const HeadSection = () => {
                 <h3 className="text-xs xl:block hidden">High-performance</h3>
                 <h3 className="text-xs xl:hidden block">High-speed</h3>
               </div>
-              <div className="flex flex-col items-center bg-secondary rounded-lg py-4 gap-3">
+              <div className="flex flex-col items-center bg-gray-100 rounded-lg py-4 gap-3">
                 <Image
                   src={"/images/user.png"}
                   width={30}
@@ -39,7 +39,7 @@ const HeadSection = () => {
                 />
                 <h3 className="text-xs">User-friendly UI</h3>
               </div>
-              <div className="flex flex-col items-center bg-secondary rounded-lg py-4 gap-3">
+              <div className="flex flex-col items-center bg-gray-100 rounded-lg py-4 gap-3">
                 <Image
                   src={"/images/arch.png"}
                   width={30}

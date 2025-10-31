@@ -12,8 +12,7 @@ const LinkSection = () => {
         <div className="flex justify-center gap-6">
           <Button
             size={"lg"}
-            className="rounded-full text-[18px] py-7 text-gray-950 ring-1 ring-offset-4 ring-secondary/50 px-5"
-            variant={"secondary"}
+            className="rounded-full text-[18px] py-7 text-gray-950 ring-1 ring-offset-4 ring-gray-200/50 px-5"
           >
             <Github />
             Source Code
@@ -21,7 +20,6 @@ const LinkSection = () => {
           <Button
             size={"lg"}
             className="rounded-full text-[18px] py-7 text-gray-950 ring-1 ring-offset-4 ring-secondary/50 px-5"
-            variant={"secondary"}
           >
             <Coffee />
             Donate
@@ -29,7 +27,6 @@ const LinkSection = () => {
           <Button
             size={"lg"}
             className="rounded-full text-[18px] py-7 text-gray-950 ring-parch px-5"
-            variant={"secondary"}
           >
             <Code2 />
             Join our team

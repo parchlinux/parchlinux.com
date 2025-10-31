@@ -15,7 +15,7 @@ const EventSection = () => {
       <div className="flex flex-col items-center gap-10">
         <h2 className="text-2xl font-bold">Events</h2>
         <div className="grid grid-cols-3 gap-4">
-          <Card className="rounded-lg gap-4 bg-secondary border-secondary">
+          <Card className="rounded-lg gap-4 bg-gray-100 border-gray-100">
             <CardHeader>
               <CardDescription className="text-md font-bold">
                 Thu, 08 May 2025
@@ -41,7 +41,7 @@ const EventSection = () => {
             </CardFooter>
           </Card>
 
-          <Card className="rounded-lg gap-4 bg-secondary border-secondary">
+          <Card className="rounded-lg gap-4 bg-gray-100 border-gray-100">
             <CardHeader>
               <CardDescription className="text-md font-bold">
                 Thu, 15 May 2025
@@ -66,7 +66,7 @@ const EventSection = () => {
               </p>
             </CardFooter>
           </Card>
-          <Card className="rounded-lg gap-4 bg-secondary border-secondary">
+          <Card className="rounded-lg gap-4 bg-gray-100 border-gray-100">
             <CardHeader>
               <CardDescription className="text-md font-bold">
                 Thu, 22 May 2025

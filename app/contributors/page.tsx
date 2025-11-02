@@ -1,8 +1,7 @@
 import contributors from "@/data/contributors";
 import Image from "next/image";
-import React from "react";
 
-const page = () => {
+export default function Contributors() {
   return (
     <div className="container mx-auto">
       <h1 className="text-center text-3xl font-bold mb-12">Contributors</h1>
@@ -28,6 +27,4 @@ const page = () => {
       </div>
     </div>
   );
-};
-
-export default page;
+}

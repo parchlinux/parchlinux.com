@@ -1,4 +1,4 @@
-const teams = [
+const team = [
   {
     name: "",
     job: "",
@@ -15,4 +15,4 @@ const teams = [
   },
 ];
 
-export default teams;
+export default team;

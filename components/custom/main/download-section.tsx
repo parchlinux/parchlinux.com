@@ -11,7 +11,7 @@ const DownloadSection = () => {
           <h2 className="2xl:text-7xl xl:text-6xl text-5xl font-bold">
             Try Parch Linux Now
           </h2>
-          <Button className="rounded-full text-[18px] py-7 ring-1 ring-gray-950 ring-offset-4 px-5 w-fit">
+          <Button className="rounded-full text-[18px] bg-black text-white font-bold py-7 ring-1 ring-gray-500 ring-offset-4 px-5 w-fit">
             <Download />
             Download for free
           </Button>

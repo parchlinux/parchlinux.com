@@ -8,12 +8,12 @@ import LinkSection from "@/components/custom/main/link-section";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-12 h-full">
+    <div className="flex flex-col gap-12 h-full lg:px0 md:px-8 px-6">
       <HeadSection />
       <div className="flex flex-col gap-24">
         <HeroSection
           title={
-            <h2 className="xl:text-[2.8rem] text-[1.8rem] font-bold xl:leading-14">
+            <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-bold xl:leading-14">
               Do your daily <span className="text-parch">work</span> easily
             </h2>
           }
@@ -29,7 +29,7 @@ export default function Home() {
         />
         <HeroSection
           title={
-            <h2 className="xl:text-[2.8rem] text-[1.8rem] font-bold xl:leading-14">
+            <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-bold xl:leading-14">
               <span className="text-parch">Coding</span> like a geek!
             </h2>
           }
@@ -44,7 +44,7 @@ export default function Home() {
         />
         <HeroSection
           title={
-            <h2 className="xl:text-[2.8rem] text-[1.8rem] font-bold xl:leading-14">
+            <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-bold xl:leading-14">
               Choose which one you want!{" "}
               <span className="text-parch">Gnome</span> or{" "}
               <span className="text-parch">Plasma</span>?
@@ -62,7 +62,7 @@ export default function Home() {
         />
         <HeroSection
           title={
-            <h2 className="xl:text-[2.8rem] text-[1.8rem] font-bold xl:leading-14">
+            <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-bold xl:leading-14">
               Always stay <span className="text-parch">up to date</span>!
             </h2>
           }
@@ -78,7 +78,7 @@ export default function Home() {
 
         <HeroSection
           title={
-            <h2 className="xl:text-[2.8rem] text-[1.8rem] font-bold xl:leading-14">
+            <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-bold xl:leading-14">
               Now you have <span className="text-parch">AUR*</span> power!
             </h2>
           }
@@ -93,7 +93,7 @@ export default function Home() {
           reverse
         />
         <div className="container max-w-7xl mx-auto">
-          <span className="font-bold text-zinc-400 text-justify text-sm">
+          <span className="font-bold text-zinc-400 text-justify lg:text-sm text-xs">
             *Arch User Repository is a community-driven repository for Arch
             Linux users. It contains package descriptions (PKGBUILDs) that allow
             you to compile a package from source with makepkg and then install
@@ -103,7 +103,7 @@ export default function Home() {
 
         <HeroSection
           title={
-            <h2 className="xl:text-[2.8rem] text-[1.8rem] font-bold xl:leading-14">
+            <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-bold xl:leading-14">
               <span className="text-parch">Pacman</span> is ready to install
               your packages!{" "}
             </h2>

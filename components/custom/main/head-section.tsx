@@ -1,52 +1,59 @@
 import Image from "next/image";
-import React from "react";
 
 const HeadSection = () => {
   return (
     <div className="container max-w-7xl mx-auto">
       <div className="grid grid-cols-12 mb-8">
         <div className="col-span-8 flex items-center">
-          <div className="flex flex-col xl:gap-7 gap-5 2xl:pe-48 xl:pe-32 pe-16">
-            <h1 className="xl:text-[3.1rem] text-4xl font-bold xl:order-first">
+          <div className="flex flex-col xl:gap-7 lg:gap-5 gap-3 2xl:pe-44">
+            <h1 className="xl:text-[3.1rem] lg:text-4xl text-[1.8rem] font-bold xl:order-first">
               We have a <span className="text-parch">ready-to-go</span> OS!
             </h1>
             <div className="grid grid-cols-4 xl:gap-4 gap-2 mb-4 xl:order-2 order-last">
-              <div className="flex flex-col items-center bg-gray-100 rounded-lg py-4 gap-3">
+              <div className="flex flex-col items-center bg-secondary rounded-lg py-4 gap-3">
                 <Image
+                  className="lg:px-0 px-1"
                   src={"/images/install.png"}
                   width={30}
                   height={30}
                   alt="install"
                 />
-                <h3 className="text-xs">Easy installation</h3>
+                <h3 className="lg:text-xs text-[10px]">Easy installation</h3>
               </div>
-              <div className="flex flex-col items-center bg-gray-100 rounded-lg py-4 gap-3">
+              <div className="flex flex-col items-center bg-secondary rounded-lg py-4 gap-3">
                 <Image
+                  className="lg:px-0 px-1"
                   src={"/images/rocket.png"}
                   width={30}
                   height={30}
                   alt="rocket"
                 />
-                <h3 className="text-xs xl:block hidden">High-performance</h3>
-                <h3 className="text-xs xl:hidden block">High-speed</h3>
+                <h3 className="lg:text-xs text-[10px] xl:block hidden">
+                  High-performance
+                </h3>
+                <h3 className="lg:text-xs text-[10px] xl:hidden block">
+                  High-speed
+                </h3>
               </div>
-              <div className="flex flex-col items-center bg-gray-100 rounded-lg py-4 gap-3">
+              <div className="flex flex-col items-center bg-secondary rounded-lg py-4 gap-3">
                 <Image
+                  className="lg:px-0 px-1"
                   src={"/images/user.png"}
                   width={30}
                   height={30}
                   alt="user"
                 />
-                <h3 className="text-xs">User-friendly UI</h3>
+                <h3 className="lg:text-xs text-[10px]">User-friendly UI</h3>
               </div>
-              <div className="flex flex-col items-center bg-gray-100 rounded-lg py-4 gap-3">
+              <div className="flex flex-col items-center bg-secondary rounded-lg py-4 gap-3">
                 <Image
+                  className="lg:px-0 px-1"
                   src={"/images/arch.png"}
                   width={30}
                   height={30}
                   alt="arch"
                 />
-                <h3 className="text-xs">Powered by Arch</h3>
+                <h3 className="lg:text-xs text-[10px]">Powered by Arch</h3>
               </div>
             </div>
             <p
@@ -66,6 +73,7 @@ const HeadSection = () => {
         <div className="col-span-4">
           <div className="flex justify-end">
             <Image
+              className="lg:px-0 px-1"
               src={"/images/parch-macos.png"}
               width={700}
               height={600}

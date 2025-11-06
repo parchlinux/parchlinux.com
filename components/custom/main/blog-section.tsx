@@ -11,11 +11,11 @@ import { Link } from "lucide-react";
 
 const BlogSection = () => {
   return (
-    <div className="container max-w-7xl mx-auto">
+    <div className="container max-w-7xl mx-auto mt-24">
       <div className="flex flex-col items-center gap-10">
-        <h2 className="text-2xl font-bold">Events</h2>
-        <div className="grid grid-cols-3 gap-4">
-          <Card className="rounded-lg gap-4 bg-gray-100 border-gray-100">
+        <h2 className="text-2xl font-bold">Blog</h2>
+        <div className="grid grid-cols-12 gap-4">
+          <Card className="xl:col-span-4 col-span-6 rounded-lg gap-4 bg-secondary border-secondary">
             <CardHeader>
               <CardDescription className="text-md font-bold">
                 Thu, 08 May 2025
@@ -45,8 +45,7 @@ const BlogSection = () => {
               </p>
             </CardFooter>
           </Card>
-
-          <Card className="rounded-lg gap-4 bg-gray-100 border-gray-100">
+          <Card className="xl:col-span-4 col-span-6 rounded-lg gap-4 bg-secondary border-gray">
             <CardHeader>
               <CardDescription className="text-md font-bold">
                 Thu, 15 May 2025
@@ -76,7 +75,7 @@ const BlogSection = () => {
               </p>
             </CardFooter>
           </Card>
-          <Card className="rounded-lg gap-4 bg-gray-100 border-gray-100">
+          <Card className="xl:col-span-4 col-span-6 rounded-lg gap-4 bg-secondary border-gray">
             <CardHeader>
               <CardDescription className="text-md font-bold">
                 Thu, 22 May 2025

@@ -31,11 +31,14 @@ const features = [
 const IconSection = () => {
   return (
     <div className="w-full max-w-6xl mx-auto p-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-4 gap-6">
         {features.map((feature, index) => {
           const IconComponent = feature.icon;
           return (
-            <Card key={index} className="text-center border-0 shadow-none">
+            <Card
+              key={index}
+              className="xl:col-span-1 sm:col-span-2 col-span-4 text-center border-0 shadow-none"
+            >
               <CardContent className="p-5 space-y-4">
                 <div className="flex flex-col items-center justify-center">
                   <div className="w-16 h-16 rounded-full flex items-center justify-center">

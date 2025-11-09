@@ -55,7 +55,7 @@ function DownloadCard({ logo, title, description, image, hashs, links }) {
           {links.map((link, index) => (
             <button
               key={index}
-              className={`w-full bg-${link.color} rounded-lg p-3 flex items-center gap-3 transition-all hover:opacity-90`}
+              className={`w-full bg-primary rounded-lg p-3 flex items-center gap-3 transition-all hover:opacity-90`}
             >
               <div className="bg-white p-2 w-8 h-8 rounded flex items-center justify-center text-xs font-bold text-black">
                 {link.version === "ARM64" ? (
@@ -132,7 +132,7 @@ export default function Download() {
               335ed8d9
             </span>
           </button>
-          <button className="px-4 py-2 bg-secondary text-white rounded-lg flex items-center gap-2">
+          <button className="px-4 py-2 parch-violet text-white rounded-lg flex items-center gap-2">
             <span>Submitted by</span>
             <span className="bg-white/20 px-2 py-0.5 rounded text-sm">
               Sohrab Behdani

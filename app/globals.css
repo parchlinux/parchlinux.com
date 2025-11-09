@@ -127,6 +127,10 @@
   background: linear-gradient(90deg, #21c796 15%, #0385ce 95%, #0d40bf 120%);
 }
 
+.bg-over {
+  background: #FF9A9A;
+}
+
 .ring-parch {
   --tw-ring-color: var(--primary);
 }
@@ -135,4 +139,21 @@
   background: linear-gradient(90deg, #21c796 40%, #0385ce 85%, #0d40bf 120%);
   color: transparent;
   background-clip: text;
+}
+
+
+.bg-primary {
+  background: #148AF7;
+}
+
+.bg-green { 
+  background: #1ABC9C;
+}
+
+.bg-secondary {
+  background: #9500FF;
+}
+
+.parch-blue {
+  background-color: #D2E5F4;
 }

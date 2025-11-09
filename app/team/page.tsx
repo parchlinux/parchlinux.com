@@ -1,35 +1,68 @@
-import team from "@/data/team";
-import teams from "@/data/team";
-import Image from "next/image";
 import React from "react";
+import ProfileCard from "./ProfileCard";
+import team from "@/data/team";
 
-export default function Team() {
+interface TeamMember {
+  name: string;
+  job: string;
+  image: string;
+  links: Array<{
+    mastadon?: string;
+    twitter?: string;
+    linkedin?: string;
+    github?: string;
+    website?: string;
+  }>;
+}
+
+export default function App() {
   return (
-    <div className="container mx-auto">
-      <h1 className="text-center text-3xl font-bold mb-12">Our team</h1>
-      <div className="grid grid-cols-4 gap-8">
-        {team.map((contributor, index) => (
-          <div
-            className="flex flex-col relative gap-3 p-5 bg-primary/20 rounded-lg lg:col-span-1 sm:col-span-2 col-span-4"
-            key={index}
-          >
-            <div className="flex flex-col">
-              <h3 className="font-bold text-lg">Mohammad Arshiya Fardinfar</h3>
-              <span className="text-muted/80">Founder</span>
-            </div>
+    <div className="min-h-screen py-12">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-5xl font-bold text-slate-900 mb-4">
+            Meet Our Team
+          </h1>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            talented individuals who make everything possible
+          </p>
+        </div>
 
-            <Image
-              src={"https://picsum.photos/350"}
-              width={350}
-              height={350}
-              className="rounded-sm w-full"
-              alt="ss"
-            />
-            <div className="absolute bottom-5 w-20 right-0 bg-primary/20 mx-5 px-2 z-10 rounded-l-xl">
-              ss
-            </div>
-          </div>
-        ))}
+        {/* Team Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
+          {team.map((member: TeamMember, index: number) => {
+            // تبدیل ساختار داده از team.ts به فرمت مورد نیاز ProfileCard
+            const links = member.links[0] || {};
+            
+            return (
+              <ProfileCard
+                key={index}
+                name={member.name}
+                role={member.job}
+                image={member.image}
+                imageAlt={`${member.name} profile picture`}
+                socialLinks={{
+                  mastodon: links.mastadon || "",
+                  twitter: links.twitter || "",
+                  linkedin: links.linkedin || "",
+                  github: links.github || "",
+                  website: links.website || "",
+                }}
+              />
+            );
+          })}
+        </div>
+
+        {/* Footer */}
+        <div className="text-center mt-16">
+          <p className="text-slate-500">
+            Want to join our team?{" "}
+            <a href="#contact" className="text-blue-600 hover:text-blue-800 font-medium">
+              Contact us
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   );

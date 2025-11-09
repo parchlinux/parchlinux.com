@@ -1,8 +1,8 @@
 const contributors = [
   {
-    name: "",
-    id: "",
-    image: "",
+    name: "Ali lotfi",
+    id: "@lotfi_ali",
+    image: "/images/sohrab.png",
   },
 ];
 

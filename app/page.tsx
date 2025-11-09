@@ -25,6 +25,8 @@ export default function Home() {
               customizability and performance that Arch Linux is known for.
             </p>
           }
+          image="/images/wallpaper 4.jpg"
+          imageAlt="ParchLinux Desktop"
           reverse
         />
         <HeroSection
@@ -41,6 +43,8 @@ export default function Home() {
               customizability and performance that Arch Linux is known for.
             </p>
           }
+          image="/images/wallpaper 2.jpg"
+          imageAlt="ParchLinux Desktop"
         />
         <HeroSection
           title={
@@ -58,6 +62,8 @@ export default function Home() {
               customizability and performance that Arch Linux is known for.
             </p>
           }
+          image="/images/wallpaper 3.jpg"
+          imageAlt="ParchLinux Desktop"
           reverse
         />
         <HeroSection
@@ -74,6 +80,8 @@ export default function Home() {
               customizability and performance that Arch Linux is known for.
             </p>
           }
+          image="/images/parchview.png"
+          imageAlt="ParchLinux Desktop"
         />
 
         <HeroSection
@@ -90,6 +98,8 @@ export default function Home() {
               customizability and performance that Arch Linux is known for.
             </p>
           }
+          image="/images/wallpaper 4.jpg"
+          imageAlt="ParchLinux Desktop"
           reverse
         />
         <div className="container max-w-7xl mx-auto">
@@ -116,6 +126,8 @@ export default function Home() {
               customizability and performance that Arch Linux is known for.
             </p>
           }
+          image="/images/wallpaper 2.jpg"
+          imageAlt="ParchLinux Desktop"
         />
       </div>
       <IconSection />

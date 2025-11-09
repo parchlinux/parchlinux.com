@@ -12,6 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import Image from "next/image";
 import { InstagramLogoIcon } from "@radix-ui/react-icons";
 import { ArrowUpRight } from "lucide-react";
 
@@ -19,8 +20,13 @@ export default function Footer() {
   return (
     <footer
       className={
-        "sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 mt-4 mb-8"
+        "sticky top-0 z-50 w-full  backdrop-blur supports-[backdrop-filter]:bg-background/60 mt-4 mb-8"
       }
+      style={{
+        backgroundImage: "url('/images/grid.svg')",
+        backgroundSize: "cover",
+        position: "relative",
+      }}
     >
       <div className="container flex items-center justify-between px-4 mx-auto">
         <FooterSect className="w-full">

@@ -48,9 +48,9 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center space-x-3">
-          <Button className="rounded-full" asChild>
+          <Button className="rounded-full bg-accent-foreground" asChild>
             <Link href="/download">
-              <span className="xl:block hidden">Donate</span> <Coffee />
+              <span className="xl:block hidden ">Donate</span> <Coffee />
             </Link>
           </Button>
           <span className="mb-1 xl:block hidden text-gray-400">&#8226;</span>

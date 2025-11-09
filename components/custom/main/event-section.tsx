@@ -50,6 +50,7 @@ const EventSection = () => {
                   <Link />
                 </Badge>
                 <span className="mb-1 text-gray-400">&#8226;</span>
+                <Badge className="rounded-full px-3 bg-over">it's over</Badge>
                 <Badge className="rounded-full px-3 bg-parch">Event</Badge>
               </CardAction>
             </CardHeader>

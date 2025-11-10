@@ -3,6 +3,7 @@ import { Saira } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/custom/layouts/header";
 import Footer from "@/components/custom/layouts/footer";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const sairaSans = Saira({
   variable: "--font-saira-sans",
@@ -24,11 +25,18 @@ export default function RootLayout({
       <body
         className={`${sairaSans.variable} ${sairaSans.className} antialiased`}
       >
-        <div className="bg-[url(/images/grid.svg)] h-[600px] w-full absolute z-[60]" />
-        <Header />
-        {children}
-        <Footer />
-        <div />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {/* <div className="bg-[url(/images/grid.svg)] bg-transparent h-[600px] w-full absolute z-[60]" /> */}
+          <Header />
+          {children}
+          <Footer />
+          <div />
+        </ThemeProvider>
       </body>
     </html>
   );

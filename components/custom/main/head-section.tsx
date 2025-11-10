@@ -2,21 +2,14 @@ import Image from "next/image";
 
 const HeadSection = () => {
   return (
-    <div
-      className="container max-w-7xl mx-auto"
-      style={{
-        backgroundImage: "url('/images/grid.svg')",
-        backgroundSize: "Cover",
-        position: "relative",
-      }}
-    >
+    <div className="container max-w-7xl mx-auto">
       <div className="grid grid-cols-12 mb-8">
         <div className="col-span-8 flex items-center">
           <div className="flex flex-col xl:gap-7 lg:gap-5 gap-3 2xl:pe-44">
             <h1 className="xl:text-[3.1rem] lg:text-4xl text-[1.8rem] font-bold xl:order-first">
               We have a <span className="text-parch">ready-to-go</span> OS!
             </h1>
-            <div className="grid grid-cols-4 xl:gap-4 gap-2 mb-4 xl:order-2 order-last mr-24">
+            <div className="grid grid-cols-4 xl:gap-4 gap-2 mb-4 xl:order-2 order-last 2xl:pr-48 xl:pr-32 pr-16">
               <div className="flex flex-col items-center bg-secondary rounded-lg py-4 gap-3">
                 <Image
                   className="lg:px-0 px-1"

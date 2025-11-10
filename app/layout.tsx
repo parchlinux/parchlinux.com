@@ -24,9 +24,11 @@ export default function RootLayout({
       <body
         className={`${sairaSans.variable} ${sairaSans.className} antialiased`}
       >
+        <div className="bg-[url(/images/grid.svg)] h-[600px] w-full absolute z-[60]" />
         <Header />
         {children}
         <Footer />
+        <div />
       </body>
     </html>
   );

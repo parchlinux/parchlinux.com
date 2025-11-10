@@ -6,7 +6,7 @@ import React from "react";
 const DownloadSection = () => {
   return (
     <div className="container max-w-7xl mx-auto">
-      <div className="grid grid-cols-12 px-8">
+      <div className="grid grid-cols-12 px-8 py-16">
         <div className="col-span-8 flex flex-col justify-center gap-14">
           <h2 className="2xl:text-7xl xl:text-6xl text-5xl font-bold">
             Try Parch Linux Now

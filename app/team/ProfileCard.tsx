@@ -28,11 +28,11 @@ const ProfileCard = ({
   const activeIcons = Object.values(socialLinks).filter(link => link && link !== "#").length;
   
   return (
-    <div className="w-full max-w-96 bg-[#D2E5F4] rounded-2xl p-5 relative">
+    <div className="w-full max-w-96 bg-cards rounded-2xl p-5 relative">
       {/* Header */}
       <div className="mb-4 text-left">
-        <h2 className="text-xl font-bold tracking-snug text-slate-900">{name}</h2>
-        <p className="text-slate-600 font-medium mt-1">{role}</p>
+        <h2 className="text-xl font-bold tracking-snug ">{name}</h2>
+        <p className=" font-medium mt-1">{role}</p>
       </div>
 
       {/* Image Container */}
@@ -46,7 +46,7 @@ const ProfileCard = ({
           
           {/* Social Icons - موقعیت‌یابی دقیق روی تصویر */}
           <div 
-            className="absolute bottom-0 right-0 bg-[#D2E5F4] p-3 rounded-tl-3xl flex gap-2 bottom-[-10px]"
+            className="absolute bottom-0 right-0 bg-cards p-3 rounded-tl-3xl flex gap-2 bottom-[-10px]"
             style={{
               minWidth: `${Math.max(3, activeIcons) * 44}px`, // حداقل 3 آیکون
             }}

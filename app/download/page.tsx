@@ -4,7 +4,7 @@ import downloads from "@/data/download";
 
 function DownloadCard({ logo, title, description, image, hashs, links }) {
   return (
-    <div className="parch-blue rounded-lg p-6 text-black relative overflow-hidden">
+    <div className="bg-secondary rounded-lg p-6  relative overflow-hidden">
       {/* Header */}
       <div className="flex items-center gap-3 mb-4">
         <div className="w-12 h-12 rounded-lg flex items-center justify-center">
@@ -16,7 +16,7 @@ function DownloadCard({ logo, title, description, image, hashs, links }) {
       </div>
 
       {/* Description */}
-      <p className="text-sm text-slate-900 mb-4 min-h-[60px]">{description}</p>
+      <p className="text-sm  mb-4 min-h-[60px]">{description}</p>
 
       {/* Hash Section */}
       <div className="mb-4">

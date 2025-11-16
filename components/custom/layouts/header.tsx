@@ -34,13 +34,13 @@ export default function Header() {
             Community
           </Link>
           <Link
-            href="/contact"
+            href="/blog"
             className="text-sm font-medium hover:text-foreground transition-colors"
           >
             Blog
           </Link>
           <Link
-            href="/contact"
+            href="/team"
             className="text-sm font-medium hover:text-foreground transition-colors"
           >
             Team

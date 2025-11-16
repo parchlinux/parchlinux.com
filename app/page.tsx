@@ -5,6 +5,7 @@ import HeadSection from "@/components/custom/main/head-section";
 import HeroSection from "@/components/custom/main/hero-section";
 import IconSection from "@/components/custom/main/icon-section";
 import LinkSection from "@/components/custom/main/link-section";
+import SponsorsCarousel from "@/components/custom/main/sponsor-carousel";
 
 export default function Home() {
   return (
@@ -134,6 +135,7 @@ export default function Home() {
       <LinkSection />
       <EventSection />
       <BlogSection />
+      <SponsorsCarousel />
       <DownloadSection />
     </div>
   );

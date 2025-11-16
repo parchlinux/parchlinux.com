@@ -21,10 +21,10 @@ export default function App() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="text-5xl font-bold  mb-4">
             Meet Our Team
           </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-xl  max-w-2xl mx-auto">
             talented individuals who make everything possible
           </p>
         </div>

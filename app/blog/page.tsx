@@ -5,7 +5,14 @@ import { ArrowLeft, Search, Calendar, Tag } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const BlogPage = () => {
-  const categories = ["All", "Event", "Update", "Tutorial", "Community", "News"];
+  const categories = [
+    "All",
+    "Event",
+    "Update",
+    "Tutorial",
+    "Community",
+    "News",
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -44,7 +51,6 @@ const BlogPage = () => {
 
         <BlogSection />
 
-        {/* Load More Button */}
         <div className="flex justify-center mt-12">
           <Button variant="outline" className="rounded-full px-8 py-2">
             Load More Articles
@@ -52,29 +58,37 @@ const BlogPage = () => {
         </div>
       </main>
 
-      {/* Sidebar */}
       <aside className="container max-w-7xl mx-auto pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-3">
-            {/* Blog content is handled by BlogSection */}
           </div>
           <div className="lg:col-span-1 space-y-6">
-            {/* Popular Tags */}
             <div className="bg-card rounded-lg p-6 border">
               <h3 className="font-semibold mb-4 flex items-center gap-2">
                 <Tag className="w-4 h-4" />
                 Popular Tags
               </h3>
               <div className="flex flex-wrap gap-2">
-                {["Gaming", "Steam", "Tutorial", "Update", "Community", "Design", "Development"].map((tag) => (
-                  <Badge key={tag} variant="secondary" className="cursor-pointer">
+                {[
+                  "Gaming",
+                  "Steam",
+                  "Tutorial",
+                  "Update",
+                  "Community",
+                  "Design",
+                  "Development",
+                ].map((tag) => (
+                  <Badge
+                    key={tag}
+                    variant="secondary"
+                    className="cursor-pointer"
+                  >
                     {tag}
                   </Badge>
                 ))}
               </div>
             </div>
 
-            {/* Newsletter */}
             <div className="bg-card rounded-lg p-6 border">
               <h3 className="font-semibold mb-2">Subscribe to Newsletter</h3>
               <p className="text-sm text-muted-foreground mb-4">
@@ -86,7 +100,9 @@ const BlogPage = () => {
                   placeholder="Enter your email"
                   className="flex h-10 w-full rounded-full border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 />
-                <Button className="w-full rounded-full bg-parch">Subscribe</Button>
+                <Button className="w-full rounded-full bg-parch">
+                  Subscribe
+                </Button>
               </div>
             </div>
           </div>

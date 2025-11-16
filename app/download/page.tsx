@@ -4,7 +4,7 @@ import downloads from "@/data/download";
 
 function DownloadCard({ logo, title, description, image, hashs, links }) {
   return (
-    <div className="bg-secondary rounded-lg p-6  relative overflow-hidden">
+    <div className="parch-blue rounded-lg p-6 text-black relative overflow-hidden">
       {/* Header */}
       <div className="flex items-center gap-3 mb-4">
         <div className="w-12 h-12 rounded-lg flex items-center justify-center">
@@ -16,7 +16,7 @@ function DownloadCard({ logo, title, description, image, hashs, links }) {
       </div>
 
       {/* Description */}
-      <p className="text-sm  mb-4 min-h-[60px]">{description}</p>
+      <p className="text-sm text-slate-900 mb-4 min-h-[60px]">{description}</p>
 
       {/* Hash Section */}
       <div className="mb-4">
@@ -48,7 +48,6 @@ function DownloadCard({ logo, title, description, image, hashs, links }) {
         </div>
       </div>
 
-      {/* Download Section */}
       <div className="mb-4 w-60">
         <h4 className="text-sm font-bold mb-2">Download</h4>
         <div className="space-y-2">
@@ -87,7 +86,6 @@ function DownloadCard({ logo, title, description, image, hashs, links }) {
         </div>
       </div>
 
-      {/* Screenshot Preview */}
       <div className="relative h-10">
         <Image
           src={image}
@@ -101,11 +99,9 @@ function DownloadCard({ logo, title, description, image, hashs, links }) {
   );
 }
 
-// کامپوننت اصلی
 export default function Download() {
   return (
     <div className="container mx-auto p-8">
-      {/* Header Section */}
       <div className="flex items-center w-full justify-between border rounded-md px-10 py-5 mb-8">
         <div className="flex items-center gap-6">
           <Image
@@ -141,7 +137,6 @@ export default function Download() {
         </div>
       </div>
 
-      {/* Download Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {downloads.map((download, index) => (
           <DownloadCard

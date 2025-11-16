@@ -19,7 +19,6 @@ export default function App() {
   return (
     <div className="min-h-screen py-12">
       <div className="container mx-auto px-4">
-        {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold  mb-4">
             Meet Our Team
@@ -29,10 +28,8 @@ export default function App() {
           </p>
         </div>
 
-        {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
           {team.map((member: TeamMember, index: number) => {
-            // تبدیل ساختار داده از team.ts به فرمت مورد نیاز ProfileCard
             const links = member.links[0] || {};
             
             return (
@@ -54,7 +51,6 @@ export default function App() {
           })}
         </div>
 
-        {/* Footer */}
         <div className="text-center mt-16">
           <p className="text-slate-500">
             Want to join our team?{" "}

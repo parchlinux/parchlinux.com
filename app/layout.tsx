@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${sairaSans.variable} ${sairaSans.className} antialiased`}
+        className={`${sairaSans.variable} ${sairaSans.className} antialiased relative overflow-x-hidden`}
       >
         <ThemeProvider
           attribute="class"
@@ -31,11 +31,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <div className="bg-[url(/images/grid.svg)] bg-transparent h-[600px] w-full absolute z-[60]" /> */}
           <Header />
-          {children}
+          <div className="mt-32">{children}</div>
           <Footer />
-          <div />
         </ThemeProvider>
       </body>
     </html>

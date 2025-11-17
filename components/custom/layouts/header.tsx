@@ -1,12 +1,35 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Coffee } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 16);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrolledClasses =
+    "bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 shadow-sm";
+  const defaultClasses = "bg-transparent xl:pt-4";
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 pt-4 mb-8">
-      <div className="container flex xl:h-16 h-32 items-center justify-between px-4 mx-auto">
+    <header
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+        isScrolled ? scrolledClasses : defaultClasses
+      }`}
+    >
+      <div className="container flex xl:h-16 h-24 items-center justify-between px-4 mx-auto">
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-3">
             <Image src={"/logo.svg"} width={19} height={19} alt="logo" />

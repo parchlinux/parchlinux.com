@@ -13,10 +13,7 @@ export default function SponsorsCarousel() {
     <div className="container max-w-7xl mx-auto py-14">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold  mb-4">Our Sponsors</h2>
-          <p className="text-gray-400 text-lg">
-            You can be one of our sponsors.
-          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold">Our Sponsors</h2>
         </div>
 
         <div className="flex justify-center gap-12">
@@ -42,7 +39,10 @@ export default function SponsorsCarousel() {
         </div>
 
         <div className="flex justify-center mt-12">
-          <Button size="lg" className="text-lg px-8 bg-parch p-6 rounded-full ring-secondary">
+          <Button
+            size="lg"
+            className="text-lg px-8 bg-parch p-6 rounded-full ring-secondary"
+          >
             Become our sponsor
           </Button>
         </div>

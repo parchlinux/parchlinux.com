@@ -25,7 +25,6 @@ const BlogSection = () => {
     <div className="container max-w-7xl mx-auto mt-24 px-4">
       <div className="flex flex-col items-center gap-10">
         <h2 className="text-2xl sm:text-3xl font-bold">Blog</h2>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
           {blogPosts.map((post: BlogPost) => (
             <Card

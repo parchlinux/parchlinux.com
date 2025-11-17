@@ -10,9 +10,7 @@ import {
 import {
   Select,
   SelectContent,
-  SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -24,7 +22,6 @@ import {
   Moon,
   MoveUpRight,
   Sun,
-  WholeWord,
 } from "lucide-react";
 import { useTheme } from "next-themes";
 
@@ -32,9 +29,9 @@ export default function Footer() {
   const { setTheme, theme } = useTheme();
 
   return (
-    <footer className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 mt-4 pb-8">
+    <footer className="bottom-0 z-50 w-full mt-4 pb-8 relative">
       <div className="container flex items-center justify-between px-4 mx-auto">
-        <FooterSect className="w-full">
+        <FooterSect className="w-full bg-transparent">
           <FooterContent className="w-full">
             <FooterColumn>
               <div className="flex items-center gap-1">

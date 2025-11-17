@@ -18,6 +18,7 @@ const HeroSection = ({
   return (
     <div className="container max-w-7xl mx-auto">
       <div className="grid grid-cols-12 gap-8 lg:gap-12 items-center">
+        
         <div
           className={cn(
             "col-span-12 lg:col-span-6",
@@ -36,17 +37,19 @@ const HeroSection = ({
             </div>
           )}
         </div>
+
         <div
           className={cn(
             "col-span-12 lg:col-span-6",
             reverse ? "lg:order-2" : "lg:order-1"
           )}
         >
-          <div className="flex flex-col xl:gap-3 gap-1">
+          <div className="flex flex-col xl:gap-3 gap-1 text-center lg:text-left">
             {title}
             {description}
           </div>
         </div>
+
       </div>
     </div>
   );

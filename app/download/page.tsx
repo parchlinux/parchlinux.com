@@ -4,8 +4,7 @@ import downloads from "@/data/download";
 
 function DownloadCard({ logo, title, description, image, hashs, links }) {
   return (
-    <div className="parch-blue rounded-lg p-6 text-black relative overflow-hidden">
-      {/* Header */}
+    <div className="bg-secondary rounded-lg p-6  relative overflow-hidden">
       <div className="flex items-center gap-3 mb-4">
         <div className="w-12 h-12 rounded-lg flex items-center justify-center">
           <Image src={logo} width={48} height={48} alt={title} />
@@ -15,10 +14,8 @@ function DownloadCard({ logo, title, description, image, hashs, links }) {
         </div>
       </div>
 
-      {/* Description */}
-      <p className="text-sm text-slate-900 mb-4 min-h-[60px]">{description}</p>
+      <p className="text-sm mb-4 min-h-[60px]">{description}</p>
 
-      {/* Hash Section */}
       <div className="mb-4">
         <h4 className="text-sm font-bold mb-2">Hash</h4>
         <div className="space-y-2">
@@ -99,45 +96,44 @@ function DownloadCard({ logo, title, description, image, hashs, links }) {
   );
 }
 
+
 export default function Download() {
   return (
-    <div className="container mx-auto p-8">
-      <div className="flex items-center w-full justify-between border rounded-md px-10 py-5 mb-8">
-        <div className="flex items-center gap-6">
+    <div className="container mx-auto p-12 sm:p-8">
+      <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between md:items-center">
+        <div className="flex flex-col items-center gap-4 order-1">
           <Image
             src={"/images/download/parch-box.png"}
-            width={150}
-            height={150}
+            width={220}
+            height={220}
             alt="parch-box"
+            className="w-40 sm:w-64 md:w-60 h-auto"
           />
-          <div className="flex flex-col gap-0.5">
-            <h1 className="text-3xl font-bold">Latest Releases</h1>
-            <h2 className="text-xl">This build was released on 2025-09-14</h2>
+          <div className="text-center">
+            <h1 className="text-3xl sm:text-4xl font-bold">Latest Releases</h1>
+            <h2 className="text-base sm:text-lg text-gray-500 mt-1">
+              This build was released on 2025-09-14
+            </h2>
           </div>
         </div>
-        <div className="flex gap-3">
-          <button className="px-4 py-2 bg-green text-white rounded-lg flex items-center gap-2">
+
+        <div className="flex flex-wrap gap-2 justify-center order-2 w-full md:w-auto mt-4 md:mt-0">
+          <button className="px-4 py-4 bg-green text-white rounded-lg flex-1 sm:flex-none flex items-center justify-center gap-2">
             <span>Pull Request</span>
-            <span className="bg-white/20 px-2 py-0.5 rounded text-sm">
-              #17508
-            </span>
+            <span className="bg-white/20 px-2 py-1 rounded text-sm">#17508</span>
           </button>
-          <button className="px-4 py-2 bg-primary text-white rounded-lg flex items-center gap-2">
+          <button className="px-4 py-4 bg-primary text-white rounded-lg flex-1 sm:flex-none flex items-center justify-center gap-2">
             <span>Commit</span>
-            <span className="bg-white/20 px-2 py-0.5 rounded text-sm">
-              335ed8d9
-            </span>
+            <span className="bg-white/20 px-2 py-1 rounded text-sm">335ed8d9</span>
           </button>
-          <button className="px-4 py-2 parch-violet text-white rounded-lg flex items-center gap-2">
+          <button className="px-4 py-4 parch-violet text-white rounded-lg flex-1 sm:flex-none flex items-center justify-center gap-2">
             <span>Submitted by</span>
-            <span className="bg-white/20 px-2 py-0.5 rounded text-sm">
-              Sohrab Behdani
-            </span>
+            <span className="bg-white/20 px-2 py-1 rounded text-sm">Sohrab Behdani</span>
           </button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-6">
         {downloads.map((download, index) => (
           <DownloadCard
             key={index}

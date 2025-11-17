@@ -31,28 +31,24 @@ const features = [
 const IconSection = () => {
   return (
     <div className="w-full max-w-6xl mx-auto p-6">
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {features.map((feature, index) => {
           const IconComponent = feature.icon;
           return (
             <Card
               key={index}
-              className="xl:col-span-1 sm:col-span-2 col-span-4 text-center border-0 shadow-none"
+              className="col-span-1 text-center border-0 shadow-none"
             >
-              <CardContent className="p-5 space-y-4">
-                <div className="flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center">
-                    <IconComponent size={48} />
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground">
-                    {feature.title}
-                  </h3>
+              <CardContent className="p-5 space-y-4 flex flex-col items-center">
+                <div className="w-16 h-16 sm:w-20 lg:w-16 rounded-full flex items-center justify-center mb-2">
+                  <IconComponent size={48} />
                 </div>
-                <div className="space-y-2 ">
-                  <p className="text-muted-foreground text-xs mx-auto leading-relaxed xl:max-w-[250px] max-w-[200px]">
-                    {feature.description}
-                  </p>
-                </div>
+                <h3 className="text-xl sm:text-2xl lg:text-xl font-semibold text-foreground">
+                  {feature.title}
+                </h3>
+                <p className="text-xs sm:text-sm lg:text-xs text-muted-foreground mx-auto leading-relaxed sm:max-w-[250px] lg:max-w-[200px]">
+                  {feature.description}
+                </p>
               </CardContent>
             </Card>
           );

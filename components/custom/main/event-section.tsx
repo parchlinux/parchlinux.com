@@ -11,16 +11,17 @@ import { Link } from "lucide-react";
 
 const EventSection = () => {
   return (
-    <div className="container max-w-7xl mx-auto">
+    <div className="container max-w-7xl mx-auto px-4">
       <div className="flex flex-col items-center gap-10">
-        <h2 className="text-2xl font-bold">Events</h2>
-        <div className="grid grid-cols-12 gap-4">
-          <Card className="xl:col-span-4 col-span-6 rounded-lg gap-4 bg-secondary border-secondary">
+        <h2 className="text-2xl sm:text-3xl font-bold">Events</h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+          <Card className="rounded-lg gap-4 bg-secondary border-secondary">
             <CardHeader>
               <CardDescription className="text-md font-bold">
                 Thu, 08 May 2025
               </CardDescription>
-              <CardAction className="flex gap-1.5">
+              <CardAction className="flex flex-wrap gap-1.5">
                 <Badge className="rounded-full px-3 bg-amber-300">
                   <Link />
                 </Badge>
@@ -40,12 +41,13 @@ const EventSection = () => {
               </p>
             </CardFooter>
           </Card>
-          <Card className="xl:col-span-4 col-span-6 rounded-lg gap-4 bg-secondary border-secondary">
+
+          <Card className="rounded-lg gap-4 bg-secondary border-secondary">
             <CardHeader>
               <CardDescription className="text-md font-bold">
                 Thu, 15 May 2025
               </CardDescription>
-              <CardAction className="flex gap-1.5">
+              <CardAction className="flex flex-wrap gap-1.5">
                 <Badge className="rounded-full px-3 bg-amber-300">
                   <Link />
                 </Badge>
@@ -66,12 +68,13 @@ const EventSection = () => {
               </p>
             </CardFooter>
           </Card>
-          <Card className="xl:col-span-4 col-span-6 rounded-lg gap-4 bg-secondary border-secondary">
+
+          <Card className="rounded-lg gap-4 bg-secondary border-secondary">
             <CardHeader>
               <CardDescription className="text-md font-bold">
                 Thu, 22 May 2025
               </CardDescription>
-              <CardAction className="flex gap-1.5">
+              <CardAction className="flex flex-wrap gap-1.5">
                 <Badge className="rounded-full px-3 bg-amber-300">
                   <Link />
                 </Badge>
@@ -86,8 +89,7 @@ const EventSection = () => {
             </CardContent>
             <CardFooter>
               <p>
-                Experts discuss the latest trends in UX and UI design for
-                2025...
+                Experts discuss the latest trends in UX and UI design for 2025...
               </p>
             </CardFooter>
           </Card>

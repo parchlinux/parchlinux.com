@@ -5,24 +5,26 @@ import React from "react";
 
 const DownloadSection = () => {
   return (
-    <div className="container max-w-7xl mx-auto">
-      <div className="grid grid-cols-12 px-8 py-16">
-        <div className="col-span-8 flex flex-col justify-center gap-14">
-          <h2 className="2xl:text-7xl xl:text-6xl text-5xl font-bold">
+    <div className="container max-w-7xl mx-auto px-4">
+      <div className="flex flex-col md:flex-row items-center md:items-center py-16 gap-10 md:gap-0">
+        <div className="md:col-span-4 flex justify-center md:justify-end order-1 md:order-2 w-full md:w-auto">
+          <Image
+            width={160}
+            height={260}
+            src={"/logo.svg"}
+            alt="logo-download"
+            className="w-36 sm:w-40 md:w-44 lg:w-48 h-auto"
+          />
+        </div>
+
+        <div className="md:col-span-8 flex flex-col justify-center gap-6 md:gap-14 text-center md:text-left order-2 md:order-1 w-full">
+          <h2 className="text-4xl sm:text-5xl xl:text-6xl 2xl:text-7xl font-bold">
             Try Parch Linux Now
           </h2>
-          <Button className="rounded-full text-[18px] bg-black text-white py-7 ring-1 ring-gray-500 ring-offset-4 px-5 w-fit">
+          <Button className="rounded-full text-[18px] bg-black text-white py-7 ring-1 ring-gray-500 ring-offset-4 px-5 w-fit mx-auto md:mx-0">
             <Download />
             Download for free
           </Button>
-        </div>
-        <div className="col-span-4 flex justify-end">
-          <Image
-            width={180}
-            height={300}
-            src={"/logo.svg"}
-            alt="logo-download"
-          />
         </div>
       </div>
     </div>

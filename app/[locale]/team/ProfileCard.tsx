@@ -27,12 +27,8 @@ const ProfileCard = ({
   const activeIcons = Object.values(socialLinks).filter(link => link && link !== "#").length;
   
   return (
-<<<<<<< HEAD
     <div className="w-full max-w-96 bg-cards rounded-2xl p-5 relative">
       {/* Header */}
-=======
-    <div className="w-full max-w-96 bg-[#D2E5F4] rounded-2xl p-5 relative">
->>>>>>> 4bb9a5a1fa1efea8f7a13fa87bf9e830fe37fe98
       <div className="mb-4 text-left">
         <h2 className="text-xl font-bold tracking-snug ">{name}</h2>
         <p className=" font-medium mt-1">{role}</p>

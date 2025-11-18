@@ -20,14 +20,14 @@ export default function SponsorsCarousel() {
           {sponsors.map((sponsor) => (
             <div
               key={sponsor.id}
-              className="group relative bg-secondary rounded-2xl p-18 py-12 ring-secondary flex flex-col items-center justify-center aspect-square"
+              className="group relative bg-secondary rounded-2xl p-20 py-12 ring-secondary flex flex-col items-center justify-center aspect-square"
             >
-              <div className="relative w-20 h-20 mb-4 flex items-center justify-center">
+              <div className="relative w-28 h-20 mb-4 flex items-center justify-center">
                 <Image
                   src={sponsor.logo}
                   alt={sponsor.name}
-                  width={80}
-                  height={80}
+                  width={150}
+                  height={150}
                   className="object-contain"
                 />
               </div>

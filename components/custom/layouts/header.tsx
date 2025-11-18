@@ -5,9 +5,11 @@ import { Coffee } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useLocale } from "next-intl";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const locale = useLocale();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,57 +32,36 @@ export default function Header() {
       }`}
     >
       <div className="container flex xl:h-16 h-24 items-center justify-between px-4 mx-auto">
+        
         <div className="flex items-center">
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href={`/${locale}`} className="flex items-center space-x-3">
             <Image src={"/logo.svg"} width={19} height={19} alt="logo" />
-            <span className=" text-xl">Parch Linux</span>
+            <span className="text-xl">Parch Linux</span>
           </Link>
         </div>
 
         <nav className="hidden md:flex items-center xl:space-x-8 space-x-4">
-          <Link
-            href="/features"
-            className="text-sm font-medium hover:text-foreground transition-colors"
-          >
-            Forum
-          </Link>
-          <Link
-            href="/pricing"
-            className="text-sm font-medium hover:text-foreground transition-colors"
-          >
-            Wiki
-          </Link>
-          <Link
-            href="/about"
-            className="text-sm font-medium hover:text-foreground transition-colors"
-          >
-            Community
-          </Link>
-          <Link
-            href="/blog"
-            className="text-sm font-medium hover:text-foreground transition-colors"
-          >
-            Blog
-          </Link>
-          <Link
-            href="/team"
-            className="text-sm font-medium hover:text-foreground transition-colors"
-          >
-            Team
-          </Link>
+          <Link href={`/${locale}/features`} className="text-sm font-medium hover:text-foreground transition-colors">Forum</Link>
+          <Link href={`/${locale}/pricing`} className="text-sm font-medium hover:text-foreground transition-colors">Wiki</Link>
+          <Link href={`/${locale}/about`} className="text-sm font-medium hover:text-foreground transition-colors">Community</Link>
+          <Link href={`/${locale}/blog`} className="text-sm font-medium hover:text-foreground transition-colors">Blog</Link>
+          <Link href={`/${locale}/team`} className="text-sm font-medium hover:text-foreground transition-colors">Team</Link>
         </nav>
 
         <div className="flex items-center space-x-3">
           <Button className="rounded-full bg-accent-foreground" asChild>
-            <Link href="/download">
-              <span className="xl:block hidden ">Donate</span> <Coffee />
+            <Link href={`/${locale}/download`}>
+              <span className="xl:block hidden">Donate</span> <Coffee />
             </Link>
           </Button>
+
           <span className="mb-1 xl:block hidden text-gray-400">&#8226;</span>
-          <Button className="rounded-full bg-parch" variant={"default"} asChild>
-            <Link href="/download">Downlaod</Link>
+
+          <Button className="rounded-full bg-parch" variant="default" asChild>
+            <Link href={`/${locale}/download`}>Download</Link>
           </Button>
         </div>
+
       </div>
     </header>
   );

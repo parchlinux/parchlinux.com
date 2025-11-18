@@ -1,5 +1,18 @@
 {
-    "Index": {
-      "App_Name" : "پارچ لینوکس"
-    }
+  "Index": {
+    "App_Name": "پارچ لینوکس"
+  },
+  "head": {
+    "title": "ما یک سیستم‌عامل <strong>آماده‌به‌کار</strong> داریم!",
+    "strong": "آماده‌به‌کار",
+    "install": "نصب آسان",
+    "performance": "عملکرد بالا",
+    "speed": "سرعت بالا",
+    "userUI": "رابط کاربری ساده",
+    "arch": "بر پایه آرچ",
+    "desc": "پارش لینوکس بر پایه <arch>آرچ لینوکس</arch> ساخته شده و تجربه‌ای <userFriendly>کاربرپسند</userFriendly> با <performance>عملکرد</performance> بالا ارائه می‌دهد.",
+    "archWord": "آرچ لینوکس",
+    "userFriendlyWord": "کاربرپسند",
+    "performanceWord": "عملکرد"
   }
+}

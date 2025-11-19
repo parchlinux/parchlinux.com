@@ -112,6 +112,40 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  .bg-grid {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 67.32%, #040b11 100%),
+      url(/images/grid.png);
+    background-size: contain;
+    transform: rotate(9.13deg);
+    opacity: 0.05;
+  }
+  
+
+
+  .bg-grid-center {
+    background: linear-gradient(
+        180deg,
+        #040a0f 0%,
+        rgba(0, 0, 0, 0) 50%,
+        #040b11 100%
+      ),
+      url(/images/grid.png);
+      opacity: 0.05;
+    background-size: contain;
+  }
+
+  .bg-grid-reverse {
+    background: linear-gradient(
+        360deg,
+        rgba(255, 255, 255, 0.05) 67%,
+        #0a1b2b 100%
+      ),
+      url(/images/grid.png);
+    background-size: contain;
+    transform: rotate(369.13deg);
+  }
+  
 }
 
 @layer base {
@@ -136,16 +170,12 @@
 }
 
 .text-parch {
-  background: linear-gradient(90deg, #21c796 40%, #0385ce 85%, #0d40bf 120%);
+  background: linear-gradient(150deg, #21c796 40%, #0385ce 85%, #0d40bf 120%);
   color: transparent;
   background-clip: text;
 }
 
-.bg-primary {
-  background: #148af7;
-}
-
-.bg-green {
+.parch-green {
   background: #1abc9c;
 }
 
@@ -156,31 +186,6 @@
 .parch-violet {
   background: #9500ff;
 }
-
-.ring-secondary {
-  border: 1.5px solid var(--ring);
-}
-
-.foregraund-btn {
-  background-color: var(--popover-foreground);
-}
-
-.bg-card {
-  background-color: var(--background) !important;
-}
-
-.bg-cards {
-  background-color: var(--card);
-}
-
-.text-primary {
-  color: var(--foreground);
-}
-
-.bg-secondary {
-  background-color: var(--secondary);
-}
-
 
 .bg-grid {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 67.32%, #edf3fa 100%),
@@ -202,41 +207,6 @@
 
 .bg-grid-reverse {
   background: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 67.32%, #edf3fa 100%),
-    url(/images/grid.png);
-  background-size: contain;
-  transform: rotate(369.13deg);
-}
-
-
-html.dark .bg-grid::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px; /* طول fade */
-  background: linear-gradient(to bottom, rgba(2,9,23,0) 0%, #020917 100%);
-  pointer-events: none;
-}
-
-html.dark .bg-grid-center {
-  background: linear-gradient(
-      180deg,
-      #040a0f 0%,
-      rgba(0, 0, 0, 0) 50%,
-      #040b11 100%
-    ),
-    url(/images/grid.png);
-    opacity: 0.1;
-  background-size: contain;
-}
-
-html.dark .bg-grid-reverse {
-  background: linear-gradient(
-      360deg,
-      rgba(255, 255, 255, 0.05) 67%,
-      #0a1b2b 100%
-    ),
     url(/images/grid.png);
   background-size: contain;
   transform: rotate(369.13deg);

@@ -31,8 +31,7 @@ export default function Header() {
         isScrolled ? scrolledClasses : defaultClasses
       }`}
     >
-      <div className="container flex xl:h-16 h-24 items-center justify-between px-4 mx-auto">
-        
+      <div className="container flex xl:h-16 h-20 max-w-7xl items-center justify-between px-4 mx-auto">
         <div className="flex items-center">
           <Link href={`/${locale}`} className="flex items-center space-x-3">
             <Image src={"/logo.svg"} width={19} height={19} alt="logo" />
@@ -41,11 +40,36 @@ export default function Header() {
         </div>
 
         <nav className="hidden md:flex items-center xl:space-x-8 space-x-4">
-          <Link href={`/${locale}/features`} className="text-sm font-medium hover:text-foreground transition-colors">Forum</Link>
-          <Link href={`/${locale}/pricing`} className="text-sm font-medium hover:text-foreground transition-colors">Wiki</Link>
-          <Link href={`/${locale}/about`} className="text-sm font-medium hover:text-foreground transition-colors">Community</Link>
-          <Link href={`/${locale}/blog`} className="text-sm font-medium hover:text-foreground transition-colors">Blog</Link>
-          <Link href={`/${locale}/team`} className="text-sm font-medium hover:text-foreground transition-colors">Team</Link>
+          <Link
+            href={`/${locale}/features`}
+            className="text-sm font-medium hover:text-foreground/50 transition-colors"
+          >
+            Forum
+          </Link>
+          <Link
+            href={`/${locale}/pricing`}
+            className="text-sm font-medium hover:text-foreground/50 transition-colors"
+          >
+            Wiki
+          </Link>
+          <Link
+            href={`/${locale}/about`}
+            className="text-sm font-medium hover:text-foreground/50 transition-colors"
+          >
+            Community
+          </Link>
+          <Link
+            href={`/${locale}/blog`}
+            className="text-sm font-medium hover:text-foreground/50 transition-colors"
+          >
+            Blog
+          </Link>
+          <Link
+            href={`/${locale}/team`}
+            className="text-sm font-medium hover:text-foreground/50 transition-colors"
+          >
+            Team
+          </Link>
         </nav>
 
         <div className="flex items-center space-x-3">
@@ -61,7 +85,6 @@ export default function Header() {
             <Link href={`/${locale}/download`}>Download</Link>
           </Button>
         </div>
-
       </div>
     </header>
   );

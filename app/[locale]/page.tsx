@@ -6,22 +6,10 @@ import HeroSection from "@/components/custom/main/hero-section";
 import IconSection from "@/components/custom/main/icon-section";
 import LinkSection from "@/components/custom/main/link-section";
 import SponsorsCarousel from "@/components/custom/main/sponsor-carousel";
-import { Locale, useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
-import { use } from "react";
 
 export default function IndexPage({ params }: PageProps<"/[locale]">) {
-  const { locale } = use(params);
-
-  // Enable static rendering
-  setRequestLocale(locale as Locale);
-
-  const t = useTranslations("Index");
-
   return (
     <>
-      {t("App_Name")}
-      <div className="bg-grid z-[-1] absolute w-[150%] h-[1000px] opacity-5 -top-44 -left-10 pointer-events-none" />
       <div className="flex flex-col gap-12 h-full lg:px0 md:px-8 px-6">
         <HeadSection />
         <div className="flex flex-col gap-24">
@@ -32,7 +20,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
               </h2>
             }
             description={
-              <p className="text-justify text-sm">
+              <p className="text-justify md:text-sm text-xs">
                 ParchLinux, which stands for Persian Arch, is a Linux
                 distribution based on the popular and versatile Arch Linux. It
                 aims to provide a streamlined, user-friendly experience while
@@ -51,7 +39,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
               </h2>
             }
             description={
-              <p className="text-justify text-sm">
+              <p className="text-justify md:text-sm text-xs">
                 ParchLinux, which stands for Persian Arch, is a Linux
                 distribution based on the popular and versatile Arch Linux. It
                 aims to provide a streamlined, user-friendly experience while
@@ -71,7 +59,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
               </h2>
             }
             description={
-              <p className="text-justify text-sm">
+              <p className="text-justify md:text-sm text-xs">
                 ParchLinux, which stands for Persian Arch, is a Linux
                 distribution based on the popular and versatile Arch Linux. It
                 aims to provide a streamlined, user-friendly experience while
@@ -90,7 +78,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
               </h2>
             }
             description={
-              <p className="text-justify text-sm">
+              <p className="text-justify md:text-sm text-xs">
                 ParchLinux, which stands for Persian Arch, is a Linux
                 distribution based on the popular and versatile Arch Linux. It
                 aims to provide a streamlined, user-friendly experience while
@@ -109,7 +97,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
               </h2>
             }
             description={
-              <p className="text-justify text-sm">
+              <p className="text-justify md:text-sm text-xs">
                 ParchLinux, which stands for Persian Arch, is a Linux
                 distribution based on the popular and versatile Arch Linux. It
                 aims to provide a streamlined, user-friendly experience while
@@ -138,7 +126,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
               </h2>
             }
             description={
-              <p className="text-justify text-sm">
+              <p className="text-justify md:text-sm text-xs">
                 ParchLinux, which stands for Persian Arch, is a Linux
                 distribution based on the popular and versatile Arch Linux. It
                 aims to provide a streamlined, user-friendly experience while

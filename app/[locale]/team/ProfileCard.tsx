@@ -1,5 +1,10 @@
-import React from "react";
-import { Github, Linkedin, Globe } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+} from "@/components/ui/card";
+import Image from "next/image";
 
 interface SocialLinks {
   mastodon?: string;
@@ -24,30 +29,30 @@ const ProfileCard = ({
   imageAlt,
   socialLinks,
 }: ProfileCardProps) => {
-  const activeIcons = Object.values(socialLinks).filter(link => link && link !== "#").length;
-  
-  return (
-    <div className="w-full max-w-96 bg-cards rounded-2xl p-5 relative">
-      {/* Header */}
-      <div className="mb-4 text-left">
-        <h2 className="text-xl font-bold tracking-snug ">{name}</h2>
-        <p className=" font-medium mt-1">{role}</p>
-      </div>
+  const activeIcons = Object.values(socialLinks).filter(
+    (link) => link && link !== "#"
+  ).length;
 
-      <div className="relative mb-6">
-        <div className="relative rounded-xl overflow-hidden aspect-square">
-          <img
+  return (
+    <Card className="lg:col-span-1 sm:col-span-2 col-span-4 relative gap-3.5 w-full rounded-lg bg-secondary border-0 shadow">
+      <CardHeader className="text-left gap-0">
+        <CardHeader className="text-[1.15rem] font-bold tracking-snug p-0 gap-0">
+          {name}
+        </CardHeader>
+        <CardDescription className="font-medium">{role}</CardDescription>
+      </CardHeader>
+
+      <CardContent className="relative">
+        <div className="relative rounded-lg overflow-hidden aspect-square">
+          <Image
             src={image}
             alt={imageAlt || `${name} profile picture`}
+            width={250}
+            height={250}
             className="w-full h-full object-cover"
           />
-          
-          <div 
-            className="absolute bottom-0 right-0 bg-cards p-3 rounded-tl-3xl flex gap-2 bottom-[-10px]"
-            style={{
-              minWidth: `${Math.max(3, activeIcons) * 44}px`,
-            }}
-          >
+
+          {/* <div className="absolute  right-0 bg-cards p-3 rounded-tl-3xl flex gap-2 bottom-[-10px]">
             {socialLinks.mastodon && socialLinks.mastodon !== "#" && (
               <a
                 href={socialLinks.mastodon}
@@ -119,10 +124,10 @@ const ProfileCard = ({
                 <Globe className="w-5 h-5 text-white" />
               </a>
             )}
-          </div>
+          </div> */}
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 

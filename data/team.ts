@@ -2,7 +2,7 @@ const team = [
   {
     name: "Sohrab Behdani",
     job: "Founder",
-    image: "/images/sohrab.png",
+    image: "https://avatars.githubusercontent.com/u/72007820?v=4",
     links: [
       {
         mastadon: "https://mastodon.social/@sohrab",

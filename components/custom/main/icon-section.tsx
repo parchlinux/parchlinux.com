@@ -37,16 +37,16 @@ const IconSection = () => {
           return (
             <Card
               key={index}
-              className="col-span-1 text-center border-0 shadow-none"
+              className="col-span-1 text-center border-0 shadow-none bg-transparent"
             >
               <CardContent className="p-5 space-y-4 flex flex-col items-center">
-                <div className="w-16 h-16 sm:w-20 lg:w-16 rounded-full flex items-center justify-center mb-2">
+                <div className="w-16 h-16 sm:w-20 lg:w-16 rounded-full flex items-center justify-center md:mb-2 mb-0">
                   <IconComponent size={48} />
                 </div>
                 <h3 className="text-xl sm:text-2xl lg:text-xl font-semibold text-foreground">
                   {feature.title}
                 </h3>
-                <p className="text-xs sm:text-sm lg:text-xs text-muted-foreground mx-auto leading-relaxed sm:max-w-[250px] lg:max-w-[200px]">
+                <p className="text-xs sm:text-sm lg:text-xs text-foreground/95 mx-auto leading-relaxed sm:max-w-[250px] lg:max-w-[200px]">
                   {feature.description}
                 </p>
               </CardContent>

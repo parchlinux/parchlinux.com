@@ -30,7 +30,8 @@ export default function Footer() {
 
   return (
     <footer className="bottom-0 z-50 w-full mt-4 pb-8 relative">
-      <div className="container flex items-center justify-between px-4 mx-auto">
+      <div className="container flex items-center justify-between px-4 mx-auto max-w-7xl">
+        <span className="hidden">{theme}</span>
         <FooterSect className="w-full bg-transparent">
           <FooterContent className="w-full">
             <FooterColumn>

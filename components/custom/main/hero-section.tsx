@@ -17,22 +17,21 @@ const HeroSection = ({
 }) => {
   return (
     <div className="container max-w-7xl mx-auto">
-      <div className="grid grid-cols-12 gap-8 lg:gap-12 items-center">
-        
+      <div className="grid grid-cols-12 gap-4 sm:gap-12 items-center">
         <div
           className={cn(
-            "col-span-12 lg:col-span-6",
-            reverse ? "lg:order-1" : "lg:order-2"
+            "col-span-12 sm:col-span-6",
+            reverse ? "sm:order-1" : "sm:order-2"
           )}
         >
           {image && (
-            <div className="relative rounded-[50px] p-2 overflow-hidden border-[6px] lg:border-8 border-[#1b2639d0]">
+            <div className="relative lg:rounded-[50px] rounded-3xl p-2 overflow-hidden border-[6px] sm:border-6 lg:border-8 border-[#1b2639d0]">
               <Image
                 src={image}
                 alt={imageAlt}
                 width={800}
                 height={500}
-                className="w-full h-auto object-cover rounded-[42px] lg:rounded-[42px]"
+                className="w-full h-auto object-cover lg:rounded-[40px] rounded-2xl"
               />
             </div>
           )}
@@ -40,16 +39,15 @@ const HeroSection = ({
 
         <div
           className={cn(
-            "col-span-12 lg:col-span-6",
-            reverse ? "lg:order-2" : "lg:order-1"
+            "col-span-12 sm:col-span-6",
+            reverse ? "sm:order-2" : "sm:order-1"
           )}
         >
-          <div className="flex flex-col xl:gap-3 gap-1 text-center lg:text-left">
+          <div className="flex flex-col xl:gap-3 gap-2.5 text-center sm:text-left">
             {title}
             {description}
           </div>
         </div>
-
       </div>
     </div>
   );

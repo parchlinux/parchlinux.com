@@ -6,7 +6,7 @@ const LinkSection = () => {
   return (
     <div className="relative">
       <div className="bg-grid-center z-[-1] w-screen h-full opacity-10 pointer-events-none absolute top-0 -left-8" />
-      <div className="w-full max-w-6xl mx-auto px-4 lg:pt-48 pt-32 lg:pb-64 md:pb-48 pb-28 relative">
+      <div className="w-full max-w-6xl mx-auto px-4 lg:pt-48 md:pt-32 pt-24 lg:pb-64 md:pb-48 pb-28 relative">
         <div className="flex flex-col gap-8">
           <div className="xl:text-5xl lg:text-4xl text-2xl sm:text-3xl font-bold text-center sm:text-center">
             Parch is open-source and free for everyone

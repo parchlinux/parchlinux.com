@@ -34,6 +34,7 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
   --color-parch-purple: var(--parch-purple);
+  --color-parch-blue: var(--parch-blue);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -78,6 +79,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --parch-purple: oklch(0.5548 0.295064 300.6688);
+  --parch-blue: oklch(0.6325 0.1882 253.02);
 }
 
 .dark {
@@ -121,8 +123,6 @@
     opacity: 0.05;
   }
   
-
-
   .bg-grid-center {
     background: linear-gradient(
         180deg,
@@ -173,18 +173,6 @@
   background: linear-gradient(150deg, #21c796 40%, #0385ce 85%, #0d40bf 120%);
   color: transparent;
   background-clip: text;
-}
-
-.parch-green {
-  background: #1abc9c;
-}
-
-.parch-blue {
-  background-color: #d2e5f4;
-}
-
-.parch-violet {
-  background: #9500ff;
 }
 
 .bg-grid {

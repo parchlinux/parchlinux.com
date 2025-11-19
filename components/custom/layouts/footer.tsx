@@ -29,23 +29,23 @@ export default function Footer() {
   const { setTheme, theme } = useTheme();
 
   return (
-    <footer className="bottom-0 z-50 w-full mt-4 pb-8 relative">
-      <div className="container flex items-center justify-between px-4 mx-auto max-w-7xl">
+    <footer className="bottom-0 z-50 w-full mt-4 md:pb-8 pb-4 relative">
+      <div className="container flex items-center justify-between md:px-8 px-6 mx-auto max-w-7xl">
         <span className="hidden">{theme}</span>
         <FooterSect className="w-full bg-transparent">
           <FooterContent className="w-full">
-            <FooterColumn>
+            <FooterColumn className="md:order-first order-last md:col-span-1 col-span-2 md:items-start items-center">
               <div className="flex items-center gap-1">
                 <h3 className="text-xs">info@parchlinux.com</h3>
                 <ArrowUpRight size={16} />
               </div>
-              <div className="flex gap-3">
+              <div className="flex gap-3 text-muted-foreground">
                 <InstagramLogoIcon width={18} height={18} />
                 <InstagramLogoIcon width={18} height={18} />
                 <InstagramLogoIcon width={18} height={18} />
                 <InstagramLogoIcon width={18} height={18} />
               </div>
-              <span className="text-muted-foreground text-sm mt-auto">
+              <span className="text-muted-foreground text-xs mt-auto">
                 2025 Design by Faridnafar
               </span>
             </FooterColumn>
@@ -100,7 +100,7 @@ export default function Footer() {
                 Privacy
               </a>
             </FooterColumn>
-            <FooterColumn>
+            <FooterColumn className="md:order-last order-first md:col-span-1 col-span-2">
               <Select>
                 <SelectTrigger className="w-full rounded-full">
                   <SelectValue placeholder="English" />

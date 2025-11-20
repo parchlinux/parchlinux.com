@@ -5,6 +5,7 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import Image from "next/image";
+import { Linkedin, Github, Globe } from "lucide-react";
 
 interface SocialLinks {
   mastodon?: string;
@@ -29,12 +30,8 @@ const ProfileCard = ({
   imageAlt,
   socialLinks,
 }: ProfileCardProps) => {
-  const activeIcons = Object.values(socialLinks).filter(
-    (link) => link && link !== "#"
-  ).length;
-
   return (
-    <Card className="lg:col-span-1 sm:col-span-2 col-span-4 relative gap-3.5 w-full rounded-lg bg-secondary border-0 shadow">
+    <Card className="lg:col-span-1 sm:col-span-2 col-span-4 relative gap-3.5 w-full rounded-lg bg-secondary border-0">
       <CardHeader className="text-left gap-0">
         <CardHeader className="text-[1.15rem] font-bold tracking-snug p-0 gap-0">
           {name}
@@ -42,7 +39,7 @@ const ProfileCard = ({
         <CardDescription className="font-medium">{role}</CardDescription>
       </CardHeader>
 
-      <CardContent className="relative">
+      <CardContent className="relative p-4 py-0">
         <div className="relative rounded-lg overflow-hidden aspect-square">
           <Image
             src={image}
@@ -52,17 +49,17 @@ const ProfileCard = ({
             className="w-full h-full object-cover"
           />
 
-          {/* <div className="absolute  right-0 bg-cards p-3 rounded-tl-3xl flex gap-2 bottom-[-10px]">
+          <div className="absolute right-0 bg-secondary p-2 rounded-tl-2xl flex gap-1.5 -bottom-1">
             {socialLinks.mastodon && socialLinks.mastodon !== "#" && (
               <a
                 href={socialLinks.mastodon}
-                className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors flex-shrink-0"
+                className="w-9 h-9 bg-slate-900 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors flex-shrink-0"
                 aria-label="Mastodon"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <svg
-                  className="w-5 h-5 text-white"
+                  className="w-3.5 h-3.5 text-white"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -74,13 +71,13 @@ const ProfileCard = ({
             {socialLinks.twitter && socialLinks.twitter !== "#" && (
               <a
                 href={socialLinks.twitter}
-                className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors flex-shrink-0"
+                className="w-9 h-9 bg-slate-900 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors flex-shrink-0"
                 aria-label="Twitter/X"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <svg
-                  className="w-5 h-5 text-white"
+                  className="w-3.5 h-3.5 text-white"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -92,39 +89,39 @@ const ProfileCard = ({
             {socialLinks.linkedin && socialLinks.linkedin !== "#" && (
               <a
                 href={socialLinks.linkedin}
-                className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors flex-shrink-0"
+                className="w-9 h-9 bg-slate-900 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors flex-shrink-0"
                 aria-label="LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin className="w-5 h-5 text-white" />
+                <Linkedin className="w-3.5 h-3.5 text-white" />
               </a>
             )}
 
             {socialLinks.github && socialLinks.github !== "#" && (
               <a
                 href={socialLinks.github}
-                className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors flex-shrink-0"
+                className="w-9 h-9 bg-slate-900 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors flex-shrink-0"
                 aria-label="GitHub"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github className="w-5 h-5 text-white" />
+                <Github className="w-3.5 h-3.5 text-white" />
               </a>
             )}
 
             {socialLinks.website && socialLinks.website !== "#" && (
               <a
                 href={socialLinks.website}
-                className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors flex-shrink-0"
+                className="w-9 h-9 bg-slate-900 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors flex-shrink-0"
                 aria-label="Website"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Globe className="w-5 h-5 text-white" />
+                <Globe className="w-3.5 h-3.5 text-white" />
               </a>
             )}
-          </div> */}
+          </div>
         </div>
       </CardContent>
     </Card>

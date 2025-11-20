@@ -53,7 +53,7 @@ export default function Header() {
             Wiki
           </Link>
           <Link
-            href={`/${locale}/about`}
+            href={`/${locale}/contributors`}
             className="text-sm font-medium hover:text-foreground/50 transition-colors"
           >
             Community

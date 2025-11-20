@@ -48,7 +48,7 @@ export default function App() {
           );
         })}
       </div>
-      <span className="font-bold text-justify lg:text-sm text-xs">
+      <span className="font-bold text-justify lg:text-sm text-xs ">
         There are many more people who have contributed to Parch linux. A full
         list of contributors can be{" "}
         <Link href={`/${locale}/contributors`} className="text-parch">

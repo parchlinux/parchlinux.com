@@ -6,7 +6,7 @@ const features = [
     icon: Lock,
     title: "Security",
     description:
-      "Built with security in mind, featuring regular updates and a robust firewall.",
+      "No telemetry, automatic security updates, hardened configurations and privacy-respecting defaults.",
   },
   {
     icon: ChartLine,
@@ -18,13 +18,13 @@ const features = [
     icon: Users,
     title: "Community Centric",
     description:
-      "Our distribution aims to create an active, collaborative community where every user can shape the project's future.",
+      "One of the most vibrant Persian Linux communities with forum, Matrix rooms, wiki and constant contributions.",
   },
   {
     icon: CaseSensitive,
     title: "Optimized Fonts",
     description:
-      "An unparalleled experience with optimized Persian fonts for enhanced readability and aesthetics.",
+      "Beautiful optimized Persian fonts, full RTL layout, Jalali calendar, Persian keyboard and Firefox fixes from the first boot.",
   },
 ];
 

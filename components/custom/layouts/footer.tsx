@@ -45,9 +45,6 @@ export default function Footer() {
                 <InstagramLogoIcon width={18} height={18} />
                 <InstagramLogoIcon width={18} height={18} />
               </div>
-              <span className="text-muted-foreground text-xs mt-auto">
-                2025 Design by Faridnafar
-              </span>
             </FooterColumn>
             <FooterColumn>
               <h3 className="text-sm pt-1 font-semibold">Product</h3>

@@ -7,7 +7,7 @@ const downloads = [
     hashs: [
       {
         version: "x64",
-        hash: "2efbca52c90306c9bef3a1c544db3112",
+        hash: "bca818c7dda9ea91954455c2130bd0ad",
       },
       {
         version: "ARM64",
@@ -32,7 +32,7 @@ const downloads = [
     ],
   },
   {
-    logo: "/images/download/gnome.png",
+    logo: "/images/gnome.png",
     title: "Parch with GNOME Desktop",
     description: "GNOME is developed in collaboration with the wider free software community to create the best level software with GNOME depends.",
     image: "/images/download/gnome-desktop.png",

@@ -21,11 +21,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
             }
             description={
               <p className="text-justify md:text-sm text-xs">
-                ParchLinux, which stands for Persian Arch, is a Linux
-                distribution based on the popular and versatile Arch Linux. It
-                aims to provide a streamlined, user-friendly experience while
-                maintaining the customizability and performance that Arch Linux
-                is known for.
+                By providing you with the tools you need and simplifying the installation process and the complete repository alongside a personalized and beautiful desktop environment, Parch Linux can bring you a good experience of bringing together speed and personalization.
               </p>
             }
             image="/images/wallpaper 4.jpg"
@@ -40,11 +36,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
             }
             description={
               <p className="text-justify md:text-sm text-xs">
-                ParchLinux, which stands for Persian Arch, is a Linux
-                distribution based on the popular and versatile Arch Linux. It
-                aims to provide a streamlined, user-friendly experience while
-                maintaining the customizability and performance that Arch Linux
-                is known for.
+                All the tools you need for programming are available in Parch, and with just one command, you can download and install the desired program.
               </p>
             }
             image="/images/wallpaper 2.jpg"
@@ -60,11 +52,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
             }
             description={
               <p className="text-justify md:text-sm text-xs">
-                ParchLinux, which stands for Persian Arch, is a Linux
-                distribution based on the popular and versatile Arch Linux. It
-                aims to provide a streamlined, user-friendly experience while
-                maintaining the customizability and performance that Arch Linux
-                is known for.
+                ParchLinux officially supports two well-known desktop environments, Plasma and GNOME. You are free to work with whichever you feel most comfortable with.
               </p>
             }
             image="/images/wallpaper 3.jpg"
@@ -79,11 +67,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
             }
             description={
               <p className="text-justify md:text-sm text-xs">
-                ParchLinux, which stands for Persian Arch, is a Linux
-                distribution based on the popular and versatile Arch Linux. It
-                aims to provide a streamlined, user-friendly experience while
-                maintaining the customizability and performance that Arch Linux
-                is known for.
+                The packages in the ParchLinux are rolling and you always get the latest features without having to get a new version.
               </p>
             }
             image="/images/parchview.png"
@@ -98,11 +82,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
             }
             description={
               <p className="text-justify md:text-sm text-xs">
-                ParchLinux, which stands for Persian Arch, is a Linux
-                distribution based on the popular and versatile Arch Linux. It
-                aims to provide a streamlined, user-friendly experience while
-                maintaining the customizability and performance that Arch Linux
-                is known for.
+                More than 80,000 packages are placed in the huge repository of Arch users (AUR) and you will have no problem downloading the package.
               </p>
             }
             image="/images/wallpaper 4.jpg"
@@ -127,11 +107,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
             }
             description={
               <p className="text-justify md:text-sm text-xs">
-                ParchLinux, which stands for Persian Arch, is a Linux
-                distribution based on the popular and versatile Arch Linux. It
-                aims to provide a streamlined, user-friendly experience while
-                maintaining the customizability and performance that Arch Linux
-                is known for.
+                The package manager in Parch is ready to provide the best user experience for installing, updating, and managing system applications.
               </p>
             }
             image="/images/wallpaper 2.jpg"

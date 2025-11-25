@@ -35,35 +35,44 @@ export default function Header() {
         <div className="flex items-center">
           <Link href={`/${locale}`} className="flex items-center space-x-3">
             <Image src={"/logo.svg"} width={19} height={19} alt="logo" />
-            <span className="text-xl">Parch Linux</span>
+            <span className="text-xl">Parch GNU/Linux</span>
           </Link>
         </div>
 
         <nav className="hidden md:flex items-center xl:space-x-8 space-x-4">
-          <Link
-            href={`/${locale}/features`}
+          <a
+            href="https://forum.parchlinux.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-medium hover:text-foreground/50 transition-colors"
           >
             Forum
-          </Link>
-          <Link
-            href={`/${locale}/pricing`}
+          </a>
+
+          <a
+            href="https://wiki.parchlinux.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-medium hover:text-foreground/50 transition-colors"
           >
             Wiki
-          </Link>
+          </a>
+
           <Link
             href={`/${locale}/contributors`}
             className="text-sm font-medium hover:text-foreground/50 transition-colors"
           >
             Community
           </Link>
-          <Link
-            href={`/${locale}/blog`}
+          <a
+            href="https://blog.parchlinux.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-medium hover:text-foreground/50 transition-colors"
           >
             Blog
-          </Link>
+          </a>
+
           <Link
             href={`/${locale}/team`}
             className="text-sm font-medium hover:text-foreground/50 transition-colors"
@@ -74,9 +83,14 @@ export default function Header() {
 
         <div className="flex items-center space-x-3">
           <Button className="rounded-full bg-accent-foreground" asChild>
-            <Link href={`/${locale}/download`}>
+            <a
+              href="https://daramet.com/parchlinux"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
               <span className="xl:block hidden">Donate</span> <Coffee />
-            </Link>
+            </a>
           </Button>
 
           <span className="mb-1 xl:block hidden text-gray-400">&#8226;</span>

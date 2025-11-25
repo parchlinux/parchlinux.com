@@ -3,7 +3,7 @@
 
 declare const messages: {
   "Index": {
-    "App_Name": "Parch Linux"
+    "App_Name": "Parch GNU/Linux"
   },
   "head": {
     "title": "We have a <strong>ready-to-go</strong> OS!",

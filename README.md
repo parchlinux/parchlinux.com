@@ -1,3 +1,3 @@
 # parchlinux.com
 
-Parch Linux Main website (WIP)
+Parch GNU/Linux Main website (WIP)

@@ -22,7 +22,7 @@ const DownloadSection = () => {
 
         <div className="md:col-span-8 flex flex-col justify-center gap-6 md:gap-14 text-center md:text-left order-2 md:order-1 w-full">
           <h2 className="md:text-4xl text-3xl sm:text-5xl xl:text-6xl 2xl:text-7xl font-bold">
-            Try Parch Linux Now
+            Try Parch GNU/Linux Now
           </h2>
           <Link href={`/${locale}/download`}>
             <Button className="rounded-full text-[18px] bg-black text-white py-7 ring-1 ring-gray-500 ring-offset-4 px-5 w-fit mx-auto md:mx-0 transition-all duration-300">

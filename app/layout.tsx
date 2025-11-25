@@ -17,7 +17,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata() {
   return {
-    title: "Parch Linux",
+    title: "Parch GNU/Linux",
   };
 }
 
@@ -29,7 +29,7 @@ export default async function LocaleLayout({
   return (
     <html>
       <body
-        className={`${sairaSans.variable} ${sairaSans.className} antialiased relative overflow-x-hidden`}
+        className={`${sairaSans.variable} ${sairaSans.className} antialiased relative overflow-x-hidden min-h-screen flex flex-col`}
       >
         <NextIntlClientProvider>
           <ThemeProvider
@@ -40,7 +40,7 @@ export default async function LocaleLayout({
           >
             <div className="bg-grid z-[-1] absolute w-[150%] h-190 opacity-5 -top-44 -left-10 pointer-events-none" />
             <Header />
-            <div className="mt-32">{children}</div>
+            <div className="mt-32 flex-1">{children}</div>
             <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>

@@ -1,6 +1,6 @@
-import BlogSection from "@/components/custom/main/blog-section";
+// import BlogSection from "@/components/custom/main/blog-section";
 import DownloadSection from "@/components/custom/main/download-section";
-import EventSection from "@/components/custom/main/event-section";
+// import EventSection from "@/components/custom/main/event-section";
 import HeadSection from "@/components/custom/main/head-section";
 import HeroSection from "@/components/custom/main/hero-section";
 import IconSection from "@/components/custom/main/icon-section";
@@ -21,7 +21,11 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
             }
             description={
               <p className="text-justify md:text-sm text-xs">
-                By providing you with the tools you need and simplifying the installation process and the complete repository alongside a personalized and beautiful desktop environment, Parch Linux can bring you a good experience of bringing together speed and personalization.
+                By providing you with the tools you need and simplifying the
+                installation process and the complete repository alongside a
+                personalized and beautiful desktop environment, Parch Linux can
+                bring you a good experience of bringing together speed and
+                personalization.
               </p>
             }
             image="/images/wallpaper 4.jpg"
@@ -36,7 +40,9 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
             }
             description={
               <p className="text-justify md:text-sm text-xs">
-                All the tools you need for programming are available in Parch, and with just one command, you can download and install the desired program.
+                All the tools you need for programming are available in Parch,
+                and with just one command, you can download and install the
+                desired program.
               </p>
             }
             image="/images/wallpaper 2.jpg"
@@ -52,7 +58,9 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
             }
             description={
               <p className="text-justify md:text-sm text-xs">
-                ParchLinux officially supports two well-known desktop environments, Plasma and GNOME. You are free to work with whichever you feel most comfortable with.
+                ParchLinux officially supports two well-known desktop
+                environments, Plasma and GNOME. You are free to work with
+                whichever you feel most comfortable with.
               </p>
             }
             image="/images/wallpaper 3.jpg"
@@ -67,7 +75,8 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
             }
             description={
               <p className="text-justify md:text-sm text-xs">
-                The packages in the ParchLinux are rolling and you always get the latest features without having to get a new version.
+                The packages in the ParchLinux are rolling and you always get
+                the latest features without having to get a new version.
               </p>
             }
             image="/images/parchview.png"
@@ -82,7 +91,9 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
             }
             description={
               <p className="text-justify md:text-sm text-xs">
-                More than 80,000 packages are placed in the huge repository of Arch users (AUR) and you will have no problem downloading the package.
+                More than 80,000 packages are placed in the huge repository of
+                Arch users (AUR) and you will have no problem downloading the
+                package.
               </p>
             }
             image="/images/wallpaper 4.jpg"
@@ -107,7 +118,9 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
             }
             description={
               <p className="text-justify md:text-sm text-xs">
-                The package manager in Parch is ready to provide the best user experience for installing, updating, and managing system applications.
+                The package manager in Parch is ready to provide the best user
+                experience for installing, updating, and managing system
+                applications.
               </p>
             }
             image="/images/wallpaper 2.jpg"
@@ -116,8 +129,8 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
         </div>
         <IconSection />
         <LinkSection />
-        <EventSection />
-        <BlogSection />
+        {/* <EventSection /> */}
+        {/* <BlogSection /> */}
         <SponsorsCarousel />
         <DownloadSection />
       </div>

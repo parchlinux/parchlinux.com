@@ -67,7 +67,7 @@ const downloads = [
     logo: "/images/download/raspberry.png",
     title: "Parch for Raspberry Pi",
     description: "Raspberry Pi is a series of small single-board computers with the best level software with GNOME depends.",
-    image: "/images/download/raspberryPi-desktop.png",
+    image: "/images/download/RaspberryPi-desktop.png",
     hashs: [
       {
         version: "x64",

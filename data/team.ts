@@ -1,4 +1,5 @@
 const team = [
+  // Founder
   {
     name: "Sohrab Behdani",
     job: "Founder",
@@ -24,17 +25,20 @@ const team = [
       },
     ],
   },
+  // Software Engineer
   {
-    name: "Hamid Reza",
-    job: "Maintainer",
-    image: "https://avatars.githubusercontent.com/HRMCA",
+    name: "Amir Husayn Panahifar",
+    job: "Software Engineer",
+    image: "https://avatars.githubusercontent.com/u/58610475",
     links: [
       {
-        mastadon: "https://mas.to/@HRM_CA",
-        github: "https://github.com/HRMCA",
+        website: "https://panahifar.ir",
+        linkedin: "https://linkedin.com/in/panahifarah",
+        github: "https://github.com/panahifarah",
       },
     ],
   },
+  // Team Leader
   {
     name: "Erfan Arabi",
     job: "Team Leader",
@@ -47,82 +51,19 @@ const team = [
       },
     ],
   },
+  // Maintainer
   {
-    name: "Gnkalk",
-    job: "Gitee Developer",
-    image: "https://avatars.githubusercontent.com/gnkalk",
+    name: "Hamid Reza",
+    job: "Maintainer",
+    image: "https://avatars.githubusercontent.com/HRMCA",
     links: [
       {
-        mastadon: "https://toot.community/@gnkalk",
-        github: "https://github.com/gnkalk",
+        mastadon: "https://mas.to/@HRM_CA",
+        github: "https://github.com/HRMCA",
       },
     ],
   },
-  {
-    name: "AhmadReza Khatamian",
-    job: "Graphic Designer",
-    image: "https://avatars.githubusercontent.com/ahmadreza00000",
-    links: [
-      {
-        mastadon: "https://mas.to/@ahmad00000",
-        github: "https://github.com/ahmadreza00000",
-      },
-    ],
-  },
-  {
-    name: "Mostafa Aminzar",
-    job: "UI/UX Designer",
-    image: "https://avatars.githubusercontent.com/MosiO1998",
-    links: [
-      {
-        github: "https://github.com/MosiO1998",
-      },
-    ],
-  },
-  {
-    name: "Ali Lotfi",
-    job: "Graphic/Web Designer",
-    image: "https://avatars.githubusercontent.com/AliLotfi09",
-    links: [
-      {
-        mastadon: "https://mas.to/@lotfali",
-        github: "https://github.com/AliLotfi09",
-        website: "https://blog.imalixd.ir",
-      },
-    ],
-  },
-  {
-    name: "Iliya Asadi",
-    job: "Graphic Designer",
-    image: "https://avatars.githubusercontent.com/iliageek",
-    links: [
-      {
-        mastadon: "https://mastodon.social/@iliageek1",
-        github: "https://github.com/iliageek",
-      },
-    ],
-  },
-  {
-    name: "Mohamad Arshiya fardinfar",
-    job: "UI&UX Designer",
-    image: "https://avatars.githubusercontent.com/arshiya-shadow",
-    links: [
-      {
-        github: "https://github.com/arshiya-shadow",
-      },
-    ],
-  },
-  {
-    name: "Mobin Firooz",
-    job: "Frontend Developer",
-    image: "https://avatars.githubusercontent.com/Bravemobin",
-    links: [
-      {
-        github: "https://github.com/Bravemobin/",
-        twitter: "https://x.com/Bravemobin/",
-      },
-    ],
-  },
+  // Web Developer
   {
     name: "Ali Almasi",
     job: "Web Developer",
@@ -144,6 +85,125 @@ const team = [
       },
     ],
   },
+  // Frontend Developer
+  {
+    name: "Mobin Firooz",
+    job: "Frontend Developer",
+    image: "https://avatars.githubusercontent.com/Bravemobin",
+    links: [
+      {
+        github: "https://github.com/Bravemobin/",
+        twitter: "https://x.com/Bravemobin/",
+      },
+    ],
+  },
+  // UI/UX Designer
+  {
+    name: "Mostafa Aminzar",
+    job: "UI/UX Designer",
+    image: "https://avatars.githubusercontent.com/MosiO1998",
+    links: [
+      {
+        github: "https://github.com/MosiO1998",
+      },
+    ],
+  },
+  {
+    name: "Mohamad Arshiya fardinfar",
+    job: "UI/UX Designer",
+    image: "https://avatars.githubusercontent.com/arshiya-shadow",
+    links: [
+      {
+        website: "https://fardinfar.ir/en.html",
+        linkedin: "https://www.linkedin.com/in/mohammad-arshiya-fardinfar",
+        github: "https://github.com/arshiya-shadow",
+      },
+    ],
+  },
+  // Graphic Designer
+  {
+    name: "AhmadReza Khatamian",
+    job: "Graphic Designer",
+    image: "https://avatars.githubusercontent.com/ahmadreza00000",
+    links: [
+      {
+        mastadon: "https://mas.to/@ahmad00000",
+        github: "https://github.com/ahmadreza00000",
+      },
+    ],
+  },
+  {
+    name: "Iliya Asadi",
+    job: "Graphic Designer",
+    image: "https://avatars.githubusercontent.com/iliageek",
+    links: [
+      {
+        mastadon: "https://mastodon.social/@iliageek1",
+        github: "https://github.com/iliageek",
+      },
+    ],
+  },
+  // Graphic/Web Designer
+  {
+    name: "Ali Lotfi",
+    job: "Graphic/Web Designer",
+    image: "https://avatars.githubusercontent.com/AliLotfi09",
+    links: [
+      {
+        mastadon: "https://mas.to/@lotfali",
+        github: "https://github.com/AliLotfi09",
+        website: "https://blog.imalixd.ir",
+      },
+    ],
+  },
+  // Gitee Developer
+  {
+    name: "Gnkalk",
+    job: "Gitee Developer",
+    image: "https://avatars.githubusercontent.com/gnkalk",
+    links: [
+      {
+        mastadon: "https://toot.community/@gnkalk",
+        github: "https://github.com/gnkalk",
+      },
+    ],
+  },
+    // Tools Developer
+  {
+    name: "Mohammad Parsa Mortazavi",
+    job: "Tools Developer",
+    image: "https://avatars.githubusercontent.com/u/127190407",
+    links: [
+      {
+        website: "https://mpmms.ir",
+        github: "https://github.com/mpmms",
+        mastodon: "https://techhub.social/@mpmms",
+      },
+    ],
+  },
+  {
+    name: "Aydin Rahbaran",
+    job: "Tools Developer",
+    image: "https://avatars.githubusercontent.com/u/154819637",
+    links: [
+      {
+        website: "https://codewizaard.ir",
+        github: "https://github.com/code-wizaard",
+        mastodon: "https://techhub.social/@codewizaard",
+      },
+    ],
+  },
+  {
+    name: "Ali Safamanesh",
+    job: "Tools Developer",
+    image: "",
+    links: [
+      {
+        website: "https://daradege.ir",
+      },
+    ],
+  },
+  // Contributor
   {
     name: "Meshya",
     job: "Contributor",

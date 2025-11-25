@@ -15,7 +15,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-import { InstagramLogoIcon } from "@radix-ui/react-icons";
 import {
   ArrowUpRight,
   LaptopMinimal,
@@ -24,80 +23,186 @@ import {
   Sun,
 } from "lucide-react";
 import { useTheme } from "next-themes";
+import Link from "next/link";
+import { useLocale } from "next-intl";
+
+import {
+  SiBluesky,
+  SiDiscord,
+  SiInstagram,
+  SiLinkedin,
+  SiMastodon,
+  SiPeertube,
+  SiTelegram,
+  SiThreads,
+  SiX,
+  SiYoutube,
+} from "@icons-pack/react-simple-icons";
 
 export default function Footer() {
   const { setTheme, theme } = useTheme();
+  const locale = useLocale();
+
+  const socials = [
+    {
+      href: "https://youtube.com/@ParchLinux",
+      label: "YouTube",
+      icon: (
+        <SiYoutube size={24} className="hover:text-white transition-colors" />
+      ),
+    },
+    {
+      href: "https://tubedu.org/c/parch",
+      label: "Tubedu",
+      icon: (
+        <SiPeertube size={24} className="hover:text-white transition-colors" />
+      ),
+    },
+    {
+      href: "https://ieji.de/@parchlinux",
+      label: "IEJI",
+      icon: (
+        <SiMastodon size={24} className="hover:text-white transition-colors" />
+      ),
+    },
+    {
+      href: "https://threads.net/@parchlinux",
+      label: "Threads",
+      icon: (
+        <SiThreads size={24} className="hover:text-white transition-colors" />
+      ),
+    },
+    {
+      href: "https://x.com/parchgnulinux",
+      label: "X",
+      icon: <SiX size={24} className="hover:text-white transition-colors" />,
+    },
+    {
+      href: "https://www.linkedin.com/company/parch-linux",
+      label: "LinkedIn",
+      icon: (
+        <SiLinkedin size={24} className="hover:text-white transition-colors" />
+      ),
+    },
+    {
+      href: "https://instagram.com/parchlinux",
+      label: "Instagram",
+      icon: (
+        <SiInstagram size={24} className="hover:text-white transition-colors" />
+      ),
+    },
+    {
+      href: "https://t.me/parchlinux_en",
+      label: "Telegram",
+      icon: (
+        <SiTelegram size={24} className="hover:text-white transition-colors" />
+      ),
+    },
+    {
+      href: "https://discord.gg/9RW5cRByAM",
+      label: "Discord",
+      icon: (
+        <SiDiscord size={24} className="hover:text-white transition-colors" />
+      ),
+    },
+    {
+      href: "https://bsky.app/profile/parchlinux.com",
+      label: "Bluesky",
+      icon: (
+        <SiBluesky size={24} className="hover:text-white transition-colors" />
+      ),
+    },
+  ];
+
+  const footerColumns = [
+    {
+      title: "Product",
+      items: [{ label: "Download", href: "/download", internal: true }],
+    },
+    {
+      title: "Resources",
+      items: [
+        {
+          label: "Forum",
+          href: "https://forum.parchlinux.com",
+          internal: false,
+        },
+        { label: "Community", href: "/contributors", internal: true },
+        { label: "Blog", href: "https://blog.parchlinux.com", internal: false },
+      ],
+    },
+    {
+      title: "Team",
+      items: [
+        { label: "Technical", href: "/team", internal: true },
+        { label: "Design", href: "/team", internal: true },
+        { label: "Web", href: "/team", internal: true },
+      ],
+    },
+  ];
 
   return (
-    <footer className="bottom-0 z-50 w-full mt-4 md:pb-8 pb-4 relative">
-      <div className="container flex items-center justify-between md:px-8 px-6 mx-auto max-w-7xl">
-        <span className="hidden">{theme}</span>
-        <FooterSect className="w-full bg-transparent">
-          <FooterContent className="w-full">
-            <FooterColumn className="md:order-first order-last md:col-span-1 col-span-2 md:items-start items-center">
+    <footer className="w-full bg-background mt-auto pt-12 md:pb-8 pb-4">
+      <div className="container mx-auto max-w-7xl px-6 md:px-8 flex flex-col md:flex-row justify-between gap-6">
+        <FooterSect className="w-full">
+          <FooterContent className="flex flex-wrap justify-between gap-8 w-full">
+            {/* Social Section */}
+            <FooterColumn className="flex flex-col md:items-start items-center gap-2">
               <div className="flex items-center gap-1">
-                <h3 className="text-xs">info@parchlinux.com</h3>
+                <h3 className="text-xs">
+                  <a href="mailto:info@parchlinux.com" className="underline">
+                    info@parchlinux.com
+                  </a>
+                </h3>
                 <ArrowUpRight size={16} />
               </div>
-              <div className="flex gap-3 text-muted-foreground">
-                <InstagramLogoIcon width={18} height={18} />
-                <InstagramLogoIcon width={18} height={18} />
-                <InstagramLogoIcon width={18} height={18} />
-                <InstagramLogoIcon width={18} height={18} />
+
+              <div className="flex gap-4 mt-2">
+                {socials.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                  >
+                    {s.icon}
+                  </a>
+                ))}
               </div>
             </FooterColumn>
-            <FooterColumn>
-              <h3 className="text-sm pt-1 font-semibold">Product</h3>
-              <a href={""} className="text-muted-foreground text-sm">
-                Features
-              </a>
-              <a href={""} className="text-muted-foreground text-sm">
-                Downloads
-              </a>
-              <a href={""} className="text-muted-foreground text-sm">
-                Parch mobile
-              </a>
-              <a href={""} className="text-muted-foreground text-sm">
-                FAQ
-              </a>
-            </FooterColumn>
-            <FooterColumn>
-              <h3 className="text-sm pt-1 font-semibold">Resources</h3>
-              <a href={""} className="text-muted-foreground text-sm">
-                Blog
-              </a>
-              <a href={""} className="text-muted-foreground text-sm">
-                Forum
-              </a>
-              <a href={""} className="text-muted-foreground text-sm">
-                Community
-              </a>
-            </FooterColumn>
-            <FooterColumn>
-              <h3 className="text-sm pt-1 font-semibold">Team</h3>
-              <a href={""} className="text-muted-foreground text-sm">
-                Technical
-              </a>
-              <a href={""} className="text-muted-foreground text-sm">
-                Design
-              </a>
-              <a href={""} className="text-muted-foreground text-sm">
-                Web
-              </a>
-            </FooterColumn>
-            <FooterColumn>
-              <h3 className="text-sm pt-1 font-semibold">Legal</h3>
-              <a href={""} className="text-muted-foreground text-sm">
-                Terms
-              </a>
-              <a href={""} className="text-muted-foreground text-sm">
-                Security
-              </a>
-              <a href={""} className="text-muted-foreground text-sm">
-                Privacy
-              </a>
-            </FooterColumn>
-            <FooterColumn className="md:order-last order-first md:col-span-1 col-span-2">
+
+            {/* Footer Columns */}
+            {footerColumns.map((col) => (
+              <FooterColumn key={col.title}>
+                <h3 className="text-sm pt-1 font-semibold">{col.title}</h3>
+
+                {col.items.map((item) =>
+                  item.internal ? (
+                    <Link
+                      key={item.label}
+                      href={`/${locale}${item.href}`}
+                      className="text-muted-foreground text-sm block hover:underline"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground text-sm block hover:underline"
+                    >
+                      {item.label}
+                    </a>
+                  )
+                )}
+              </FooterColumn>
+            ))}
+
+            {/* Theme + Language */}
+            <FooterColumn className="flex flex-col items-center md:items-end gap-2">
               <Select>
                 <SelectTrigger className="w-full rounded-full">
                   <SelectValue placeholder="English" />
@@ -107,7 +212,8 @@ export default function Footer() {
                   <SelectItem value="Persian">Persian</SelectItem>
                 </SelectContent>
               </Select>
-              <ButtonGroup>
+
+              <ButtonGroup className="mt-2">
                 <Button
                   variant="outline"
                   size="icon"
@@ -119,6 +225,7 @@ export default function Footer() {
                 >
                   <LaptopMinimal />
                 </Button>
+
                 <Button
                   variant="outline"
                   size="icon"
@@ -130,6 +237,7 @@ export default function Footer() {
                 >
                   <Sun />
                 </Button>
+
                 <Button
                   variant="outline"
                   size="icon"
@@ -142,12 +250,21 @@ export default function Footer() {
                   <Moon />
                 </Button>
               </ButtonGroup>
-              <div>
+
+              {/* Fixed Forum CTA (kept external, but clean structure) */}
+              <div className="mt-2 text-center md:text-right">
                 <p className="text-xs">Do you have a problem?</p>
-                <p className="flex gap-1 text-xs">
+                <p className="flex gap-1 text-xs justify-center md:justify-end">
                   Visit the
                   <span className="flex text-parch">
-                    Forum <MoveUpRight size={16} className="mt-0.5" />
+                    <a
+                      href="https://forum.parchlinux.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Forum
+                    </a>
+                    <MoveUpRight size={16} className="mt-0.5" />
                   </span>
                 </p>
               </div>

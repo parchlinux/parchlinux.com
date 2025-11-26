@@ -73,7 +73,7 @@ const HeadSection = () => {
           </div>
         </div>
         <div className="col-span-4">
-          <div className="flex justify-end w-dvh ">
+          <div className="flex justify-end">
             <Image
               className="lg:px-0 px-1 "
               src={"/images/preview.png"}

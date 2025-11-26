@@ -1,6 +1,8 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const HeadSection = () => {
+
   return (
     <div className="container max-w-7xl mx-auto">
       <div className="grid grid-cols-12 mb-8">
@@ -71,13 +73,13 @@ const HeadSection = () => {
           </div>
         </div>
         <div className="col-span-4">
-          <div className="flex justify-end">
+          <div className="flex justify-end w-dvh ">
             <Image
-              className="lg:px-0 px-1"
-              src={"/images/parch-macos.png"}
+              className="lg:px-0 px-1 "
+              src={"/images/preview.png"}
               width={700}
               height={600}
-              alt="macos"
+              alt="Parch Preview"
             />
           </div>
         </div>

@@ -2,21 +2,15 @@
 // See: https://next-intl.dev/docs/workflows/typescript#messages-arguments
 
 declare const messages: {
-  "Index": {
-    "App_Name": "Parch GNU/Linux"
-  },
-  "head": {
-    "title": "We have a <strong>ready-to-go</strong> OS!",
-    "strong": "ready-to-go",
-    "install": "Easy installation",
-    "performance": "High-performance",
-    "speed": "High-speed",
-    "userUI": "User-friendly UI",
-    "arch": "Powered by Arch",
-    "desc": "ParchLinux is based on <arch>Arch Linux</arch> and offers a <userFriendly>user-friendly</userFriendly> experience with high <performance>performance</performance>.",
-    "archWord": "Arch Linux",
-    "userFriendlyWord": "user-friendly",
-    "performanceWord": "performance"
+  "HeadSection": {
+    "title": "We have a ready-to-go OS!",
+    "desc": "ParchLinux, which stands for Persian Arch, is a Linux distribution based on the popular and versatile <arch>Arch Linux</arch>. It aims to provide a streamlined, <userFriendly>user-friendly</userFriendly> experience while maintaining the customizability and <performance>performance</performance> that Arch Linux is known for.",
+    "features": {
+      "install": "Easy installation",
+      "rocket": "High-performance",
+      "user": "User-friendly UI",
+      "arch": "Powered by Arch"
+    }
   }
 };
 export default messages;

@@ -1,18 +1,12 @@
 {
-  "Index": {
-    "App_Name": "پارچ گنو/لینوکس"
-  },
-  "head": {
-    "title": "ما یک سیستم‌عامل <strong>آماده‌به‌کار</strong> داریم!",
-    "strong": "آماده‌به‌کار",
-    "install": "نصب آسان",
-    "performance": "عملکرد بالا",
-    "speed": "سرعت بالا",
-    "userUI": "رابط کاربری ساده",
-    "arch": "بر پایه آرچ",
-    "desc": "پارش لینوکس بر پایه <arch>آرچ لینوکس</arch> ساخته شده و تجربه‌ای <userFriendly>کاربرپسند</userFriendly> با <performance>عملکرد</performance> بالا ارائه می‌دهد.",
-    "archWord": "آرچ لینوکس",
-    "userFriendlyWord": "کاربرپسند",
-    "performanceWord": "عملکرد"
+  "HeadSection": {
+    "title": "ما یک سیستم‌عامل آماده‌به‌کار داریم!",
+    "desc": "پارش لینوکس، مخفف Persian Arch، یک توزیع لینوکس بر پایه <arch>آرچ لینوکس</arch> است. هدف آن ارائه تجربه‌ای <userFriendly>کاربرپسند</userFriendly> و در عین حال حفظ قابلیت سفارشی‌سازی و <performance>عملکرد</performance> است.",
+    "features": {
+      "install": "نصب آسان",
+      "rocket": "عملکرد بالا",
+      "user": "رابط کاربری کاربرپسند",
+      "arch": "بر پایه آرچ"
+    }
   }
 }

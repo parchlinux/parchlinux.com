@@ -196,7 +196,7 @@ const team = [
   {
     name: "Ali Safamanesh",
     job: "Tools Developer",
-    image: "",
+    image: "https://avatars.githubusercontent.com/u/136700107",
     links: [
       {
         website: "https://daradege.ir",

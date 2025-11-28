@@ -168,7 +168,7 @@ const team = [
       },
     ],
   },
-    // Tools Developer
+  // Tools Developer
   {
     name: "Mohammad Parsa Mortazavi",
     job: "Tools Developer",

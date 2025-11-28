@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+import path from "path";
 
 const withNextIntl = createNextIntlPlugin({
   experimental: {
@@ -23,6 +24,9 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
+  },
+  turbopack: {
+    root: path.join(__dirname, ".."),
   },
 };
 

@@ -10,7 +10,7 @@ import SponsorsCarousel from "@/components/custom/main/sponsor-carousel";
 export default function IndexPage({ params }: PageProps<"/[locale]">) {
   return (
     <>
-      <div className="flex flex-col gap-12 h-full lg:px0 md:px-8 px-6">
+      <div className="flex flex-col gap-12 h-full lg:px0 md:px-8 sm:px-6 px-4">
         <HeadSection />
         <div className="flex flex-col gap-24">
           <HeroSection

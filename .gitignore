@@ -9,8 +9,8 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
-.bun*
-bun.lockb
+package-lock.json
+pnpm-lock.yaml
 
 # testing
 /coverage

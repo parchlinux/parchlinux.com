@@ -255,7 +255,7 @@ export default function Footer() {
 
               <div className="mt-2 text-center md:text-right">
                 <p className="text-xs">Do you have a problem?</p>
-                <p className="flex gap-1 text-xs justify-center md:justify-end">
+                <p className="flex gap-1 text-xs ">
                   Visit the
                   <span className="flex text-parch">
                     <a

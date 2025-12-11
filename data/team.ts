@@ -168,7 +168,7 @@ const team = [
       },
     ],
   },
-    // Tools Developer
+  // Tools Developer
   {
     name: "Mohammad Parsa Mortazavi",
     job: "Tools Developer",
@@ -199,7 +199,7 @@ const team = [
     image: "https://avatars.githubusercontent.com/u/136700107",
     links: [
       {
-        website: "https://daradege.ir",
+        github: "https://github.com/nulltuxa",
       },
     ],
   },

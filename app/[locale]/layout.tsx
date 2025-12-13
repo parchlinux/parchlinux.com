@@ -8,6 +8,8 @@ import { Saira } from "next/font/google";
 import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import "../globals.css";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/custom/layouts/app-sidebar";
 
 const sairaSans = Saira({
   variable: "--font-saira-sans",
@@ -70,10 +72,13 @@ export default async function LocaleLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className="bg-grid z-[-1] absolute w-[150%] h-190 opacity-5 -top-44 -left-10 pointer-events-none" />
-            <Header />
-            <div className="mt-32 flex-1">{children}</div>
-            <Footer />
+            <SidebarProvider defaultOpen={false}>
+              <AppSidebar />
+              <div className="bg-grid z-[-1] absolute w-[150%] h-190 opacity-5 -top-44 -left-10 pointer-events-none" />
+              <Header />
+              <div className="md:mt-32 mt-28 flex-1">{children}</div>
+              <Footer />
+            </SidebarProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

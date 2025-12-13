@@ -22,10 +22,10 @@ import {
   MoveUpRight,
   Sun,
 } from "lucide-react";
+import { useLocale } from "next-intl";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { useLocale } from "next-intl";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import {
   SiBluesky,
@@ -57,68 +57,100 @@ export default function Footer() {
       href: "https://youtube.com/@ParchLinux",
       label: "YouTube",
       icon: (
-        <SiYoutube size={24} className="hover:text-white transition-colors" />
+        <SiYoutube
+          size={19}
+          className="text-muted-foreground hover:text-white transition-colors"
+        />
       ),
     },
     {
       href: "https://tubedu.org/c/parch",
       label: "Tubedu",
       icon: (
-        <SiPeertube size={24} className="hover:text-white transition-colors" />
+        <SiPeertube
+          size={19}
+          className="text-muted-foreground hover:text-white transition-colors"
+        />
       ),
     },
     {
       href: "https://ieji.de/@parchlinux",
       label: "Mastodon",
       icon: (
-        <SiMastodon size={24} className="hover:text-white transition-colors" />
+        <SiMastodon
+          size={19}
+          className="text-muted-foreground hover:text-white transition-colors"
+        />
       ),
     },
     {
       href: "https://threads.net/@parchlinux",
       label: "Threads",
       icon: (
-        <SiThreads size={24} className="hover:text-white transition-colors" />
+        <SiThreads
+          size={19}
+          className="text-muted-foreground hover:text-white transition-colors"
+        />
       ),
     },
     {
       href: "https://x.com/parchgnulinux",
       label: "X",
-      icon: <SiX size={24} className="hover:text-white transition-colors" />,
+      icon: (
+        <SiX
+          size={19}
+          className="text-muted-foreground hover:text-white transition-colors"
+        />
+      ),
     },
     {
       href: "https://www.linkedin.com/company/parch-linux",
       label: "LinkedIn",
       icon: (
-        <SiLinkedin size={24} className="hover:text-white transition-colors" />
+        <SiLinkedin
+          size={19}
+          className="text-muted-foreground hover:text-white transition-colors"
+        />
       ),
     },
     {
       href: "https://instagram.com/parchlinux",
       label: "Instagram",
       icon: (
-        <SiInstagram size={24} className="hover:text-white transition-colors" />
+        <SiInstagram
+          size={19}
+          className="text-muted-foreground hover:text-white transition-colors"
+        />
       ),
     },
     {
       href: "https://t.me/parchlinux_en",
       label: "Telegram",
       icon: (
-        <SiTelegram size={24} className="hover:text-white transition-colors" />
+        <SiTelegram
+          size={19}
+          className="text-muted-foreground hover:text-white transition-colors"
+        />
       ),
     },
     {
       href: "https://discord.gg/9RW5cRByAM",
       label: "Discord",
       icon: (
-        <SiDiscord size={24} className="hover:text-white transition-colors" />
+        <SiDiscord
+          size={19}
+          className="text-muted-foreground hover:text-white transition-colors"
+        />
       ),
     },
     {
       href: "https://bsky.app/profile/parchlinux.com",
       label: "Bluesky",
       icon: (
-        <SiBluesky size={24} className="hover:text-white transition-colors" />
+        <SiBluesky
+          size={19}
+          className="text-muted-foreground hover:text-white transition-colors"
+        />
       ),
     },
   ];
@@ -136,7 +168,7 @@ export default function Footer() {
           href: "https://forum.parchlinux.com",
           internal: false,
         },
-        { label: "Community", href: "/contributors", internal: true },
+        { label: "Contributors", href: "/contributors", internal: true },
         { label: "Blog", href: "https://blog.parchlinux.com", internal: false },
       ],
     },
@@ -155,7 +187,7 @@ export default function Footer() {
       <div className="container mx-auto max-w-7xl px-6 md:px-8 flex flex-col md:flex-row justify-between gap-6">
         <FooterSect className="w-full">
           <FooterContent className="flex flex-wrap justify-between gap-8 w-full">
-            <FooterColumn className="flex flex-col md:items-start items-center gap-2">
+            <FooterColumn className="flex flex-col md:items-start items-center gap-2 sm:m-0 mx-auto">
               <div className="flex items-center gap-1">
                 <h3 className="text-xs">
                   <a href="mailto:info@parchlinux.com" className="underline">
@@ -165,16 +197,16 @@ export default function Footer() {
                 <ArrowUpRight size={16} />
               </div>
               <div className="flex gap-4 mt-2">
-                {socials.map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
+                {socials.map((social) => (
+                  <Link
+                    key={social.label}
+                    href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={s.label}
+                    aria-label={social.label}
                   >
-                    {s.icon}
-                  </a>
+                    {social.icon}
+                  </Link>
                 ))}
               </div>
             </FooterColumn>
@@ -192,7 +224,7 @@ export default function Footer() {
                       {item.label}
                     </Link>
                   ) : (
-                    <a
+                    <Link
                       key={item.label}
                       href={item.href}
                       target="_blank"
@@ -200,12 +232,12 @@ export default function Footer() {
                       className="text-muted-foreground text-sm block hover:underline"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   )
                 )}
               </FooterColumn>
             ))}
-
+            <span className="hidden">{theme}</span>
             <FooterColumn className="flex flex-col items-center md:items-end gap-2">
               <Select onValueChange={changeLanguage} defaultValue="en">
                 <SelectTrigger className="w-full rounded-full">

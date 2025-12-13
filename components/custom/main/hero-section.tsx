@@ -31,6 +31,7 @@ const HeroSection = ({
                 alt={imageAlt}
                 width={800}
                 height={500}
+                quality={40}
                 className="w-full h-auto object-cover lg:rounded-[40px] rounded-2xl"
               />
             </div>

@@ -6,8 +6,8 @@ export interface Sponsor {
 
 export const sponsors: Sponsor[] = [
   {
-    id: '1',
-    name: 'NobarCloud ☁️',
-    logo: '/images/sponsors/nubarcloud.svg',
+    id: "1",
+    name: "NobarCloud 🌱☁️",
+    logo: "/images/sponsors/nubarcloud.svg",
   },
 ];

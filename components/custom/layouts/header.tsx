@@ -6,10 +6,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLocale } from "next-intl";
+import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const locale = useLocale();
+  const { isMobile } = useSidebar();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,38 +42,38 @@ export default function Header() {
         </div>
 
         <nav className="hidden md:flex items-center xl:space-x-8 space-x-4">
-          <a
+          <Link
             href="https://forum.parchlinux.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-medium hover:text-foreground/50 transition-colors"
           >
             Forum
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="https://wiki.parchlinux.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-medium hover:text-foreground/50 transition-colors"
           >
             Wiki
-          </a>
+          </Link>
 
           <Link
             href={`/${locale}/contributors`}
             className="text-sm font-medium hover:text-foreground/50 transition-colors"
           >
-            Community
+            Contributors
           </Link>
-          <a
+          <Link
             href="https://blog.parchlinux.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-medium hover:text-foreground/50 transition-colors"
           >
             Blog
-          </a>
+          </Link>
 
           <Link
             href={`/${locale}/team`}
@@ -80,25 +82,36 @@ export default function Header() {
             Team
           </Link>
         </nav>
-
-        <div className="flex items-center space-x-3">
-          <Button className="rounded-full bg-accent-foreground" asChild>
-            <a
-              href="https://daramet.com/parchlinux"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2"
+        {isMobile ? (
+          <SidebarTrigger />
+        ) : (
+          <div className="flex items-center space-x-3">
+            <Button
+              variant={"secondary"}
+              className="rounded-full bg-accent-foreground hover:bg-accent-foreground/80"
+              asChild
             >
-              <span className="xl:block hidden">Donate</span> <Coffee />
-            </a>
-          </Button>
+              <Link
+                href="https://daramet.com/parchlinux"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Coffee className="text-muted" />
+              </Link>
+            </Button>
 
-          <span className="mb-1 xl:block hidden text-gray-400">&#8226;</span>
+            <span className="mb-1 xl:block hidden text-gray-400">&#8226;</span>
 
-          <Button className="rounded-full bg-parch" variant="default" asChild>
-            <Link href={`/${locale}/download`}>Download</Link>
-          </Button>
-        </div>
+            <Button
+              className="rounded-full bg-parch text-white hover:text-white/80"
+              variant="default"
+              asChild
+            >
+              <Link href={`/${locale}/download`}>Download</Link>
+            </Button>
+          </div>
+        )}
       </div>
     </header>
   );

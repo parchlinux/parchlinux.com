@@ -1,42 +1,53 @@
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import type { DownloadCardProps } from "@/types";
+import { Download } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
-const DownloadCard = ({ logo, title, description, image, hashs, links }) => {
+const DownloadCard = ({
+  logo,
+  title,
+  description,
+  image,
+  hashs,
+  links,
+}: DownloadCardProps) => {
   return (
-    <Card>
+    <Card className="relative">
       <CardContent>
         <div className="flex flex-col items-start gap-3 mb-4">
           <Image src={logo} width={50} height={50} alt={title} />
           <div className="flex flex-col gap-1">
             <h3 className="text-2xl font-bold">{title}</h3>
-            <p className="text-sm min-h-[60px]">{description}</p>
+            <p className="text-sm text-foreground/80">{description}</p>
           </div>
         </div>
 
         <div className="mb-4">
-          <h3 className="text-lg font-medium mb-2">Hash</h3>
+          <h3 className="text-lg font-bold mb-2">Hash</h3>
           <div className="space-y-2">
             {hashs.map((hashItem, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 bg-primary/15 p-2 rounded border-primary border"
+                className="flex items-center gap-2 bg-primary/15 p-2 rounded-md border-primary border"
               >
                 <div
-                  className={`bg-primary text-black px-2 py-1 rounded font-bold text-xs ${
+                  className={`flex items-center justify-center bg-primary text-black w-9 h-9 rounded font-bold text-xs ${
                     hashItem.version === "ARM64" ? "text-center leading-3" : ""
                   }`}
                 >
                   {hashItem.version === "ARM64" ? (
-                    <>
+                    <span>
                       ARM
                       <br />
-                      <span className="text-[10px]">64</span>
-                    </>
+                      <span className="text-[12px]">64</span>
+                    </span>
                   ) : (
-                    hashItem.version
+                    <span>{hashItem.version}</span>
                   )}
                 </div>
-                <div className="text-xs font-mono truncate">
+                <div className="text-xs font-mono truncate text-primary font-medium">
                   {hashItem.hash}
                 </div>
               </div>
@@ -45,57 +56,56 @@ const DownloadCard = ({ logo, title, description, image, hashs, links }) => {
         </div>
 
         <div className="mb-4 w-60">
-          <h4 className="text-sm font-bold mb-2">Download</h4>
+          <h3 className="text-lg font-bold mb-2">Download</h3>
           <div className="space-y-2">
             {links.map((link, index) => (
-              <button
+              <Link
                 key={index}
-                className={`w-full bg-primary rounded-lg p-3 flex items-center gap-3 transition-all hover:opacity-90`}
+                href={link.href}
+                className={`flex sm:flex-row flex-col w-fit bg-${link.color} rounded-md p-2.5 flex items-center gap-3 transition-all hover:opacity-80  `}
               >
-                <div className="bg-white p-2 w-8 h-8 rounded flex items-center justify-center text-xs font-bold text-black">
-                  {link.version === "ARM64" ? (
-                    <div className="flex flex-col items-center justify-center leading-3">
-                      <span className="text-[10px]">ARM</span>
-                      <span className="text-[8px]">64</span>
-                    </div>
-                  ) : (
-                    link.version
-                  )}
-                </div>
-                <div className="text-left flex-1">
-                  <div className="font-bold text-white text-xs">
-                    {link.title}
+                <div className="flex sm:w-fit w-full items-center justify-between">
+                  <div className="bg-white p-2 w-8 h-8 rounded-sm flex items-center justify-center text-xs font-bold text-black">
+                    {link.version === "ARM64" ? (
+                      <div className="flex flex-col items-center justify-center leading-3">
+                        <span className="text-[10px]">ARM</span>
+                        <span className="text-[10px]">64</span>
+                      </div>
+                    ) : (
+                      link.version
+                    )}
                   </div>
-                  <div
-                    className={`text-[10px] ${
-                      link.color === "primary"
-                        ? "text-blue-100"
-                        : "text-purple-100"
-                    }`}
-                  >
-                    Size: {link.size} • {link.date}
-                  </div>
+                  <Download size={18} className="sm:hidden block" />
                 </div>
-                <div className="text-xl">
-                  <img
-                    src="/images/software-download.svg"
-                    alt="download icon"
+
+                <div className="flex flex-row text-left">
+                  <div className="flex flex-col">
+                    <h5 className="font-bold text-white text-sm mb-1.5">
+                      {link.title}
+                    </h5>
+                    <span className="text-xs w-fit">Size: {link.size}</span>
+                    <span className="text-xs w-fit">
+                      Build date: {link.date}
+                    </span>
+                  </div>
+
+                  <Download
+                    size={15}
+                    className="sm:block hidden mt-auto mb-2.5 ms-1.5"
                   />
                 </div>
-              </button>
+              </Link>
             ))}
           </div>
         </div>
 
-        <div className="relative h-10">
-          <Image
-            src={image}
-            width={150}
-            height={60}
-            alt={title}
-            className="absolute -bottom-8 -right-6 w-44 h-56 z-10"
-          />
-        </div>
+        <Image
+          src={image}
+          width={120}
+          height={60}
+          alt={title}
+          className="absolute bottom-0 right-0.5 sm:w-32 sm:h-40 w-40 h-56 z-10"
+        />
       </CardContent>
     </Card>
   );

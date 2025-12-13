@@ -1,10 +1,7 @@
-// import BlogSection from "@/components/custom/main/blog-section";
 import DownloadSection from "@/components/custom/main/download-section";
-// import EventSection from "@/components/custom/main/event-section";
 import HeadSection from "@/components/custom/main/head-section";
 import HeroSection from "@/components/custom/main/hero-section";
 import IconSection from "@/components/custom/main/icon-section";
-import LinkSection from "@/components/custom/main/link-section";
 import SponsorsCarousel from "@/components/custom/main/sponsor-carousel";
 import { Locale, useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
@@ -13,10 +10,7 @@ import { use } from "react";
 export default function IndexPage({ params }: PageProps<"/[locale]">) {
   const { locale } = use(params);
 
-  // Enable static rendering
   setRequestLocale(locale as Locale);
-
-  const t = useTranslations("Index");
 
   return (
     <>
@@ -138,9 +132,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
           />
         </div>
         <IconSection />
-        <LinkSection />
-        {/* <EventSection /> */}
-        {/* <BlogSection /> */}
+
         <SponsorsCarousel />
         <DownloadSection />
       </div>

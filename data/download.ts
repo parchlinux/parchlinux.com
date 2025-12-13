@@ -1,8 +1,11 @@
-const downloads = [
+import type { DownloadItem } from "@/types";
+
+const downloads: DownloadItem[] = [
   {
     logo: "/images/download/kde.png",
     title: "Parch with KDE Desktop",
-    description: "KDE is an international team co-operating on development and distribution of Free, Open Source Software for desktop and portable computing.",
+    description:
+      "KDE is an international team co-operating on development and distribution of Free, Open Source Software for desktop and portable computing.",
     image: "/images/download/kde-desktop.png",
     hashs: [
       {
@@ -20,21 +23,24 @@ const downloads = [
         title: "Download for x64",
         size: "2.9 GiB",
         date: "7/23/2025",
-        color: "primary",
+        color: "parch-blue",
+        href: "",
       },
       {
         version: "ARM64",
         title: "Download for ARM64",
         size: "2.8 GiB",
         date: "7/23/2025",
-        color: "secondary",
+        color: "parch-purple",
+        href: "",
       },
     ],
   },
   {
     logo: "/images/gnome.png",
     title: "Parch with GNOME Desktop",
-    description: "GNOME is developed in collaboration with the wider free software community to create the best level software with GNOME depends.",
+    description:
+      "GNOME is developed in collaboration with the wider free software community to create the best level software with GNOME depends.",
     image: "/images/download/gnome-desktop.png",
     hashs: [
       {
@@ -52,21 +58,24 @@ const downloads = [
         title: "Download for x64",
         size: "2.7 GiB",
         date: "7/23/2025",
-        color: "primary",
+        color: "parch-blue",
+        href: "",
       },
       {
         version: "ARM64",
         title: "Download for ARM64",
         size: "2.6 GiB",
         date: "7/23/2025",
-        color: "secondary",
+        color: "parch-purple",
+        href: "",
       },
     ],
   },
   {
     logo: "/images/download/raspberry.png",
     title: "Parch for Raspberry Pi",
-    description: "Raspberry Pi is a series of small single-board computers with the best level software with GNOME depends.",
+    description:
+      "Raspberry Pi is a series of small single-board computers with the best level software with GNOME depends.",
     image: "/images/download/RaspberryPi-desktop.png",
     hashs: [
       {
@@ -84,14 +93,16 @@ const downloads = [
         title: "Download for x64",
         size: "2.5 GiB",
         date: "7/23/2025",
-        color: "primary",
+        color: "parch-blue",
+        href: "",
       },
       {
         version: "ARM64",
         title: "Download for ARM64",
         size: "2.4 GiB",
         date: "7/23/2025",
-        color: "secondary",
+        color: "parch-purple",
+        href: "",
       },
     ],
   },

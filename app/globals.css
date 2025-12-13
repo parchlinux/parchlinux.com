@@ -122,7 +122,7 @@
     transform: rotate(9.13deg);
     opacity: 0.05;
   }
-  
+
   .bg-grid-center {
     background: linear-gradient(
         180deg,
@@ -131,7 +131,7 @@
         #040b11 100%
       ),
       url(/images/grid.png);
-      opacity: 0.05;
+    opacity: 0.05;
     background-size: contain;
   }
 
@@ -145,7 +145,6 @@
     background-size: contain;
     transform: rotate(369.13deg);
   }
-  
 }
 
 @layer base {
@@ -163,10 +162,6 @@
 
 .bg-over {
   background: #ff9a9a;
-}
-
-.ring-parch {
-  --tw-ring-color: var(--primary);
 }
 
 .text-parch {

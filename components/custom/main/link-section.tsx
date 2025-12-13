@@ -17,7 +17,7 @@ const LinkSection = () => {
               <Button
                 size="lg"
                 variant="secondary"
-                className="md:col-span-4 col-span-6 rounded-full text-xs sm:text-[18px] py-6 sm:py-7 ring-parch px-5 ring-1 ring-offset-4 ring-secondary/20"
+                className="md:col-span-4 col-span-6 rounded-full text-xs sm:text-[18px] py-6 sm:py-7 px-5 outline-2 outline-offset-2 outline-solid outline-secondary"
               >
                 <Github />
                 Source Code
@@ -26,7 +26,7 @@ const LinkSection = () => {
               <Button
                 size="lg"
                 variant="secondary"
-                className="md:col-span-4 col-span-6 rounded-full text-xs sm:text-[18px] py-6 sm:py-7 ring-parch px-5 ring-1 ring-offset-4 ring-secondary/20"
+                className="md:col-span-4 col-span-6 rounded-full text-xs sm:text-[18px] py-6 sm:py-7 px-5 outline-2 outline-offset-2 outline-solid outline-secondary"
               >
                 <Coffee />
                 Donate
@@ -34,7 +34,7 @@ const LinkSection = () => {
               <Button
                 size="lg"
                 variant="secondary"
-                className="md:col-span-4 col-span-12 rounded-full text-[16px] sm:text-[18px] py-6 sm:py-7 ring-parch px-5 ring-1 ring-offset-4 ring-primary"
+                className="md:col-span-4 col-span-12 rounded-full text-[16px] sm:text-[18px] py-6 sm:py-7 px-5 outline-2 outline-offset-2 outline-solid outline-primary"
               >
                 <Code2 />
                 Join our team

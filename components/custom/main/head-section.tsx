@@ -5,7 +5,7 @@ const HeadSection = () => {
     <div className="container max-w-7xl mx-auto">
       <div className="grid grid-cols-12 mb-8">
         <div className="xl:col-span-7 sm:col-span-8 col-span-12 flex items-center sm:order-first order-last">
-          <div className="flex flex-col xl:gap-7 lg:gap-5 gap-3 2xl:pe-44 sm:items-start items-center">
+          <div className="flex flex-col xl:gap-7 lg:gap-5 gap-3 sm:items-start items-center">
             <h1 className="xl:text-[3.1rem] lg:text-4xl sm:text-[1.8rem] text-[1.85rem] font-bold xl:order-first">
               We have a <span className="text-parch">ready-to-go</span> OS!
             </h1>

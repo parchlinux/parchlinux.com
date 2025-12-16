@@ -6,7 +6,7 @@ function FooterSect({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="footer"
-      className={cn("bg-background text-foreground pt-12 pb-4", className)}
+      className={cn("text-foreground pt-12 pb-4", className)}
       {...props}
     />
   );

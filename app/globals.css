@@ -114,37 +114,6 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
-
-  .bg-grid {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 67.32%, #040b11 100%),
-      url(/images/grid.png);
-    background-size: contain;
-    transform: rotate(9.13deg);
-    opacity: 0.05;
-  }
-
-  .bg-grid-center {
-    background: linear-gradient(
-        180deg,
-        #040a0f 0%,
-        rgba(0, 0, 0, 0) 50%,
-        #040b11 100%
-      ),
-      url(/images/grid.png);
-    opacity: 0.05;
-    background-size: contain;
-  }
-
-  .bg-grid-reverse {
-    background: linear-gradient(
-        360deg,
-        rgba(255, 255, 255, 0.05) 67%,
-        #0a1b2b 100%
-      ),
-      url(/images/grid.png);
-    background-size: contain;
-    transform: rotate(369.13deg);
-  }
 }
 
 @layer base {
@@ -189,7 +158,44 @@
 }
 
 .bg-grid-reverse {
-  background: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 67.32%, #edf3fa 100%),
+  background: linear-gradient(
+      180deg,
+      #edf3fa 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url(/images/grid.png);
+  background-size: contain;
+  transform: rotate(369.13deg);
+}
+
+.dark .bg-grid {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 67.32%, #040b11 100%),
+    url(/images/grid.png);
+  background-size: contain;
+  transform: rotate(9.13deg);
+  opacity: 0.05;
+}
+
+.dark .bg-grid-center {
+  background: linear-gradient(
+      180deg,
+      #040a0f 0%,
+      rgba(0, 0, 0, 0) 50%,
+      #040b11 100%
+    ),
+    url(/images/grid.png);
+  opacity: 0.05;
+  background-size: contain;
+}
+
+.dark .bg-grid-reverse {
+  background: linear-gradient(
+      180deg,
+      #000 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      #040b11 100%
+    ),
     url(/images/grid.png);
   background-size: contain;
   transform: rotate(369.13deg);

@@ -2,8 +2,9 @@ import DownloadSection from "@/components/custom/main/download-section";
 import HeadSection from "@/components/custom/main/head-section";
 import HeroSection from "@/components/custom/main/hero-section";
 import IconSection from "@/components/custom/main/icon-section";
+import LinkSection from "@/components/custom/main/link-section";
 import SponsorsCarousel from "@/components/custom/main/sponsor-carousel";
-import { Locale, useTranslations } from "next-intl";
+import { Locale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
 
@@ -132,11 +133,11 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
           />
         </div>
         <IconSection />
+        <LinkSection />
 
         <SponsorsCarousel />
         <DownloadSection />
       </div>
-      {/* <div className="bg-grid-reverse z-[-1] absolute w-[150%] h-[1000px] opacity-5 bottom-44 -left-10 transform translate-y-1/2 pointer-events-none" /> */}
     </>
   );
 }

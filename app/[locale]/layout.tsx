@@ -52,12 +52,10 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
-
   setRequestLocale(locale);
   console.log("locale", locale);
-
   return (
-    <html className="h-full" lang={locale}>
+    <html className="h-full overflow-x-hidden" lang={locale}>
       <body
         className={`${
           locale === "en" ? sairaSans.variable : Estedad.variable
@@ -73,11 +71,14 @@ export default async function LocaleLayout({
             disableTransitionOnChange
           >
             <SidebarProvider defaultOpen={false}>
-              <AppSidebar />
-              <div className="bg-grid z-[-1] absolute w-[150%] h-190 opacity-5 -top-44 -left-10 pointer-events-none" />
-              <Header />
-              <div className="md:mt-32 mt-28 flex-1">{children}</div>
-              <Footer />
+              <div className="relative min-h-screen flex flex-col overflow-hidden">
+                <AppSidebar />
+                <div className="bg-grid z-[-1] absolute w-[150%] h-190 opacity-5 -top-44 -left-10 pointer-events-none" />
+                <Header />
+                <div className="md:mt-32 mt-28 flex-1">{children}</div>
+                <Footer />
+                <div className="bg-grid-reverse z-[-1] absolute w-[150%] h-190 opacity-5 -bottom-85 -left-20 pointer-events-none" />
+              </div>
             </SidebarProvider>
           </ThemeProvider>
         </NextIntlClientProvider>

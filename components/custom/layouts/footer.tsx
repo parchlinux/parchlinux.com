@@ -18,6 +18,7 @@ import { cn } from "@/lib/utils";
 import {
   ArrowUpRight,
   LaptopMinimal,
+  Linkedin,
   Moon,
   MoveUpRight,
   Sun,
@@ -31,7 +32,6 @@ import {
   SiBluesky,
   SiDiscord,
   SiInstagram,
-  SiLinkedin,
   SiMastodon,
   SiPeertube,
   SiTelegram,
@@ -107,7 +107,7 @@ export default function Footer() {
       href: "https://www.linkedin.com/company/parch-linux",
       label: "LinkedIn",
       icon: (
-        <SiLinkedin
+        <Linkedin
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
         />
@@ -183,7 +183,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-background mt-auto pt-12 md:pb-8 pb-4">
+    <footer className="w-full mt-auto pt-12 md:pb-8 pb-4">
       <div className="container mx-auto max-w-7xl px-6 md:px-8 flex flex-col md:flex-row justify-between gap-6">
         <FooterSect className="w-full">
           <FooterContent className="flex flex-wrap justify-between gap-8 w-full">

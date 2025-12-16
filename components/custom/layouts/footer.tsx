@@ -238,7 +238,7 @@ export default function Footer() {
               </FooterColumn>
             ))}
             <span className="hidden">{theme}</span>
-            <FooterColumn className="flex flex-col items-center md:items-end gap-2">
+            <FooterColumn className="flex flex-col items-start md:items-end gap-2">
               <Select onValueChange={changeLanguage} defaultValue="en">
                 <SelectTrigger className="w-full rounded-full">
                   <SelectValue placeholder="English" />

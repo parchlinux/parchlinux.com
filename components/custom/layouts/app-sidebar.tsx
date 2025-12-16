@@ -1,63 +1,107 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+"use client";
 
+import { Button } from "@/components/ui/button";
 import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  useSidebar,
 } from "@/components/ui/sidebar";
+import { Coffee, X } from "lucide-react";
+import { useLocale } from "next-intl";
 import Link from "next/link";
 
-// Menu items.
-const items = [
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-];
-
 export function AppSidebar() {
+  const locale = useLocale();
+  const { toggleSidebar } = useSidebar();
+
+  const items = [
+    {
+      title: "Forum",
+      url: "https://forum.parchlinux.com/",
+      out: true,
+    },
+    {
+      title: "Wiki",
+      url: "https://wiki.parchlinux.com/",
+      out: true,
+    },
+    {
+      title: "Contributors",
+      url: `/${locale}/contributors`,
+    },
+    {
+      title: "Blog",
+      url: "https://blog.parchlinux.com/",
+      out: true,
+    },
+    {
+      title: "Team",
+      url: `/${locale}/team`,
+    },
+  ];
+
   return (
     <Sidebar side="right">
-      <SidebarContent>
+      <SidebarContent className="bg-[#1B3033] dark:bg-[#122022]">
+        <Button
+          variant={"ghost"}
+          onClick={toggleSidebar}
+          className="right-5 top-5 absolute z-50"
+        >
+          <X className="w-6! h-6!" />
+        </Button>
         <SidebarGroup>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="flex gap-12 mt-28">
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <Link href={item.url}>
-                      <span>{item.title}</span>
+                  <SidebarMenuButton
+                    className="hover:text-muted-foreground"
+                    onClick={toggleSidebar}
+                    asChild
+                  >
+                    <Link
+                      href={item.url}
+                      className="justify-center hover:bg-transparent focus:bg-transparent"
+                      target={item?.out ? "_blank" : "_self"}
+                    >
+                      <span className="text-xl">{item.title}</span>
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
+            <div className="flex flex-col gap-4 items-center mt-12">
+              <Button
+                className="rounded-full bg-parch text-white hover:text-white/80 w-full max-w-80 font-medium text-base py-6"
+                variant="default"
+                onClick={toggleSidebar}
+                size={"lg"}
+                asChild
+              >
+                <Link href={`/${locale}/download`}>Download</Link>
+              </Button>
+              <Button
+                className="rounded-full bg-accent-foreground hover:bg-accent-foreground/80 w-full max-w-80 font-medium text-base py-6"
+                size={"lg"}
+                onClick={toggleSidebar}
+                asChild
+              >
+                <Link
+                  href="https://daramet.com/parchlinux"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  Donate <Coffee className="text-muted w-5! h-5!" />
+                </Link>
+              </Button>
+            </div>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>

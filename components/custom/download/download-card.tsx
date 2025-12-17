@@ -61,6 +61,7 @@ const DownloadCard = ({
             {links.map((link, index) => (
               <Link
                 key={index}
+                download
                 href={link.href}
                 className={`flex sm:flex-row flex-col w-fit bg-${link.color} rounded-md p-2.5 flex items-center gap-3 transition-all hover:opacity-80  `}
               >

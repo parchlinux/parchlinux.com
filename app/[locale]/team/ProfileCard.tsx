@@ -53,7 +53,7 @@ const ProfileCard = ({
             {socialLinks.mastodon && socialLinks.mastodon !== "#" && (
               <a
                 href={socialLinks.mastodon}
-                className="w-9 h-9 bg-slate-900 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors flex-shrink-0"
+                className="w-8 h-6 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors shrink-0"
                 aria-label="Mastodon"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -71,7 +71,7 @@ const ProfileCard = ({
             {socialLinks.twitter && socialLinks.twitter !== "#" && (
               <a
                 href={socialLinks.twitter}
-                className="w-9 h-9 bg-slate-900 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors flex-shrink-0"
+                className="w-8 h-6 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors shrink-0"
                 aria-label="Twitter/X"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -89,7 +89,7 @@ const ProfileCard = ({
             {socialLinks.linkedin && socialLinks.linkedin !== "#" && (
               <a
                 href={socialLinks.linkedin}
-                className="w-9 h-9 bg-slate-900 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors flex-shrink-0"
+                className="w-8 h-6 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors shrink-0"
                 aria-label="LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -101,7 +101,7 @@ const ProfileCard = ({
             {socialLinks.github && socialLinks.github !== "#" && (
               <a
                 href={socialLinks.github}
-                className="w-9 h-9 bg-slate-900 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors flex-shrink-0"
+                className="w-8 h-6 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors shrink-0"
                 aria-label="GitHub"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -113,7 +113,7 @@ const ProfileCard = ({
             {socialLinks.website && socialLinks.website !== "#" && (
               <a
                 href={socialLinks.website}
-                className="w-9 h-9 bg-slate-900 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors flex-shrink-0"
+                className="w-8 h-6 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors shrink-0"
                 aria-label="Website"
                 target="_blank"
                 rel="noopener noreferrer"

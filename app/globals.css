@@ -154,7 +154,7 @@
       #edf3fa 100%
     ),
     url(/images/grid.png);
-  background-size: contain;
+  opacity: 0.04;
 }
 
 .bg-grid-reverse {
@@ -181,12 +181,10 @@
   background: linear-gradient(
       180deg,
       #040a0f 0%,
-      rgba(0, 0, 0, 0) 50%,
+      rgba(221, 0, 0, 0) 50%,
       #040b11 100%
     ),
     url(/images/grid.png);
-  opacity: 0.05;
-  background-size: contain;
 }
 
 .dark .bg-grid-reverse {

@@ -30,7 +30,7 @@ const features = [
 
 const IconSection = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto p-6">
+    <div className="w-full max-w-360 mx-auto pt-16 pb-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {features.map((feature, index) => {
           const IconComponent = feature.icon;
@@ -40,13 +40,13 @@ const IconSection = () => {
               className="col-span-1 text-center border-0 shadow-none bg-transparent"
             >
               <CardContent className="p-5 space-y-4 flex flex-col items-center">
-                <div className="w-16 h-16 sm:w-20 lg:w-16 rounded-full flex items-center justify-center md:mb-2 mb-0">
+                <div className="w-16 h-16 sm:w-20 lg:w-16 rounded-full flex items-center justify-center md:mb-1.5 mb-0">
                   <IconComponent size={48} />
                 </div>
                 <h3 className="text-xl sm:text-2xl lg:text-xl font-semibold text-foreground">
                   {feature.title}
                 </h3>
-                <p className="text-xs sm:text-sm lg:text-xs text-foreground/95 mx-auto leading-relaxed sm:max-w-[250px] lg:max-w-[200px]">
+                <p className="text-xs sm:text-sm lg:text-xs text-foreground/95 mx-auto leading-relaxed sm:max-w-[250px] lg:max-w-[200px] font-light">
                   {feature.description}
                 </p>
               </CardContent>

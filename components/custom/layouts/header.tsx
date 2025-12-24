@@ -36,7 +36,7 @@ export default function Header() {
       <div className="container flex xl:h-16 h-20 max-w-7xl items-center justify-between px-4 mx-auto">
         <div className="flex items-center">
           <Link href={`/${locale}`} className="flex items-center space-x-3">
-            <Image src={"/logo.svg"} width={19} height={19} alt="logo" />
+            <Image src={"/logo-white.svg"} width={30} height={30} alt="logo" />
             <span className="text-xl">Parch GNU/Linux</span>
           </Link>
         </div>
@@ -88,7 +88,7 @@ export default function Header() {
           <div className="flex items-center space-x-3">
             <Button
               variant={"secondary"}
-              className="rounded-full bg-accent-foreground hover:bg-accent-foreground/80"
+              className="rounded-full bg-accent-foreground hover:bg-accent-foreground/80 text-muted"
               asChild
             >
               <Link
@@ -97,12 +97,12 @@ export default function Header() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
               >
+                Donate
                 <Coffee className="text-muted" />
               </Link>
             </Button>
 
             <span className="mb-1 xl:block hidden text-gray-400">&#8226;</span>
-
             <Button
               className="rounded-full bg-parch text-white hover:text-white/80"
               variant="default"

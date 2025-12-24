@@ -25,7 +25,7 @@ const DownloadSection = () => {
             Try Parch GNU/Linux Now
           </h2>
           <Link href={`/${locale}/download`}>
-            <Button className="rounded-full text-[18px] bg-black text-white py-7 outline-2 outline-offset-2 outline-solid outline-white/45 px-5 w-fit mx-auto md:mx-0 transition-all duration-300">
+            <Button className="rounded-full text-[18px] bg-foreground text-background py-7 outline-2 outline-offset-2 outline-solid outline-black/45 dark:outline-white/45 px-5 w-fit mx-auto md:mx-0 transition-all duration-300">
               <Download />
               Download for free
             </Button>

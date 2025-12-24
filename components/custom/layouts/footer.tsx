@@ -190,8 +190,8 @@ export default function Footer() {
             <FooterColumn className="flex flex-col md:items-start items-center gap-2 sm:m-0 mx-auto">
               <div className="flex items-center gap-1">
                 <h3 className="text-xs">
-                  <a href="mailto:info@parchlinux.com" className="underline">
-                    info@parchlinux.com
+                  <a href="mailto:contact@parchlinux.com" className="underline">
+                    contact@parchlinux.com
                   </a>
                 </h3>
                 <ArrowUpRight size={16} />

@@ -3,6 +3,7 @@ import type { DownloadCardProps } from "@/types";
 import { Download } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const DownloadCard = ({
   logo,
@@ -12,6 +13,7 @@ const DownloadCard = ({
   hashs,
   links,
 }: DownloadCardProps) => {
+  const t = useTranslations("DownloadCard");
   return (
     <Card className="relative">
       <CardContent dir="ltr">
@@ -24,7 +26,7 @@ const DownloadCard = ({
         </div>
 
         <div className="mb-4">
-          <h3 className="text-lg font-bold mb-2 rtl:text-right">Hash</h3>
+          <h3 className="text-lg font-bold mb-2 rtl:text-right">{t("hash")}</h3>
           <div className="space-y-2">
             {hashs.map((hashItem, index) => (
               <div
@@ -55,7 +57,7 @@ const DownloadCard = ({
         </div>
 
         <div className="mb-4 w-60">
-          <h3 className="text-lg font-bold mb-2">Download</h3>
+          <h3 className="text-lg font-bold mb-2">{t("download")}</h3>
           <div className="space-y-2">
             {links.map((link, index) => (
               <Link
@@ -83,9 +85,9 @@ const DownloadCard = ({
                     <h5 className="font-bold text-white text-sm mb-1.5">
                       {link.title}
                     </h5>
-                    <span className="text-xs w-fit">Size: {link.size}</span>
+                    <span className="text-xs w-fit">{t("size")}: {link.size}</span>
                     <span className="text-xs w-fit">
-                      Build date: {link.date}
+                      {t("buildDate")}: {link.date}
                     </span>
                   </div>
 
@@ -98,14 +100,15 @@ const DownloadCard = ({
             ))}
           </div>
         </div>
-
-        <Image
-          src={image}
-          width={120}
-          height={60}
-          alt={title}
-          className="absolute bottom-0 right-0.5 sm:w-32 sm:h-40 w-40 h-56 z-10"
-        />
+        {image && (
+          <Image
+            src={image}
+            width={120}
+            height={60}
+            alt={title}
+            className="absolute bottom-0 right-0.5 sm:w-32 sm:h-40 w-40 h-56 z-10"
+          />
+        )}
       </CardContent>
     </Card>
   );

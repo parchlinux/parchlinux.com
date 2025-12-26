@@ -22,7 +22,7 @@ const DownloadSection = () => {
           />
         </div>
 
-        <div className="md:col-span-8 flex flex-col justify-center gap-6 md:gap-14 text-center md:text-left order-2 md:order-1 w-full">
+        <div className="md:col-span-8 flex flex-col justify-center md:items-start items-center gap-6 md:gap-14 text-center md:text-left order-2 md:order-1 w-full">
           <h2 className="text-2xl sm:text-4xl xl:text-6xl 2xl:text-7xl font-semibold text-start">
             {t("title")}
           </h2>

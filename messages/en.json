@@ -102,16 +102,46 @@
     "titles": {
       "kde": "Parch with KDE Desktop",
       "gnome": "Parch with GNOME Desktop",
+      "xfce": "Parch with XFCE Desktop",
       "raspberry": "Parch for Raspberry Pi"
     },
     "descriptions": {
       "kde": "KDE is an international team co-operating on development and distribution of Free, Open Source Software for desktop and portable computing.",
       "gnome": "GNOME is developed in collaboration with the wider free software community to create the best level software with GNOME depends.",
+      "xfce": "XFCE is a lightweight desktop environment for Unix-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly.",
       "raspberry": "Raspberry Pi is a series of small single-board computers with the best level software with GNOME depends."
     },
     "downloadTitles": {
       "x64": "Download for x64",
       "arm64": "Download for ARM64"
     }
+  },
+  "Header": {
+    "brandName": "Parch GNU/Linux",
+    "forum": "Forum",
+    "wiki": "Wiki",
+    "contributors": "Contributors",
+    "blog": "Blog",
+    "team": "Team",
+    "donate": "Donate",
+    "download": "Download"
+  },
+  "AppSidebar": {
+    "forum": "Forum",
+    "wiki": "Wiki",
+    "contributors": "Contributors",
+    "blog": "Blog",
+    "team": "Team",
+    "donate": "Donate",
+    "download": "Download"
+  },
+  "DownloadCard": {
+    "download": "Download",
+    "hash": "Hash",
+    "size": "Size",
+    "buildDate": "Build date"
+  },
+  "BlogSection": {
+    "title": "Blog"
   }
 }

@@ -12,35 +12,36 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { Coffee, X } from "lucide-react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 
 export function AppSidebar() {
   const locale = useLocale();
   const { toggleSidebar } = useSidebar();
+  const t = useTranslations("AppSidebar");
 
   const items = [
     {
-      title: "Forum",
+      title: t("forum"),
       url: "https://forum.parchlinux.com/",
       out: true,
     },
     {
-      title: "Wiki",
+      title: t("wiki"),
       url: "https://wiki.parchlinux.com/",
       out: true,
     },
     {
-      title: "Contributors",
+      title: t("contributors"),
       url: `/${locale}/contributors`,
     },
     {
-      title: "Blog",
+      title: t("blog"),
       url: "https://blog.parchlinux.com/",
       out: true,
     },
     {
-      title: "Team",
+      title: t("team"),
       url: `/${locale}/team`,
     },
   ];
@@ -84,7 +85,7 @@ export function AppSidebar() {
                 size={"lg"}
                 asChild
               >
-                <Link href={`/${locale}/download`}>Download</Link>
+                <Link href={`/${locale}/download`}>{t("download")}</Link>
               </Button>
               <Button
                 className="rounded-full bg-accent-foreground hover:bg-accent-foreground/80 w-full max-w-80 font-medium text-base py-6"
@@ -98,7 +99,7 @@ export function AppSidebar() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
-                  Donate <Coffee className="text-muted w-5! h-5!" />
+                  {t("donate")} <Coffee className="text-muted w-5! h-5!" />
                 </Link>
               </Button>
             </div>

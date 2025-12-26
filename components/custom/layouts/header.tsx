@@ -5,13 +5,14 @@ import { Coffee } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const locale = useLocale();
   const { isMobile } = useSidebar();
+  const t = useTranslations("Header");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,11 +34,11 @@ export default function Header() {
         isScrolled ? scrolledClasses : defaultClasses
       }`}
     >
-      <div className="container flex xl:h-16 h-20 max-w-7xl items-center justify-between px-4 mx-auto">
+      <div className="container flex xl:h-16 h-20 2xl:max-w-360 max-w-7xl 2xl:px-0 px-4 items-center justify-between mx-auto">
         <div className="flex items-center">
           <Link href={`/${locale}`} className="flex items-center space-x-3">
             <Image src={"/logo-white.svg"} width={30} height={30} alt="logo" />
-            <span className="text-xl">Parch GNU/Linux</span>
+            <span className="text-xl">{t("brandName")}</span>
           </Link>
         </div>
 
@@ -48,7 +49,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="text-sm font-medium hover:text-foreground/50 transition-colors"
           >
-            Forum
+            {t("forum")}
           </Link>
 
           <Link
@@ -57,14 +58,14 @@ export default function Header() {
             rel="noopener noreferrer"
             className="text-sm font-medium hover:text-foreground/50 transition-colors"
           >
-            Wiki
+            {t("wiki")}
           </Link>
 
           <Link
             href={`/${locale}/contributors`}
             className="text-sm font-medium hover:text-foreground/50 transition-colors"
           >
-            Contributors
+            {t("contributors")}
           </Link>
           <Link
             href="https://blog.parchlinux.com/"
@@ -72,14 +73,14 @@ export default function Header() {
             rel="noopener noreferrer"
             className="text-sm font-medium hover:text-foreground/50 transition-colors"
           >
-            Blog
+            {t("blog")}
           </Link>
 
           <Link
             href={`/${locale}/team`}
             className="text-sm font-medium hover:text-foreground/50 transition-colors"
           >
-            Team
+            {t("team")}
           </Link>
         </nav>
         {isMobile ? (
@@ -97,7 +98,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
               >
-                Donate
+                {t("donate")}
                 <Coffee className="text-muted" />
               </Link>
             </Button>
@@ -108,7 +109,7 @@ export default function Header() {
               variant="default"
               asChild
             >
-              <Link href={`/${locale}/download`}>Download</Link>
+              <Link href={`/${locale}/download`}>{t("download")}</Link>
             </Button>
           </div>
         )}

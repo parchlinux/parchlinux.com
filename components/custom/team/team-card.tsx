@@ -60,7 +60,7 @@ const TeamCard = ({
                 rel="noopener noreferrer"
               >
                 <svg
-                  className="w-3.5 h-3.5 text-white"
+                  className="w-4 h-4 text-foreground/80"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -78,7 +78,7 @@ const TeamCard = ({
                 rel="noopener noreferrer"
               >
                 <svg
-                  className="w-3.5 h-3.5 text-white"
+                  className="w-4 h-4 text-foreground/80"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -95,7 +95,7 @@ const TeamCard = ({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin className="w-3.5 h-3.5 text-white" />
+                <Linkedin className="w-4 h-4 text-foreground/80" />
               </Link>
             )}
 
@@ -107,7 +107,7 @@ const TeamCard = ({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github className="w-3.5 h-3.5 text-white" />
+                <Github className="w-4 h-4 text-foreground/80" />
               </Link>
             )}
 
@@ -119,7 +119,7 @@ const TeamCard = ({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Globe className="w-3.5 h-3.5 text-white" />
+                <Globe className="w-4 h-4 text-foreground/80" />
               </Link>
             )}
           </div>

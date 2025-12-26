@@ -52,11 +52,33 @@ const LinkSection = () => {
               <Button
                 size="lg"
                 variant="secondary"
-                className="md:col-span-4 col-span-12 rounded-full text-[16px] sm:text-[18px] py-6  sm:py-7 outline-2 outline-offset-2 outline-solid outline-primary"
+                className="md:col-span-4 col-span-12 rounded-full text-[16px] sm:text-[18px] py-6 sm:py-7 outline-2 outline-offset-2 outline-solid outline-primary relative"
                 asChild
               >
-                <Link href="mailto:contact@parchlinux.com" target="_blank">
-                  <Code2 />
+                <Link
+                  href="mailto:contact@parchlinux.com"
+                  target="_blank"
+                  className="relative"
+                >
+                  <svg width="0" height="0" className="absolute">
+                    <defs>
+                      <linearGradient
+                        id="gradient-code2"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="100%"
+                      >
+                        <stop offset="0%" stopColor="#21c796" />
+                        <stop offset="50%" stopColor="#0385ce" />
+                        <stop offset="100%" stopColor="#0d40bf" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <Code2
+                    stroke={`url(#gradient-code2)`}
+                    className="drop-shadow-sm"
+                  />
                   {t("joinTeam")}
                 </Link>
               </Button>

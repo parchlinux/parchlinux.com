@@ -24,7 +24,7 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
-    qualities: [25, 50, 75],
+    qualities: [25, 50, 75, 100],
   },
   turbopack: {
     root: path.join(__dirname, ".."),

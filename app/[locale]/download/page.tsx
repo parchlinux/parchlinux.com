@@ -2,30 +2,31 @@ import DownloadCard from "@/components/custom/download/download-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import downloads from "@/data/download";
+import { releaseInfo } from "@/data/release-info";
 import { GitGraph, Github, GitPullRequest } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 export default function Download() {
   const t = useTranslations("DownloadPage");
-  
+
   const translatedDownloads = downloads.map((download) => {
     const key = download.title;
-    
+
     return {
       ...download,
       title: t(`titles.${key}`),
       description: t(`descriptions.${key}`),
-      links: download.links.map(link => ({
+      links: download.links.map((link) => ({
         ...link,
-        title: t(`downloadTitles.${link.version.toLowerCase()}`)
-      }))
+        title: t(`downloadTitles.${link.version.toLowerCase()}`),
+      })),
     };
   });
 
   return (
     <div className="container mx-auto max-w-7xl lg:px0 md:px-8 sm:px-6 px-4">
-      <div className="flex sm:flex-row flex-col justify-center sm:text-start text-center items-center w-full sm:justify-between sm:border rounded-md px-8 py-3 mb-12">
+      <div className="flex sm:flex-row flex-col justify-center sm:text-start text-center items-center w-full md:gap-4 gap-2 sm:border rounded-md px-8 py-3 mb-12">
         <Image
           src={"/images/download/parch-box.png"}
           width={150}
@@ -34,7 +35,9 @@ export default function Download() {
         />
         <div className="flex sm:flex-row flex-col gap-3 items-center">
           <div className="flex flex-col gap-0.5">
-            <h1 className="xl:text-2xl text-lg font-bold">{t("latestReleases")}</h1>
+            <h1 className="xl:text-2xl text-lg font-bold">
+              {t("latestReleases")}
+            </h1>
             <h2 className="lg:text-base text-sm text-foreground/85">
               {t("buildReleased")} 2025-09-14
             </h2>
@@ -47,7 +50,9 @@ export default function Download() {
             >
               <GitPullRequest />
               <span>{t("pullRequest")}</span>
-              <Badge className="bg-white/20 shadow text-white">#17508</Badge>
+              <Badge className="bg-white/20 shadow text-white">
+                {releaseInfo.pullRequestNumber}
+              </Badge>
             </Button>
             <Button
               variant={"link"}
@@ -56,7 +61,9 @@ export default function Download() {
             >
               <GitGraph />
               <span>{t("commit")}</span>
-              <Badge className="bg-white/20 shadow text-white">335ed8d9</Badge>
+              <Badge className="bg-white/20 shadow text-white">
+                {releaseInfo.commitHash}
+              </Badge>
             </Button>
             <Button
               variant={"link"}
@@ -66,7 +73,7 @@ export default function Download() {
               <Github />
               <span>{t("submittedBy")}</span>
               <Badge className="bg-white/20 shadow text-white">
-                Sohrab Behdani
+                {releaseInfo.submittedBy}
               </Badge>
             </Button>
           </div>

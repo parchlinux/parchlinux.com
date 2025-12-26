@@ -43,7 +43,7 @@ const HeroSection = ({
             reverse ? "sm:order-2" : "sm:order-1"
           )}
         >
-          <div className="flex flex-col xl:gap-3 gap-2.5 text-center sm:text-left">
+          <div className="flex flex-col xl:gap-3 gap-2.5 text-center sm:text-left rtl:sm:text-right">
             {title}
             {description}
           </div>

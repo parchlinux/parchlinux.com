@@ -22,7 +22,9 @@ export default function Contributors() {
               />
               <div className="flex flex-col gap-1">
                 <h3 className="font-bold text-lg">{contributor.name}</h3>
-                <span className="text-sm">{contributor.id}</span>
+                <span className="text-sm" dir="ltr">
+                  {contributor.id}
+                </span>
               </div>
             </CardContent>
           </Card>

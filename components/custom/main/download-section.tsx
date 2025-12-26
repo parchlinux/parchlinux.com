@@ -23,10 +23,10 @@ const DownloadSection = () => {
         </div>
 
         <div className="md:col-span-8 flex flex-col justify-center gap-6 md:gap-14 text-center md:text-left order-2 md:order-1 w-full">
-          <h2 className="text-2xl sm:text-4xl xl:text-6xl 2xl:text-7xl font-semibold">
+          <h2 className="text-2xl sm:text-4xl xl:text-6xl 2xl:text-7xl font-semibold text-start">
             {t("title")}
           </h2>
-          <Link href={`/${locale}/download`}>
+          <Link href={`/${locale}/download`} className="w-fit">
             <Button className="rounded-full md:text-[18px] text-sm bg-foreground text-background md:py-7 py-5 outline-2 outline-offset-2 outline-solid outline-black/45 dark:outline-white/45 md:px-5 px-8 w-fit mx-auto md:mx-0 transition-all duration-300">
               <Download />
               {t("downloadButton")}

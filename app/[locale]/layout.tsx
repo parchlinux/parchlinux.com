@@ -55,7 +55,11 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
   console.log("locale", locale);
   return (
-    <html className="h-full overflow-x-hidden" lang={locale}>
+    <html
+      className="h-full overflow-x-hidden"
+      lang={locale}
+      dir={locale === "en" ? "ltr" : "rtl"}
+    >
       <body
         className={`${
           locale === "en" ? sairaSans.variable : Estedad.variable

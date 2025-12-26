@@ -262,7 +262,7 @@ export default function Footer() {
                 </SelectContent>
               </Select>
 
-              <ButtonGroup className="mt-2">
+              <ButtonGroup className="mt-2" dir="ltr">
                 <Button
                   variant="outline"
                   size="icon"

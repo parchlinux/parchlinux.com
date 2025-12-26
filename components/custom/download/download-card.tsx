@@ -14,8 +14,8 @@ const DownloadCard = ({
 }: DownloadCardProps) => {
   return (
     <Card className="relative">
-      <CardContent>
-        <div className="flex flex-col items-start gap-3 mb-4">
+      <CardContent dir="ltr">
+        <div className="flex flex-col items-start gap-3 mb-4" dir="auto">
           <Image src={logo} width={50} height={50} alt={title} />
           <div className="flex flex-col gap-1">
             <h3 className="text-2xl font-bold">{title}</h3>
@@ -24,7 +24,7 @@ const DownloadCard = ({
         </div>
 
         <div className="mb-4">
-          <h3 className="text-lg font-bold mb-2">Hash</h3>
+          <h3 className="text-lg font-bold mb-2 rtl:text-right">Hash</h3>
           <div className="space-y-2">
             {hashs.map((hashItem, index) => (
               <div

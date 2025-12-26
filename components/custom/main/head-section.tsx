@@ -16,7 +16,7 @@ const HeadSection = () => {
                 ready: (chunks) => <span className="text-parch">{chunks}</span>,
               })}
             </h1>
-            <div className="grid grid-cols-4 xl:gap-4 md:gap-2 sm:gap-5 gap-3 mb-1.5 xl:order-2 order-last 2xl:pr-30 xl:pr-32 sm:pr-16 w-full">
+            <div className="grid grid-cols-4 xl:gap-4 md:gap-2 sm:gap-5 gap-3 mb-1.5 xl:order-2 order-last 2xl:pe-30 xl:pe-32 sm:pe-16 w-full">
               <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-3">
                 <Image
                   className="lg:px-0 px-1"
@@ -85,11 +85,20 @@ const HeadSection = () => {
         <div className="xl:col-span-5 sm:col-span-4 col-span-12">
           <div className="flex sm:justify-end justify-center">
             <Image
-              className="lg:px-0 px-1"
-              src={"/images/parch-macos-2.png"}
+              className="hidden md:block 2xl:hidden lg:px-0 px-1 translate-x-13"
+              src={"/images/bg-md.png"}
               width={700}
-              height={600}
-              alt="Parch Preview"
+              height={800}
+              quality={100}
+              alt="Parch Preview Medium"
+            />
+            <Image
+              className="block md:hidden 2xl:block lg:px-0 px-1 mb-5"
+              src={"/images/bg-sm.png"}
+              width={700}
+              height={800}
+              quality={100}
+              alt="Parch Preview Small"
             />
           </div>
         </div>

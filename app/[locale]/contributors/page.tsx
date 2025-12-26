@@ -16,15 +16,18 @@ export default function Contributors() {
           >
             <CardContent className="flex items-center gap-3 px-0">
               <Image
-                src={contributor.image || "https://picsum.photos/60"}
+                src={contributor.image || ""}
                 width={60}
                 height={60}
                 className="rounded-sm"
                 alt={contributor.name}
               />
               <div className="flex flex-col gap-1">
-                <h3 className="font-bold text-lg">{contributor.name}</h3>
-                <span className="text-sm" dir="ltr">
+                <h3 className="font-bold text-base">{contributor.name}</h3>
+                <span
+                  className="text-sm text-foreground/90 rtl:text-end"
+                  dir="ltr"
+                >
                   {contributor.id}
                 </span>
               </div>

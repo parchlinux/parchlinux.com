@@ -15,14 +15,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-import {
-  ArrowUpRight,
-  LaptopMinimal,
-  Linkedin,
-  Moon,
-  MoveUpRight,
-  Sun,
-} from "lucide-react";
+import { ArrowUpRight, LaptopMinimal, Linkedin, Moon, Sun } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -249,7 +242,7 @@ export default function Footer() {
             <span className="hidden">{theme}</span>
             <FooterColumn className="sm:order-last order-first flex flex-col items-start gap-2 lg:w-fit w-full max-w-74 sm:col-span-1 col-span-2">
               <Select onValueChange={changeLanguage} defaultValue={locale}>
-                <SelectTrigger className="w-full rounded-full">
+                <SelectTrigger className="w-full rounded-full" dir="auto">
                   <SelectValue placeholder={t("languageSelect.placeholder")} />
                 </SelectTrigger>
                 <SelectContent>
@@ -310,8 +303,13 @@ export default function Footer() {
                     >
                       {t("problemMessage.line2.forum")}
                     </Link>
-                    <MoveUpRight size={16} className="mt-0.5" />
+                    <ArrowUpRight
+                      size={16}
+                      className="mt-0.5 text-foreground rtl:hidden"
+                    />
                   </span>
+                  {t("problemMessage.line2.part2") &&
+                    `${t("problemMessage.line2.part2")}`}
                 </p>
               </div>
             </FooterColumn>

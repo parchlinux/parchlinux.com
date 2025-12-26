@@ -18,14 +18,14 @@ const HeadSection = () => {
                 ready: (chunks) => <span className="text-parch">{chunks}</span>,
               })}
             </h1>
-            <div className="grid grid-cols-4 xl:gap-4 md:gap-2 sm:gap-5 gap-3 mb-1.5 xl:order-2 order-last 2xl:pe-30 xl:pe-32 sm:pe-16 w-full">
-              <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-1.5">
+            <div className="grid grid-cols-4 xl:gap-4 sm:gap-2 gap-3 mb-1.5 xl:order-2 order-last 2xl:pe-30 xl:pe-32 sm:pe-16 w-full">
+              <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 xl:px-0 px-4 gap-1.5">
                 <Monitor size={32} />
                 <h3 className="lg:text-xs sm:text-[10px] text-xs">
                   {t("features.easyInstallation")}
                 </h3>
               </div>
-              <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-1.5">
+              <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 xl:px-0 px-4 gap-1.5">
                 <Rocket size={32} />
                 <h3 className="lg:text-xs sm:text-[10px] text-xs xl:block hidden">
                   {t("features.highPerformance")}
@@ -34,13 +34,13 @@ const HeadSection = () => {
                   {t("features.highSpeed")}
                 </h3>
               </div>
-              <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-1.5">
+              <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 xl:px-0 px-4 gap-1.5">
                 <Handshake size={32} />
                 <h3 className="lg:text-xs sm:text-[10px] text-xs">
                   {t("features.userFriendly")}
                 </h3>
               </div>
-              <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-1.5">
+              <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 xl:px-0 px-4 gap-1.5">
                 <SiArchlinux size={32} />
                 <h3 className="lg:text-xs sm:text-[10px] text-xs">
                   {t("features.poweredByArch")}
@@ -63,7 +63,7 @@ const HeadSection = () => {
         <div className="xl:col-span-5 sm:col-span-4 col-span-12">
           <div className="flex sm:justify-end justify-center">
             <Image
-              className="hidden md:block 2xl:hidden lg:px-0 px-1 translate-x-20"
+              className="hidden sm:block 2xl:hidden lg:px-0 px-1 translate-x-20"
               src={"/images/bg-md.png"}
               width={700}
               height={800}
@@ -71,7 +71,7 @@ const HeadSection = () => {
               alt="Parch Preview Medium"
             />
             <Image
-              className="block md:hidden 2xl:block lg:px-0 px-1 mb-5"
+              className="block sm:hidden 2xl:block lg:px-0 px-1 mb-5"
               src={"/images/bg-sm.png"}
               width={700}
               height={800}

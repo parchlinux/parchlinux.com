@@ -63,25 +63,17 @@ const team = [
       },
     ],
   },
-  // Web Developer
+
+  // UI/UX Designer
   {
-    name: "Ali Almasi",
-    job: "Web Developer",
-    image: "https://avatars.githubusercontent.com/AliAlmasi",
+    name: "Mohamad Arshiya fardinfar",
+    job: "UI/UX Designer",
+    image: "https://avatars.githubusercontent.com/arshiya-shadow",
     links: [
       {
-        mastadon: "https://ieji.de/@almasi",
-        github: "https://github.com/AliAlmasi",
-      },
-    ],
-  },
-  {
-    name: "Mahdi Gholamhosseini",
-    job: "Web Developer",
-    image: "https://avatars.githubusercontent.com/m6hdix",
-    links: [
-      {
-        github: "https://github.com/m6hdix",
+        website: "https://fardinfar.ir/en.html",
+        linkedin: "https://www.linkedin.com/in/mohammad-arshiya-fardinfar",
+        github: "https://github.com/arshiya-shadow",
       },
     ],
   },
@@ -94,29 +86,6 @@ const team = [
       {
         github: "https://github.com/Bravemobin/",
         twitter: "https://x.com/Bravemobin/",
-      },
-    ],
-  },
-  // UI/UX Designer
-  {
-    name: "Mostafa Aminzar",
-    job: "UI/UX Designer",
-    image: "https://avatars.githubusercontent.com/MosiO1998",
-    links: [
-      {
-        github: "https://github.com/MosiO1998",
-      },
-    ],
-  },
-  {
-    name: "Mohamad Arshiya fardinfar",
-    job: "UI/UX Designer",
-    image: "https://avatars.githubusercontent.com/arshiya-shadow",
-    links: [
-      {
-        website: "https://fardinfar.ir/en.html",
-        linkedin: "https://www.linkedin.com/in/mohammad-arshiya-fardinfar",
-        github: "https://github.com/arshiya-shadow",
       },
     ],
   },
@@ -133,13 +102,15 @@ const team = [
     ],
   },
   {
-    name: "Iliya Asadi",
-    job: "Graphic Designer",
-    image: "https://avatars.githubusercontent.com/iliageek",
+    name: "M.Hasan Abedi",
+    job: "Contributor",
+    image:
+      "https://framagit.org/uploads/-/system/user/avatar/137591/avatar.png?width=192",
     links: [
       {
-        mastadon: "https://mastodon.social/@iliageek1",
-        github: "https://github.com/iliageek",
+        github: "https://github.com/mhabedii",
+        website: "https://mhabedi.ir",
+        linkedin: "https://linkedin.com/in/mhabedi",
       },
     ],
   },
@@ -212,16 +183,6 @@ const team = [
       {
         mastadon: "https://mas.to/@meshya",
         github: "https://github.com/meshya",
-      },
-    ],
-  },
-  {
-    name: "Aria Moradi",
-    job: "Contributor",
-    image: "https://avatars.githubusercontent.com/AriaMoradi",
-    links: [
-      {
-        github: "https://github.com/AriaMoradi",
       },
     ],
   },

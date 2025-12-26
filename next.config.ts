@@ -13,13 +13,13 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "picsum.photos",
+        hostname: "avatars.githubusercontent.com",
         port: "",
         pathname: "/**",
       },
       {
         protocol: "https",
-        hostname: "avatars.githubusercontent.com",
+        hostname: "framagit.org",
         port: "",
         pathname: "/**",
       },

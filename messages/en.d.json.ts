@@ -88,7 +88,8 @@ declare const messages: {
       "line1": "Do you have a problem?",
       "line2": {
         "part1": "Visit the",
-        "forum": "Forum"
+        "forum": "Forum",
+        "part2": ""
       }
     }
   },

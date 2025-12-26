@@ -3,10 +3,12 @@ import { Download } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const DownloadSection = () => {
   const locale = useLocale();
+  const t = useTranslations("DownloadSection");
+  
   return (
     <div className="container max-w-7xl mx-auto px-4">
       <div className="flex flex-col md:flex-row items-center md:items-center py-16 gap-10 md:gap-0">
@@ -15,19 +17,19 @@ const DownloadSection = () => {
             width={160}
             height={260}
             src={"/logo.svg"}
-            alt="logo-download"
+            alt={t("logoAlt")}
             className="w-36 sm:w-40 md:w-44 lg:w-48 h-auto"
           />
         </div>
 
         <div className="md:col-span-8 flex flex-col justify-center gap-6 md:gap-14 text-center md:text-left order-2 md:order-1 w-full">
           <h2 className="md:text-4xl text-3xl sm:text-5xl xl:text-6xl 2xl:text-7xl font-bold">
-            Try Parch GNU/Linux Now
+            {t("title")}
           </h2>
           <Link href={`/${locale}/download`}>
             <Button className="rounded-full text-[18px] bg-foreground text-background py-7 outline-2 outline-offset-2 outline-solid outline-black/45 dark:outline-white/45 px-5 w-fit mx-auto md:mx-0 transition-all duration-300">
               <Download />
-              Download for free
+              {t("downloadButton")}
             </Button>
           </Link>
         </div>

@@ -23,7 +23,7 @@ import {
   MoveUpRight,
   Sun,
 } from "lucide-react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -45,6 +45,7 @@ export default function Footer() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const t = useTranslations("Footer");
 
   const changeLanguage = (lang: "en" | "fa") => {
     if (!pathname) return;
@@ -157,27 +158,27 @@ export default function Footer() {
 
   const footerColumns = [
     {
-      title: "Product",
-      items: [{ label: "Download", href: "/download", internal: true }],
+      titleKey: "product",
+      items: [{ labelKey: "download", href: "/download", internal: true }],
     },
     {
-      title: "Resources",
+      titleKey: "resources",
       items: [
         {
-          label: "Forum",
+          labelKey: "forum",
           href: "https://forum.parchlinux.com",
           internal: false,
         },
-        { label: "Contributors", href: "/contributors", internal: true },
-        { label: "Blog", href: "https://blog.parchlinux.com", internal: false },
+        { labelKey: "contributors", href: "/contributors", internal: true },
+        { labelKey: "blog", href: "https://blog.parchlinux.com", internal: false },
       ],
     },
     {
-      title: "Team",
+      titleKey: "team",
       items: [
-        { label: "Technical", href: "/team", internal: true },
-        { label: "Design", href: "/team", internal: true },
-        { label: "Web", href: "/team", internal: true },
+        { labelKey: "technical", href: "/team", internal: true },
+        { labelKey: "design", href: "/team", internal: true },
+        { labelKey: "web", href: "/team", internal: true },
       ],
     },
   ];
@@ -212,26 +213,26 @@ export default function Footer() {
             </FooterColumn>
 
             {footerColumns.map((col) => (
-              <FooterColumn key={col.title}>
-                <h3 className="text-sm pt-1 font-semibold">{col.title}</h3>
+              <FooterColumn key={col.titleKey}>
+                <h3 className="text-sm pt-1 font-semibold">{t(`columns.${col.titleKey}.title`)}</h3>
                 {col.items.map((item) =>
                   item.internal ? (
                     <Link
-                      key={item.label}
+                      key={item.labelKey}
                       href={`/${locale}${item.href}`}
                       className="text-muted-foreground text-sm block hover:underline"
                     >
-                      {item.label}
+                      {t(`columns.${col.titleKey}.items.${item.labelKey}`)}
                     </Link>
                   ) : (
                     <Link
-                      key={item.label}
+                      key={item.labelKey}
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-muted-foreground text-sm block hover:underline"
                     >
-                      {item.label}
+                      {t(`columns.${col.titleKey}.items.${item.labelKey}`)}
                     </Link>
                   )
                 )}
@@ -239,13 +240,13 @@ export default function Footer() {
             ))}
             <span className="hidden">{theme}</span>
             <FooterColumn className="flex flex-col items-start md:items-end gap-2">
-              <Select onValueChange={changeLanguage} defaultValue="en">
+              <Select onValueChange={changeLanguage} defaultValue={locale}>
                 <SelectTrigger className="w-full rounded-full">
-                  <SelectValue placeholder="English" />
+                  <SelectValue placeholder={t("languageSelect.placeholder")} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="en">English</SelectItem>
-                  <SelectItem value="fa">Persian</SelectItem>
+                  <SelectItem value="en">{t("languageSelect.english")}</SelectItem>
+                  <SelectItem value="fa">{t("languageSelect.persian")}</SelectItem>
                 </SelectContent>
               </Select>
 
@@ -286,16 +287,16 @@ export default function Footer() {
               </ButtonGroup>
 
               <div className="mt-2 text-center md:text-right">
-                <p className="text-xs">Do you have a problem?</p>
+                <p className="text-xs">{t("problemMessage.line1")}</p>
                 <p className="flex gap-1 text-xs ">
-                  Visit the
+                  {t("problemMessage.line2.part1")}
                   <span className="flex text-parch">
                     <a
                       href="https://forum.parchlinux.com"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Forum
+                      {t("problemMessage.line2.forum")}
                     </a>
                     <MoveUpRight size={16} className="mt-0.5" />
                   </span>

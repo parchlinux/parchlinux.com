@@ -1,34 +1,33 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { CaseSensitive, ChartLine, Lock, Users } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const features = [
   {
     icon: Lock,
-    title: "Security",
-    description:
-      "No telemetry, automatic security updates, hardened configurations and privacy-respecting defaults.",
+    titleKey: "security",
+    descriptionKey: "securityDescription",
   },
   {
     icon: ChartLine,
-    title: "Performance",
-    description:
-      "Optimized for speed and efficiency, Parch runs smoothly on a wide range of hardware.",
+    titleKey: "performance",
+    descriptionKey: "performanceDescription",
   },
   {
     icon: Users,
-    title: "Community Centric",
-    description:
-      "One of the most vibrant Persian Linux communities with forum, Matrix rooms, wiki and constant contributions.",
+    titleKey: "communityCentric",
+    descriptionKey: "communityCentricDescription",
   },
   {
     icon: CaseSensitive,
-    title: "Optimized Fonts",
-    description:
-      "Beautiful optimized Persian fonts, full RTL layout, Jalali calendar, Persian keyboard and Firefox fixes from the first boot.",
+    titleKey: "optimizedFonts",
+    descriptionKey: "optimizedFontsDescription",
   },
 ];
 
 const IconSection = () => {
+  const t = useTranslations("IconSection");
+
   return (
     <div className="w-full max-w-360 mx-auto pt-16 pb-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -44,10 +43,10 @@ const IconSection = () => {
                   <IconComponent size={48} />
                 </div>
                 <h3 className="text-xl sm:text-2xl lg:text-xl font-semibold text-foreground">
-                  {feature.title}
+                  {t(feature.titleKey)}
                 </h3>
                 <p className="text-xs sm:text-sm lg:text-xs text-foreground/95 mx-auto leading-relaxed sm:max-w-[250px] lg:max-w-[200px] font-light">
-                  {feature.description}
+                  {t(feature.descriptionKey)}
                 </p>
               </CardContent>
             </Card>

@@ -1,13 +1,20 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const HeadSection = () => {
+  const t = useTranslations("HeadSection");
+
   return (
     <div className="container max-w-7xl mx-auto">
       <div className="grid grid-cols-12 mb-8">
         <div className="xl:col-span-7 sm:col-span-8 col-span-12 flex items-center sm:order-first order-last">
           <div className="flex flex-col xl:gap-7 lg:gap-5 gap-3 sm:items-start items-center">
             <h1 className="xl:text-[3.1rem] lg:text-4xl sm:text-[1.8rem] text-[1.85rem] font-extrabold xl:order-first">
-              We have a <span className="text-parch">ready-to-go</span> OS!
+              {t.rich("title", {
+                ready: (chunks) => <span className="text-parch">{chunks}</span>,
+              })}
             </h1>
             <div className="grid grid-cols-4 xl:gap-4 md:gap-2 sm:gap-5 gap-3 mb-1.5 xl:order-2 order-last 2xl:pr-30 xl:pr-32 sm:pr-16 w-full">
               <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-3">
@@ -19,7 +26,7 @@ const HeadSection = () => {
                   alt="install"
                 />
                 <h3 className="lg:text-xs sm:text-[10px] text-xs">
-                  Easy installation
+                  {t("features.easyInstallation")}
                 </h3>
               </div>
               <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-3">
@@ -31,10 +38,10 @@ const HeadSection = () => {
                   alt="rocket"
                 />
                 <h3 className="lg:text-xs sm:text-[10px] text-xs xl:block hidden">
-                  High-performance
+                  {t("features.highPerformance")}
                 </h3>
                 <h3 className="lg:text-xs sm:text-[10px] text-xs xl:hidden block">
-                  High-speed
+                  {t("features.highSpeed")}
                 </h3>
               </div>
               <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-3">
@@ -46,7 +53,7 @@ const HeadSection = () => {
                   alt="user"
                 />
                 <h3 className="lg:text-xs sm:text-[10px] text-xs">
-                  User-friendly UI
+                  {t("features.userFriendly")}
                 </h3>
               </div>
               <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-3">
@@ -58,21 +65,16 @@ const HeadSection = () => {
                   alt="arch"
                 />
                 <h3 className="lg:text-xs sm:text-[10px] text-xs">
-                  Powered by Arch
+                  {t("features.poweredByArch")}
                 </h3>
               </div>
             </div>
-            <p
-              className="text-justify font-light sm:w-5/6 sm:text-[0.99rem] text-xs xl:order-last sm:mb-0 mb-4"
-              style={{}}
-            >
-              ParchLinux, which stands for Persian Arch, is a Linux distribution
-              based on the popular and versatile{" "}
-              <span className="text-parch">Arch Linux</span>. It aims to provide
-              a streamlined, <span className="text-parch">user-friendly</span>{" "}
-              experience while maintaining the customizability and{" "}
-              <span className="text-parch">performance</span> that Arch Linux is
-              known for.
+            <p className="text-justify font-light sm:w-5/6 sm:text-[0.99rem] text-xs xl:order-last sm:mb-0 mb-4">
+              {t.rich("description", {
+                arch: (chunks) => <span className="text-parch">{chunks}</span>,
+                userFriendly: (chunks) => <span className="text-parch">{chunks}</span>,
+                performance: (chunks) => <span className="text-parch">{chunks}</span>,
+              })}
             </p>
           </div>
         </div>

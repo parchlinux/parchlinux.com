@@ -4,8 +4,25 @@ import { Button } from "@/components/ui/button";
 import downloads from "@/data/download";
 import { GitGraph, Github, GitPullRequest } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function Download() {
+  const t = useTranslations("DownloadPage");
+  
+  const translatedDownloads = downloads.map((download) => {
+    const key = download.title;
+    
+    return {
+      ...download,
+      title: t(`titles.${key}`),
+      description: t(`descriptions.${key}`),
+      links: download.links.map(link => ({
+        ...link,
+        title: t(`downloadTitles.${link.version.toLowerCase()}`)
+      }))
+    };
+  });
+
   return (
     <div className="container mx-auto max-w-7xl lg:px0 md:px-8 sm:px-6 px-4">
       <div className="flex sm:flex-row flex-col justify-center sm:text-start text-center items-center w-full sm:justify-between sm:border rounded-md px-8 py-3 mb-12">
@@ -17,9 +34,9 @@ export default function Download() {
         />
         <div className="flex sm:flex-row flex-col gap-3 items-center">
           <div className="flex flex-col gap-0.5">
-            <h1 className="xl:text-2xl text-lg font-bold">Latest Releases</h1>
+            <h1 className="xl:text-2xl text-lg font-bold">{t("latestReleases")}</h1>
             <h2 className="lg:text-base text-sm text-foreground/85">
-              This build was released on 2025-09-14
+              {t("buildReleased")} 2025-09-14
             </h2>
           </div>
           <div className="flex gap-3">
@@ -29,7 +46,7 @@ export default function Download() {
               size={"lg"}
             >
               <GitPullRequest />
-              <span>Pull Request</span>
+              <span>{t("pullRequest")}</span>
               <Badge className="bg-white/20 shadow text-white">#17508</Badge>
             </Button>
             <Button
@@ -38,7 +55,7 @@ export default function Download() {
               size={"lg"}
             >
               <GitGraph />
-              <span>Commit</span>
+              <span>{t("commit")}</span>
               <Badge className="bg-white/20 shadow text-white">335ed8d9</Badge>
             </Button>
             <Button
@@ -47,7 +64,7 @@ export default function Download() {
               size={"lg"}
             >
               <Github />
-              <span>Submitted by</span>
+              <span>{t("submittedBy")}</span>
               <Badge className="bg-white/20 shadow text-white">
                 Sohrab Behdani
               </Badge>
@@ -56,7 +73,7 @@ export default function Download() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-6">
-        {downloads.map((download, index) => (
+        {translatedDownloads.map((download, index) => (
           <DownloadCard
             key={index}
             logo={download.logo}

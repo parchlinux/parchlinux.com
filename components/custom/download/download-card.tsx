@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import type { DownloadCardProps } from "@/types";
 import { Download } from "lucide-react";

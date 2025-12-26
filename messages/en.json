@@ -143,5 +143,11 @@
   },
   "BlogSection": {
     "title": "Blog"
+  },
+  "TeamPage": {
+    "title": "Our team"
+  },
+  "ContributorsPage": {
+    "title": "Contributors"
   }
 }

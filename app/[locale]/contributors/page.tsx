@@ -1,11 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
 import contributors from "@/data/contributors";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function Contributors() {
+  const t = useTranslations("ContributorsPage");
   return (
     <div className="container max-w-7xl mx-auto px-4">
-      <h1 className="text-center text-3xl font-bold mb-12">Contributors</h1>
+      <h1 className="text-center text-3xl font-bold mb-12">{t("title")}</h1>
       <div className="grid grid-cols-4 gap-8">
         {contributors.map((contributor, index) => (
           <Card

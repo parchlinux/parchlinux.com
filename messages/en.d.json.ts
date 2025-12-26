@@ -146,6 +146,12 @@ declare const messages: {
   },
   "BlogSection": {
     "title": "Blog"
+  },
+  "TeamPage": {
+    "title": "Our team"
+  },
+  "ContributorsPage": {
+    "title": "Contributors"
   }
 };
 export default messages;

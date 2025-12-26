@@ -2,7 +2,7 @@ import React from "react";
 import ProfileCard from "../../../components/custom/team/team-card";
 import team from "@/data/team";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 interface TeamMember {
   name: string;
@@ -19,11 +19,12 @@ interface TeamMember {
 
 export default function App() {
   const locale = useLocale();
+  const t = useTranslations("TeamPage");
 
   return (
     <div className="container max-w-7xl mx-auto px-4">
       <div className="text-center mb-16">
-        <h1 className="text-center text-3xl font-bold mb-12">Our team</h1>
+        <h1 className="text-center text-3xl font-bold mb-12">{t("title")}</h1>
       </div>
 
       <div className="grid grid-cols-4 gap-6 mb-8">

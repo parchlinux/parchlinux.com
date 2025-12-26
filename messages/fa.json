@@ -143,5 +143,11 @@
   },
   "BlogSection": {
     "title": "بلاگ"
+  },
+  "TeamPage": {
+    "title": "تیم ما"
+  },
+  "ContributorsPage": {
+    "title": "مشارکت کنندگان"
   }
 }

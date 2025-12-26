@@ -15,11 +15,11 @@ export default function Download() {
 
     return {
       ...download,
-      title: t(`titles.${key}`),
-      description: t(`descriptions.${key}`),
+      title: t(`titles.${key}` as any),
+      description: t(`descriptions.${key}` as any),
       links: download.links.map((link) => ({
         ...link,
-        title: t(`downloadTitles.${link.version.toLowerCase()}`),
+        title: t(`downloadTitles.${link.version.toLowerCase()}` as any),
       })),
     };
   });

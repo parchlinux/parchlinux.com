@@ -1,4 +1,10 @@
-const contributors = [
+interface Contributor {
+  name: string;
+  id: string;
+  image?: string;
+}
+
+const contributors: Contributor[] = [
   // {
   //   name: "Ali lotfi",
   //   id: "@lotfi_ali",

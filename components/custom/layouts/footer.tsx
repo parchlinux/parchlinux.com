@@ -170,7 +170,11 @@ export default function Footer() {
           internal: false,
         },
         { labelKey: "contributors", href: "/contributors", internal: true },
-        { labelKey: "blog", href: "https://blog.parchlinux.com", internal: false },
+        {
+          labelKey: "blog",
+          href: "https://blog.parchlinux.com",
+          internal: false,
+        },
       ],
     },
     {
@@ -187,17 +191,20 @@ export default function Footer() {
     <footer className="w-full mt-auto pt-12 md:pb-8 pb-4">
       <div className="container mx-auto max-w-7xl px-6 md:px-8 flex flex-col md:flex-row justify-between gap-6">
         <FooterSect className="w-full">
-          <FooterContent className="flex flex-wrap justify-between gap-8 w-full">
-            <FooterColumn className="flex flex-col md:items-start items-center gap-2 sm:m-0 mx-auto">
+          <FooterContent className="lg:flex flex-wrap justify-between gap-8 w-full">
+            <FooterColumn className="lg:order-first order-last flex flex-col sm:items-start items-center gap-2 sm:m-0 mx-auto col-span-2">
               <div className="flex items-center gap-1">
                 <h3 className="text-xs">
-                  <a href="mailto:contact@parchlinux.com" className="underline">
+                  <Link
+                    href="mailto:contact@parchlinux.com"
+                    className="underline"
+                  >
                     contact@parchlinux.com
-                  </a>
+                  </Link>
                 </h3>
                 <ArrowUpRight size={16} />
               </div>
-              <div className="flex gap-4 mt-2">
+              <div className="flex md:gap-4 gap-3 mt-2">
                 {socials.map((social) => (
                   <Link
                     key={social.label}
@@ -211,10 +218,11 @@ export default function Footer() {
                 ))}
               </div>
             </FooterColumn>
-
             {footerColumns.map((col) => (
               <FooterColumn key={col.titleKey}>
-                <h3 className="text-sm pt-1 font-semibold">{t(`columns.${col.titleKey}.title`)}</h3>
+                <h3 className="text-sm pt-1 font-semibold">
+                  {t(`columns.${col.titleKey}.title`)}
+                </h3>
                 {col.items.map((item) =>
                   item.internal ? (
                     <Link
@@ -239,14 +247,18 @@ export default function Footer() {
               </FooterColumn>
             ))}
             <span className="hidden">{theme}</span>
-            <FooterColumn className="flex flex-col items-start md:items-end gap-2">
+            <FooterColumn className="sm:order-last order-first flex flex-col items-start gap-2 lg:w-fit w-full max-w-74 sm:col-span-1 col-span-2">
               <Select onValueChange={changeLanguage} defaultValue={locale}>
                 <SelectTrigger className="w-full rounded-full">
                   <SelectValue placeholder={t("languageSelect.placeholder")} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="en">{t("languageSelect.english")}</SelectItem>
-                  <SelectItem value="fa">{t("languageSelect.persian")}</SelectItem>
+                  <SelectItem value="en">
+                    {t("languageSelect.english")}
+                  </SelectItem>
+                  <SelectItem value="fa">
+                    {t("languageSelect.persian")}
+                  </SelectItem>
                 </SelectContent>
               </Select>
 
@@ -286,18 +298,18 @@ export default function Footer() {
                 </Button>
               </ButtonGroup>
 
-              <div className="mt-2 text-center md:text-right">
+              <div className="mt-2 text-center sm:text-right">
                 <p className="text-xs">{t("problemMessage.line1")}</p>
                 <p className="flex gap-1 text-xs ">
                   {t("problemMessage.line2.part1")}
                   <span className="flex text-parch">
-                    <a
+                    <Link
                       href="https://forum.parchlinux.com"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       {t("problemMessage.line2.forum")}
-                    </a>
+                    </Link>
                     <MoveUpRight size={16} className="mt-0.5" />
                   </span>
                 </p>

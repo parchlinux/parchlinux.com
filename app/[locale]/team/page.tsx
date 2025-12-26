@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileCard from "./ProfileCard";
+import ProfileCard from "../../../components/custom/team/team-card";
 import team from "@/data/team";
 import Link from "next/link";
 import { useLocale } from "next-intl";

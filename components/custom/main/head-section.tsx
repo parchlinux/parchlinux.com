@@ -11,7 +11,7 @@ const HeadSection = () => {
       <div className="grid grid-cols-12 mb-8">
         <div className="xl:col-span-7 sm:col-span-8 col-span-12 flex items-center sm:order-first order-last">
           <div className="flex flex-col xl:gap-7 lg:gap-5 gap-3 sm:items-start items-center">
-            <h1 className="xl:text-[3.1rem] lg:text-4xl sm:text-[1.8rem] text-[1.85rem] font-extrabold xl:order-first">
+            <h1 className="xl:text-[3.1rem] lg:text-4xl sm:text-[1.8rem] text-[1.6rem] font-extrabold xl:order-first">
               {t.rich("title", {
                 ready: (chunks) => <span className="text-parch">{chunks}</span>,
               })}
@@ -72,8 +72,12 @@ const HeadSection = () => {
             <p className="text-justify font-light sm:w-5/6 sm:text-[0.99rem] text-xs xl:order-last sm:mb-0 mb-4">
               {t.rich("description", {
                 arch: (chunks) => <span className="text-parch">{chunks}</span>,
-                userFriendly: (chunks) => <span className="text-parch">{chunks}</span>,
-                performance: (chunks) => <span className="text-parch">{chunks}</span>,
+                userFriendly: (chunks) => (
+                  <span className="text-parch">{chunks}</span>
+                ),
+                performance: (chunks) => (
+                  <span className="text-parch">{chunks}</span>
+                ),
               })}
             </p>
           </div>

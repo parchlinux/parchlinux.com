@@ -77,7 +77,7 @@ export default async function LocaleLayout({
                 <Header />
                 <div className="md:mt-32 mt-28 flex-1">{children}</div>
                 <Footer />
-                <div className="bg-grid-reverse z-[-1] absolute w-[150%] h-190 opacity-5 -bottom-85 -left-20 pointer-events-none" />
+                <div className="bg-grid-reverse z-[-1] absolute w-[150%] h-190 opacity-5 md:-bottom-85 bottom-0 -left-20 pointer-events-none" />
               </div>
             </SidebarProvider>
           </ThemeProvider>

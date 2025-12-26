@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 
 export default function SponsorsCarousel() {
   const t = useTranslations("SponsorsCarousel");
-  
+
   if (!sponsors || sponsors.length === 0) return null;
 
   return (
@@ -38,14 +38,14 @@ export default function SponsorsCarousel() {
       </div>
 
       <div className="flex justify-center mt-12">
-        <a href="mailto:community@parchlinux.com">
+        <Link href="mailto:contact@parchlinux.com">
           <Button
             size="lg"
-            className="text-lg flex flex-col items-center px-8 bg-parch p-6 rounded-full ring-secondary"
+            className="text-lg flex flex-col items-center px-8 bg-parch p-6 rounded-full ring-secondary text-white"
           >
-            <span>{t("becomeSponsor")}</span>
+            {t("becomeSponsor")}
           </Button>
-        </a>
+        </Link>
       </div>
     </div>
   );

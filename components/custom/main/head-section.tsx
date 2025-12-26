@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Handshake, Monitor, Rocket } from "lucide-react";
+import { SiArchlinux, SiLinux } from "@icons-pack/react-simple-icons";
 
 const HeadSection = () => {
   const t = useTranslations("HeadSection");
@@ -17,26 +19,14 @@ const HeadSection = () => {
               })}
             </h1>
             <div className="grid grid-cols-4 xl:gap-4 md:gap-2 sm:gap-5 gap-3 mb-1.5 xl:order-2 order-last 2xl:pe-30 xl:pe-32 sm:pe-16 w-full">
-              <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-3">
-                <Image
-                  className="lg:px-0 px-1"
-                  src={"/images/install.png"}
-                  width={30}
-                  height={30}
-                  alt="install"
-                />
+              <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-1.5">
+                <Monitor size={32} />
                 <h3 className="lg:text-xs sm:text-[10px] text-xs">
                   {t("features.easyInstallation")}
                 </h3>
               </div>
-              <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-3">
-                <Image
-                  className="lg:px-0 px-1"
-                  src={"/images/rocket.png"}
-                  width={30}
-                  height={30}
-                  alt="rocket"
-                />
+              <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-1.5">
+                <Rocket size={32} />
                 <h3 className="lg:text-xs sm:text-[10px] text-xs xl:block hidden">
                   {t("features.highPerformance")}
                 </h3>
@@ -44,26 +34,14 @@ const HeadSection = () => {
                   {t("features.highSpeed")}
                 </h3>
               </div>
-              <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-3">
-                <Image
-                  className="lg:px-0 px-1"
-                  src={"/images/user.png"}
-                  width={30}
-                  height={30}
-                  alt="user"
-                />
+              <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-1.5">
+                <Handshake size={32} />
                 <h3 className="lg:text-xs sm:text-[10px] text-xs">
                   {t("features.userFriendly")}
                 </h3>
               </div>
-              <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-3">
-                <Image
-                  className="lg:px-0 px-1"
-                  src={"/images/arch.png"}
-                  width={30}
-                  height={30}
-                  alt="arch"
-                />
+              <div className="flex sm:flex-col justify-center items-center sm:col-span-1 col-span-full w-full bg-secondary rounded-lg py-4 gap-1.5">
+                <SiArchlinux size={32} />
                 <h3 className="lg:text-xs sm:text-[10px] text-xs">
                   {t("features.poweredByArch")}
                 </h3>

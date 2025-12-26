@@ -38,7 +38,7 @@ export default function SponsorsCarousel() {
       </div>
 
       <div className="flex justify-center mt-12">
-        <Link href="mailto:contact@parchlinux.com">
+        <Link href="mailto:contact@parchlinux.com" target="_blank">
           <Button
             size="lg"
             className="text-lg flex flex-col items-center px-8 bg-parch p-6 rounded-full ring-secondary text-white"

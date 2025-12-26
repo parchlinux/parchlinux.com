@@ -59,7 +59,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
           />
           <HeroSection
             title={
-              <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-extrabold xl:leading-14 xl:text-nowrap">
+              <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-extrabold xl:leading-14 rtl:xl:text-nowrap">
                 {t.rich("chooseTitle", {
                   gnome: (chunks) => (
                     <span className="text-parch">{chunks}</span>
@@ -142,7 +142,6 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
         </div>
         <IconSection />
         <LinkSection />
-
         <SponsorsCarousel />
         <DownloadSection />
       </div>

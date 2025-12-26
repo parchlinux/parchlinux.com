@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Code2, Coffee, Github } from "lucide-react";
 import React from "react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 const LinkSection = () => {
   const t = useTranslations("LinkSection");
@@ -21,26 +22,43 @@ const LinkSection = () => {
                 size="lg"
                 variant="secondary"
                 className="md:col-span-4 col-span-6 rounded-full text-xs sm:text-[18px] py-6 sm:py-7 outline-2 outline-offset-2 outline-solid outline-secondary"
+                asChild
               >
-                <Github />
-                {t("sourceCode")}
+                <Link
+                  href={"https://github.com/parchlinux/parch-iso-plasma"}
+                  target="_blank"
+                >
+                  <Github />
+                  {t("sourceCode")}
+                </Link>
               </Button>
 
               <Button
                 size="lg"
                 variant="secondary"
                 className="md:w-fit md:col-span-4 col-span-6 rounded-full text-xs sm:text-[18px] py-6 sm:py-7 outline-2 outline-offset-2 outline-solid outline-secondary"
+                asChild
               >
-                <Coffee />
-                {t("donate")}
+                <Link
+                  href="https://daramet.com/parchlinux"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <Coffee />
+                  {t("donate")}
+                </Link>
               </Button>
               <Button
                 size="lg"
                 variant="secondary"
                 className="md:col-span-4 col-span-12 rounded-full text-[16px] sm:text-[18px] py-6  sm:py-7 outline-2 outline-offset-2 outline-solid outline-primary"
+                asChild
               >
-                <Code2 />
-                {t("joinTeam")}
+                <Link href="mailto:contact@parchlinux.com" target="_blank">
+                  <Code2 />
+                  {t("joinTeam")}
+                </Link>
               </Button>
             </div>
           </div>

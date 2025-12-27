@@ -37,7 +37,20 @@ export default function Header() {
       <div className="container flex xl:h-16 h-20 2xl:max-w-360 max-w-7xl 2xl:px-0 px-4 items-center justify-between mx-auto">
         <div className="flex items-center">
           <Link href={`/${locale}`} className="flex items-center space-x-3">
-            <Image src={"/logo-white.svg"} width={30} height={30} alt="logo" />
+            <Image
+              src={"/logo-white.svg"}
+              width={30}
+              height={30}
+              alt="logo-dark"
+              className="dark:block hidden"
+            />
+            <Image
+              src={"/logo.svg"}
+              width={20}
+              height={20}
+              alt="logo-light"
+              className="dark:hidden block"
+            />
             <span className="text-xl">{t("brandName")}</span>
           </Link>
         </div>

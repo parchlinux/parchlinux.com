@@ -85,7 +85,9 @@ const DownloadCard = ({
                     <h5 className="font-bold text-white text-sm mb-1.5">
                       {link.title}
                     </h5>
-                    <span className="text-xs w-fit">{t("size")}: {link.size}</span>
+                    <span className="text-xs w-fit">
+                      {t("size")}: {link.size}
+                    </span>
                     <span className="text-xs w-fit">
                       {t("buildDate")}: {link.date}
                     </span>
@@ -106,7 +108,7 @@ const DownloadCard = ({
             width={120}
             height={60}
             alt={title}
-            className="absolute bottom-0 right-0.5 sm:w-32 sm:h-40 w-40 h-56 z-10"
+            className="absolute bottom-0 right-0.5 sm:w-32 h-40 w-30 z-10"
           />
         )}
       </CardContent>

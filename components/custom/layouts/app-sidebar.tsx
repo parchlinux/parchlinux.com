@@ -52,7 +52,8 @@ export function AppSidebar() {
         <Button
           variant={"ghost"}
           onClick={toggleSidebar}
-          className="right-5 top-5 absolute z-50"
+          size={"icon"}
+          className="right-5 top-5 absolute z-50 hover:bg-gray-300 hover:text-black text-white"
         >
           <X className="w-6! h-6!" />
         </Button>
@@ -68,7 +69,7 @@ export function AppSidebar() {
                   >
                     <Link
                       href={item.url}
-                      className="justify-center hover:bg-transparent focus:bg-transparent"
+                      className="justify-center hover:bg-transparent focus:bg-transparent text-white"
                       target={item?.out ? "_blank" : "_self"}
                     >
                       <span className="text-xl">{item.title}</span>

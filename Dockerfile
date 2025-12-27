@@ -11,5 +11,7 @@ WORKDIR /app
 COPY --from=base /app/.next/standalone/app ./
 COPY --from=base /app/public ./public
 COPY --from=base /app/.next/static ./.next/static
+RUN chown -R bun:bun /app
+USER bun
 EXPOSE 3000
 CMD [ "bun","--bun","server.js" ]

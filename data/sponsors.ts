@@ -16,6 +16,6 @@ export const sponsors: Sponsor[] = [
     id: "2",
     name: "Electro",
     logo: "/images/sponsors/electro.png",
-    url: "https://https://electrotm.org/",
+    url: "https://electrotm.org",
   },
 ];

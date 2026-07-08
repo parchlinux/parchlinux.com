@@ -15,17 +15,17 @@ const downloads: DownloadItem[] = [
     hashs: [
       {
         version: "x64",
-        hash: "c29c85f0ac20e8ac78b19959a639b4f9",
+        hash: "8476893e34729afa705cd98954712187",
       },
     ],
     links: [
       {
         version: "x64",
         title: "x64",
-        size: "3.1 GiB",
-        date: formatDate("2025-11-26"),
+        size: "3.4 GiB",
+        date: formatDate("2026-07-08"),
         color: "parch-blue",
-        href: "https://mirror.parchlinux.ir/plasma/ParchLinux-plasma-latest.iso",
+        href: "https://mirror.parchlinux.ir/plasma/Parchlinux-plasma-latest.iso",
       },
     ],
   },
@@ -37,17 +37,17 @@ const downloads: DownloadItem[] = [
     hashs: [
       {
         version: "x64",
-        hash: "c3e86e45f19dc276a0d858bd7a64e5c5",
+        hash: "e26d97936ce3a874f0ae194e9fcf8b9b",
       },
     ],
     links: [
       {
         version: "x64",
         title: "x64",
-        size: "2.7 GiB",
-        date: formatDate("2025-11-26"),
+        size: "2.8 GiB",
+        date: formatDate("2026-07-08"),
         color: "parch-blue",
-        href: "https://mirror.parchlinux.ir/gnome/ParchLinux-gnome-latest.iso",
+        href: "https://mirror.parchlinux.ir/gnome/Parchlinux-gnome-latest.iso",
       },
     ],
   },

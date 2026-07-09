@@ -45,7 +45,7 @@ export default function Header() {
               className="dark:block hidden"
             />
             <Image
-              src={"/logo.svg"}
+              src={"/logo-dark.svg"}
               width={20}
               height={20}
               alt="logo-light"

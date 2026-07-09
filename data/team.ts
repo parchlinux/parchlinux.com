@@ -25,19 +25,7 @@ const team = [
       },
     ],
   },
-  // Software Engineer
-  {
-    name: "Amir Husayn Panahifar",
-    job: "Software Engineer",
-    image: "https://avatars.githubusercontent.com/u/58610475",
-    links: [
-      {
-        website: "https://panahifar.ir",
-        linkedin: "https://linkedin.com/in/panahifarah",
-        github: "https://github.com/panahifarah",
-      },
-    ],
-  },
+
   // Team Leader
   {
     name: "Erfan Arabi",
@@ -101,19 +89,7 @@ const team = [
       },
     ],
   },
-  {
-    name: "M.Hasan Abedi",
-    job: "Contributor",
-    image:
-      "https://framagit.org/uploads/-/system/user/avatar/137591/avatar.png?width=192",
-    links: [
-      {
-        github: "https://github.com/mhabedii",
-        website: "https://mhabedi.ir",
-        linkedin: "https://linkedin.com/in/mhabedi",
-      },
-    ],
-  },
+
   // Graphic/Web Designer
   {
     name: "Ali Lotfi",
@@ -127,18 +103,7 @@ const team = [
       },
     ],
   },
-  // Gitee Developer
-  {
-    name: "Gnkalk",
-    job: "Gitee Developer",
-    image: "https://avatars.githubusercontent.com/gnkalk",
-    links: [
-      {
-        mastadon: "https://toot.community/@gnkalk",
-        github: "https://github.com/gnkalk",
-      },
-    ],
-  },
+
   // Tools Developer
   {
     name: "Mohammad Parsa Mortazavi",

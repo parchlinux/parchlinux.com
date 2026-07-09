@@ -28,7 +28,7 @@ const LinkSection = () => {
                   href={"https://github.com/parchlinux/parch-iso-plasma"}
                   target="_blank"
                 >
-                  <Github />
+                  <Github aria-hidden="true" />
                   {t("sourceCode")}
                 </Link>
               </Button>
@@ -45,7 +45,7 @@ const LinkSection = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
-                  <Coffee />
+                  <Coffee aria-hidden="true" />
                   {t("donate")}
                 </Link>
               </Button>
@@ -78,6 +78,7 @@ const LinkSection = () => {
                   <Code2
                     stroke={`url(#gradient-code2)`}
                     className="drop-shadow-sm"
+                    aria-hidden="true"
                   />
                   {t("joinTeam")}
                 </Link>

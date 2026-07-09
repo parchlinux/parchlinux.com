@@ -16,16 +16,16 @@ declare const messages: {
   "Index": {
     "workTitle": "Do your daily <work>work</work> easily",
     "workDescription": "By providing you with the tools you need and simplifying the installation process and the complete repository alongside a personalized and beautiful desktop environment, Parch Linux can bring you a good experience of bringing together speed and personalization.",
-    "codingTitle": "<coding>Coding</coding> like a geek!",
+    "codingTitle": "<coding>Coding</coding> like a geek",
     "codingDescription": "All the tools you need for programming are available in Parch, and with just one command, you can download and install the desired program.",
-    "chooseTitle": "Choose which one you want! <gnome>Gnome</gnome> or <plasma>Plasma</plasma>?",
-    "chooseDescription": "ParchLinux officially supports two well-known desktop environments, Plasma and GNOME. You are free to work with whichever you feel most comfortable with.",
-    "updateTitle": "Always stay <update>up to date</update>!",
+    "chooseTitle": "Choose your perfect desktop environment",
+    "chooseDescription": "ParchLinux officially supports three desktop environments — Plasma, GNOME, and XFCE. You are free to work with whichever you feel most comfortable with.",
+    "updateTitle": "Always stay <update>up to date</update>",
     "updateDescription": "The packages in the ParchLinux are rolling and you always get the latest features without having to get a new version.",
-    "aurTitle": "Now you have <aur>AUR*</aur> power!",
+    "aurTitle": "Now you have <aur>AUR*</aur> power",
     "aurDescription": "More than 80,000 packages are placed in the huge repository of Arch users (AUR) and you will have no problem downloading the package.",
     "aurNote": "*Arch User Repository is a community-driven repository for Arch Linux users. It contains package descriptions (PKGBUILDs) that allow you to compile a package from source with makepkg and then install it via pacman.",
-    "pacmanTitle": "<pacman>Pacman</pacman> is ready to install your packages!",
+    "pacmanTitle": "<pacman>Pacman</pacman> is ready to install your packages",
     "pacmanDescription": "The package manager in Parch is ready to provide the best user experience for installing, updating, and managing system applications.",
     "desktopAlt": "ParchLinux Desktop"
   },
@@ -111,7 +111,7 @@ declare const messages: {
     },
     "descriptions": {
       "kde": "KDE is an international team co-operating on development and distribution of Free, Open Source Software for desktop and portable computing.",
-      "gnome": "GNOME is developed in collaboration with the wider free software community to create the best level software with GNOME depends.",
+      "gnome": "GNOME is developed in collaboration with the wider free software community to create a focused, elegant, and user-friendly desktop experience.",
       "xfce": "XFCE is a lightweight desktop environment for Unix-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly.",
       "raspberry": "Raspberry Pi is a series of small single-board computers with the best level software with GNOME depends."
     },

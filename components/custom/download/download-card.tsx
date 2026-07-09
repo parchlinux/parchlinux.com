@@ -1,9 +1,12 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import type { DownloadCardProps } from "@/types";
-import { Download } from "lucide-react";
+import { Check, Copy, Download } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 const DownloadCard = ({
   logo,
@@ -14,6 +17,14 @@ const DownloadCard = ({
   links,
 }: DownloadCardProps) => {
   const t = useTranslations("DownloadCard");
+  const [copiedIndex, setCopiedIndex] = useState<string | null>(null);
+
+  const copyHash = async (hash: string, version: string) => {
+    await navigator.clipboard.writeText(hash);
+    setCopiedIndex(version);
+    setTimeout(() => setCopiedIndex(null), 2000);
+  };
+
   return (
     <Card className="relative">
       <CardContent dir="ltr">
@@ -28,10 +39,12 @@ const DownloadCard = ({
         <div className="mb-4">
           <h3 className="text-lg font-bold mb-2 rtl:text-right">{t("hash")}</h3>
           <div className="space-y-2">
-            {hashs.map((hashItem, index) => (
+            {hashs.map((hashItem) => (
               <div
-                key={index}
-                className="flex items-center gap-2 bg-primary/15 p-2 rounded-md border-primary border"
+                key={hashItem.version}
+        className="flex items-center gap-2 bg-primary/15 p-2 rounded-md border-primary border cursor-pointer group"
+        onClick={() => copyHash(hashItem.hash, hashItem.version)}
+        title="Click to copy"
               >
                 <div
                   className={`flex items-center justify-center bg-primary text-black w-9 h-9 rounded font-bold text-xs ${
@@ -48,8 +61,15 @@ const DownloadCard = ({
                     <span>{hashItem.version}</span>
                   )}
                 </div>
-                <div className="text-xs font-mono truncate text-primary font-medium">
+                <div className="text-xs font-mono truncate text-primary font-medium flex-1">
                   {hashItem.hash}
+                </div>
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                  {copiedIndex === hashItem.version ? (
+                    <Check size={16} className="text-green-500" />
+                  ) : (
+                    <Copy size={16} className="text-primary" />
+                  )}
                 </div>
               </div>
             ))}
@@ -59,9 +79,9 @@ const DownloadCard = ({
         <div className="mb-4 w-60">
           <h3 className="text-lg font-bold mb-2">{t("download")}</h3>
           <div className="space-y-2">
-            {links.map((link, index) => (
+            {links.map((link) => (
               <Link
-                key={index}
+                key={link.version}
                 download
                 href={link.href}
                 className={`flex sm:flex-row flex-col w-fit bg-${link.color} rounded-md p-2.5 flex items-center gap-3 transition-all hover:opacity-80  `}
@@ -77,7 +97,7 @@ const DownloadCard = ({
                       link.version
                     )}
                   </div>
-                  <Download size={18} className="sm:hidden block" />
+                  <Download size={18} className="sm:hidden block" aria-hidden="true" />
                 </div>
 
                 <div className="flex flex-row text-left">
@@ -85,7 +105,9 @@ const DownloadCard = ({
                     <h5 className="font-bold text-white text-sm mb-1.5">
                       {link.title}
                     </h5>
-                    <span className="text-xs w-fit">{t("size")}: {link.size}</span>
+                    <span className="text-xs w-fit">
+                      {t("size")}: {link.size}
+                    </span>
                     <span className="text-xs w-fit">
                       {t("buildDate")}: {link.date}
                     </span>
@@ -94,6 +116,7 @@ const DownloadCard = ({
                   <Download
                     size={15}
                     className="sm:block hidden mt-auto mb-2.5 ms-1.5"
+                    aria-hidden="true"
                   />
                 </div>
               </Link>
@@ -106,8 +129,7 @@ const DownloadCard = ({
             width={120}
             height={60}
             alt={title}
-            className="absolute bottom-0 right-0.5 sm:w-32 sm:h-40 w-40 h-56 z-10"
-            unoptimized
+            className="absolute bottom-0 right-0.5 sm:w-32 h-40 w-30 z-10"
           />
         )}
       </CardContent>

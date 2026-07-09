@@ -35,7 +35,7 @@ const IconSection = () => {
           const IconComponent = feature.icon;
           return (
             <Card
-              key={index}
+              key={feature.titleKey}
               className="col-span-1 text-center border-0 shadow-none bg-transparent"
             >
               <CardContent className="p-5 space-y-4 flex flex-col items-center">
@@ -59,6 +59,7 @@ const IconSection = () => {
                     size={48}
                     stroke={`url(#gradient-${index})`}
                     className="drop-shadow-sm"
+                    aria-hidden="true"
                   />
                 </div>
                 <h3 className="text-xl sm:text-2xl lg:text-xl font-semibold text-foreground">

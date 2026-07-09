@@ -17,9 +17,10 @@ import {
 import { cn } from "@/lib/utils";
 import { ArrowUpRight, LaptopMinimal, Linkedin, Moon, Sun } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/theme-provider";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import {
   SiBluesky,
@@ -39,6 +40,11 @@ export default function Footer() {
   const router = useRouter();
   const pathname = usePathname();
   const t = useTranslations("Footer");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const changeLanguage = (lang: "en" | "fa") => {
     if (!pathname) return;
@@ -54,6 +60,7 @@ export default function Footer() {
         <SiYoutube
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -64,6 +71,7 @@ export default function Footer() {
         <SiPeertube
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -74,6 +82,7 @@ export default function Footer() {
         <SiMastodon
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -84,6 +93,7 @@ export default function Footer() {
         <SiThreads
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -94,6 +104,7 @@ export default function Footer() {
         <SiX
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -104,6 +115,7 @@ export default function Footer() {
         <Linkedin
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -114,6 +126,7 @@ export default function Footer() {
         <SiInstagram
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -124,6 +137,7 @@ export default function Footer() {
         <SiTelegram
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -134,6 +148,7 @@ export default function Footer() {
         <SiDiscord
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -144,6 +159,7 @@ export default function Footer() {
         <SiBluesky
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -195,7 +211,7 @@ export default function Footer() {
                     contact@parchlinux.com
                   </Link>
                 </h3>
-                <ArrowUpRight size={16} />
+                <ArrowUpRight size={16} aria-hidden="true" />
               </div>
               <div className="flex md:gap-4 gap-3 mt-2">
                 {socials.map((social) => (
@@ -239,7 +255,7 @@ export default function Footer() {
                 )}
               </FooterColumn>
             ))}
-            <span className="hidden">{theme}</span>
+            <span className="hidden" suppressHydrationWarning>{theme}</span>
             <FooterColumn className="sm:order-last order-first flex flex-col items-start gap-2 lg:w-fit w-full max-w-74 sm:col-span-1 col-span-2">
               <Select onValueChange={changeLanguage} defaultValue={locale}>
                 <SelectTrigger className="w-full rounded-full" dir="auto">
@@ -261,33 +277,33 @@ export default function Footer() {
                   size="icon"
                   className={cn(
                     "rounded-s-full border-e-0",
-                    theme === "system" && "bg-foreground! text-background!"
+                    mounted && theme === "system" && "bg-foreground! text-background!"
                   )}
                   onClick={() => setTheme("system")}
                 >
-                  <LaptopMinimal />
+                  <LaptopMinimal aria-hidden="true" />
                 </Button>
                 <Button
                   variant="outline"
                   size="icon"
                   className={cn(
                     "border-x-0",
-                    theme === "light" && "bg-foreground! text-background!"
+                    mounted && theme === "light" && "bg-foreground! text-background!"
                   )}
                   onClick={() => setTheme("light")}
                 >
-                  <Sun />
+                  <Sun aria-hidden="true" />
                 </Button>
                 <Button
                   variant="outline"
                   size="icon"
                   className={cn(
                     "rounded-e-full",
-                    theme === "dark" && "bg-foreground! text-background!"
+                    mounted && theme === "dark" && "bg-foreground! text-background!"
                   )}
                   onClick={() => setTheme("dark")}
                 >
-                  <Moon />
+                  <Moon aria-hidden="true" />
                 </Button>
               </ButtonGroup>
 
@@ -306,6 +322,7 @@ export default function Footer() {
                     <ArrowUpRight
                       size={16}
                       className="mt-0.5 text-foreground rtl:hidden"
+                      aria-hidden="true"
                     />
                   </span>
                   {t("problemMessage.line2.part2") &&

@@ -30,6 +30,22 @@ const contributors: Contributor[] = [
     id: "@MosiO1998",
     image: "https://avatars.githubusercontent.com/MosiO1998",
   },
+  {
+    name: "Amir Husayn Panahifar",
+    id: "@panahifarah",
+    image: "https://avatars.githubusercontent.com/u/58610475",
+  },
+  {
+    name: "M.Hasan Abedi",
+    id: "@mhabedii",
+    image:
+      "https://framagit.org/uploads/-/system/user/avatar/137591/avatar.png?width=192",
+  },
+  {
+    name: "Gnkalk",
+    id: "@gnkalk",
+    image: "https://avatars.githubusercontent.com/gnkalk",
+  },
 ];
 
 export default contributors;

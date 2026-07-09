@@ -20,6 +20,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import {
   SiBluesky,
@@ -39,6 +40,11 @@ export default function Footer() {
   const router = useRouter();
   const pathname = usePathname();
   const t = useTranslations("Footer");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const changeLanguage = (lang: "en" | "fa") => {
     if (!pathname) return;
@@ -261,7 +267,7 @@ export default function Footer() {
                   size="icon"
                   className={cn(
                     "rounded-s-full border-e-0",
-                    theme === "system" && "bg-foreground! text-background!"
+                    mounted && theme === "system" && "bg-foreground! text-background!"
                   )}
                   onClick={() => setTheme("system")}
                 >
@@ -272,7 +278,7 @@ export default function Footer() {
                   size="icon"
                   className={cn(
                     "border-x-0",
-                    theme === "light" && "bg-foreground! text-background!"
+                    mounted && theme === "light" && "bg-foreground! text-background!"
                   )}
                   onClick={() => setTheme("light")}
                 >
@@ -283,7 +289,7 @@ export default function Footer() {
                   size="icon"
                   className={cn(
                     "rounded-e-full",
-                    theme === "dark" && "bg-foreground! text-background!"
+                    mounted && theme === "dark" && "bg-foreground! text-background!"
                   )}
                   onClick={() => setTheme("dark")}
                 >

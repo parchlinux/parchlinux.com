@@ -17,7 +17,7 @@ import {
 import { cn } from "@/lib/utils";
 import { ArrowUpRight, LaptopMinimal, Linkedin, Moon, Sun } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/theme-provider";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -60,6 +60,7 @@ export default function Footer() {
         <SiYoutube
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -70,6 +71,7 @@ export default function Footer() {
         <SiPeertube
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -80,6 +82,7 @@ export default function Footer() {
         <SiMastodon
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -90,6 +93,7 @@ export default function Footer() {
         <SiThreads
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -100,6 +104,7 @@ export default function Footer() {
         <SiX
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -110,6 +115,7 @@ export default function Footer() {
         <Linkedin
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -120,6 +126,7 @@ export default function Footer() {
         <SiInstagram
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -130,6 +137,7 @@ export default function Footer() {
         <SiTelegram
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -140,6 +148,7 @@ export default function Footer() {
         <SiDiscord
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -150,6 +159,7 @@ export default function Footer() {
         <SiBluesky
           size={19}
           className="text-muted-foreground hover:text-white transition-colors"
+          aria-hidden="true"
         />
       ),
     },
@@ -201,7 +211,7 @@ export default function Footer() {
                     contact@parchlinux.com
                   </Link>
                 </h3>
-                <ArrowUpRight size={16} />
+                <ArrowUpRight size={16} aria-hidden="true" />
               </div>
               <div className="flex md:gap-4 gap-3 mt-2">
                 {socials.map((social) => (
@@ -271,7 +281,7 @@ export default function Footer() {
                   )}
                   onClick={() => setTheme("system")}
                 >
-                  <LaptopMinimal />
+                  <LaptopMinimal aria-hidden="true" />
                 </Button>
                 <Button
                   variant="outline"
@@ -282,7 +292,7 @@ export default function Footer() {
                   )}
                   onClick={() => setTheme("light")}
                 >
-                  <Sun />
+                  <Sun aria-hidden="true" />
                 </Button>
                 <Button
                   variant="outline"
@@ -293,7 +303,7 @@ export default function Footer() {
                   )}
                   onClick={() => setTheme("dark")}
                 >
-                  <Moon />
+                  <Moon aria-hidden="true" />
                 </Button>
               </ButtonGroup>
 
@@ -312,6 +322,7 @@ export default function Footer() {
                     <ArrowUpRight
                       size={16}
                       className="mt-0.5 text-foreground rtl:hidden"
+                      aria-hidden="true"
                     />
                   </span>
                   {t("problemMessage.line2.part2") &&

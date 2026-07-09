@@ -1,14 +1,14 @@
 FROM oven/bun:alpine AS base 
 
 WORKDIR /app
-ADD package.json .
-ADD bun.lock .
+COPY package.json .
+COPY bun.lock .
 RUN bun i
-ADD . .
+COPY . .
 RUN bun run build
 FROM oven/bun:alpine AS production
 WORKDIR /app
-COPY --from=base /app/.next/standalone/app ./
+COPY --from=base /app/.next/standalone/ ./
 COPY --from=base /app/public ./public
 COPY --from=base /app/.next/static ./.next/static
 RUN chown -R bun:bun /app

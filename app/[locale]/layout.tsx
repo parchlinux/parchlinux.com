@@ -38,9 +38,31 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata() {
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
   return {
     title: "Parch GNU/Linux",
+    description: "Parch Linux is a Persian Arch-based Linux distribution that provides a streamlined, user-friendly experience with full Persian language support.",
+    metadataBase: new URL("https://parchlinux.com"),
+    alternates: {
+      canonical: `https://parchlinux.com/${locale}`,
+      languages: {
+        en: "https://parchlinux.com/en",
+        fa: "https://parchlinux.com/fa",
+      },
+    },
+    openGraph: {
+      title: "Parch GNU/Linux",
+      description: "A Persian Arch-based Linux distribution — streamlined, user-friendly, and community-driven.",
+      url: `https://parchlinux.com/${locale}`,
+      siteName: "Parch GNU/Linux",
+      locale: locale === "fa" ? "fa_IR" : "en_US",
+      type: "website",
+    },
   };
 }
 
@@ -69,12 +91,7 @@ export default async function LocaleLayout({
         } antialiased relative overflow-x-hidden min-h-screen flex flex-col`}
       >
         <NextIntlClientProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
+          <ThemeProvider defaultTheme="system">
             <SidebarProvider defaultOpen={false}>
               <div className="relative min-h-screen flex flex-col overflow-hidden">
                 <AppSidebar />

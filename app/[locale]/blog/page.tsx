@@ -1,7 +1,7 @@
 import React from "react";
 import BlogSection from "@/components/custom/main/blog-section";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Search, Calendar, Tag } from "lucide-react";
+import { ArrowLeft, Search, Tag } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const BlogPage = () => {
@@ -26,10 +26,11 @@ const BlogPage = () => {
               <h1 className="text-3xl font-bold">Blog</h1>
             </div>
             <div className="relative w-80">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" aria-hidden="true" />
               <input
                 type="text"
                 placeholder="Search articles..."
+                aria-label="Search articles"
                 className="flex h-10 w-full rounded-full border border-input bg-background px-10 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               />
             </div>
@@ -42,7 +43,7 @@ const BlogPage = () => {
             <Badge
               key={category}
               variant={category === "All" ? "default" : "outline"}
-              className="px-4 py-2 cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="px-4 py-2"
             >
               {category}
             </Badge>
@@ -64,7 +65,7 @@ const BlogPage = () => {
           <div className="lg:col-span-1 space-y-6">
             <div className="bg-card rounded-lg p-6 border">
               <h3 className="font-semibold mb-4 flex items-center gap-2">
-                <Tag className="w-4 h-4" />
+                <Tag className="w-4 h-4" aria-hidden="true" />
                 Popular Tags
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -80,7 +81,6 @@ const BlogPage = () => {
                   <Badge
                     key={tag}
                     variant="secondary"
-                    className="cursor-pointer"
                   >
                     {tag}
                   </Badge>
@@ -97,6 +97,7 @@ const BlogPage = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
+                  aria-label="Email for newsletter"
                   className="flex h-10 w-full rounded-full border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 />
                 <Button className="w-full rounded-full bg-parch">

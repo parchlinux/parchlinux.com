@@ -49,7 +49,7 @@ export default function Download() {
               className="flex xl:flex-row flex-col xl:h-10 h-fit py-2 sm:py-3 rounded-lg text-white hover:no-underline bg-primary text-xs sm:text-sm"
               size={"lg"}
             >
-              <GitPullRequest className="w-3 h-3 sm:w-4 sm:h-4" />
+              <GitPullRequest className="w-3 h-3 sm:w-4 sm:h-4" aria-hidden="true" />
               <span>{t("pullRequest")}</span>
               <Badge className="bg-white/20 shadow text-white text-xs">
                 {releaseInfo.pullRequestNumber}
@@ -60,7 +60,7 @@ export default function Download() {
               className="flex xl:flex-row flex-col xl:h-10 h-fit py-2 sm:py-3 rounded-lg text-white hover:no-underline bg-parch-blue shadow-parch-blue shadow-sm text-xs sm:text-sm"
               size={"lg"}
             >
-              <GitGraph className="w-3 h-3 sm:w-4 sm:h-4" />
+              <GitGraph className="w-3 h-3 sm:w-4 sm:h-4" aria-hidden="true" />
               <span>{t("commit")}</span>
               <Badge className="bg-white/20 shadow text-white text-xs">
                 {releaseInfo.commitHash}
@@ -71,7 +71,7 @@ export default function Download() {
               className="flex xl:flex-row flex-col xl:h-10 h-fit py-2 sm:py-3 rounded-lg text-white hover:no-underline bg-parch-purple text-xs sm:text-sm"
               size={"lg"}
             >
-              <Github className="w-3 h-3 sm:w-4 sm:h-4" />
+              <Github className="w-3 h-3 sm:w-4 sm:h-4" aria-hidden="true" />
               <span>{t("submittedBy")}</span>
               <Badge className="bg-white/20 shadow text-white text-xs">
                 {releaseInfo.submittedBy}
@@ -81,9 +81,9 @@ export default function Download() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-6">
-        {translatedDownloads.map((download, index) => (
+        {translatedDownloads.map((download) => (
           <DownloadCard
-            key={index}
+            key={download.logo}
             logo={download.logo}
             title={download.title}
             description={download.description}

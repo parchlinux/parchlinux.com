@@ -28,12 +28,12 @@ export default function App() {
       </div>
 
       <div className="grid grid-cols-4 gap-6 mb-8">
-        {team.map((member: TeamMember, index: number) => {
+        {team.map((member: TeamMember) => {
           const links = member.links[0] || {};
 
           return (
             <ProfileCard
-              key={index}
+              key={member.name}
               name={member.name}
               role={member.job}
               image={member.image}

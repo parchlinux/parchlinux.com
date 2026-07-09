@@ -46,8 +46,8 @@ export default function Header() {
             />
             <Image
               src={"/logo-dark.svg"}
-              width={20}
-              height={20}
+              width={30}
+              height={30}
               alt="logo-light"
               className="dark:hidden block"
             />
@@ -112,7 +112,7 @@ export default function Header() {
                 className="flex items-center gap-2"
               >
                 {t("donate")}
-                <Coffee className="text-muted" />
+                <Coffee className="text-muted" aria-hidden="true" />
               </Link>
             </Button>
 

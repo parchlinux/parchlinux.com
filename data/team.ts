@@ -136,9 +136,7 @@ const team = [
     links: [
       {
         github: "https://github.com/daradege",
-      },
-      {
-        website: "https://daradege.top",
+        website: "https://daradege.top"
       },
     ],
   },
@@ -169,6 +167,19 @@ const team = [
     links: [
       {
         github: "https://github.com/abdor1",
+      },
+    ],
+  },
+  {
+    name: "Soroush Alinia",
+    job: "Contributor",
+    image: "https://avatars.githubusercontent.com/u/199381946?v=4",
+    links: [
+      {
+        github: "https://github.com/soroushalinia",
+        website: "https://soroushalinia.ir",
+        twitter: "https://x.com/xero_dl",
+        linkedin: "https://linkedin.com/in/soroushalinia",
       },
     ],
   },

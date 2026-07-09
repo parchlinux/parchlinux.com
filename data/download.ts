@@ -55,7 +55,7 @@ const downloads: DownloadItem[] = [
     logo: "/images/download/xfce.png",
     title: "xfce",
     description: "xfce",
-    image: "",
+    image: "/images/download/xfce-desktop.png",
     hashs: [
       {
         version: "x64",

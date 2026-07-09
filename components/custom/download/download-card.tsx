@@ -107,6 +107,7 @@ const DownloadCard = ({
             height={60}
             alt={title}
             className="absolute bottom-0 right-0.5 sm:w-32 sm:h-40 w-40 h-56 z-10"
+            unoptimized
           />
         )}
       </CardContent>

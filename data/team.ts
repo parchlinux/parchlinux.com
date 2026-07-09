@@ -54,7 +54,7 @@ const team = [
 
   // UI/UX Designer
   {
-    name: "Mohamad Arshiya fardinfar",
+    name: "Mohammad Arshiya fardinfar",
     job: "UI/UX Designer",
     image: "https://avatars.githubusercontent.com/arshiya-shadow",
     links: [
@@ -131,11 +131,44 @@ const team = [
   },
   {
     name: "Ali Safamanesh",
-    job: "Tools Developer",
-    image: "https://avatars.githubusercontent.com/u/136700107",
+    job: "Tools & XFCE Iso Developer",
+    image: "https://avatars.githubusercontent.com/u/136700107?v=4",
     links: [
       {
-        github: "https://github.com/nulltuxa",
+        github: "https://github.com/daradege",
+      },
+      {
+        website: "https://daradege.top",
+      },
+    ],
+  },
+  {
+    name: "Amirhosein Ashkani",
+    job: "Software engineer",
+    image: "https://avatars.githubusercontent.com/u/155793844",
+    links: [
+      {
+        github: "https://avatars.githubusercontent.com/u/155793844",
+      },
+    ],
+  },
+  {
+    name: "Parviz",
+    job: "Contributor",
+    image: "https://avatars.githubusercontent.com/u/230838397",
+    links: [
+      {
+        github: "https://github.com/parvizsudo",
+      },
+    ],
+  },
+  {
+    name: "Abdorrahman iran Nezhad",
+    job: "Software engineer,Video & Photo Editor",
+    image: "https://avatars.githubusercontent.com/u/214778140",
+    links: [
+      {
+        github: "https://github.com/abdor1",
       },
     ],
   },

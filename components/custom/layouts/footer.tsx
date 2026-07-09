@@ -239,7 +239,7 @@ export default function Footer() {
                 )}
               </FooterColumn>
             ))}
-            <span className="hidden">{theme}</span>
+            <span className="hidden" suppressHydrationWarning>{theme}</span>
             <FooterColumn className="sm:order-last order-first flex flex-col items-start gap-2 lg:w-fit w-full max-w-74 sm:col-span-1 col-span-2">
               <Select onValueChange={changeLanguage} defaultValue={locale}>
                 <SelectTrigger className="w-full rounded-full" dir="auto">

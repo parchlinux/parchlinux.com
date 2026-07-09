@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Coffee } from "lucide-react";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -10,9 +11,15 @@ import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
   const locale = useLocale();
   const { isMobile } = useSidebar();
   const t = useTranslations("Header");
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +44,7 @@ export default function Header() {
       <div className="container flex xl:h-16 h-20 2xl:max-w-360 max-w-7xl 2xl:px-0 px-4 items-center justify-between mx-auto">
         <div className="flex items-center">
           <Link href={`/${locale}`} className="flex items-center space-x-3">
-            <Image src={"/logo-white.svg"} width={30} height={30} alt="logo" />
+            <Image src={mounted && resolvedTheme === "dark" ? "/logo-white.svg" : "/logo.svg"} width={30} height={30} alt="logo" />
             <span className="text-xl">{t("brandName")}</span>
           </Link>
         </div>

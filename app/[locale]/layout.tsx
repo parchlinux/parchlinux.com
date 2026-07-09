@@ -59,6 +59,7 @@ export default async function LocaleLayout({
       className="h-full overflow-x-hidden"
       lang={locale}
       dir={locale === "en" ? "ltr" : "rtl"}
+      suppressHydrationWarning
     >
       <body
         className={`${

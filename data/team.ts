@@ -25,19 +25,7 @@ const team = [
       },
     ],
   },
-  // Software Engineer
-  {
-    name: "Amir Husayn Panahifar",
-    job: "Software Engineer",
-    image: "https://avatars.githubusercontent.com/u/58610475",
-    links: [
-      {
-        website: "https://panahifar.ir",
-        linkedin: "https://linkedin.com/in/panahifarah",
-        github: "https://github.com/panahifarah",
-      },
-    ],
-  },
+
   // Team Leader
   {
     name: "Erfan Arabi",
@@ -66,7 +54,7 @@ const team = [
 
   // UI/UX Designer
   {
-    name: "Mohamad Arshiya fardinfar",
+    name: "Mohammad Arshiya fardinfar",
     job: "UI/UX Designer",
     image: "https://avatars.githubusercontent.com/arshiya-shadow",
     links: [
@@ -101,19 +89,7 @@ const team = [
       },
     ],
   },
-  {
-    name: "M.Hasan Abedi",
-    job: "Contributor",
-    image:
-      "https://framagit.org/uploads/-/system/user/avatar/137591/avatar.png?width=192",
-    links: [
-      {
-        github: "https://github.com/mhabedii",
-        website: "https://mhabedi.ir",
-        linkedin: "https://linkedin.com/in/mhabedi",
-      },
-    ],
-  },
+
   // Graphic/Web Designer
   {
     name: "Ali Lotfi",
@@ -127,18 +103,7 @@ const team = [
       },
     ],
   },
-  // Gitee Developer
-  {
-    name: "Gnkalk",
-    job: "Gitee Developer",
-    image: "https://avatars.githubusercontent.com/gnkalk",
-    links: [
-      {
-        mastadon: "https://toot.community/@gnkalk",
-        github: "https://github.com/gnkalk",
-      },
-    ],
-  },
+
   // Tools Developer
   {
     name: "Mohammad Parsa Mortazavi",
@@ -166,11 +131,55 @@ const team = [
   },
   {
     name: "Ali Safamanesh",
-    job: "Tools Developer",
-    image: "https://avatars.githubusercontent.com/u/136700107",
+    job: "Tools & XFCE Iso Developer",
+    image: "https://avatars.githubusercontent.com/u/136700107?v=4",
     links: [
       {
-        github: "https://github.com/nulltuxa",
+        github: "https://github.com/daradege",
+        website: "https://daradege.top"
+      },
+    ],
+  },
+  {
+    name: "Amirhosein Ashkani",
+    job: "Software engineer",
+    image: "https://avatars.githubusercontent.com/u/155793844",
+    links: [
+      {
+        github: "https://avatars.githubusercontent.com/u/155793844",
+      },
+    ],
+  },
+  {
+    name: "Parviz",
+    job: "Contributor",
+    image: "https://avatars.githubusercontent.com/u/230838397",
+    links: [
+      {
+        github: "https://github.com/parvizsudo",
+      },
+    ],
+  },
+  {
+    name: "Abdorrahman iran Nezhad",
+    job: "Software engineer,Video & Photo Editor",
+    image: "https://avatars.githubusercontent.com/u/214778140",
+    links: [
+      {
+        github: "https://github.com/abdor1",
+      },
+    ],
+  },
+  {
+    name: "Soroush Alinia",
+    job: "Contributor",
+    image: "https://avatars.githubusercontent.com/u/199381946?v=4",
+    links: [
+      {
+        github: "https://github.com/soroushalinia",
+        website: "https://soroushalinia.ir",
+        twitter: "https://x.com/xero_dl",
+        linkedin: "https://linkedin.com/in/soroushalinia",
       },
     ],
   },

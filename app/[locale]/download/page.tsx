@@ -40,7 +40,7 @@ export default function Download() {
               {t("latestReleases")}
             </h1>
             <h2 className="lg:text-base text-sm text-foreground/85">
-              {t("buildReleased")} 2025-09-14
+              {t("buildReleased")} 2026-07-09
             </h2>
           </div>
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3">

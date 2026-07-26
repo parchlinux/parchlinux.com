@@ -198,3 +198,31 @@
   background-size: contain;
   transform: rotate(369.13deg);
 }
+
+[dir="rtl"] p,
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] span,
+[dir="rtl"] div {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+}
+
+[dir="rtl"] .text-justify {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+[dir="rtl"] .container,
+[dir="rtl"] .max-w-7xl,
+[dir="rtl"] .mx-auto {
+  overflow: hidden;
+  word-wrap: break-word;
+}

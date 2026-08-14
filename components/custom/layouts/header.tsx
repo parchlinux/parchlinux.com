@@ -36,7 +36,7 @@ export default function Header() {
     >
       <div className="container flex xl:h-16 h-20 2xl:max-w-360 max-w-7xl 2xl:px-0 px-4 items-center justify-between mx-auto">
         <div className="flex items-center">
-          <Link href={`/${locale}`} className="flex items-center space-x-3">
+          <Link href={`/${locale}`} className="flex items-center gap-3">
             <Image
               src={"/logo-white.svg"}
               width={30}
@@ -55,7 +55,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <nav className="hidden md:flex items-center xl:space-x-8 space-x-4">
+        <nav className="hidden md:flex items-center gap-4 xl:gap-8">
           <Link
             href="https://forum.parchlinux.com/"
             target="_blank"
@@ -81,9 +81,7 @@ export default function Header() {
             {t("contributors")}
           </Link>
           <Link
-            href="https://blog.parchlinux.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`/${locale}/blog`}
             className="text-sm font-medium hover:text-foreground/50 transition-colors"
           >
             {t("blog")}
@@ -99,7 +97,7 @@ export default function Header() {
         {isMobile ? (
           <SidebarTrigger />
         ) : (
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center gap-3">
             <Button
               variant={"secondary"}
               className="rounded-full bg-accent-foreground hover:bg-accent-foreground/80 text-muted"

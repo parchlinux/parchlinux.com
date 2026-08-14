@@ -181,8 +181,8 @@ export default function Footer() {
         { labelKey: "contributors", href: "/contributors", internal: true },
         {
           labelKey: "blog",
-          href: "https://blog.parchlinux.com",
-          internal: false,
+          href: "/blog",
+          internal: true,
         },
       ],
     },
@@ -255,7 +255,6 @@ export default function Footer() {
                 )}
               </FooterColumn>
             ))}
-            <span className="hidden" suppressHydrationWarning>{theme}</span>
             <FooterColumn className="sm:order-last order-first flex flex-col items-start gap-2 lg:w-fit w-full max-w-74 sm:col-span-1 col-span-2">
               <Select onValueChange={changeLanguage} defaultValue={locale}>
                 <SelectTrigger className="w-full rounded-full" dir="auto">
@@ -307,7 +306,7 @@ export default function Footer() {
                 </Button>
               </ButtonGroup>
 
-              <div className="mt-2 text-center sm:text-right">
+              <div className="mt-2 text-center sm:text-start">
                 <p className="text-xs">{t("problemMessage.line1")}</p>
                 <p className="flex gap-1 text-xs ">
                   {t("problemMessage.line2.part1")}

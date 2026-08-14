@@ -1,115 +1,64 @@
-import React from "react";
-import BlogSection from "@/components/custom/main/blog-section";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft, Search, Tag } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import BlogExplorer from "@/components/custom/blog/blog-explorer";
+import { getBlogCopy } from "@/components/custom/blog/blog-copy";
+import { getAllPosts } from "@/lib/blog";
+import { Metadata } from "next";
 
-const BlogPage = () => {
-  const categories = [
-    "All",
-    "Event",
-    "Update",
-    "Tutorial",
-    "Community",
-    "News",
-  ];
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const fa = locale === "fa";
+  return {
+    title: fa ? "بلاگ پارچ گنو/لینوکس" : "Parch GNU/Linux Blog",
+    description: fa
+      ? "خبرها، راهنماهای فنی و نوشته‌های جامعه پارچ گنو/لینوکس."
+      : "Release stories, technical guides and community writing from Parch GNU/Linux.",
+    alternates: {
+      canonical: `https://parchlinux.com/${locale}/blog`,
+      languages: {
+        fa: "https://parchlinux.com/fa/blog",
+        en: "https://parchlinux.com/en/blog",
+      },
+    },
+    openGraph: {
+      type: "website",
+      url: `https://parchlinux.com/${locale}/blog`,
+      title: fa ? "بلاگ پارچ گنو/لینوکس" : "Parch GNU/Linux Blog",
+    },
+  };
+}
+
+export default async function BlogPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const posts = getAllPosts(locale);
+  const copy = getBlogCopy(locale);
 
   return (
-    <div className="min-h-screen bg-background">
-      <header className="border-b">
-        <div className="container max-w-7xl mx-auto py-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <Button variant="ghost" size="icon" className="rounded-full">
-                <ArrowLeft className="w-5 h-5" />
-              </Button>
-              <h1 className="text-3xl font-bold">Blog</h1>
-            </div>
-            <div className="relative w-80">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" aria-hidden="true" />
-              <input
-                type="text"
-                placeholder="Search articles..."
-                aria-label="Search articles"
-                className="flex h-10 w-full rounded-full border border-input bg-background px-10 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-              />
-            </div>
+    <main className="blog-page pb-12 sm:pb-20">
+      <section className="container mx-auto max-w-7xl px-4 pb-10 pt-4 sm:px-6 sm:pb-14 md:px-8 lg:pt-8">
+        <div className="relative mx-auto max-w-5xl text-center">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1.5 text-xs font-medium text-muted-foreground shadow-sm backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_14px_rgba(33,199,150,.9)]" />
+            {copy.eyebrow}
           </div>
+          <h1 className="text-balance text-[2.5rem] font-extrabold leading-[1.16] tracking-tight sm:text-5xl lg:text-[4.4rem] lg:leading-[1.05]">
+            {copy.titleStart}{" "}
+            <span className="text-parch">{copy.titleAccent}</span>{" "}
+            {copy.titleEnd}
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
+            {copy.intro}
+          </p>
         </div>
-      </header>
-      <main className="container max-w-7xl mx-auto py-8">
-        <div className="flex flex-wrap gap-2 mb-8">
-          {categories.map((category) => (
-            <Badge
-              key={category}
-              variant={category === "All" ? "default" : "outline"}
-              className="px-4 py-2"
-            >
-              {category}
-            </Badge>
-          ))}
-        </div>
+      </section>
 
-        <BlogSection />
-
-        <div className="flex justify-center mt-12">
-          <Button variant="outline" className="rounded-full px-8 py-2">
-            Load More Articles
-          </Button>
-        </div>
-      </main>
-
-      <aside className="container max-w-7xl mx-auto pb-12">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          <div className="lg:col-span-3"></div>
-          <div className="lg:col-span-1 space-y-6">
-            <div className="bg-card rounded-lg p-6 border">
-              <h3 className="font-semibold mb-4 flex items-center gap-2">
-                <Tag className="w-4 h-4" aria-hidden="true" />
-                Popular Tags
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "Gaming",
-                  "Steam",
-                  "Tutorial",
-                  "Update",
-                  "Community",
-                  "Design",
-                  "Development",
-                ].map((tag) => (
-                  <Badge
-                    key={tag}
-                    variant="secondary"
-                  >
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h3 className="font-semibold mb-2">Subscribe to Newsletter</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                Get the latest updates and news directly in your inbox.
-              </p>
-              <div className="space-y-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  aria-label="Email for newsletter"
-                  className="flex h-10 w-full rounded-full border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                />
-                <Button className="w-full rounded-full bg-parch">
-                  Subscribe
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </div>
+      <BlogExplorer posts={posts} locale={locale} />
+    </main>
   );
-};
-
-export default BlogPage;
+}

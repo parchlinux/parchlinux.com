@@ -13,12 +13,10 @@ type ThemeContextValue = {
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
 function getSystemTheme(): "light" | "dark" {
-  if (typeof window === "undefined") return "light";
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 
 function getStoredTheme(): Theme {
-  if (typeof window === "undefined") return "system";
   try {
     const stored = localStorage.getItem("theme");
     if (stored === "light" || stored === "dark" || stored === "system") return stored;

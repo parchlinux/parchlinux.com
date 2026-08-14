@@ -37,8 +37,7 @@ export function AppSidebar() {
     },
     {
       title: t("blog"),
-      url: "https://blog.parchlinux.com/",
-      out: true,
+      url: `/${locale}/blog`,
     },
     {
       title: t("team"),
@@ -53,7 +52,7 @@ export function AppSidebar() {
           variant={"ghost"}
           onClick={toggleSidebar}
           size={"icon"}
-          className="right-5 top-5 absolute z-50 hover:bg-gray-300 hover:text-black text-white"
+          className="end-5 top-5 absolute z-50 hover:bg-gray-300 hover:text-black text-white"
         >
           <X className="w-6! h-6!" />
         </Button>

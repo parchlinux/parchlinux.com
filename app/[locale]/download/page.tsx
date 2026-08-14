@@ -25,7 +25,7 @@ export default function Download() {
   });
 
   return (
-    <div className="container mx-auto max-w-7xl lg:px0 md:px-8 sm:px-6 px-4">
+    <div className="container mx-auto max-w-7xl lg:px-0 md:px-8 sm:px-6 px-4">
       <div className="flex sm:flex-row flex-col justify-center sm:text-start text-center items-center w-full md:gap-4 gap-2 sm:border rounded-md px-4 sm:px-6 md:px-8 py-3 mb-12">
         <Image
           src={"/images/download/parch-box.png"}

@@ -63,7 +63,7 @@ const HeadSection = () => {
         <div className="xl:col-span-5 sm:col-span-4 col-span-12">
           <div className="flex sm:justify-end justify-center">
             <Image
-              className="hidden sm:block 2xl:hidden lg:px-0 px-1 translate-x-20"
+              className="hidden sm:block 2xl:hidden lg:px-0 px-1 ltr:translate-x-20 rtl:-translate-x-20"
               src={"/images/bg-md.png"}
               width={700}
               height={800}

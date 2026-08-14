@@ -33,7 +33,7 @@ const TeamCard = ({
 }: TeamCardProps) => {
   return (
     <Card className="lg:col-span-1 sm:col-span-2 col-span-4 relative gap-3.5 w-full rounded-lg bg-secondary border-0">
-      <CardHeader className="text-left gap-0">
+      <CardHeader className="text-start gap-0">
         <CardHeader className="text-[1.15rem] font-bold tracking-snug p-0 gap-0">
           {name}
         </CardHeader>
@@ -50,7 +50,7 @@ const TeamCard = ({
             className="w-full h-full object-cover rounded-lg"
           />
 
-          <div className="absolute right-0 bg-secondary p-2 rounded-tl-2xl flex gap-1.5 -bottom-1">
+          <div className="absolute end-0 bg-secondary p-2 rounded-ts-2xl flex gap-1.5 -bottom-1">
             {socialLinks.mastodon && socialLinks.mastodon !== "#" && (
               <Link
                 href={socialLinks.mastodon}

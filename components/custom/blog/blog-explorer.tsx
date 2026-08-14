@@ -5,7 +5,6 @@ import { ArrowUpRight, Clock3, Rss, Search, Sparkles, X } from "lucide-react";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { getBlogCopy } from "./blog-copy";
-import Image from "next/image";
 
 function formatDate(date: string, locale: string) {
   return new Intl.DateTimeFormat(locale === "fa" ? "fa-IR" : "en-US", {
@@ -34,20 +33,10 @@ function PostVisual({
   }
 
   return (
-    <div
-      className={`blog-post-visual blog-post-visual--abstract ${className}`}
-      aria-hidden="true"
-    >
+    <div className={`blog-post-visual blog-post-visual--abstract ${className}`} aria-hidden="true">
       <div className="blog-orbit blog-orbit--one" />
       <div className="blog-orbit blog-orbit--two" />
-      <div className="blog-visual-mark">
-        <Image
-          src={"/logo-white.svg"}
-          width={50}
-          height={50}
-          className="w-full h-full object-cover rounded-lg w-6 h-6"
-        />
-      </div>
+      <div className="blog-visual-mark">P</div>
     </div>
   );
 }
@@ -65,11 +54,8 @@ export default function BlogExplorer({
 
   const featured = posts.find((post) => post.featured) ?? posts[0];
   const categories = useMemo(
-    () => [
-      copy.all,
-      ...Array.from(new Set(posts.map((post) => post.category))),
-    ],
-    [posts, copy.all],
+    () => [copy.all, ...Array.from(new Set(posts.map((post) => post.category)))],
+    [posts, copy.all]
   );
 
   const filtered = useMemo(() => {
@@ -102,10 +88,7 @@ export default function BlogExplorer({
               </div>
 
               <div className="max-w-3xl">
-                <Link
-                  href={`/${locale}/blog/${featured.slug}`}
-                  className="group block"
-                >
+                <Link href={`/${locale}/blog/${featured.slug}`} className="group block">
                   <h2 className="text-balance text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-[3.25rem] lg:leading-[1.08]">
                     {featured.title}
                   </h2>
@@ -129,10 +112,7 @@ export default function BlogExplorer({
             </div>
 
             <div className="relative min-h-[280px] p-4 lg:col-span-5 lg:p-5">
-              <PostVisual
-                post={featured}
-                className="h-full min-h-[280px] rounded-[1.5rem]"
-              />
+              <PostVisual post={featured} className="h-full min-h-[280px] rounded-[1.5rem]" />
             </div>
           </div>
         </section>
@@ -146,9 +126,7 @@ export default function BlogExplorer({
               {copy.archive}
             </div>
             <h2 className="text-2xl font-bold sm:text-3xl">{copy.latest}</h2>
-            <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">
-              {copy.latestHint}
-            </p>
+            <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">{copy.latestHint}</p>
           </div>
 
           <div className="relative w-full lg:w-[360px]">
@@ -199,24 +177,14 @@ export default function BlogExplorer({
               <article
                 key={post.slug}
                 className={`blog-story-card group relative overflow-hidden rounded-[1.6rem] border border-border/70 bg-card/65 p-3 ${
-                  index === 0 && filtered.length > 2
-                    ? "md:col-span-2 xl:col-span-1"
-                    : ""
+                  index === 0 && filtered.length > 2 ? "md:col-span-2 xl:col-span-1" : ""
                 }`}
               >
-                <Link
-                  href={`/${locale}/blog/${post.slug}`}
-                  className="flex h-full flex-col"
-                >
-                  <PostVisual
-                    post={post}
-                    className="aspect-[16/10] rounded-[1.15rem]"
-                  />
+                <Link href={`/${locale}/blog/${post.slug}`} className="flex h-full flex-col">
+                  <PostVisual post={post} className="aspect-[16/10] rounded-[1.15rem]" />
                   <div className="flex flex-1 flex-col px-2 pb-3 pt-5 sm:px-3">
                     <div className="mb-3 flex items-center gap-2 text-xs text-muted-foreground">
-                      <span className="font-medium text-primary">
-                        {post.category}
-                      </span>
+                      <span className="font-medium text-primary">{post.category}</span>
                       <span>•</span>
                       <span>{formatDate(post.date, locale)}</span>
                     </div>
@@ -261,12 +229,8 @@ export default function BlogExplorer({
         <div className="blog-newsletter-grid" aria-hidden="true" />
         <div className="relative z-10 flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-bold sm:text-3xl">
-              {copy.newsletterTitle}
-            </h2>
-            <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
-              {copy.newsletterText}
-            </p>
+            <h2 className="text-2xl font-bold sm:text-3xl">{copy.newsletterTitle}</h2>
+            <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">{copy.newsletterText}</p>
           </div>
           <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
             <span className="rounded-full border border-border bg-background/70 px-4 py-2">

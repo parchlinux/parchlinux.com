@@ -1,11 +1,11 @@
 ---
 title: "تغییرات پارچ لینوکس روی شاخه Next تا به امروز"
-description: "امروز از نخستین نسخه‌ی آزمایشی پارچ لینوکس با کدنام آرش رونمایی می‌کنیم. این نسخه حاصل بازنگری جدی در معماری، وابستگی‌ها، و تجربه‌ی کاربری توزیع است و مسیری را که پارچ از این پس طی خواهد کرد، مشخص می‌نماید. پارچ نکست چیست؟ پارچ نکست یک پروف"
+description: "بررسی تحولات معماری و پروفایل‌های کاربری در نسخه آزمایشی پارچ نکست با تمرکز بر ارتقای عملکرد، پایداری و بازطراحی نصاب."
 date: "2026-05-18T18:00:02Z"
 category: "اطلاعیه‌ها"
 tags: ["آرچ لینوکس", "بازطراحی", "پارچ", "پارچ لینوکس", "پارچ نکست", "جامعه"]
 author: "sohrab"
-image: "https://blog.parchlinux.com/wp-content/uploads/2026/05/keyboard-model-1024x546.png"
+image: "/blog/fa/parch-next/cover.png"
 featured: false
 draft: false
 ---
@@ -65,13 +65,13 @@ draft: false
 
 ### نگاهی به نصب‌کننده‌ی جدید
 
-![](https://blog.parchlinux.com/wp-content/uploads/2026/05/keyboard-model-1024x546.png)   ![](https://blog.parchlinux.com/wp-content/uploads/2026/05/keyboard-layout-1024x546.png)   ![](https://blog.parchlinux.com/wp-content/uploads/2026/05/region-1024x546.png)   ![](https://blog.parchlinux.com/wp-content/uploads/2026/05/language-1024x546.png)   ![](https://blog.parchlinux.com/wp-content/uploads/2026/05/summery-1-1024x546.png)   ![](https://blog.parchlinux.com/wp-content/uploads/2026/05/timezone-1024x546.png)   ![](https://blog.parchlinux.com/wp-content/uploads/2026/05/users-1024x546.png)   ![](https://blog.parchlinux.com/wp-content/uploads/2026/05/welcome-1024x546.png)
+![keyboard model 1024x546](/blog/fa/parch-next/cover.png)   ![keyboard layout 1024x546](/blog/fa/parch-next/01-keyboard-layout-1024x546.png)   ![region 1024x546](/blog/fa/parch-next/02-region-1024x546.png)   ![language 1024x546](/blog/fa/parch-next/03-language-1024x546.png)   ![summery 1 1024x546](/blog/fa/parch-next/04-summery-1-1024x546.png)   ![timezone 1024x546](/blog/fa/parch-next/05-timezone-1024x546.png)   ![users 1024x546](/blog/fa/parch-next/02-users-1024x546.png)   ![welcome 1024x546](/blog/fa/parch-next/07-welcome-1024x546.png)
 
 ## فروم پارچ در روزهای قطعی
 
 در دوران قطعی‌های اینترنت، فروم پارچ لینوکس به فضایی برای همراهی کاربران تبدیل شد. آنچه در آن روزها در فروم جریان داشت، چیزی فراتر از پشتیبانی فنی بود.
 
-![](https://blog.parchlinux.com/wp-content/uploads/2026/05/image-801x1024.png)
+![image 801x1024](/blog/fa/parch-next/08-image-801x1024.png)
 
 >
 

@@ -1,6 +1,6 @@
 ---
 title: "New releases of Parch Linux 23/07/2025"
-description: "We’re excited to announce the latest releases of Parch Linux! This is the final version of Parch to ship with mkinitcpio. What’s new: - Updated to the latest Linux kernel - X11 session removed from both Plasma and GNOME editions - Plasma ho"
+description: "Announcement and download links for the latest Parch Linux ISO releases featuring updated Plasma and GNOME desktop environments."
 date: "2025-07-23T10:41:16Z"
 category: "releases"
 tags: ["Parch", "ParchLinux"]

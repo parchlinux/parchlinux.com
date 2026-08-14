@@ -1,11 +1,11 @@
 ---
 title: "This month in Parch: Parch in motion"
-description: "It’s been a while since our last proper update on the Parch Linux blog, and we owe you an apology for that. Development, testing, and a few unexpected hurdles have kept us busy, and we let our posts slide. We’re sorry for the gap and deeply"
+description: "A comprehensive monthly update detailing new Parch Linux desktop editions, mobile builds, Docker images, and system tools."
 date: "2025-10-20T14:45:02Z"
 category: "Blog"
 tags: ["Arch Linux", "ARM Linux", "Docker", "endof10", "Enterprise Linux", "GTK4", "Linux Distribution", "Linux Gaming", "Mobile Linux", "Open Source", "Parch Linux", "postmarketOS", "Rust", "WSL", "XFCE", "Zen Browser"]
 author: "sohrab"
-image: "https://blog.parchlinux.com/wp-content/uploads/2025/10/XFCE-1024x493.jpg"
+image: "/blog/en/this-month-in-parch-parch-in-motion/cover.jpg"
 featured: false
 draft: false
 ---
@@ -17,7 +17,7 @@ It’s been a while since our last proper update on the Parch Linux blog, and we
 
 The Parch Linux XFCE Beta, developed by Amir Hussein Panahifar, delivers a lightweight desktop environment for users who need efficiency without complexity. XFCE is built for speed, and this beta enhances it with faster boot times and lower memory usage. On a mid-range system, like a 2017 laptop with 8GB of RAM, you’re at the desktop in under 30 seconds, ready to work. Amir optimized the panel for easy tweaks adding launchers or system monitors is a drag-and-drop affair and improved support for high-DPI screens. A tester running it on older hardware noted smooth performance with apps like Firefox and GIMP open together, a task that bogged down heavier distros. Since its early 2025 debut, we’ve pushed four updates, fixing issues like graphical glitches on some AMD GPUs. There’s still work to do minor font scaling issues persist on certain Intel graphics but we’re targeting a stable release soon, with plans to include an experimental XFCE Wayland Session Powered by labwc too.
 
-![](https://blog.parchlinux.com/wp-content/uploads/2025/10/XFCE-1024x493.jpg)
+![XFCE 1024x493](/blog/en/this-month-in-parch-parch-in-motion/cover.jpg)
 
 ### Docker Edition
 
@@ -27,14 +27,14 @@ Parch Linux Docker, also led by Amir Hussein Panahifar, is tailored for develope
 
 The Parch Linux WSL port, another of Amir’s efforts, brings Arch’s power to Windows Subsystem for Linux (WSL2). It lets Windows users run a full Parch environment, including pacman and AUR access, without leaving their desktop. Terminal workflows are seamless, and graphical apps work via X11 forwarding. A data analyst described using it on Windows 11 to run Python scripts with newer libraries than Ubuntu WSL offered. We’ve addressed quirks like file permission syncing between Windows and Linux, with helper scripts in the installer. With Windows 10’s end, this port offers a smooth entry to Parch, and we’re planning to Add it into Microsoft Store in 2026.
 
-![](https://blog.parchlinux.com/wp-content/uploads/2025/10/wsl-1024x575.jpg)
+![wsl 1024x575](/blog/en/this-month-in-parch-parch-in-motion/01-wsl-1024x575.jpg)
 
 ### ParchDE (Custom OpenBox Session)
 
 Parch Linux with ParchDE provides a custom OpenBox session for users who want a lightweight, flexible desktop. OpenBox’s minimal design is enhanced with Parch-specific features like pre-set keybindings and a menu that prioritizes recent apps, plus visuals inspired by Persian art. Community feedback led to fixes for crashes with certain window managers, rolled out in August 2025. We’re developing modular extensions, like window tiling, to make it even more customizable.
 This version is still WIP
 
-![](https://blog.parchlinux.com/wp-content/uploads/2025/10/ParchDE-1024x610.jpg)
+![ParchDE 1024x610](/blog/en/this-month-in-parch-parch-in-motion/02-parchde-1024x610.jpg)
 
 ### ARM Comeback
 
@@ -46,7 +46,7 @@ Parch Linux Mobile (codename Damavand) now runs on the PocoPhone F1. Using the S
 
 we use postmarketOS upstream for its kernel and configurations. It’s not ready for daily use yet since most features do not work but it’s functional. We’re refining power management and plan to test more devices in the coming months.
 
-![](https://blog.parchlinux.com/wp-content/uploads/2025/10/mobile-493x1024.jpg)
+![mobile 493x1024](/blog/en/this-month-in-parch-parch-in-motion/03-mobile-493x1024.jpg)
 
 ### Immutable (WIP)
 
@@ -68,7 +68,7 @@ This Version is still WIP and it is going to be released in year 2026.
 
 Dorood, built by Amir Hussein Panahifar in libadwaita/GTK4, Is shown on the first start and would help users to install the Parch Gnu/Linux on their systems.
 
-![](https://blog.parchlinux.com/wp-content/uploads/2025/10/dorood-1024x783.png)
+![dorood 1024x783](/blog/en/this-month-in-parch-parch-in-motion/04-dorood-1024x783.png)
 
 ### Parch Bootstrapper
 
@@ -80,13 +80,13 @@ Mirrorman, also in libadwaita/GTK4, manages mirrors smarter than simple-reflecto
 
 it has a ping system and a section for Changing pacman Settings.
 
-![](https://blog.parchlinux.com/wp-content/uploads/2025/10/mirrorman1-1024x576.jpg)   ![](https://blog.parchlinux.com/wp-content/uploads/2025/10/mirrorman2-1024x576.jpg)   ![](https://blog.parchlinux.com/wp-content/uploads/2025/10/mirrorman3-1024x576.jpg)   ![](https://blog.parchlinux.com/wp-content/uploads/2025/10/mirrorman4-1024x712.jpg)
+![mirrorman1 1024x576](/blog/en/this-month-in-parch-parch-in-motion/05-mirrorman1-1024x576.jpg)   ![mirrorman2 1024x576](/blog/en/this-month-in-parch-parch-in-motion/06-mirrorman2-1024x576.jpg)   ![mirrorman3 1024x576](/blog/en/this-month-in-parch-parch-in-motion/07-mirrorman3-1024x576.jpg)   ![mirrorman4 1024x712](/blog/en/this-month-in-parch-parch-in-motion/08-mirrorman4-1024x712.jpg)
 
 ### Parch QuickStart
 
 Parch QuickStart is another GTK4/ADW application in development, and it's aimed squarely at newcomers. One of the biggest challenges for people new to distributions like Parch is figuring out how to install applications and enable additional repositories. The learning curve can be steep, and the documentation scattered. QuickStart streamlines this process, providing a guided interface for common tasks like enabling the AUR, installing popular applications, and configuring additional software sources. It's the bridge between "I just installed Parch" and "I have a working system configured the way I want it."
 
-![](https://blog.parchlinux.com/wp-content/uploads/2025/10/Quickstart1-1024x783.jpg)   ![](https://blog.parchlinux.com/wp-content/uploads/2025/10/Quickstart2-1024x783.jpg)   ![](https://blog.parchlinux.com/wp-content/uploads/2025/10/Quickstart3-1024x783.jpg)   ![](https://blog.parchlinux.com/wp-content/uploads/2025/10/Quickstart4-1024x783.jpg)
+![Quickstart1 1024x783](/blog/en/this-month-in-parch-parch-in-motion/09-quickstart1-1024x783.jpg)   ![Quickstart2 1024x783](/blog/en/this-month-in-parch-parch-in-motion/10-quickstart2-1024x783.jpg)   ![Quickstart3 1024x783](/blog/en/this-month-in-parch-parch-in-motion/11-quickstart3-1024x783.jpg)   ![Quickstart4 1024x783](/blog/en/this-month-in-parch-parch-in-motion/12-quickstart4-1024x783.jpg)
 
 ### Parch Driver Manager
 
@@ -94,7 +94,7 @@ We're building Parch Driver Manager using ADW and GTK4 to address one of Linux's
 
 This program is still WIP and would be released in 2026.
 
-![](https://blog.parchlinux.com/wp-content/uploads/2025/10/driver-manager-1024x547.png)
+![driver manager 1024x547](/blog/en/this-month-in-parch-parch-in-motion/13-driver-manager-1024x547.png)
 
 ### Parch Store AKA. Pastor
 
@@ -104,7 +104,7 @@ we are planning to add support for web applications and integration with f-droid
 
 Here are some mock-ups of The Pastor Design
 
-![](https://blog.parchlinux.com/wp-content/uploads/2025/10/mockup-1024x665.jpg)   ![](https://blog.parchlinux.com/wp-content/uploads/2025/10/mockup2-1024x665.jpg)   ![](https://blog.parchlinux.com/wp-content/uploads/2025/10/mockup3-1024x665.jpg)
+![mockup 1024x665](/blog/en/this-month-in-parch-parch-in-motion/14-mockup-1024x665.jpg)   ![mockup2 1024x665](/blog/en/this-month-in-parch-parch-in-motion/15-mockup2-1024x665.jpg)   ![mockup3 1024x665](/blog/en/this-month-in-parch-parch-in-motion/16-mockup3-1024x665.jpg)
 
 ## Core
 

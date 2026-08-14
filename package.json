@@ -19,10 +19,10 @@
     "@radix-ui/react-tooltip": "^1.2.12",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "highlight.js": "^11.12.0",
     "lucide-react": "^0.562.0",
     "next": "^16.2.10",
     "next-intl": "^4.13.1",
-
     "react": "19.2.7",
     "react-dom": "19.2.7",
     "tailwind-merge": "^3.6.0"

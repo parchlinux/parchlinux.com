@@ -1,15 +1,15 @@
 ---
 title: "انتشار نسخه جدید پارچ لینوکس با بهبودهای چشمگیر"
-description: "!https://blog.parchlinux.com/wp-content/uploads/2025/11/image-3.png تیم پارچ مفتخر است تا نگارش جدید این توزیع را مورخ ۳ آذرماه ۱۴۰۴ معرفی و منتشر کند. نکته مهم: اگر از قبل کاربر پارچ لینوکس هستید، نیازی به دانلود مجدد ایزو ندارید. کافی است"
+description: "معرفی نگارش آذرماه ۱۴۰۴ پارچ لینوکس شامل ارتقاء به پلاسما ۶.۵، معرفی MirrorMan و دَستور، رفع ایرادات و والپیپرهای تازه."
 date: "2025-11-24T19:21:25Z"
 category: "رلیز"
 tags: []
 author: "sohrab"
-image: "https://blog.parchlinux.com/wp-content/uploads/2025/11/image-3.png"
+image: "/blog/fa/new-release-2025-11-24/cover.png"
 featured: false
 draft: false
 ---
-![](https://blog.parchlinux.com/wp-content/uploads/2025/11/image-3.png)
+![image 3](/blog/fa/new-release-2025-11-24/cover.png)
 
 تیم پارچ مفتخر است تا نگارش جدید این توزیع را مورخ ۳ آذرماه ۱۴۰۴ معرفی و منتشر کند.
 
@@ -27,12 +27,12 @@ draft: false
 
 برای نصب MirrorMan:
 
-```
+```bash
 sudo pacman -Sy
 sudo pacman -S mirrorman
 ```
 
-![](https://blog.parchlinux.com/wp-content/uploads/2025/11/image-1-1024x576.png)
+![image 1 1024x576](/blog/fa/new-release-2025-11-24/01-image-1-1024x576.png)
 
 ## ارتقاء به پلاسما ۶.۵.۰
 
@@ -48,19 +48,19 @@ sudo pacman -S mirrorman
 
 برای نصب دستور:
 
-```
+```bash
 sudo pacman -S dastore
 ```
 
 از علی صفامنش عزیز برای توسعه برنامه دستور تشکر می‌کنیم.
 
-![](https://blog.parchlinux.com/wp-content/uploads/2025/11/image-2-1024x717.png)
+![image 2 1024x717](/blog/fa/new-release-2025-11-24/02-image-2-1024x717.png)
 
 ## مجموعه والپیپرهای جدید
 
 والپیپرهای پیش‌فرض پارچ به‌روزرسانی و بهینه‌سازی شده‌اند تا با سبک بصری این نسخه هماهنگی بیشتری داشته باشند. این تصاویر زمینه با دقت انتخاب شده‌اند تا زیبایی و حس تازه‌ای به محیط کاری شما بدهند.
 
-![](https://blog.parchlinux.com/wp-content/uploads/2025/11/wallpaper-2-1024x576.jpg)   ![](https://blog.parchlinux.com/wp-content/uploads/2025/11/wallpaper-3-1024x576.jpg)   ![](https://blog.parchlinux.com/wp-content/uploads/2025/11/wallpaper-4-1024x576.jpg)
+![wallpaper 2 1024x576](/blog/fa/new-release-2025-11-24/03-wallpaper-2-1024x576.jpg)   ![wallpaper 3 1024x576](/blog/fa/new-release-2025-11-24/04-wallpaper-3-1024x576.jpg)   ![wallpaper 4 1024x576](/blog/fa/new-release-2025-11-24/05-wallpaper-4-1024x576.jpg)
 
 ## رفع مشکل سازگاری GRUB
 
@@ -72,7 +72,7 @@ sudo pacman -S dastore
 
 همچنین بسته فونت آراد نیز به مخزن پارچ اضافه شده و می‌توانید آن را نصب کنید:
 
-```
+```bash
 pacman -S parch-emoji-ios-arad
 ```
 
@@ -80,7 +80,7 @@ pacman -S parch-emoji-ios-arad
 
 سایت پارچ با رفع مشکلات جزئی از قدیم به‌روز شد. همچنین یک مخزن جایگزین در دسترس قرار گرفته است. اگر با مشکل دسترسی به مخزن مواجه هستید، می‌توانید نشانی زیر را در ابتدای فایل `/etc/pacman.d/parch-mirrors` قرار دهید:
 
-```
+```ini
 Server = https://mirror.parchlinux.ir/$repo/$arch/
 ```
 

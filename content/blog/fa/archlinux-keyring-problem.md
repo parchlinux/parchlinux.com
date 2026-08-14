@@ -1,11 +1,11 @@
 ---
 title: "علت خرابی کلیدهای آرچ در پارچ چه بود؟"
-description: "یکی از مشکلاتی که بعد از انتقال مخازن رخ داد، خراب شدن کلیدهای آرچ در پارچ بود که در نوع خودش عجیب و قابل ملاحظه بود. در این پست بلاگ پارچ ما بررسی می‌کنیم که چرا این مشکل رخ داده و در آینده چطور از اون پیشگیری می‌کنیم. چرا این مشکل رخ داد؟"
+description: "بررسی علت خرابی کلیدهای آرچ پس از ادغام مخازن در پارچ و ارائه راهکار ساده برای حل کامل مشکل و بازسازی کلیدها."
 date: "2025-08-10T08:17:21Z"
 category: "اطلاعیه‌ها"
 tags: ["gpg problem", "Parch", "آرچ"]
 author: "sohrab"
-image: "https://blog.parchlinux.com/wp-content/uploads/2025/08/pacman-init-1024x238.jpg"
+image: "/blog/fa/archlinux-keyring-problem/cover.jpg"
 featured: false
 draft: false
 ---
@@ -22,14 +22,14 @@ draft: false
 
 بعد از به‌روزرسانی بسته parchlinux-keyring روی مخازن کاربرا مونده بود که باعث میشد تا سرویس سیستم‌دی مربوط به پک‌من pacman-init دچار خطا بشه و عملیات بازسازی کلیدها رو که در مرحله بوت انجام میده ناقص بمونه که در نهایت منجر به کلیدهای ناقص می‌شد و در هر راه‌اندازی مجدد کلیدها رو ناقص می‌کرد.
 
-![مشکل pacman-init سرویس](https://blog.parchlinux.com/wp-content/uploads/2025/08/pacman-init-1024x238.jpg)
+![مشکل pacman-init سرویس](/blog/fa/archlinux-keyring-problem/cover.jpg)
 
 ### راه حل رفع این مشکل در پارچ
 
 راه حلی که برای رفع این مشکل وجود داره حذف parchlinux-keyring
 و بازسازی مجدد کلیدهاست، برای این مورد می‌تونید از دستورات زیر استفاده کنید:
 
-```
+```ini
 sudo pacman -Rdd parchlinux-keyring
 sudo rm -rf /etc/pacman.d/gnupg
 sudo pacman-key --init

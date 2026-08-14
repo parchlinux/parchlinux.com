@@ -1,6 +1,6 @@
 ---
 title: "A Linux Distribution That Leaves No One Behind"
-description: "Imagine a blind user wanting to install an operating system on their laptop, with no one sitting beside them to explain where to click on the screen. In today's Linux world, this is almost impossible. No Linux distribution, Persian-speaking"
+description: "An introduction to the Parch accessibility project aimed at providing built-in screen readers, Persian speech support, and inclusive tools."
 date: "2026-08-11T06:37:14Z"
 category: "Blog"
 tags: ["Arch Linux", "Open Source", "Parch Linux"]

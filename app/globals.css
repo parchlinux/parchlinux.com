@@ -437,6 +437,13 @@
   text-decoration: underline;
   text-decoration-color: color-mix(in oklab, var(--primary) 35%, transparent);
   text-underline-offset: 0.22em;
+  unicode-bidi: isolate;
+}
+
+.blog-prose a.inline-link-ltr,
+.blog-prose a[dir="ltr"] {
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .blog-prose strong {
@@ -444,36 +451,88 @@
   font-weight: 750;
 }
 
-.blog-prose code:not(pre code) {
+.blog-prose code:not(pre code),
+.inline-code {
   border: 1px solid var(--border);
   border-radius: 0.45rem;
   background: var(--secondary);
   padding: 0.12rem 0.4rem;
   color: var(--foreground);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 0.88em;
-  direction: ltr;
-  unicode-bidi: isolate;
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate !important;
+  display: inline-block;
 }
 
-.blog-prose pre {
-  position: relative;
-  overflow-x: auto;
-  margin: 2rem 0;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 1rem;
-  background: #08111f;
-  padding: 1.25rem;
-  color: #dce7f4;
-  direction: ltr;
-  text-align: left;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.04);
+.codeblock-container {
+  direction: ltr !important;
+  text-align: left !important;
 }
 
-.blog-prose pre code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.88rem;
-  line-height: 1.8;
+.codeblock-container * {
+  direction: ltr;
+}
+
+.codeblock-pre code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  direction: ltr !important;
+  text-align: left !important;
+  white-space: pre;
+  tab-size: 2;
+}
+
+/* Highlight.js Syntax Theme */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in,
+.hljs-name,
+.hljs-tag {
+  color: #ff7b72;
+  font-weight: 600;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-literal,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-addition {
+  color: #7ee787;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+  color: #8b949e;
+  font-style: italic;
+}
+
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet {
+  color: #f0883e;
+}
+
+.hljs-function,
+.hljs-title.function_ {
+  color: #d2a8ff;
+}
+
+.hljs-variable,
+.hljs-attr,
+.hljs-params {
+  color: #79c0ff;
+}
+
+.hljs-operator,
+.hljs-punctuation {
+  color: #c9d1d9;
 }
 
 .blog-prose blockquote {

@@ -1,4 +1,5 @@
 import React from "react";
+import CodeBlock from "./code-block";
 
 export interface TocItem {
   id: string;
@@ -49,8 +50,12 @@ export function extractToc(content: string): TocItem[] {
   return items;
 }
 
+function isUrlOrLatin(text: string): boolean {
+  return /^https?:\/\//i.test(text) || !/[\u0600-\u06FF]/.test(text);
+}
+
 function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
-  const pattern = /(!\[[^\]]*\]\([^)]*\)|\[[^\]]+\]\([^)]*\)|`[^`]+`|\*\*[^*]+\*\*|__[^_]+__|\*[^*]+\*|_[^_]+_)/g;
+  const pattern = /(!\[[^\]]*\]\([^)]*\)|\[[^\]]+\]\([^)]*\)|https?:\/\/[^\s<>)"]+|`[^`]+`|\*\*[^*]+\*\*|__[^_]+__|\*[^*]+\*|_[^_]+_)/g;
   const parts = text.split(pattern).filter((part) => part !== "");
 
   return parts.map((part, index) => {
@@ -70,37 +75,59 @@ function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
       );
     }
 
-    const link = /^\[([^\]]+)\]\(([^)\s]+)(?:\s+["'][^"']*["'])?\)$/.exec(part);
+    const link = /^\[([^\]]+)\]\(([^)\s]+)(?:\s+["']([^"']*)["'])?\)$/.exec(part);
     if (link) {
       const external = /^https?:\/\//.test(link[2]);
+      const ltr = isUrlOrLatin(link[1]);
       return (
         <a
           key={key}
           href={link[2]}
           target={external ? "_blank" : undefined}
           rel={external ? "noopener noreferrer" : undefined}
+          dir={ltr ? "ltr" : undefined}
+          className={ltr ? "inline-link-ltr" : undefined}
         >
-          {link[1]}
+          {renderInline(link[1], `${key}-t`)}
+        </a>
+      );
+    }
+
+    if (/^https?:\/\//i.test(part)) {
+      return (
+        <a
+          key={key}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          dir="ltr"
+          className="inline-link-ltr"
+        >
+          {part}
         </a>
       );
     }
 
     if (part.startsWith("`") && part.endsWith("`")) {
-      return <code key={key}>{part.slice(1, -1)}</code>;
+      return (
+        <code key={key} dir="ltr" className="inline-code">
+          {part.slice(1, -1)}
+        </code>
+      );
     }
 
     if (
       (part.startsWith("**") && part.endsWith("**")) ||
       (part.startsWith("__") && part.endsWith("__"))
     ) {
-      return <strong key={key}>{part.slice(2, -2)}</strong>;
+      return <strong key={key}>{renderInline(part.slice(2, -2), `${key}-s`)}</strong>;
     }
 
     if (
       (part.startsWith("*") && part.endsWith("*")) ||
       (part.startsWith("_") && part.endsWith("_"))
     ) {
-      return <em key={key}>{part.slice(1, -1)}</em>;
+      return <em key={key}>{renderInline(part.slice(1, -1), `${key}-e`)}</em>;
     }
 
     return <React.Fragment key={key}>{part}</React.Fragment>;
@@ -144,9 +171,11 @@ export default function MarkdownContent({ content }: { content: string }) {
       }
       index += 1;
       blocks.push(
-        <pre key={`code-${index}`} data-language={language || undefined}>
-          <code>{code.join("\n")}</code>
-        </pre>
+        <CodeBlock
+          key={`code-${index}`}
+          code={code.join("\n")}
+          language={language}
+        />
       );
       continue;
     }
@@ -157,13 +186,13 @@ export default function MarkdownContent({ content }: { content: string }) {
       const text = plainInlineText(heading[2]);
       const id = headingId(text);
       const children = renderInline(heading[2], `heading-${index}`);
-      const props = { id, key: `heading-${index}` };
-      if (level === 1) blocks.push(<h1 {...props}>{children}</h1>);
-      if (level === 2) blocks.push(<h2 {...props}>{children}</h2>);
-      if (level === 3) blocks.push(<h3 {...props}>{children}</h3>);
-      if (level === 4) blocks.push(<h4 {...props}>{children}</h4>);
-      if (level === 5) blocks.push(<h5 {...props}>{children}</h5>);
-      if (level === 6) blocks.push(<h6 {...props}>{children}</h6>);
+      const key = `heading-${index}`;
+      if (level === 1) blocks.push(<h1 key={key} id={id}>{children}</h1>);
+      if (level === 2) blocks.push(<h2 key={key} id={id}>{children}</h2>);
+      if (level === 3) blocks.push(<h3 key={key} id={id}>{children}</h3>);
+      if (level === 4) blocks.push(<h4 key={key} id={id}>{children}</h4>);
+      if (level === 5) blocks.push(<h5 key={key} id={id}>{children}</h5>);
+      if (level === 6) blocks.push(<h6 key={key} id={id}>{children}</h6>);
       index += 1;
       continue;
     }

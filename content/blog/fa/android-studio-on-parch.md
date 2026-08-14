@@ -1,17 +1,17 @@
 ---
 title: "آماده‌سازی پارچ برای توسعه برنامه اندروید"
-description: "سلام! توی این فرسته از بلاگ پارچ می‌خواهیم آموزش نصب اندروید استودیو روی پارچ رو به ساده‌ترین شکل ممکن بدیم. پس با ما همراه باشید. !https://blog.parchlinux.com/wp-content/uploads/2025/11/image-1024x576.png اول باید مخازن Chaotic-AUR رو فعال"
+description: "آموزش گام به گام نصب و راه‌اندازی اندروید استودیو در پارچ لینوکس به همراه ابزارهای SDK و رفع مشکل دسترسی به پوشه‌ها."
 date: "2025-11-20T09:00:48Z"
 category: "آموزش"
 tags: ["اندروید استودیو", "پارچ", "پارچ لینوکس"]
 author: "sohrab"
-image: "https://blog.parchlinux.com/wp-content/uploads/2025/11/image-1024x576.png"
+image: "/blog/fa/android-studio-on-parch/cover.png"
 featured: false
 draft: false
 ---
 سلام! توی این فرسته از بلاگ پارچ می‌خواهیم آموزش نصب اندروید استودیو روی پارچ رو به ساده‌ترین شکل ممکن بدیم. پس با ما همراه باشید.
 
-![](https://blog.parchlinux.com/wp-content/uploads/2025/11/image-1024x576.png)
+![image 1024x576](/blog/fa/android-studio-on-parch/cover.png)
 
 ### اول باید مخازن Chaotic-AUR رو فعال کنیم
 
@@ -21,13 +21,13 @@ draft: false
 
 اول این رو بزنید و اینتر کنید (رمز عبورتون رو می‌خواد):
 
-```
+```bash
 sudo pacman -S chaotic-aur
 ```
 
 بعدش این یکی رو بزنید:
 
-```
+```bash
 sudo chaotic-install
 ```
 
@@ -37,7 +37,7 @@ sudo chaotic-install
 
 ترمینال رو باز کنید و فقط یک خط دستور خیلی طولانی رو کپی کنید و وارد کنید (همه‌چیز با هم نصب میشه):
 
-```
+```bash
 sudo pacman -S android-studio android-sdk-cmdline-tools-latest android-sdk android-sdk-build-tools android-sdk-platform-tools android-platform android-emulator
 ```
 
@@ -45,7 +45,7 @@ sudo pacman -S android-studio android-sdk-cmdline-tools-latest android-sdk andro
 
 بعد از اینکه نصب تموم شد، اندروید استودیو رو می‌تونید از منوی برنامه‌ها باز کنید یا توی ترمینال تایپ کنید:
 
-```
+```bash
 android-studio
 ```
 
@@ -55,13 +55,13 @@ android-studio
 
 چون SDK توی مسیر `/opt/android-sdk` نصب میشه و این مسیر متعلق به root هست، وقتی می‌خواهید پروژه بسازید یا emulator اجرا کنید ممکنه ارور دسترسی بگیرید. برای اینکه دیگه هیچ مشکلی نداشته باشید، فقط یک دستور ساده بزنید (به جای username اسم کاربری خودتون رو بنویسید، مثلاً اگر اسمتون ali هست بنویسید ali):
 
-```
+```bash
 sudo chown -R username:username /opt/android-sdk/*
 ```
 
 مثال واقعی:
 
-```
+```bash
 sudo chown -R ali:ali /opt/android-sdk/*
 ```
 

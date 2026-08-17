@@ -75,10 +75,10 @@ export default function BlogExplorer({
   return (
     <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
       {featured && (
-        <section className="blog-featured-shell relative overflow-hidden rounded-[2rem] border border-border/70 bg-card/70">
+        <section className="blog-featured-shell relative overflow-hidden rounded-4xl border border-border/70 bg-card/70">
           <div className="blog-featured-glow" aria-hidden="true" />
-          <div className="grid min-h-[430px] grid-cols-1 lg:grid-cols-12">
-            <div className="relative z-10 flex flex-col justify-between gap-12 p-6 sm:p-9 lg:col-span-7 lg:p-12">
+          <div className="grid min-h-107.5 grid-cols-1 lg:grid-cols-12">
+            <div className="relative z-10 flex flex-col gap-12 p-6 sm:p-9 lg:col-span-7 lg:p-12">
               <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-foreground">
                   <Sparkles className="h-3.5 w-3.5 text-primary" />
@@ -87,15 +87,15 @@ export default function BlogExplorer({
                 <span>{featured.category}</span>
               </div>
 
-              <div className="max-w-3xl">
-                <Link href={`/${locale}/blog/${featured.slug}`} className="group block">
-                  <h2 className="text-balance text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-[3.25rem] lg:leading-[1.08]">
+              <div className="max-w-3xl h-full w-full mx-auto">
+                <Link href={`/${locale}/blog/${featured.slug}`} className="flex flex-col group h-full w-full">
+                  <h2 className="text-balance text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl xl:text-3xl lg:text-2xl lg:leading-[1.08]">
                     {featured.title}
                   </h2>
-                  <p className="mt-5 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
+                  <p className="mt-2.5 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
                     {featured.description}
                   </p>
-                  <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground sm:text-sm">
+                  <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground sm:text-sm">
                     <span>{formatDate(featured.date, locale)}</span>
                     <span className="h-1 w-1 rounded-full bg-muted-foreground/60" />
                     <span className="inline-flex items-center gap-1.5">
@@ -225,7 +225,7 @@ export default function BlogExplorer({
         )}
       </section>
 
-      <section className="blog-newsletter relative mt-20 overflow-hidden rounded-[2rem] border border-border/70 px-6 py-10 sm:px-10 sm:py-12 lg:px-14">
+      <section className="blog-newsletter relative mt-20 overflow-hidden rounded-4xl border border-border/70 px-6 py-10 sm:px-10 sm:py-12 lg:px-14">
         <div className="blog-newsletter-grid" aria-hidden="true" />
         <div className="relative z-10 flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-2xl">

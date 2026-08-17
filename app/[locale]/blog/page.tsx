@@ -43,16 +43,12 @@ export default async function BlogPage({
     <main className="blog-page pb-12 sm:pb-20">
       <section className="container mx-auto max-w-7xl px-4 pb-10 pt-4 sm:px-6 sm:pb-14 md:px-8 lg:pt-8">
         <div className="relative mx-auto max-w-5xl text-center">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1.5 text-xs font-medium text-muted-foreground shadow-sm backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_14px_rgba(33,199,150,.9)]" />
-            {copy.eyebrow}
-          </div>
-          <h1 className="text-balance text-[2.5rem] font-extrabold leading-[1.16] tracking-tight sm:text-5xl lg:text-[4.4rem] lg:leading-[1.05]">
+          <h1 className="text-balance text-[2.5rem] font-extrabold leading-[1.16] tracking-tight sm:text-5xl lg:leading-[1.05]">
             {copy.titleStart}{" "}
             <span className="text-parch">{copy.titleAccent}</span>{" "}
             {copy.titleEnd}
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
+          <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
             {copy.intro}
           </p>
         </div>

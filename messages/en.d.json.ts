@@ -2,6 +2,12 @@
 // See: https://next-intl.dev/docs/workflows/typescript#messages-arguments
 
 declare const messages: {
+  "AnniversaryBanner": {
+    "badge": "5th Anniversary",
+    "title": "🎉 Happy 5th Birthday, Parch Linux!",
+    "description": "Discover five years of journey, breakthroughs, and the year in review.",
+    "cta": "Read the story"
+  },
   "HeadSection": {
     "title": "We have a <ready>ready-to-go</ready> OS!",
     "features": {

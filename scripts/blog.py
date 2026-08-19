@@ -327,7 +327,7 @@ def cmd_show(args: argparse.Namespace) -> int:
     print(f"Author:   {post.meta.get('author', '')}")
     print(f"Cover:    {post.meta.get('image', '')}")
     print(f"Featured: {'yes' if bool(post.meta.get('featured', False)) else 'no'}")
-    print(f"Words:    {len(re.findall(r'\\S+', post.body))}")
+    print(f"Words:    {len(re.findall(r'\S+', post.body))}")
     return 0
 
 

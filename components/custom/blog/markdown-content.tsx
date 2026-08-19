@@ -1,5 +1,6 @@
 import React from "react";
 import CodeBlock from "./code-block";
+import ImageGallery, { GalleryImage } from "./image-gallery";
 
 export interface TocItem {
   id: string;
@@ -29,15 +30,25 @@ function plainInlineText(text: string) {
 export function extractToc(content: string): TocItem[] {
   const items: TocItem[] = [];
   let inCode = false;
+  let inGallery = false;
 
   for (const line of content.split("\n")) {
-    if (line.trim().startsWith("```")) {
+    const trimmed = line.trim();
+    if (trimmed.startsWith("```")) {
       inCode = !inCode;
       continue;
     }
-    if (inCode) continue;
+    if (trimmed.startsWith(":::gallery")) {
+      inGallery = true;
+      continue;
+    }
+    if (inGallery && trimmed.startsWith(":::")) {
+      inGallery = false;
+      continue;
+    }
+    if (inCode || inGallery) continue;
 
-    const match = /^(##|###)\s+(.+)$/.exec(line.trim());
+    const match = /^(##|###)\s+(.+)$/.exec(trimmed);
     if (!match) continue;
     const text = plainInlineText(match[2]);
     items.push({
@@ -52,6 +63,20 @@ export function extractToc(content: string): TocItem[] {
 
 function isUrlOrLatin(text: string): boolean {
   return /^https?:\/\//i.test(text) || !/[\u0600-\u06FF]/.test(text);
+}
+
+function parseImagesFromText(text: string): GalleryImage[] {
+  const images: GalleryImage[] = [];
+  const regex = /!\[([^\]]*)\]\(([^)\s]+)(?:\s+["']([^"']*)["'])?\)/g;
+  let match;
+  while ((match = regex.exec(text)) !== null) {
+    images.push({
+      alt: match[1],
+      src: match[2],
+      title: match[3] || undefined,
+    });
+  }
+  return images;
 }
 
 function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
@@ -138,12 +163,15 @@ function isBlockStart(line: string) {
   const trimmed = line.trim();
   return (
     !trimmed ||
+    trimmed.startsWith(":::gallery") ||
+    trimmed === ":::" ||
     /^#{1,6}\s/.test(trimmed) ||
     /^```/.test(trimmed) ||
     /^>\s?/.test(trimmed) ||
     /^[-*+]\s+/.test(trimmed) ||
     /^\d+\.\s+/.test(trimmed) ||
-    /^---+$/.test(trimmed)
+    /^---+$/.test(trimmed) ||
+    /^!\[([^\]]*)\]\(([^)\s]+)(?:\s+["']([^"']*)["'])?\)$/.test(trimmed)
   );
 }
 
@@ -161,6 +189,7 @@ export default function MarkdownContent({ content }: { content: string }) {
       continue;
     }
 
+    // Code block
     if (line.startsWith("```")) {
       const language = line.slice(3).trim();
       const code: string[] = [];
@@ -180,6 +209,35 @@ export default function MarkdownContent({ content }: { content: string }) {
       continue;
     }
 
+    // Explicit gallery block: :::gallery [caption]
+    if (line.startsWith(":::gallery")) {
+      const captionMatch = /:::gallery\s*(?:["'](.*)["'])?/.exec(line);
+      const caption = captionMatch?.[1] || undefined;
+      const galleryLines: string[] = [];
+      index += 1;
+      while (index < lines.length && !lines[index].trim().startsWith(":::")) {
+        galleryLines.push(lines[index]);
+        index += 1;
+      }
+      index += 1; // skip closing :::
+      const images: GalleryImage[] = [];
+      for (const gLine of galleryLines) {
+        const parsed = parseImagesFromText(gLine);
+        images.push(...parsed);
+      }
+      if (images.length > 0) {
+        blocks.push(
+          <ImageGallery
+            key={`gallery-${index}`}
+            images={images}
+            caption={caption}
+          />
+        );
+      }
+      continue;
+    }
+
+    // Heading
     const heading = /^(#{1,6})\s+(.+)$/.exec(line);
     if (heading) {
       const level = heading[1].length;
@@ -197,12 +255,14 @@ export default function MarkdownContent({ content }: { content: string }) {
       continue;
     }
 
+    // Horizontal Rule
     if (/^---+$/.test(line)) {
       blocks.push(<hr key={`hr-${index}`} />);
       index += 1;
       continue;
     }
 
+    // Blockquote
     if (/^>\s?/.test(line)) {
       const quote: string[] = [];
       while (index < lines.length && /^>\s?/.test(lines[index].trim())) {
@@ -217,6 +277,7 @@ export default function MarkdownContent({ content }: { content: string }) {
       continue;
     }
 
+    // Unordered List
     if (/^[-*+]\s+/.test(line)) {
       const items: string[] = [];
       while (index < lines.length && /^[-*+]\s+/.test(lines[index].trim())) {
@@ -233,6 +294,7 @@ export default function MarkdownContent({ content }: { content: string }) {
       continue;
     }
 
+    // Ordered List
     if (/^\d+\.\s+/.test(line)) {
       const items: string[] = [];
       while (index < lines.length && /^\d+\.\s+/.test(lines[index].trim())) {
@@ -249,23 +311,68 @@ export default function MarkdownContent({ content }: { content: string }) {
       continue;
     }
 
+    // Standalone image or consecutive images (gallery)
     const standaloneImage = /^!\[([^\]]*)\]\(([^)\s]+)(?:\s+["']([^"']*)["'])?\)$/.exec(line);
     if (standaloneImage) {
-      blocks.push(
-        <figure key={`image-${index}`} className="my-8">
-          <img
-            src={standaloneImage[2]}
-            alt={standaloneImage[1]}
-            title={standaloneImage[3]}
-            loading="lazy"
-            className="h-auto w-full rounded-2xl border border-border/70"
-          />
-        </figure>
-      );
+      const consecutiveImages: GalleryImage[] = [
+        {
+          alt: standaloneImage[1],
+          src: standaloneImage[2],
+          title: standaloneImage[3] || undefined,
+        },
+      ];
       index += 1;
+      while (index < lines.length) {
+        const nextLine = lines[index].trim();
+        if (!nextLine) {
+          let lookahead = index + 1;
+          while (lookahead < lines.length && !lines[lookahead].trim()) {
+            lookahead++;
+          }
+          if (
+            lookahead < lines.length &&
+            /^!\[([^\]]*)\]\(([^)\s]+)(?:\s+["']([^"']*)["'])?\)$/.test(
+              lines[lookahead].trim()
+            )
+          ) {
+            index = lookahead;
+            const nextImg = /^!\[([^\]]*)\]\(([^)\s]+)(?:\s+["']([^"']*)["'])?\)$/.exec(
+              lines[index].trim()
+            )!;
+            consecutiveImages.push({
+              alt: nextImg[1],
+              src: nextImg[2],
+              title: nextImg[3] || undefined,
+            });
+            index += 1;
+            continue;
+          }
+          break;
+        }
+        const nextImg = /^!\[([^\]]*)\]\(([^)\s]+)(?:\s+["']([^"']*)["'])?\)$/.exec(
+          nextLine
+        );
+        if (nextImg) {
+          consecutiveImages.push({
+            alt: nextImg[1],
+            src: nextImg[2],
+            title: nextImg[3] || undefined,
+          });
+          index += 1;
+        } else {
+          break;
+        }
+      }
+      blocks.push(
+        <ImageGallery
+          key={`gallery-${index}`}
+          images={consecutiveImages}
+        />
+      );
       continue;
     }
 
+    // Regular Paragraph
     const paragraph = [line];
     index += 1;
     while (index < lines.length && !isBlockStart(lines[index])) {

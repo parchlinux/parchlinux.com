@@ -73,7 +73,8 @@ declare const messages: {
         "items": {
           "forum": "Forum",
           "contributors": "Contributors",
-          "blog": "Blog"
+          "blog": "Blog",
+          "guidelines": "Guidelines"
         }
       },
       "team": {
@@ -159,6 +160,77 @@ declare const messages: {
   },
   "ContributorsPage": {
     "title": "Contributors"
+  },
+  "GuidelinesPage": {
+    "badge": "Community Charter",
+    "title": "Parch Linux Community Guidelines",
+    "subtitle": "A welcoming, inclusive, and respectful environment for open collaboration and knowledge sharing.",
+    "welcomeTitle": "Welcome to Parch Linux Community",
+    "welcomeP1": "Hello dear friends, and a very warm welcome to the Parch Linux community! We are thrilled to have you with us. First and foremost, our doors are open to everyone, and our discussions here are not limited solely to the Parch Linux distribution. You are welcome to freely discuss other operating systems, the open-source ecosystem, programming, and various technology topics, and share your knowledge with one another.",
+    "scopeTitle": "Scope & Application",
+    "scopeP1": "These guidelines apply to all spaces managed under the Parch Linux name, including the forum, Telegram group, Discord server, mailing lists, issue trackers, social media channels, and any other events or spaces created by the project or used by the community for communication.",
+    "scopeP2": "This includes all forms of interaction and conduct across these platforms, from messages and emails to files, images, and any content shared. Violations of these principles outside these spaces may also, in rare cases, affect an individual's ability to participate in the Parch Linux community if the conduct constitutes a severe breach of these guidelines.",
+    "principlesTitle": "Our Principles",
+    "principlesIntro": "The Parch Linux community has always strived to be a welcoming and respectful environment, and as our community grows and evolves, we want to ensure these qualities remain steadfast. The following is not an exhaustive list of permitted and prohibited behaviors, but rather a guide to facilitate positive communication and collaboration.",
+    "principles": {
+      "patient": {
+        "title": "Be Patient",
+        "description": "We all come with varying levels of knowledge and experience. Every question, no matter how simple it may seem, deserves a respectful and thoughtful answer."
+      },
+      "welcoming": {
+        "title": "Be Welcoming",
+        "description": "The Parch Linux community strives to welcome and support individuals from all backgrounds and identities, regardless of race, ethnicity, culture, national origin, skin color, immigration status, social and economic class, educational background, sex, sexual orientation, gender identity and expression, age, physical and mental ability, family status, political beliefs, or religion."
+      },
+      "considerate": {
+        "title": "Be Considerate",
+        "description": "Your work is used by others, and you depend on the work of others as well. Any decision you make affects fellow users and contributors, and you should consider these ramifications. Remember that this is a global community, and you may not always be communicating in the other person's native language."
+      },
+      "respectful": {
+        "title": "Be Respectful",
+        "description": "Disagreements are a natural part of any community, but they are never an excuse for poor behavior or bad manners. We may feel frustrated at times, but we must never allow that frustration to turn into personal attacks. A community where members feel uncomfortable or threatened cannot be a constructive one."
+      },
+      "kind": {
+        "title": "Be Thoughtful & Kind in Word and Action",
+        "description": "Harassment and other exclusionary behaviors have no place in the Parch Linux community. This includes violent or verbal threats against others, discriminatory language and jokes, posting sexually explicit or violent material, publishing or threatening to publish others' private information (doxxing), personal insults (especially with racist or sexist language), and supporting or encouraging any of these behaviors. In general, if someone asks you to stop a certain behavior, stop. Continuing after such a request is considered harassment."
+      },
+      "understanding": {
+        "title": "Understand Why We Disagree",
+        "description": "Social and technical disagreements will always occur, and Parch Linux is no exception. It is essential to resolve these differences constructively. Parch Linux's strength comes from its diverse community, consisting of people from diverse backgrounds who bring different perspectives to challenges. Not understanding why someone holds a particular opinion does not mean they are wrong. Making mistakes is human, and blaming one another gets us nowhere; instead, our focus should be on solving problems and learning from mistakes."
+      }
+    },
+    "freebsdAttribution": "These principles of conduct are based on and inspired by the FreeBSD Community Code of Conduct.",
+    "cafe": {
+      "badge": "Off-topic Lounge",
+      "title": "Parch Cafe: A Space for Casual Chat",
+      "description": "We have also thought about your leisure time and everyday conversations! We created a dedicated section on the forum called \"Parch Cafe\" exclusively for open, off-topic chats. In Parch Cafe, you can talk about any topic you like and chat with other members, just be mindful that conversations still remain within the boundaries of these guidelines.",
+      "cta": "Explore Parch Cafe"
+    },
+    "spaces": {
+      "title": "Parch Linux Community Spaces",
+      "subtitle": "The Parch Linux community is present across several platforms, and these guidelines apply equally to all of them.",
+      "futureNote": "Any new platform launched under the Parch Linux name in the future will likewise be governed by these guidelines.",
+      "forum": {
+        "title": "Official Forum",
+        "description": "The primary hub for technical discussions, project announcements, and general discourse. The full code of conduct and Parch Cafe are also hosted here.",
+        "action": "Open Forum"
+      },
+      "telegram": {
+        "title": "Telegram Group",
+        "description": "A space for faster, day-to-day chats and real-time interaction among members.",
+        "action": "Join Telegram"
+      },
+      "discord": {
+        "title": "Discord Server",
+        "description": "A venue for voice and text chat, event coordination, and closer communication with the development team.",
+        "action": "Join Discord"
+      }
+    },
+    "closing": {
+      "title": "Building a Thriving Community Together",
+      "description": "We hope to have a fruitful and rewarding community together and enjoy meaningful conversations. Thank you for being a vital part of the Parch Linux community!",
+      "backToHome": "Return Home",
+      "joinCommunity": "Join the Community"
+    }
   }
 };
 export default messages;

@@ -4,7 +4,7 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://parchlinux.com";
-  const routes = ["", "/download", "/contributors", "/team", "/blog"];
+  const routes = ["", "/download", "/contributors", "/team", "/blog", "/guidelines"];
 
   const staticRoutes = routing.locales.flatMap((locale) =>
     routes.map((route) => ({

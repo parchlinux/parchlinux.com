@@ -184,6 +184,11 @@ export default function Footer() {
           href: "/blog",
           internal: true,
         },
+        {
+          labelKey: "guidelines",
+          href: "/guidelines",
+          internal: true,
+        },
       ],
     },
     {

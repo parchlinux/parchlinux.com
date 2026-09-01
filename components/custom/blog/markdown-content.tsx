@@ -159,12 +159,32 @@ function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
   });
 }
 
+function parseIframe(html: string): {
+  src?: string;
+  title?: string;
+  allow?: string;
+  sandbox?: string;
+} | null {
+  const srcMatch = /src=["']([^"']+)["']/i.exec(html);
+  if (!srcMatch) return null;
+  const titleMatch = /title=["']([^"']+)["']/i.exec(html);
+  const allowMatch = /allow=["']([^"']+)["']/i.exec(html);
+  const sandboxMatch = /sandbox=["']([^"']+)["']/i.exec(html);
+  return {
+    src: srcMatch[1],
+    title: titleMatch?.[1],
+    allow: allowMatch?.[1],
+    sandbox: sandboxMatch?.[1],
+  };
+}
+
 function isBlockStart(line: string) {
   const trimmed = line.trim();
   return (
     !trimmed ||
     trimmed.startsWith(":::gallery") ||
     trimmed === ":::" ||
+    trimmed.startsWith("<iframe") ||
     /^#{1,6}\s/.test(trimmed) ||
     /^```/.test(trimmed) ||
     /^>\s?/.test(trimmed) ||
@@ -232,6 +252,38 @@ export default function MarkdownContent({ content }: { content: string }) {
             images={images}
             caption={caption}
           />
+        );
+      }
+      continue;
+    }
+
+    // Iframe / Video embed
+    if (line.startsWith("<iframe")) {
+      const iframeLines: string[] = [];
+      while (index < lines.length) {
+        iframeLines.push(lines[index]);
+        if (lines[index].includes("</iframe>")) {
+          index += 1;
+          break;
+        }
+        index += 1;
+      }
+      const parsed = parseIframe(iframeLines.join(" "));
+      if (parsed?.src) {
+        blocks.push(
+          <div
+            key={`iframe-${index}`}
+            className="my-8 aspect-video w-full overflow-hidden rounded-2xl border border-border/70 bg-black/5 shadow-sm"
+          >
+            <iframe
+              src={parsed.src}
+              title={parsed.title || "Video preview"}
+              allow={parsed.allow || "fullscreen"}
+              sandbox={parsed.sandbox}
+              className="h-full w-full border-0"
+              allowFullScreen
+            />
+          </div>
         );
       }
       continue;

@@ -97,6 +97,8 @@ export function estimateReadingTime(content: string) {
     .replace(/`[^`]+`/g, " ")
     .replace(/!\[[^\]]*\]\([^)]*\)/g, " ")
     .replace(/\[[^\]]+\]\([^)]*\)/g, " ")
+    .replace(/<iframe[\s\S]*?<\/iframe>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
     .replace(/[#>*_~\-]/g, " ");
   const words = plain.split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.ceil(words / 220));

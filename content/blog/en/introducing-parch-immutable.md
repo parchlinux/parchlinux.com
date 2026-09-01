@@ -11,6 +11,8 @@ draft: false
 
 We are currently working on Parch Immutable, an immutable edition of Parch GNU/Linux. It is planned to become the foundation of our future commercial project, Apadana, and it represents a significant shift in how we think about building and maintaining a desktop operating system.
 
+<iframe title="A Preview of Parch Gnu/Linux immutable" width="560" height="315" src="https://tubedu.org/videos/embed/hqNnP6tRGHkVP9ZvXhgZW2" style="border: 0px;" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+
 ## Why immutable
 
 Traditional package-based distributions give users a great deal of flexibility, but that flexibility comes at a cost. Systems drift over time, updates can leave a machine in an inconsistent state, and a broken update often means hours of manual repair. An immutable base image solves this differently. The core of the system is built, tested, and shipped as a single unit, and updates are applied atomically. If something goes wrong, rolling back to the previous working state takes seconds rather than hours. For a commercial product like Apadana, where reliability and predictable behavior matter as much as performance, this model is a natural fit.

@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
     qualities: [25, 50, 75, 100],
   },
   turbopack: {
-    root: path.join(__dirname, ".."),
+    root: path.join(__dirname),
   },
   typescript: {
     ignoreBuildErrors: true,

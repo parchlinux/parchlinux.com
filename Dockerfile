@@ -27,10 +27,16 @@ ENV NODE_OPTIONS="--max-old-space-size=768"
 RUN addgroup --system --gid 1001 nodejs && \
     adduser --system --uid 1001 nextjs
 
-# Copy standalone build and static assets with correct ownership (no extra chown layers)
-COPY --from=base --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=base --chown=nextjs:nodejs /app/public ./public
-COPY --from=base --chown=nextjs:nodejs /app/.next/static ./.next/static
+# Copy standalone build and static assets
+COPY --from=base /app/.next/standalone ./
+COPY --from=base /app/public ./public
+COPY --from=base /app/.next/static ./.next/static
+
+# Guarantee server.js and its dependencies are at /app root and owned by nextjs
+RUN if [ ! -f /app/server.js ] && [ -f /app/app/server.js ]; then \
+      cp -r /app/app/* /app/ && rm -rf /app/app; \
+    fi && \
+    chown -R nextjs:nodejs /app
 
 USER nextjs
 EXPOSE 3000

@@ -1,2 +1,4 @@
-export { default, generateMetadata, generateStaticParams, dynamic } from "../guidelines/page";
+export { default, generateMetadata, generateStaticParams } from "../guidelines/page";
+
+export const dynamic = "force-static";
 

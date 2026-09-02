@@ -24,6 +24,17 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
+import { routing } from "@/i18n/routing";
+import { Locale } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { use } from "react";
+
+export const dynamic = "force-static";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -65,8 +76,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function GuidelinesPage() {
-  const locale = useLocale();
+export default function GuidelinesPage({ params }: Props) {
+  const { locale } = use(params);
+  setRequestLocale(locale as Locale);
   const t = useTranslations("GuidelinesPage");
   const isFa = locale === "fa";
 

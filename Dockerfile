@@ -1,17 +1,38 @@
-FROM oven/bun:alpine AS base 
+# Stage 1: Build application using Bun for fast package install & build
+FROM oven/bun:alpine AS base
+WORKDIR /app
 
-WORKDIR /app
-ADD package.json .
-ADD bun.lock .
-RUN bun i
-ADD . .
+# Install dependencies based on lockfile
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
+
+# Copy application source and build standalone output
+COPY . .
+ENV NEXT_TELEMETRY_DISABLED=1
 RUN bun run build
-FROM oven/bun:alpine AS production
+
+# Stage 2: Production runner with Node.js 22 LTS (Official Next.js standalone runtime)
+FROM node:22-alpine AS production
 WORKDIR /app
-COPY --from=base /app/.next/standalone/app ./
-COPY --from=base /app/public ./public
-COPY --from=base /app/.next/static ./.next/static
-RUN chown -R bun:bun /app
-USER bun
+
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
+
+# Guardrail to keep V8 heap memory bounded and prevent runaway memory usage
+ENV NODE_OPTIONS="--max-old-space-size=768"
+
+# Create non-root system user for security
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 nextjs
+
+# Copy standalone build and static assets with correct ownership (no extra chown layers)
+COPY --from=base --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=base --chown=nextjs:nodejs /app/public ./public
+COPY --from=base --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
 EXPOSE 3000
-CMD [ "bun","--bun","server.js" ]
+
+CMD ["node", "server.js"]

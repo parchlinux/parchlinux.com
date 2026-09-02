@@ -34,6 +34,8 @@ const Estedad = localFont({
   variable: "--Estedad",
 });
 
+export const dynamic = "force-static";
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }

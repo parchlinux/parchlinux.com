@@ -1,7 +1,16 @@
 import BlogExplorer from "@/components/custom/blog/blog-explorer";
 import { getBlogCopy } from "@/components/custom/blog/blog-copy";
 import { getAllPosts } from "@/lib/blog";
+import { routing } from "@/i18n/routing";
+import { Locale } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
+
+export const dynamic = "force-static";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata({
   params,
@@ -36,6 +45,7 @@ export default async function BlogPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale as Locale);
   const posts = getAllPosts(locale);
   const copy = getBlogCopy(locale);
 

@@ -1,1 +1,2 @@
-export { default, generateMetadata } from "../guidelines/page";
+export { default, generateMetadata, generateStaticParams, dynamic } from "../guidelines/page";
+

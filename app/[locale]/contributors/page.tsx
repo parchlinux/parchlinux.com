@@ -1,9 +1,21 @@
 import { Card, CardContent } from "@/components/ui/card";
 import contributors from "@/data/contributors";
 import Image from "next/image";
+import { routing } from "@/i18n/routing";
+import { Locale } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import { use } from "react";
 
-export default function Contributors() {
+export const dynamic = "force-static";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default function Contributors({ params }: PageProps<"/[locale]">) {
+  const { locale } = use(params);
+  setRequestLocale(locale as Locale);
   const t = useTranslations("ContributorsPage");
   return (
     <div className="container max-w-7xl mx-auto px-4">

@@ -5,9 +5,22 @@ import downloads from "@/data/download";
 import { releaseInfo } from "@/data/release-info";
 import { GitGraph, Github, GitPullRequest } from "lucide-react";
 import Image from "next/image";
+import { routing } from "@/i18n/routing";
+import { Locale } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import { use } from "react";
 
-export default function Download() {
+export const dynamic = "force-static";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default function Download({ params }: PageProps<"/[locale]">) {
+  const { locale } = use(params);
+  setRequestLocale(locale as Locale);
+
   const t = useTranslations("DownloadPage");
 
   const translatedDownloads = downloads.map((download) => {

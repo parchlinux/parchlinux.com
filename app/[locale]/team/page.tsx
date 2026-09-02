@@ -2,7 +2,17 @@ import React from "react";
 import ProfileCard from "../../../components/custom/team/team-card";
 import team from "@/data/team";
 import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
+import { routing } from "@/i18n/routing";
+import { Locale } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { useTranslations } from "next-intl";
+import { use } from "react";
+
+export const dynamic = "force-static";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 interface TeamMember {
   name: string;
@@ -17,8 +27,9 @@ interface TeamMember {
   }>;
 }
 
-export default function App() {
-  const locale = useLocale();
+export default function App({ params }: PageProps<"/[locale]">) {
+  const { locale } = use(params);
+  setRequestLocale(locale as Locale);
   const t = useTranslations("TeamPage");
 
   return (

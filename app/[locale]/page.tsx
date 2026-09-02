@@ -5,10 +5,17 @@ import HeroSection from "@/components/custom/main/hero-section";
 import IconSection from "@/components/custom/main/icon-section";
 import LinkSection from "@/components/custom/main/link-section";
 import SponsorsCarousel from "@/components/custom/main/sponsor-carousel";
+import { routing } from "@/i18n/routing";
 import { Locale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { use } from "react";
+
+export const dynamic = "force-static";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export default function IndexPage({ params }: PageProps<"/[locale]">) {
   const { locale } = use(params);

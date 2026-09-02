@@ -1,4 +1,11 @@
+import { routing } from "@/i18n/routing";
 import { getAllPosts } from "@/lib/blog";
+
+export const dynamic = "force-static";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 function escapeXml(value: string) {
   return value

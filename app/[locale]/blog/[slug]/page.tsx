@@ -4,9 +4,13 @@ import MarkdownContent, { extractToc } from "@/components/custom/blog/markdown-c
 import ReadingProgress from "@/components/custom/blog/reading-progress";
 import { getAllPostSlugs, getAllPosts, getPostBySlug } from "@/lib/blog";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Clock3 } from "lucide-react";
+import { Locale } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
+export const dynamic = "force-static";
 
 function formatDate(date: string, locale: string) {
   return new Intl.DateTimeFormat(locale === "fa" ? "fa-IR" : "en-US", {
@@ -62,6 +66,7 @@ export default async function BlogPostPage({
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
+  setRequestLocale(locale as Locale);
   const post = getPostBySlug(locale, slug);
   if (!post) notFound();
 

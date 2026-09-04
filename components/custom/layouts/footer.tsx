@@ -189,6 +189,11 @@ export default function Footer() {
           href: "/guidelines",
           internal: true,
         },
+        {
+          labelKey: "repo",
+          href: "/repo",
+          internal: true,
+        },
       ],
     },
     {

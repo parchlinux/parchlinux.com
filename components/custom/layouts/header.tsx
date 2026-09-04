@@ -93,6 +93,12 @@ export default function Header() {
           >
             {t("team")}
           </Link>
+          <Link
+            href={`/${locale}/repo`}
+            className="text-sm font-medium hover:text-foreground/50 transition-colors"
+          >
+            {t("repo")}
+          </Link>
         </nav>
         {isMobile ? (
           <SidebarTrigger />

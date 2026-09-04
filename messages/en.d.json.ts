@@ -74,7 +74,8 @@ declare const messages: {
           "forum": "Forum",
           "contributors": "Contributors",
           "blog": "Blog",
-          "guidelines": "Guidelines"
+          "guidelines": "Guidelines",
+          "repo": "Repositories"
         }
       },
       "team": {
@@ -134,6 +135,7 @@ declare const messages: {
     "contributors": "Contributors",
     "blog": "Blog",
     "team": "Team",
+    "repo": "Repositories",
     "donate": "Donate",
     "download": "Download"
   },
@@ -143,6 +145,7 @@ declare const messages: {
     "contributors": "Contributors",
     "blog": "Blog",
     "team": "Team",
+    "repo": "Repositories",
     "donate": "Donate",
     "download": "Download"
   },
@@ -230,6 +233,90 @@ declare const messages: {
       "description": "We hope to have a fruitful and rewarding community together and enjoy meaningful conversations. Thank you for being a vital part of the Parch Linux community!",
       "backToHome": "Return Home",
       "joinCommunity": "Join the Community"
+    }
+  },
+  "RepoPage": {
+    "badge": "Official Mirrors and Repositories",
+    "title": "Software Repositories",
+    "subtitle": "High-speed mirrors and software repositories for Parch Linux, Arch Linux, and other Linux distributions.",
+    "quickNav": {
+      "pacman": "Pacman Repositories",
+      "flatpak": "Flatpak Proxy",
+      "mirrors": "Mirror Servers"
+    },
+    "pacman": {
+      "badge": "Arch-Based Systems",
+      "title": "Pacman Repositories",
+      "description": "Parch Linux maintains dedicated Pacman repositories with custom tools, system packages, desktop configurations, wallpapers, and software. These repositories can be used in Parch Linux itself or any Arch-based distribution including Arch Linux, EndeavourOS, and Manjaro.",
+      "supportedDistros": "Supported distributions: Parch Linux, Arch Linux, EndeavourOS, Manjaro, and any Arch-based operating system",
+      "world": {
+        "name": "world",
+        "tag": "Stable",
+        "description": "The official stable repository of Parch Linux. It contains thoroughly tested packages, tools, and desktop enhancements recommended for regular everyday usage."
+      },
+      "void": {
+        "name": "void",
+        "tag": "Testing / Unstable",
+        "description": "The testing and experimental repository of Parch Linux. It provides bleeding-edge software versions and early updates before they are moved to the stable world repository."
+      },
+      "steps": {
+        "title": "How to Configure Pacman Repositories",
+        "step1": {
+          "title": "Step 1: Open pacman.conf",
+          "description": "Open the Pacman configuration file with root privileges in your favorite terminal editor:"
+        },
+        "step2": {
+          "title": "Step 2: Add the Repository Block",
+          "description": "Append the repository section to the end of the file. You can add the stable world repository, the unstable void repository, or both:"
+        },
+        "step3": {
+          "title": "Step 3: Update Package Databases",
+          "description": "Synchronize the package databases with Pacman:"
+        },
+        "step4": {
+          "title": "Step 4: Install Packages",
+          "description": "You can now install any package from the Parch repository directly using Pacman:"
+        }
+      }
+    },
+    "flatpak": {
+      "badge": "Universal Linux Mirror",
+      "title": "Flatpak Proxy Repository",
+      "announcement": "The Parch Flatpak repository is now available.",
+      "description": "This repository is an optimized proxied mirror of upstream Flathub, designed to provide reliable access under difficult network conditions or filtering in Iran.",
+      "supportedDistros": "Supported distributions: Any Linux distribution with Flatpak support, including Parch Linux, Arch Linux, Fedora, Ubuntu, Debian, openSUSE, and Linux Mint",
+      "steps": {
+        "title": "How to Use the Flatpak Proxy",
+        "step1": {
+          "title": "Step 1: Add Flathub Remote",
+          "description": "Add the Flathub remote repository if it has not already been added to your system:"
+        },
+        "step2": {
+          "title": "Step 2: Switch to Parch Proxy Mirror",
+          "description": "Change the repository URL to point to the Parch mirror:"
+        },
+        "step3": {
+          "title": "Step 3: Verify and Update",
+          "description": "Update application metadata and test connectivity:"
+        },
+        "step4": {
+          "title": "Step 4: Install Applications",
+          "description": "Install any application from Flathub through the Parch proxy:"
+        }
+      }
+    },
+    "mirrors": {
+      "title": "Mirror Information",
+      "description": "Direct URLs for the Parch Linux repository infrastructure.",
+      "pacmanUrl": "Pacman Mirror URL",
+      "flatpakUrl": "Flatpak Proxy URL"
+    },
+    "community": {
+      "title": "Join Our Community",
+      "description": "Need assistance or want to discuss packages? Connect with the Parch Linux community.",
+      "forum": "Official Forum",
+      "telegram": "Telegram",
+      "discord": "Discord"
     }
   }
 };

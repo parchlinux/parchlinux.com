@@ -43,6 +43,10 @@ export function AppSidebar() {
       title: t("team"),
       url: `/${locale}/team`,
     },
+    {
+      title: t("repo"),
+      url: `/${locale}/repo`,
+    },
   ];
 
   return (

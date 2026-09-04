@@ -44,7 +44,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
                 {t("workDescription")}
               </p>
             }
-            image="/images/wallpaper 4.jpg"
+            image="/images/sitep1.webp"
             imageAlt={t("desktopAlt")}
             reverse
           />
@@ -63,7 +63,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
                 {t("codingDescription")}
               </p>
             }
-            image="/images/wallpaper 2.jpg"
+            image="/images/sitep2.webp"
             imageAlt={t("desktopAlt")}
           />
           <HeroSection
@@ -84,7 +84,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
                 {t("chooseDescription")}
               </p>
             }
-            image="/images/wallpaper 3.jpg"
+            image="/images/sitep3.webp"
             imageAlt={t("desktopAlt")}
             reverse
           />
@@ -103,7 +103,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
                 {t("updateDescription")}
               </p>
             }
-            image="/images/wallpaper 4.jpg"
+            image="/images/sitep4.webp"
             imageAlt={t("desktopAlt")}
           />
 
@@ -120,7 +120,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
                 {t("aurDescription")}
               </p>
             }
-            image="/images/wallpaper 2.jpg"
+            image="/images/sitep5.webp"
             imageAlt={t("desktopAlt")}
             reverse
           />
@@ -145,7 +145,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
                 {t("pacmanDescription")}
               </p>
             }
-            image="/images/wallpaper 3.jpg"
+            image="/images/sitep6.webp"
             imageAlt={t("desktopAlt")}
           />
         </div>

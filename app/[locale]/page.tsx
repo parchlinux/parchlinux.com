@@ -31,7 +31,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
         <div className="flex flex-col gap-24">
           <HeroSection
             title={
-              <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-extrabold xl:leading-14 ltr:xl:text-nowrap">
+              <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-extrabold xl:leading-14">
                 {t.rich("workTitle", {
                   work: (chunks) => (
                     <span className="text-parch">{chunks}</span>
@@ -50,7 +50,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
           />
           <HeroSection
             title={
-              <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-extrabold xl:leading-14 ltr:xl:text-nowrap">
+              <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-extrabold xl:leading-14">
                 {t.rich("codingTitle", {
                   coding: (chunks) => (
                     <span className="text-parch">{chunks}</span>
@@ -68,7 +68,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
           />
           <HeroSection
             title={
-              <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-extrabold xl:leading-14 ltr:xl:text-nowrap">
+              <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-extrabold xl:leading-14">
                 {t.rich("chooseTitle", {
                   gnome: (chunks) => (
                     <span className="text-parch">{chunks}</span>
@@ -84,13 +84,13 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
                 {t("chooseDescription")}
               </p>
             }
-            image="/images/sitep3.webp"
+            image="/images/sitep6.webp"
             imageAlt={t("desktopAlt")}
             reverse
           />
           <HeroSection
             title={
-              <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-extrabold xl:leading-14 ltr:xl:text-nowrap">
+              <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-extrabold xl:leading-14">
                 {t.rich("updateTitle", {
                   update: (chunks) => (
                     <span className="text-parch">{chunks}</span>
@@ -109,7 +109,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
 
           <HeroSection
             title={
-              <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-extrabold xl:leading-14 ltr:xl:text-nowrap">
+              <h2 className="xl:text-[2.8rem] lg:text-[1.8rem] text-2xl font-extrabold xl:leading-14">
                 {t.rich("aurTitle", {
                   aur: (chunks) => <span className="text-parch">{chunks}</span>,
                 })}
@@ -145,7 +145,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
                 {t("pacmanDescription")}
               </p>
             }
-            image="/images/sitep6.webp"
+            image="/images/sitep4.webp"
             imageAlt={t("desktopAlt")}
           />
         </div>

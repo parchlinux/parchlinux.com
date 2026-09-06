@@ -1,4 +1,5 @@
 const team = [
+  // Founder
   {
     name: "Sohrab Behdani",
     job: "Founder",
@@ -25,6 +26,7 @@ const team = [
     ],
   },
 
+  // Team Leader
   {
     name: "Erfan Arabi",
     job: "Team Leader",
@@ -37,6 +39,7 @@ const team = [
       },
     ],
   },
+  // Maintainer
   {
     name: "Hamid Reza",
     job: "Maintainer",
@@ -49,6 +52,7 @@ const team = [
     ],
   },
 
+  // UI/UX Designer
   {
     name: "Mohammad Arshiya fardinfar",
     job: "UI/UX Designer",
@@ -61,6 +65,7 @@ const team = [
       },
     ],
   },
+  // Frontend Developer
   {
     name: "Mobin Firooz",
     job: "Frontend Developer",
@@ -72,6 +77,7 @@ const team = [
       },
     ],
   },
+  // Graphic Designer
   {
     name: "AhmadReza Khatamian",
     job: "Graphic Designer",
@@ -84,6 +90,7 @@ const team = [
     ],
   },
 
+  // Graphic/Web Designer
   {
     name: "Ali Lotfi",
     job: "Graphic/Web Designer",
@@ -97,6 +104,7 @@ const team = [
     ],
   },
 
+  // Tools Developer
   {
     name: "Mohammad Parsa Mortazavi",
     job: "Tools Developer",
@@ -175,6 +183,7 @@ const team = [
       },
     ],
   },
+  // Contributor
   {
     name: "Meshya",
     job: "Contributor",
@@ -183,6 +192,16 @@ const team = [
       {
         mastadon: "https://mas.to/@meshya",
         github: "https://github.com/meshya",
+      },
+    ],
+  },
+  {
+    name: "Mehrad Taravati",
+    job: "Software Engineer",
+    image: "https://avatars.githubusercontent.com/u/176372055?v=4",
+    links: [
+      {
+        github: "https://github.com/MehradDraco",
       },
     ],
   },

@@ -3,7 +3,7 @@ title: "Introducing Parch Immutable: First Public Alpha Released"
 description: "The Parch Linux project announces the first public alpha release of Parch Immutable, a new image-based edition built on an immutable architecture with atomic updates."
 date: "2026-09-08T14:28:17Z"
 category: "Releases"
-tags: ["Parch Linux", "Parch Immutable", "Alpha", "bootc", "Pastor", "Flatpak", "Podman", "Distrobox", "KDE Plasma", "Open Source"]
+tags: ["Parch Linux", "Parch Immutable", "Alpha", "bootc", "Pastor", "Flatpak", "Podman", "Distrobox", "KDE Plasma", "Immutable Linux", "Linux", "Open Source"]
 author: "Parch GNU/Linux Team"
 featured: false
 draft: false
@@ -23,6 +23,14 @@ This alpha spans versions 0.1 through 0.2 and includes a substantial number of c
 
 The full changelog for this release is available on GitHub:
 https://github.com/parchlinux/parch-bootc/releases/tag/0.2
+
+## System Requirements
+
+The minimal system requirements for running Parch Immutable are:
+
+- **Firmware:** UEFI
+- **Memory (RAM):** 4 GB RAM
+- **Processor:** 2 CPU cores
 
 ## How to Test
 

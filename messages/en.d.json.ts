@@ -163,7 +163,8 @@ declare const messages: {
     "title": "Blog"
   },
   "TeamPage": {
-    "title": "Our team"
+    "title": "Our team",
+    "contributorsNote": "There are many more people who have contributed to Parch GNU/Linux. A full list of contributors can be <link>found here</link>."
   },
   "ContributorsPage": {
     "title": "Contributors"

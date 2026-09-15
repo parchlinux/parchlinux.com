@@ -10,11 +10,49 @@ import { Locale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { use } from "react";
+import type { Metadata } from "next";
 
 export const dynamic = "force-static";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
+}
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const isFa = locale === "fa";
+
+  const title = isFa
+    ? "دانلود پارچ لینوکس | Parch GNU/Linux"
+    : "Download Parch Linux | Official ISO Releases";
+  const description = isFa
+    ? "دانلود مستقیم و تورنت آخرین ایمیج‌های نصب پارچ لینوکس برای میزکارهای پلاسما ۶، گنوم و XFCE با چکسام رسمی SHA256."
+    : "Download official Parch Linux ISOs for KDE Plasma 6, GNOME, and XFCE desktop environments. Free, fast, and secure.";
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `https://parchlinux.com/${locale}/download`,
+      languages: {
+        en: "https://parchlinux.com/en/download",
+        fa: "https://parchlinux.com/fa/download",
+        "x-default": "https://parchlinux.com/en/download",
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://parchlinux.com/${locale}/download`,
+      siteName: "Parch GNU/Linux",
+      locale: isFa ? "fa_IR" : "en_US",
+      type: "website",
+    },
+  };
 }
 
 export default function Download({ params }: PageProps<"/[locale]">) {

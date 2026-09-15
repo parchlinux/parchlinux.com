@@ -27,8 +27,9 @@ export async function generateMetadata({
     alternates: {
       canonical: `https://parchlinux.com/${locale}/blog`,
       languages: {
-        fa: "https://parchlinux.com/fa/blog",
         en: "https://parchlinux.com/en/blog",
+        fa: "https://parchlinux.com/fa/blog",
+        "x-default": "https://parchlinux.com/en/blog",
       },
     },
     openGraph: {

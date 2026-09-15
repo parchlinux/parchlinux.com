@@ -53,6 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: {
         en: "https://parchlinux.com/en/repo",
         fa: "https://parchlinux.com/fa/repo",
+        "x-default": "https://parchlinux.com/en/repo",
       },
     },
     openGraph: {

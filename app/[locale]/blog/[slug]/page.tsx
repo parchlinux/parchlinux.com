@@ -3,6 +3,7 @@ import { getBlogCopy } from "@/components/custom/blog/blog-copy";
 import MarkdownContent, { extractToc } from "@/components/custom/blog/markdown-content";
 import ReadingProgress from "@/components/custom/blog/reading-progress";
 import { getAllPostSlugs, getAllPosts, getPostBySlug } from "@/lib/blog";
+import { getBlogAlternates } from "@/lib/sitemap-data";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Clock3 } from "lucide-react";
 import { Locale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
@@ -34,12 +35,16 @@ export async function generateMetadata({
   const post = getPostBySlug(locale, slug);
   if (!post) return {};
 
-  const url = `https://parchlinux.com/${locale}/blog/${post.slug}`;
+  const alternates = getBlogAlternates(locale, post.slug);
+  const url = alternates.canonical;
   return {
     title: `${post.title} | ${locale === "fa" ? "بلاگ پارچ" : "Parch Blog"}`,
     description: post.description,
     authors: [{ name: post.author }],
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      languages: alternates.languages,
+    },
     openGraph: {
       type: "article",
       url,

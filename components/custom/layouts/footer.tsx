@@ -168,7 +168,10 @@ export default function Footer() {
   const footerColumns = [
     {
       titleKey: "product",
-      items: [{ labelKey: "download", href: "/download", internal: true }],
+      items: [
+        { labelKey: "features", href: "/features", internal: true },
+        { labelKey: "download", href: "/download", internal: true },
+      ],
     },
     {
       titleKey: "resources",

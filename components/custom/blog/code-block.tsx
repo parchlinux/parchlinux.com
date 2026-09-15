@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from "react";
 import { Check, Copy, Terminal } from "lucide-react";
 import hljs from "highlight.js";
+import { useLocale } from "next-intl";
 
 interface CodeBlockProps {
   code: string;
@@ -28,6 +29,8 @@ function normalizeLanguage(lang?: string): string {
 
 export default function CodeBlock({ code, language = "" }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
+  const locale = useLocale();
+  const isFa = locale === "fa";
 
   const cleanLang = normalizeLanguage(language);
 
@@ -86,18 +89,18 @@ export default function CodeBlock({ code, language = "" }: CodeBlockProps) {
         <button
           type="button"
           onClick={handleCopy}
-          aria-label="Copy code"
+          aria-label={isFa ? "کپی کد" : "Copy code"}
           className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-300 transition hover:border-primary/50 hover:bg-primary/10 hover:text-white active:scale-95"
         >
           {copied ? (
             <>
               <Check className="h-3.5 w-3.5 text-emerald-400" />
-              <span className="text-emerald-400">Copied!</span>
+              <span className="text-emerald-400">{isFa ? "کپی شد!" : "Copied!"}</span>
             </>
           ) : (
             <>
               <Copy className="h-3.5 w-3.5" />
-              <span>Copy</span>
+              <span>{isFa ? "کپی" : "Copy"}</span>
             </>
           )}
         </button>

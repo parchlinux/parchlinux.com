@@ -57,6 +57,13 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center gap-4 xl:gap-8">
           <Link
+            href={`/${locale}/features`}
+            className="text-sm font-medium hover:text-foreground/50 transition-colors"
+          >
+            {t("features")}
+          </Link>
+
+          <Link
             href="https://forum.parchlinux.com/"
             target="_blank"
             rel="noopener noreferrer"

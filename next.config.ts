@@ -55,6 +55,20 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/fa/blog/a-linux-distribution-that-leaves-no-one-behind",
+        destination: "/fa/blog/parch-accessibility",
+        permanent: true,
+      },
+      {
+        source: "/en/blog/parch-accessibility",
+        destination: "/en/blog/a-linux-distribution-that-leaves-no-one-behind",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);

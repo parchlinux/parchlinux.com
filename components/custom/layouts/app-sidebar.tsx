@@ -22,6 +22,10 @@ export function AppSidebar() {
 
   const items = [
     {
+      title: t("features"),
+      url: `/${locale}/features`,
+    },
+    {
       title: t("forum"),
       url: "https://forum.parchlinux.com/",
       out: true,

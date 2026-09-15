@@ -46,23 +46,34 @@ type Props = {
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
+  const isFa = locale === "fa";
+
+  const title = isFa ? "پارچ گنو/لینوکس | Parch GNU/Linux" : "Parch GNU/Linux";
+  const description = isFa
+    ? "پارچ لینوکس، یک توزیع کارآمد، سبک و کاربرپسند بر پایه آرچ لینوکس با ابزارهای اختصاصی و پشتیبانی کامل از زبان فارسی."
+    : "Parch Linux is a Persian Arch-based Linux distribution that provides a streamlined, user-friendly experience with full Persian language support.";
+  const ogDescription = isFa
+    ? "توزیع آزاد و جامعه‌محور مبتنی بر آرچ لینوکس — ساده، پرسرعت، زیبا و آماده به کار برای کارهای روزمره و تخصصی."
+    : "A Persian Arch-based Linux distribution — streamlined, user-friendly, and community-driven.";
+
   return {
-    title: "Parch GNU/Linux",
-    description: "Parch Linux is a Persian Arch-based Linux distribution that provides a streamlined, user-friendly experience with full Persian language support.",
+    title,
+    description,
     metadataBase: new URL("https://parchlinux.com"),
     alternates: {
       canonical: `https://parchlinux.com/${locale}`,
       languages: {
         en: "https://parchlinux.com/en",
         fa: "https://parchlinux.com/fa",
+        "x-default": "https://parchlinux.com/en",
       },
     },
     openGraph: {
-      title: "Parch GNU/Linux",
-      description: "A Persian Arch-based Linux distribution — streamlined, user-friendly, and community-driven.",
+      title,
+      description: ogDescription,
       url: `https://parchlinux.com/${locale}`,
       siteName: "Parch GNU/Linux",
-      locale: locale === "fa" ? "fa_IR" : "en_US",
+      locale: isFa ? "fa_IR" : "en_US",
       type: "website",
     },
   };
@@ -77,6 +88,27 @@ export default async function LocaleLayout({
     notFound();
   }
   setRequestLocale(locale);
+
+  const softwareAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Parch GNU/Linux",
+    operatingSystem: "Linux",
+    applicationCategory: "OperatingSystem",
+    description:
+      locale === "fa"
+        ? "پارچ لینوکس یک توزیع کارآمد و کاربرپسند مبتنی بر آرچ لینوکس با ابزارهای اختصاصی و پشتیبانی کامل است."
+        : "Parch Linux is a modern, accessible, and high-performance operating system powered by Arch Linux.",
+    url: `https://parchlinux.com/${locale}`,
+    downloadUrl: `https://parchlinux.com/${locale}/download`,
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    license: "https://www.gnu.org/licenses/gpl-3.0.html",
+  };
+
   return (
     <html
       className="h-full overflow-x-hidden"
@@ -84,6 +116,12 @@ export default async function LocaleLayout({
       dir={locale === "en" ? "ltr" : "rtl"}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }}
+        />
+      </head>
       <body
         suppressHydrationWarning
         className={`${

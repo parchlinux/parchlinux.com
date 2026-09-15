@@ -4,18 +4,21 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://parchlinux.com";
-  const routes = ["", "/download", "/contributors", "/team", "/blog", "/guidelines", "/repo"];
+  const routes = ["", "/features", "/download", "/contributors", "/team", "/blog", "/guidelines", "/repo"];
 
   const staticRoutes = routing.locales.flatMap((locale) =>
     routes.map((route) => ({
       url: `${baseUrl}/${locale}${route}`,
       lastModified: new Date(),
       changeFrequency: route === "/blog" ? ("weekly" as const) : ("monthly" as const),
-      priority: route === "" ? 1 : route === "/blog" ? 0.9 : 0.8,
+      priority: route === "" ? 1 : route === "/features" || route === "/download" ? 0.9 : 0.8,
       alternates: {
-        languages: Object.fromEntries(
-          routing.locales.map((l) => [l, `${baseUrl}/${l}${route}`])
-        ),
+        languages: {
+          ...Object.fromEntries(
+            routing.locales.map((l) => [l, `${baseUrl}/${l}${route}`])
+          ),
+          "x-default": `${baseUrl}/en${route}`,
+        },
       },
     }))
   );

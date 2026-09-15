@@ -44,7 +44,7 @@ const DownloadCard = ({
                 key={hashItem.version}
         className="flex items-center gap-2 bg-primary/15 p-2 rounded-md border-primary border cursor-pointer group"
         onClick={() => copyHash(hashItem.hash, hashItem.version)}
-        title="Click to copy"
+        title={t("clickToCopy")}
               >
                 <div
                   className={`flex items-center justify-center bg-primary text-black w-9 h-9 rounded font-bold text-xs ${

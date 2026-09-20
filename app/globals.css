@@ -545,6 +545,91 @@
   color: color-mix(in oklab, var(--foreground) 80%, var(--muted-foreground));
 }
 
+/* GitHub Alert styles */
+.blog-prose .markdown-alert {
+  position: relative;
+  margin: 2rem 0;
+  padding: 1rem 1.25rem;
+  border-radius: 0.85rem;
+  border-inline-start-width: 4px;
+  border-inline-start-style: solid;
+  font-size: 0.975rem;
+  line-height: 1.85;
+}
+
+.blog-prose .markdown-alert-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.blog-prose .markdown-alert-content p {
+  margin: 0.5rem 0;
+  color: color-mix(in oklab, var(--foreground) 90%, var(--muted-foreground));
+}
+
+.blog-prose .markdown-alert-content p:first-child {
+  margin-top: 0;
+}
+
+.blog-prose .markdown-alert-content p:last-child {
+  margin-bottom: 0;
+}
+
+.blog-prose .markdown-alert-content ul,
+.blog-prose .markdown-alert-content ol {
+  margin: 0.5rem 0;
+  padding-inline-start: 1.4rem;
+}
+
+.blog-prose .markdown-alert-content li {
+  margin: 0.25rem 0;
+}
+
+.blog-prose .markdown-alert-note {
+  border-inline-start-color: #38bdf8;
+  background: color-mix(in srgb, #38bdf8 8%, transparent);
+}
+.blog-prose .markdown-alert-note .markdown-alert-title {
+  color: #38bdf8;
+}
+
+.blog-prose .markdown-alert-tip {
+  border-inline-start-color: #10b981;
+  background: color-mix(in srgb, #10b981 8%, transparent);
+}
+.blog-prose .markdown-alert-tip .markdown-alert-title {
+  color: #10b981;
+}
+
+.blog-prose .markdown-alert-important {
+  border-inline-start-color: #a855f7;
+  background: color-mix(in srgb, #a855f7 8%, transparent);
+}
+.blog-prose .markdown-alert-important .markdown-alert-title {
+  color: #a855f7;
+}
+
+.blog-prose .markdown-alert-warning {
+  border-inline-start-color: #f59e0b;
+  background: color-mix(in srgb, #f59e0b 8%, transparent);
+}
+.blog-prose .markdown-alert-warning .markdown-alert-title {
+  color: #f59e0b;
+}
+
+.blog-prose .markdown-alert-caution {
+  border-inline-start-color: #ef4444;
+  background: color-mix(in srgb, #ef4444 8%, transparent);
+}
+.blog-prose .markdown-alert-caution .markdown-alert-title {
+  color: #ef4444;
+}
+
 .blog-prose ul,
 .blog-prose ol {
   margin: 1.3rem 0;

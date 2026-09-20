@@ -1,6 +1,62 @@
 import React from "react";
 import CodeBlock from "./code-block";
 import ImageGallery, { GalleryImage } from "./image-gallery";
+import {
+  Info,
+  Lightbulb,
+  AlertCircle,
+  AlertTriangle,
+  OctagonAlert,
+} from "lucide-react";
+
+type AlertType = "note" | "tip" | "important" | "warning" | "caution";
+
+const ALERT_CONFIG: Record<
+  AlertType,
+  {
+    icon: React.ComponentType<{ className?: string }>;
+    titleEn: string;
+    titleFa: string;
+    containerClass: string;
+    titleClass: string;
+  }
+> = {
+  note: {
+    icon: Info,
+    titleEn: "Note",
+    titleFa: "یادداشت",
+    containerClass: "markdown-alert-note",
+    titleClass: "text-sky-500 dark:text-sky-400",
+  },
+  tip: {
+    icon: Lightbulb,
+    titleEn: "Tip",
+    titleFa: "نکته",
+    containerClass: "markdown-alert-tip",
+    titleClass: "text-emerald-500 dark:text-emerald-400",
+  },
+  important: {
+    icon: AlertCircle,
+    titleEn: "Important",
+    titleFa: "مهم",
+    containerClass: "markdown-alert-important",
+    titleClass: "text-purple-500 dark:text-purple-400",
+  },
+  warning: {
+    icon: AlertTriangle,
+    titleEn: "Warning",
+    titleFa: "هشدار",
+    containerClass: "markdown-alert-warning",
+    titleClass: "text-amber-500 dark:text-amber-400",
+  },
+  caution: {
+    icon: OctagonAlert,
+    titleEn: "Caution",
+    titleFa: "احتیاط",
+    containerClass: "markdown-alert-caution",
+    titleClass: "text-rose-500 dark:text-rose-400",
+  },
+};
 
 export interface TocItem {
   id: string;
@@ -314,13 +370,118 @@ export default function MarkdownContent({ content }: { content: string }) {
       continue;
     }
 
-    // Blockquote
+    // Blockquote or GitHub Alert
     if (/^>\s?/.test(line)) {
       const quote: string[] = [];
       while (index < lines.length && /^>\s?/.test(lines[index].trim())) {
         quote.push(lines[index].trim().replace(/^>\s?/, ""));
         index += 1;
       }
+
+      const firstLine = quote[0]?.trim() || "";
+      const alertMatch = /^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION|INFO)\](?:\s+(.*))?$/i.exec(firstLine);
+
+      if (alertMatch) {
+        let alertTypeKey = alertMatch[1].toLowerCase() as AlertType | "info";
+        if (alertTypeKey === "info") alertTypeKey = "note";
+        const config = ALERT_CONFIG[alertTypeKey as AlertType];
+
+        const rawContentLines: string[] = [];
+        if (alertMatch[2] && alertMatch[2].trim()) {
+          rawContentLines.push(alertMatch[2].trim());
+        }
+        rawContentLines.push(...quote.slice(1));
+
+        const isPersian = /[\u0600-\u06FF]/.test(rawContentLines.join(" "));
+        const defaultTitle = isPersian ? config.titleFa : config.titleEn;
+        const Icon = config.icon;
+
+        const alertElements: React.ReactNode[] = [];
+        let pBuffer: string[] = [];
+        let listBuffer: string[] = [];
+        let isOrderedList = false;
+
+        const flushP = () => {
+          if (pBuffer.length > 0) {
+            alertElements.push(
+              <p key={`ap-${alertElements.length}`}>
+                {renderInline(pBuffer.join(" "), `alert-p-${index}-${alertElements.length}`)}
+              </p>
+            );
+            pBuffer = [];
+          }
+        };
+
+        const flushList = () => {
+          if (listBuffer.length > 0) {
+            const listKey = `al-${alertElements.length}`;
+            if (isOrderedList) {
+              alertElements.push(
+                <ol key={listKey}>
+                  {listBuffer.map((it, idx) => (
+                    <li key={idx}>{renderInline(it, `${listKey}-${idx}`)}</li>
+                  ))}
+                </ol>
+              );
+            } else {
+              alertElements.push(
+                <ul key={listKey}>
+                  {listBuffer.map((it, idx) => (
+                    <li key={idx}>{renderInline(it, `${listKey}-${idx}`)}</li>
+                  ))}
+                </ul>
+              );
+            }
+            listBuffer = [];
+          }
+        };
+
+        for (const cLine of rawContentLines) {
+          const trimmed = cLine.trim();
+          if (!trimmed) {
+            flushP();
+            flushList();
+            continue;
+          }
+          const ulMatch = /^[-*+]\s+(.+)$/.exec(trimmed);
+          const olMatch = /^\d+\.\s+(.+)$/.exec(trimmed);
+
+          if (ulMatch) {
+            flushP();
+            if (isOrderedList) flushList();
+            isOrderedList = false;
+            listBuffer.push(ulMatch[1]);
+          } else if (olMatch) {
+            flushP();
+            if (!isOrderedList) flushList();
+            isOrderedList = true;
+            listBuffer.push(olMatch[1]);
+          } else {
+            flushList();
+            pBuffer.push(trimmed);
+          }
+        }
+        flushP();
+        flushList();
+
+        blocks.push(
+          <div
+            key={`alert-${index}`}
+            className={`markdown-alert ${config.containerClass}`}
+            role="alert"
+          >
+            <div className={`markdown-alert-title ${config.titleClass}`}>
+              <Icon className="h-4 w-4 shrink-0" />
+              <span>{defaultTitle}</span>
+            </div>
+            <div className="markdown-alert-content">
+              {alertElements}
+            </div>
+          </div>
+        );
+        continue;
+      }
+
       blocks.push(
         <blockquote key={`quote-${index}`}>
           <p>{renderInline(quote.join(" "), `quote-${index}`)}</p>

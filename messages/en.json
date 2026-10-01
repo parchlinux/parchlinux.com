@@ -126,6 +126,33 @@
     "downloadTitles": {
       "x64": "Download for x64",
       "arm64": "Download for ARM64"
+    },
+    "heroBadge": "Official ISO Downloads",
+    "heroTitle": "Download Parch Linux",
+    "heroSubtitle": "Choose your preferred desktop environment. Fast, modern, and user-friendly Arch-based Linux distributions ready for daily use.",
+    "requirements": {
+      "title": "System Requirements",
+      "subtitle": "Ensure your hardware meets the recommended specifications for a smooth and responsive experience.",
+      "cpu": "64-bit dual-core processor (x86_64)",
+      "ram": "2 GB RAM (4 GB+ recommended)",
+      "storage": "20 GB available disk space",
+      "usb": "4 GB+ USB flash drive"
+    },
+    "quickStart": {
+      "title": "Quick Installation Guide",
+      "subtitle": "Follow these simple steps to prepare your bootable media and get Parch running.",
+      "step1Title": "Download ISO",
+      "step1Desc": "Select your preferred desktop edition above and verify its checksum.",
+      "step2Title": "Create Bootable USB",
+      "step2Desc": "Flash the image to a USB drive using Ventoy, Balena Etcher, or Rufus.",
+      "step3Title": "Boot and Install",
+      "step3Desc": "Boot your computer from the USB and follow the Calamares installer."
+    },
+    "community": {
+      "title": "Need Help or Have Feedback?",
+      "subtitle": "Join our vibrant community on the Parch Forum to ask questions, report issues, or connect with fellow users.",
+      "forumButton": "Visit Parch Forum",
+      "wikiButton": "Read Documentation"
     }
   },
   "Header": {
@@ -156,7 +183,12 @@
     "hash": "Hash",
     "size": "Size",
     "buildDate": "Build date",
-    "clickToCopy": "Click to copy"
+    "clickToCopy": "Click to copy",
+    "releaseCandidate": "Release Candidate (Beta)",
+    "officialEdition": "Official Edition",
+    "copied": "Copied!",
+    "checksum": "Checksum (MD5)",
+    "feedbackForum": "Report feedback on Forum"
   },
   "BlogSection": {
     "title": "Blog"

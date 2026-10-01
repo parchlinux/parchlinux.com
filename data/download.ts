@@ -77,6 +77,7 @@ const downloads: DownloadItem[] = [
     title: "hyprland",
     description: "hyprland",
     image: "/images/download/hyprland-desktop.png",
+    isRC: true,
     hashs: [
       {
         version: "x64",

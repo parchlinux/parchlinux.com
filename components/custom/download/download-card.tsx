@@ -1,8 +1,9 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import type { DownloadCardProps } from "@/types";
-import { Check, Copy, Download } from "lucide-react";
+import { Check, Copy, Download, ExternalLink, MessageSquare } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
@@ -13,6 +14,7 @@ const DownloadCard = ({
   title,
   description,
   image,
+  isRC,
   hashs,
   links,
 }: DownloadCardProps) => {
@@ -26,114 +28,149 @@ const DownloadCard = ({
   };
 
   return (
-    <Card className="relative">
-      <CardContent dir="ltr">
-        <div className="flex flex-col items-start gap-3 mb-4" dir="auto">
-          <Image src={logo} width={50} height={50} alt={title} />
-          <div className="flex flex-col gap-1">
-            <h3 className="text-2xl font-bold">{title}</h3>
-            <p className="text-sm text-foreground/80">{description}</p>
-          </div>
-        </div>
-
-        <div className="mb-4">
-          <h3 className="text-lg font-bold mb-2 rtl:text-right">{t("hash")}</h3>
-          <div className="space-y-2">
-            {hashs.map((hashItem) => (
-              <div
-                key={hashItem.version}
-        className="flex items-center gap-2 bg-primary/15 p-2 rounded-md border-primary border cursor-pointer group"
-        onClick={() => copyHash(hashItem.hash, hashItem.version)}
-        title={t("clickToCopy")}
-              >
-                <div
-                  className={`flex items-center justify-center bg-primary text-black w-9 h-9 rounded font-bold text-xs ${
-                    hashItem.version === "ARM64" ? "text-center leading-3" : ""
-                  }`}
-                >
-                  {hashItem.version === "ARM64" ? (
-                    <span>
-                      ARM
-                      <br />
-                      <span className="text-[12px]">64</span>
-                    </span>
-                  ) : (
-                    <span>{hashItem.version}</span>
-                  )}
-                </div>
-                <div className="text-xs font-mono truncate text-primary font-medium flex-1">
-                  {hashItem.hash}
-                </div>
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity">
-                  {copiedIndex === hashItem.version ? (
-                    <Check size={16} className="text-green-500" />
-                  ) : (
-                    <Copy size={16} className="text-primary" />
-                  )}
-                </div>
+    <Card className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border/70 bg-card/80 p-5 sm:p-6 backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5">
+      {/* Top Header */}
+      <div>
+        <div className="flex items-start justify-between gap-3 mb-4">
+          <div className="flex items-center gap-3">
+            <div className="relative shrink-0 p-0.5 rounded-xl bg-muted/60 border border-border/40">
+              <Image
+                src={logo}
+                width={48}
+                height={48}
+                alt={title}
+                className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg object-contain"
+              />
+            </div>
+            <div>
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">
+                {title}
+              </h3>
+              <div className="mt-1">
+                {isRC ? (
+                  <Badge
+                    variant="outline"
+                    className="bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30 text-xs px-2.5 py-0.5 font-medium rounded-full"
+                  >
+                    {t("releaseCandidate")}
+                  </Badge>
+                ) : (
+                  <Badge
+                    variant="outline"
+                    className="bg-primary/10 text-primary border-primary/25 text-xs px-2.5 py-0.5 font-medium rounded-full"
+                  >
+                    {t("officialEdition")}
+                  </Badge>
+                )}
               </div>
-            ))}
+            </div>
           </div>
         </div>
 
-        <div className="mb-4 w-60">
-          <h3 className="text-lg font-bold mb-2">{t("download")}</h3>
-          <div className="space-y-2">
-            {links.map((link) => (
-              <Link
-                key={link.version}
-                download
-                href={link.href}
-                className={`flex sm:flex-row flex-col w-fit bg-${link.color} rounded-md p-2.5 flex items-center gap-3 transition-all hover:opacity-80  `}
-              >
-                <div className="flex sm:w-fit w-full items-center justify-between">
-                  <div className="bg-white p-2 w-8 h-8 rounded-sm flex items-center justify-center text-xs font-bold text-black">
-                    {link.version === "ARM64" ? (
-                      <div className="flex flex-col items-center justify-center leading-3">
-                        <span className="text-[10px]">ARM</span>
-                        <span className="text-[10px]">64</span>
-                      </div>
-                    ) : (
-                      link.version
-                    )}
-                  </div>
-                  <Download size={18} className="sm:hidden block" aria-hidden="true" />
-                </div>
+        {/* Middle Content & Mockup */}
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-5 my-4">
+          <div className="flex-1 space-y-4 w-full">
+            <p className="text-sm text-foreground/80 leading-relaxed text-justify sm:text-start">
+              {description}
+            </p>
 
-                <div className="flex flex-row text-left">
-                  <div className="flex flex-col">
-                    <h5 className="font-bold text-white text-sm mb-1.5">
-                      {link.title}
-                    </h5>
-                    <span className="text-xs w-fit">
-                      {t("size")}: {link.size}
-                    </span>
-                    <span className="text-xs w-fit">
-                      {t("buildDate")}: {link.date}
-                    </span>
+            {/* Checksums */}
+            <div className="space-y-1.5 pt-1">
+              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                {t("checksum")}
+              </span>
+              <div className="space-y-2">
+                {hashs.map((hashItem) => (
+                  <div
+                    key={hashItem.version}
+                    onClick={() => copyHash(hashItem.hash, hashItem.version)}
+                    className="flex items-center justify-between gap-2 bg-muted/50 hover:bg-muted/80 border border-border/60 hover:border-primary/40 rounded-xl px-3 py-2 cursor-pointer transition-colors group/hash"
+                    title={t("clickToCopy")}
+                  >
+                    <div className="flex items-center gap-2 min-w-0 flex-1">
+                      <span className="shrink-0 text-[11px] font-bold px-1.5 py-0.5 rounded bg-primary/15 text-primary">
+                        {hashItem.version}
+                      </span>
+                      <code className="text-xs font-mono text-foreground/90 truncate dir-ltr text-left">
+                        {hashItem.hash}
+                      </code>
+                    </div>
+                    <div className="shrink-0 text-muted-foreground group-hover/hash:text-primary transition-colors flex items-center gap-1">
+                      {copiedIndex === hashItem.version ? (
+                        <>
+                          <span className="text-[11px] text-green-500 font-medium">
+                            {t("copied")}
+                          </span>
+                          <Check size={14} className="text-green-500" />
+                        </>
+                      ) : (
+                        <Copy size={14} />
+                      )}
+                    </div>
                   </div>
-
-                  <Download
-                    size={15}
-                    className="sm:block hidden mt-auto mb-2.5 ms-1.5"
-                    aria-hidden="true"
-                  />
-                </div>
-              </Link>
-            ))}
+                ))}
+              </div>
+            </div>
           </div>
+
+          {/* Desktop Preview Frame */}
+          {image && (
+            <div className="shrink-0 flex items-center justify-center p-2 rounded-2xl bg-muted/30 border border-border/50 group-hover:border-primary/25 transition-colors">
+              <Image
+                src={image}
+                width={125}
+                height={188}
+                alt={title}
+                className="w-[100px] sm:w-[120px] h-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105"
+                unoptimized
+              />
+            </div>
+          )}
         </div>
-        {image && (
-          <Image
-            src={image}
-            width={120}
-            height={60}
-            alt={title}
-            className="absolute bottom-0 right-0.5 sm:w-32 h-40 w-30 z-10"
-            unoptimized
-          />
+      </div>
+
+      {/* Download Action Footer */}
+      <div className="mt-4 pt-3 border-t border-border/40 space-y-2">
+        {links.map((link) => (
+          <Link
+            key={link.version}
+            download
+            href={link.href}
+            className="flex items-center justify-between gap-3 w-full bg-primary text-primary-foreground hover:bg-primary/90 font-medium rounded-xl p-3.5 transition-all shadow-sm hover:shadow-md active:scale-[0.99]"
+          >
+            <div className="flex items-center gap-3">
+              <div className="bg-black/15 dark:bg-white/15 px-2.5 py-1 rounded-lg flex items-center justify-center font-bold text-xs shrink-0">
+                {link.version}
+              </div>
+              <div className="flex flex-col text-start">
+                <span className="font-bold text-sm leading-tight text-white dark:text-black">
+                  {link.title}
+                </span>
+                <span className="text-xs opacity-90 font-normal text-white/90 dark:text-black/90">
+                  {t("size")}: {link.size} • {t("buildDate")}: {link.date}
+                </span>
+              </div>
+            </div>
+
+            <Download size={18} className="shrink-0 text-white dark:text-black" aria-hidden="true" />
+          </Link>
+        ))}
+
+        {isRC && (
+          <div className="flex justify-center pt-1">
+            <a
+              href="https://forum.parchlinux.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors"
+            >
+              <MessageSquare size={13} />
+              <span>{t("feedbackForum")}</span>
+              <ExternalLink size={11} />
+            </a>
+          </div>
         )}
-      </CardContent>
+      </div>
     </Card>
   );
 };

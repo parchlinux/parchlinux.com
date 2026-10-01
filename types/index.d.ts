@@ -17,6 +17,8 @@ export interface DownloadItem {
   title: string;
   description: string;
   image: string;
+  isRC?: boolean;
+  badge?: string;
   hashs: HashItem[];
   links: LinkItem[];
 }
@@ -26,6 +28,8 @@ export interface DownloadCardProps {
   title: string;
   description: string;
   image: string;
+  isRC?: boolean;
+  badge?: string;
   hashs: HashItem[];
   links: LinkItem[];
 }

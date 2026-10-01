@@ -72,6 +72,28 @@ const downloads: DownloadItem[] = [
       },
     ],
   },
+  {
+    logo: "/images/download/hyprland.png",
+    title: "hyprland",
+    description: "hyprland",
+    image: "/images/download/hyprland-desktop.png",
+    hashs: [
+      {
+        version: "x64",
+        hash: "2b5dc8c573818452d4ed6dcecd8eb631",
+      },
+    ],
+    links: [
+      {
+        version: "x64",
+        title: "x64",
+        size: "3.3 GiB",
+        date: formatDate("2026-10-01"),
+        color: "parch-blue",
+        href: "https://mirror.parchlinux.ir/hyprland/Parchlinux-hyprland-latest.iso",
+      },
+    ],
+  },
 ];
 
 export default downloads;

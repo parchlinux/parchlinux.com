@@ -113,12 +113,14 @@
       "kde": "Parch with KDE Desktop",
       "gnome": "Parch with GNOME Desktop",
       "xfce": "Parch with XFCE Desktop",
+      "hyprland": "Parch with Hyprland (Release Candidate)",
       "raspberry": "Parch for Raspberry Pi"
     },
     "descriptions": {
       "kde": "KDE is an international team co-operating on development and distribution of Free, Open Source Software for desktop and portable computing.",
       "gnome": "GNOME is developed in collaboration with the wider free software community to create a focused, elegant, and user-friendly desktop experience.",
       "xfce": "XFCE is a lightweight desktop environment for Unix-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly.",
+      "hyprland": "Hyprland is a dynamic tiling Wayland compositor that provides fluid animations and modern aesthetics without sacrificing performance. Please note that this edition is currently a Release Candidate (Beta). We warmly invite you to test it, share your feedback, and join our community on the Parch Forum at forum.parchlinux.com.",
       "raspberry": "Raspberry Pi is a series of small single-board computers with the best level software with GNOME depends."
     },
     "downloadTitles": {

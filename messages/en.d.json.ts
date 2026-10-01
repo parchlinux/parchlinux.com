@@ -3,9 +3,9 @@
 
 declare const messages: {
   "AnniversaryBanner": {
-    "badge": "5th Anniversary",
-    "title": "🎉 Happy 5th Birthday, Parch Linux!",
-    "description": "Discover five years of journey, breakthroughs, and the year in review.",
+    "badge": "New Release",
+    "title": "🚀 Parch Hyprland RC is Here!",
+    "description": "Explore the new Parch Store, Hyprland RC, Parch Lite preview, and September 2026 highlights.",
     "cta": "Read the story"
   },
   "HeadSection": {

@@ -3,7 +3,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import type { DownloadCardProps } from "@/types";
-import { Check, Copy, Download, ExternalLink, MessageSquare } from "lucide-react";
+import { Check, Copy, Download } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
@@ -28,9 +28,10 @@ const DownloadCard = ({
   };
 
   return (
-    <Card className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border/70 bg-card/80 p-5 sm:p-6 backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5">
-      {/* Top Header */}
-      <div>
+    <Card className="group relative flex flex-col justify-between h-full overflow-hidden rounded-2xl border border-border/70 bg-card/80 p-5 sm:p-6 backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5">
+      {/* Top Header & Body */}
+      <div className="flex-1 flex flex-col justify-between">
+        {/* Header */}
         <div className="flex items-start justify-between gap-3 mb-4">
           <div className="flex items-center gap-3">
             <div className="relative shrink-0 p-0.5 rounded-xl bg-muted/60 border border-border/40">
@@ -67,10 +68,10 @@ const DownloadCard = ({
           </div>
         </div>
 
-        {/* Middle Content & Mockup */}
-        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-5 my-4">
-          <div className="flex-1 space-y-4 w-full">
-            <p className="text-sm text-foreground/80 leading-relaxed text-justify sm:text-start">
+        {/* Middle Content & Mockup (In Persian, image is on the right side of the text) */}
+        <div className="flex flex-col sm:flex-row rtl:sm:flex-row-reverse items-center sm:items-start gap-4 sm:gap-5 my-4 flex-1">
+          <div className="flex-1 flex flex-col justify-between space-y-4 w-full h-full">
+            <p className="text-sm text-foreground/80 leading-relaxed text-justify sm:text-start min-h-[4rem]">
               {description}
             </p>
 
@@ -115,7 +116,7 @@ const DownloadCard = ({
 
           {/* Desktop Preview Frame */}
           {image && (
-            <div className="shrink-0 flex items-center justify-center p-2 rounded-2xl bg-muted/30 border border-border/50 group-hover:border-primary/25 transition-colors">
+            <div className="shrink-0 flex items-center justify-center p-2 rounded-2xl bg-muted/30 border border-border/50 group-hover:border-primary/25 transition-colors self-center sm:self-start">
               <Image
                 src={image}
                 width={125}
@@ -129,8 +130,8 @@ const DownloadCard = ({
         </div>
       </div>
 
-      {/* Download Action Footer */}
-      <div className="mt-4 pt-3 border-t border-border/40 space-y-2">
+      {/* Download Action Footer - Aligned identically across all cards */}
+      <div className="mt-auto pt-4 border-t border-border/40">
         {links.map((link) => (
           <Link
             key={link.version}
@@ -155,21 +156,6 @@ const DownloadCard = ({
             <Download size={18} className="shrink-0 text-white dark:text-black" aria-hidden="true" />
           </Link>
         ))}
-
-        {isRC && (
-          <div className="flex justify-center pt-1">
-            <a
-              href="https://forum.parchlinux.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors"
-            >
-              <MessageSquare size={13} />
-              <span>{t("feedbackForum")}</span>
-              <ExternalLink size={11} />
-            </a>
-          </div>
-        )}
       </div>
     </Card>
   );

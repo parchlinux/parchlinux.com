@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, Rocket } from "lucide-react";
 
 export default function AnniversaryBanner() {
   const t = useTranslations("AnniversaryBanner");
@@ -12,12 +12,12 @@ export default function AnniversaryBanner() {
   return (
     <div className="container max-w-7xl mx-auto">
       <Link
-        href={`/${locale}/blog/parch-fifth-anniversary`}
+        href={`/${locale}/blog/one-month-in-parch-september-2026`}
         className="group relative flex flex-col sm:flex-row items-center justify-between gap-4 overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-r from-primary/15 via-primary/5 to-primary/15 p-4 sm:p-5 backdrop-blur-md shadow-lg shadow-primary/5 transition-all duration-300 hover:border-primary/60 hover:shadow-primary/10 hover:scale-[1.005]"
       >
         <div className="flex items-center gap-3.5 sm:gap-4 text-center sm:text-start">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/20 text-primary border border-primary/30 shadow-inner group-hover:scale-110 transition-transform">
-            <Sparkles className="h-5 w-5 animate-pulse" />
+            <Rocket className="h-5 w-5 animate-pulse" />
           </div>
           <div>
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">

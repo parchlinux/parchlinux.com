@@ -205,6 +205,17 @@ const team = [
       },
     ],
   },
+  {
+    name: "AliReza AsadolahiFard",
+    job: "Maintainer & Developer",
+    image: "https://avatars.githubusercontent.com/u/283110861?v=4",
+    links: [
+      {
+        github: "https://github.com/alfredafard",
+        twitter: "https://x.com/alfredafard",
+      },
+    ],
+  },
 ];
 
 export default team;

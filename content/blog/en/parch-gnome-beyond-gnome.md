@@ -8,7 +8,7 @@ author: "sohrab"
 featured: false
 draft: false
 ---
-GNOME is one of the most popular desktop environments in Parch Linux—a space where users spend hours every day. Any improvement to this desktop environment can have a direct impact on the user experience. In the upcoming versions of Parch Linux, a few key changes are on the way, aimed at simplifying tasks and creating a better and more modern visual environment.
+GNOME is one of the most popular desktop environments in Parch Linux, a space where users spend hours every day. Any improvement to this desktop environment can have a direct impact on the user experience. In the upcoming versions of Parch Linux, a few key changes are on the way, aimed at simplifying tasks and creating a better and more modern visual environment.
 
 These changes may seem minor at first glance, but each of them has been carefully selected based on community feedback and thorough consideration. Let’s take a closer look at what’s coming to Parch Linux in the next releases.
 
@@ -42,7 +42,7 @@ For example, if you want to mirror your screen to a wireless monitor or televisi
 
 **Greater Harmony in Design and Functionality**
 
-A good user experience isn’t just about having powerful tools—it’s also about the harmony between different components. One of the priorities for the Parch Linux team in future versions is to improve the visual and functional integration of GNOME’s desktop environment.
+A good user experience isn’t just about having powerful tools; it’s also about the harmony between different components. One of the priorities for the Parch Linux team in future versions is to improve the visual and functional integration of GNOME’s desktop environment.
 
 These changes may include enhancing themes, refining icon designs, and better coordination between tools and applications. The goal is to ensure that users feel like all parts of the system work as a unified whole, where every piece interacts seamlessly with the others.
 

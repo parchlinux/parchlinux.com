@@ -53,8 +53,8 @@ export async function generateMetadata({ params }: Props) {
     ? "پارچ لینوکس، یک توزیع کارآمد، سبک و کاربرپسند بر پایه آرچ لینوکس با ابزارهای اختصاصی و پشتیبانی کامل از زبان فارسی."
     : "Parch Linux is a Persian Arch-based Linux distribution that provides a streamlined, user-friendly experience with full Persian language support.";
   const ogDescription = isFa
-    ? "توزیع آزاد و جامعه‌محور مبتنی بر آرچ لینوکس — ساده، پرسرعت، زیبا و آماده به کار برای کارهای روزمره و تخصصی."
-    : "A Persian Arch-based Linux distribution — streamlined, user-friendly, and community-driven.";
+    ? "توزیع آزاد و جامعه‌محور مبتنی بر آرچ لینوکس، ساده، پرسرعت، زیبا و آماده به کار برای کارهای روزمره و تخصصی."
+    : "A Persian Arch-based Linux distribution: streamlined, user-friendly, and community-driven.";
 
   return {
     title,

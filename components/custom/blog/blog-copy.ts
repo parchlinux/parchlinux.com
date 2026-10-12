@@ -44,7 +44,7 @@ export const blogCopy = {
     noResults: "No stories match that search.",
     clear: "Clear filters",
     newsletterTitle: "Follow the journal with RSS",
-    newsletterText: "Get new stories directly in your feed reader — no account, no email and no inbox noise.",
+    newsletterText: "Get new stories directly in your feed reader: no account, no email, and no inbox noise.",
     rss: "Open RSS feed",
     archive: "Story archive",
     articles: "articles",

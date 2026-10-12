@@ -193,6 +193,11 @@ export default function Footer() {
           internal: true,
         },
         {
+          labelKey: "presskit",
+          href: "/presskit",
+          internal: true,
+        },
+        {
           labelKey: "repo",
           href: "/repo",
           internal: true,

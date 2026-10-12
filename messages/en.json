@@ -22,7 +22,7 @@
     "codingTitle": "<coding>Coding</coding> like a geek",
     "codingDescription": "All the tools you need for programming are available in Parch, and with just one command, you can download and install the desired program.",
     "chooseTitle": "Choose your perfect desktop environment",
-    "chooseDescription": "ParchLinux officially supports three desktop environments — Plasma, GNOME, and XFCE. You are free to work with whichever you feel most comfortable with.",
+    "chooseDescription": "ParchLinux officially supports three desktop environments: Plasma, GNOME, and XFCE. You are free to work with whichever you feel most comfortable with.",
     "updateTitle": "Always stay <update>up to date</update>",
     "updateDescription": "The packages in the ParchLinux are rolling and you always get the latest features without having to get a new version.",
     "aurTitle": "Now you have <aur>AUR*</aur> power",
@@ -73,6 +73,7 @@
           "contributors": "Contributors",
           "blog": "Blog",
           "guidelines": "Guidelines",
+          "presskit": "Brand & Press Kit",
           "repo": "Repositories"
         }
       },
@@ -194,11 +195,115 @@
     "title": "Blog"
   },
   "TeamPage": {
-    "title": "Our team",
-    "contributorsNote": "There are many more people who have contributed to Parch GNU/Linux. A full list of contributors can be <link>found here</link>."
+    "badge": "Core Community",
+    "title": "Meet the Parch Team",
+    "subtitle": "The passionate developers, designers, packagers, and maintainers crafting an open and accessible Linux experience.",
+    "contributorsNote": "There are many more people who have contributed to Parch GNU/Linux. A full list of contributors can be <link>found here</link>.",
+    "community": {
+      "title": "Built with the Community",
+      "subtitle": "Parch Linux thrives thanks to its passionate global open-source community. Explore everyone who contributes code, translations, wallpapers, and bug reports.",
+      "contributorsButton": "Explore Contributors",
+      "githubButton": "Contribute on GitHub"
+    }
   },
   "ContributorsPage": {
-    "title": "Contributors"
+    "badge": "Open Source Heroes",
+    "title": "Community Contributors",
+    "subtitle": "Everyone who contributes to Parch Linux makes it better. Thank you to all developers, translators, designers, and testers.",
+    "community": {
+      "title": "Want to Contribute to Parch?",
+      "subtitle": "Whether you want to package software, fix bugs, improve documentation, or translate strings, everyone is welcome!",
+      "githubButton": "Parch on GitHub",
+      "guidelinesButton": "Community Guidelines"
+    }
+  },
+  "PresskitPage": {
+    "badge": "Brand Identity & Media Kit",
+    "title": "Parch Brand Guidelines",
+    "subtitle": "Official brand assets, logos, color palettes, and usage rules for creators, community members, and media.",
+    "downloadAllButton": "Download Full Brand Kit (ZIP)",
+    "downloadPdfButton": "Artwork & Design Repository",
+    "aboutSection": {
+      "title": "The Story Behind the Logo",
+      "p1": "The Parch Linux logo is inspired by the Boteh Jegheh (Paisley), an ancient Iranian artistic form representing the cypress tree. In Persian culture, the cypress symbolizes freedom, resilience, and humility.",
+      "p2": "Combined with elements echoing Arch Linux, the mark embodies a modern, friendly GNU/Linux distribution crafted for everyone."
+    },
+    "logosSection": {
+      "title": "Official Logos",
+      "subtitle": "Download vector SVGs or high-resolution PNGs for both dark and light modes.",
+      "downloadSvg": "SVG",
+      "downloadPng": "PNG",
+      "copyName": "Copy name",
+      "copied": "Copied!",
+      "previewDark": "Dark Background",
+      "previewLight": "Light Background",
+      "items": {
+        "normal": {
+          "title": "Full Color (Normal)",
+          "description": "The default logo featuring the Parch cyan-to-blue gradient. Recommended on dark or clean neutral backgrounds."
+        },
+        "dark": {
+          "title": "Dark Edition",
+          "description": "Deep blue-cyan tones for light contexts with sufficient contrast."
+        },
+        "white": {
+          "title": "Monochrome White",
+          "description": "Solid white glyph for dark wallpapers, colored overlays, and high-contrast scenarios."
+        },
+        "black": {
+          "title": "Monochrome Black",
+          "description": "Solid black silhouette for monochrome print, stencils, or light document backgrounds."
+        }
+      }
+    },
+    "paletteSection": {
+      "badge": "Brand Colors",
+      "title": "Color System",
+      "subtitle": "The core color palette defined in the official visual identity guidelines.",
+      "copyHex": "Copy HEX",
+      "colors": {
+        "primary": "Parch Cyan (Primary)",
+        "blue": "Parch Blue (Accent)",
+        "sky": "Deep Sky Blue",
+        "mint": "Mint Cyan (Highlight)",
+        "charcoal": "Dark Charcoal",
+        "cloud": "Light Cloud"
+      }
+    },
+    "typographySection": {
+      "badge": "Typography",
+      "title": "Typography Guidelines",
+      "subtitle": "Carefully selected typefaces for UI, web, and editorial identity.",
+      "latinTitle": "Latin Typography",
+      "latinDesc": "Saira is used for web interfaces and headlines. Clean, geometric, and modern.",
+      "persianTitle": "Persian Typography",
+      "persianDesc": "Estedad is our primary Persian interface and text font. Morabba is used for editorial logotypes.",
+      "secondaryTitle": "Editorial & Display",
+      "secondaryDesc": "Raleway and Morabba complement special presentations and promotional media."
+    },
+    "rulesSection": {
+      "title": "Usage Rules & Best Practices",
+      "subtitle": "Guidelines to keep our brand consistent and recognizable across all platforms.",
+      "dosTitle": "Do",
+      "dontsTitle": "Do Not",
+      "dos": [
+        "Use official vector SVG files whenever possible.",
+        "Maintain clear space around the logo equivalent to at least the height of the mark.",
+        "Use high-contrast combinations such as white on dark or black on light.",
+        "When placing on screenshots or photos, frame the imagery cleanly instead of heavily watermarking."
+      ],
+      "donts": [
+        "Do not stretch, rotate, distort, or alter the aspect ratio of the logo.",
+        "Do not place low-contrast or dark logos directly over busy or dark backgrounds.",
+        "Do not modify the logo gradient colors with arbitrary tints.",
+        "Do not alter the relative spacing or placement between the icon and the logotype."
+      ]
+    },
+    "bottomCallout": {
+      "title": "Need More Brand Assets or Custom Variations?",
+      "subtitle": "All Parch artwork, wallpapers, and design files are open source and maintained in our artwork repository.",
+      "button": "GitHub Artwork Repo"
+    }
   },
   "GuidelinesPage": {
     "badge": "Community Charter",

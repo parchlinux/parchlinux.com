@@ -212,7 +212,7 @@ export default function FeaturesPage({ params }: Props) {
           </div>
         </div>
 
-        {/* SECTION 1: The Parch Experience — What You Get From Day One */}
+        {/* SECTION 1: The Parch Experience: What You Get From Day One */}
         <div className="flex flex-col gap-6">
           <div className="flex flex-col items-center text-center gap-2 max-w-2xl mx-auto">
             <Badge variant="outline" className="text-xs text-primary border-primary/30 bg-primary/10">
@@ -647,7 +647,7 @@ export default function FeaturesPage({ params }: Props) {
           </Card>
         </div>
 
-        {/* SECTION 4: Comparison Table — Parch Linux vs Stock Arch Linux */}
+        {/* SECTION 4: Comparison Table: Parch Linux vs Stock Arch Linux */}
         <div className="flex flex-col gap-6 pt-4">
           <div className="flex flex-col items-center text-center gap-2 max-w-2xl mx-auto">
             <Badge variant="outline" className="text-xs text-primary border-primary/30 bg-primary/10">

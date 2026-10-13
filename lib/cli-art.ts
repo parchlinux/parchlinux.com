@@ -4,8 +4,8 @@
  */
 
 export const COLS = 42;
-export const ROWS = 32;
-export const FPS = 25;
+export const ROWS = 30;
+export const FPS = 15; // Smooth but low network overhead
 export const START = 0.5;
 export const PASS = 2.0;
 export const HEAD = 2;
@@ -99,7 +99,6 @@ export const INK = String.raw`
 
 const parseLines = (art: string) => {
   const raw = art.split("\n");
-  // Trim potential leading/trailing empty lines from template literal
   if (raw.length > 0 && raw[0].trim() === "") raw.shift();
   if (raw.length > 0 && raw[raw.length - 1].trim() === "") raw.pop();
   return raw.map((l) => (l || "").padEnd(COLS));
@@ -128,7 +127,7 @@ monoLines.forEach((line, y) => {
 });
 
 const span = lastRow - firstRow + 1 + HEAD + TRAIL;
-const every = 3.5; // Seconds between scan cycles
+const every = 3.5;
 
 /**
  * Renders a single frame of the Parch ASCII logo at time `t` (seconds).
@@ -170,53 +169,46 @@ export function renderLogoFrame(t: number): string[] {
 }
 
 /**
- * Right-side dashboard information displayed alongside the logo.
+ * Compact right-side dashboard info formatted to fit cleanly beside the 42-col logo.
+ * Total line length stays strictly under 85 columns.
  */
-export const DASHBOARD_INFO = [
-  "\x1b[1;38;2;0;234;255m  ____                 _       _     _                  \x1b[0m",
-  "\x1b[1;38;2;0;234;255m |  _ \\ __ _ _ __  ___| |__   | |   (_)_ __  _   ___  __\x1b[0m",
-  "\x1b[1;38;2;0;169;255m | |_) / _` | '__|/ __| '_ \\  | |   | | '_ \\| | | \\ \\/ /\x1b[0m",
-  "\x1b[1;38;2;0;169;255m |  __/ (_| | |  | (__| | | | | |___| | | | | |_| |>  < \x1b[0m",
-  "\x1b[1;38;2;0;128;255m |_|   \\__,_|_|   \\___|_| |_| |_____|_|_| |_|\\__,_/_/\\_\\\x1b[0m",
-  "",
-  "  \x1b[1;37mAn easy, fast, and lightweight Arch-based GNU/Linux distribution.\x1b[0m",
-  "  \x1b[90mOfficial Release ISOs with modern UX and zero bloat.\x1b[0m",
+export const COMPACT_DASHBOARD_INFO = [
+  "  \x1b[1;38;2;0;234;255mPARCH GNU/LINUX\x1b[0m",
+  "  \x1b[90mAn Arch-based distribution.\x1b[0m",
+  "  \x1b[90mFast, elegant, and lightweight.\x1b[0m",
   "",
   "  \x1b[1;36mOFFICIAL EDITIONS:\x1b[0m",
-  "    \x1b[38;2;0;234;255m• KDE Plasma 6\x1b[0m       \x1b[90mLatest Plasma desktop with Parch theme\x1b[0m",
-  "    \x1b[38;2;0;169;255m• GNOME\x1b[0m              \x1b[90mModern, focused and elegant desktop\x1b[0m",
-  "    \x1b[38;2;0;255;136m• XFCE\x1b[0m               \x1b[90mUltra-lightweight for older & low-spec machines\x1b[0m",
-  "    \x1b[38;2;255;180;0m• Hyprland (RC)\x1b[0m      \x1b[90mDynamic tiling Wayland compositor\x1b[0m",
+  "    \x1b[38;2;0;234;255m• Plasma 6\x1b[0m       \x1b[90mKDE 6 desktop\x1b[0m",
+  "    \x1b[38;2;0;169;255m• GNOME\x1b[0m          \x1b[90mModern and focused\x1b[0m",
+  "    \x1b[38;2;0;255;136m• XFCE\x1b[0m           \x1b[90mLow-spec machines\x1b[0m",
+  "    \x1b[38;2;255;180;0m• Hyprland (RC)\x1b[0m  \x1b[90mWayland tiling\x1b[0m",
   "",
-  "  \x1b[1;36mQUICK DOWNLOADS:\x1b[0m",
-  "    \x1b[1mPlasma:\x1b[0m    \x1b[4mhttps://parchlinux.com/download\x1b[0m",
-  "    \x1b[1mGNOME:\x1b[0m     \x1b[4mhttps://parchlinux.com/download\x1b[0m",
-  "    \x1b[1mXFCE:\x1b[0m      \x1b[4mhttps://parchlinux.com/download\x1b[0m",
-  "    \x1b[1mHyprland:\x1b[0m  \x1b[4mhttps://parchlinux.com/download\x1b[0m",
+  "  \x1b[1;36mDOWNLOAD RELEASES:\x1b[0m",
+  "    \x1b[4mhttps://parchlinux.com/download\x1b[0m",
   "",
-  "  \x1b[1;36mCOMMUNITY & RESOURCES:\x1b[0m",
-  "    \x1b[1mForum:\x1b[0m     https://forum.parchlinux.com",
-  "    \x1b[1mWiki:\x1b[0m      https://wiki.parchlinux.com",
-  "    \x1b[1mGitHub:\x1b[0m    https://github.com/parchlinux",
-  "    \x1b[1mBrand:\x1b[0m     https://parchlinux.com/presskit",
+  "  \x1b[1;36mCOMMUNITY & DOCS:\x1b[0m",
+  "    \x1b[1mForum:\x1b[0m   https://forum.parchlinux.com",
+  "    \x1b[1mWiki:\x1b[0m    https://wiki.parchlinux.com",
+  "    \x1b[1mGitHub:\x1b[0m  https://github.com/parchlinux",
+  "    \x1b[1mBrand:\x1b[0m   https://parchlinux.com/presskit",
   "",
-  "  \x1b[90m─────────────────────────────────────────────────────────────\x1b[0m",
-  "  \x1b[33mTip:\x1b[0m Open in any web browser for interactive ISO downloads & blog.",
-  "  \x1b[90mPress Ctrl+C to exit stream at any time.\x1b[0m",
+  "  \x1b[90m──────────────────────────────────────\x1b[0m",
+  "  \x1b[33mWeb:\x1b[0m   https://parchlinux.com",
+  "  \x1b[90mLive:  curl -sN parchlinux.com/live\x1b[0m",
 ];
 
 /**
- * Combines a logo frame with the dashboard info columns.
+ * Builds the side-by-side terminal composite frame.
  */
 export function buildCompositeFrame(t: number): string {
   const logoLines = renderLogoFrame(t);
-  const totalRows = Math.max(logoLines.length, DASHBOARD_INFO.length);
+  const totalRows = Math.max(logoLines.length, COMPACT_DASHBOARD_INFO.length);
   const result: string[] = [];
 
   for (let r = 0; r < totalRows; r++) {
     const logoPart = logoLines[r] ?? "".padEnd(COLS);
-    const infoPart = DASHBOARD_INFO[r] ?? "";
-    result.push(`${logoPart}   ${infoPart}`);
+    const infoPart = COMPACT_DASHBOARD_INFO[r] ?? "";
+    result.push(`${logoPart} ${infoPart}`);
   }
 
   return result.join("\n");

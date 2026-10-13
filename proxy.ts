@@ -12,6 +12,9 @@ export default function middleware(request: NextRequest) {
   // stream the rich animated terminal interface instead of serving HTML!
   if (isCLIUserAgent(userAgent)) {
     const cliUrl = request.nextUrl.clone();
+    if (request.nextUrl.pathname.endsWith("/live")) {
+      cliUrl.searchParams.set("live", "1");
+    }
     cliUrl.pathname = "/api/cli";
     return NextResponse.rewrite(cliUrl);
   }

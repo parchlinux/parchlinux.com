@@ -135,12 +135,56 @@ function parseImagesFromText(text: string): GalleryImage[] {
   return images;
 }
 
+function parseHtmlLink(html: string): {
+  href: string;
+  className?: string;
+  text: string;
+  target?: string;
+  rel?: string;
+} | null {
+  const match = /^<a\s+([^>]*?)>(.*?)<\/a>$/i.exec(html.trim());
+  if (!match) return null;
+  const attrs = match[1];
+  const text = match[2];
+  const hrefMatch = /href=["']([^"']+)["']/i.exec(attrs);
+  if (!hrefMatch) return null;
+  const classMatch = /class(?:Name)?=["']([^"']+)["']/i.exec(attrs);
+  const targetMatch = /target=["']([^"']+)["']/i.exec(attrs);
+  const relMatch = /rel=["']([^"']+)["']/i.exec(attrs);
+  return {
+    href: hrefMatch[1],
+    className: classMatch?.[1],
+    text,
+    target: targetMatch?.[1],
+    rel: relMatch?.[1],
+  };
+}
+
 function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
-  const pattern = /(!\[[^\]]*\]\([^)]*\)|\[[^\]]+\]\([^)]*\)|https?:\/\/[^\s<>)"]+|`[^`]+`|\*\*[^*]+\*\*|__[^_]+__|\*[^*]+\*|_[^_]+_)/g;
+  const pattern = /(<a\s+[^>]*>.*?<\/a>|!\[[^\]]*\]\([^)]*\)|\[[^\]]+\]\([^)]*\)|https?:\/\/[^\s<>)"]+|`[^`]+`|\*\*[^*]+\*\*|__[^_]+__|\*[^*]+\*|_[^_]+_)/g;
   const parts = text.split(pattern).filter((part) => part !== "");
 
   return parts.map((part, index) => {
     const key = `${keyPrefix}-${index}`;
+
+    const htmlLink = parseHtmlLink(part);
+    if (htmlLink) {
+      const isBtn = htmlLink.className?.includes("btn");
+      const buttonClasses = isBtn
+        ? "inline-flex items-center justify-center gap-2 rounded-lg bg-zinc-900 text-zinc-100 hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200 px-4 py-2 text-sm font-medium shadow-xs transition-colors my-3 no-underline border border-transparent dark:border-zinc-800"
+        : htmlLink.className;
+      return (
+        <a
+          key={key}
+          href={htmlLink.href}
+          target={htmlLink.target || (htmlLink.href.startsWith("http") ? "_blank" : undefined)}
+          rel={htmlLink.rel || (htmlLink.href.startsWith("http") ? "noopener noreferrer" : undefined)}
+          className={buttonClasses}
+        >
+          {renderInline(htmlLink.text, `${key}-btn`)}
+        </a>
+      );
+    }
 
     const image = /^!\[([^\]]*)\]\(([^)\s]+)(?:\s+["']([^"']*)["'])?\)$/.exec(part);
     if (image) {

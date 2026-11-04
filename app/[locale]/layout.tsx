@@ -1,5 +1,6 @@
 import Footer from "@/components/custom/layouts/footer";
 import Header from "@/components/custom/layouts/header";
+import ResponsiveMotion from "@/components/custom/layouts/responsive-motion";
 import { ThemeProvider } from "@/components/theme-provider";
 import { routing } from "@/i18n/routing";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
@@ -139,6 +140,7 @@ export default async function LocaleLayout({
                 <Header />
                 <div className="md:mt-32 mt-28 flex-1">{children}</div>
                 <Footer />
+                <ResponsiveMotion />
                 <div className="bg-grid-reverse z-[-1] absolute w-[150%] h-190 opacity-5 md:-bottom-85 bottom-0 -start-20 pointer-events-none" />
               </div>
             </SidebarProvider>

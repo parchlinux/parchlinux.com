@@ -4,7 +4,7 @@
 declare const messages: {
   "AnniversaryBanner": {
     "badge": "New Release",
-    "title": "🚀 Parch Hyprland RC is Here!",
+    "title": "Parch Hyprland RC is Here!",
     "description": "Explore the new Parch Store, Hyprland RC, Parch Lite preview, and September 2026 highlights.",
     "cta": "Read the story"
   },

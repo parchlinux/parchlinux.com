@@ -124,7 +124,6 @@ Server = https://mirror.parchlinux.ir/$repo/$arch
       />
 
       {/* Decorative ambient background glow */}
-      <div className="pointer-events-none absolute -top-24 start-1/2 -translate-x-1/2 w-[90vw] max-w-6xl h-96 bg-radial from-teal-500/10 via-sky-500/5 to-transparent blur-3xl -z-10" />
 
       <div className="container max-w-5xl mx-auto px-4 sm:px-6 md:px-8">
         {/* Hero Section */}
@@ -210,7 +209,7 @@ Server = https://mirror.parchlinux.ir/$repo/$arch
           {/* World vs Void Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
             {/* World Repository Card */}
-            <Card className="rounded-2xl border border-emerald-500/30 bg-linear-to-br from-emerald-500/5 via-card to-card p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
+            <Card className="rounded-2xl border border-emerald-500/30 bg-card p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
               <CardContent className="p-0 flex flex-col gap-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
@@ -238,7 +237,7 @@ Server = https://mirror.parchlinux.ir/$repo/$arch
             </Card>
 
             {/* Void Repository Card */}
-            <Card className="rounded-2xl border border-amber-500/30 bg-linear-to-br from-amber-500/5 via-card to-card p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
+            <Card className="rounded-2xl border border-amber-500/30 bg-card p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
               <CardContent className="p-0 flex flex-col gap-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
@@ -356,8 +355,7 @@ Server = https://mirror.parchlinux.ir/$repo/$arch
           </div>
 
           {/* Announcement Card */}
-          <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-linear-to-br from-primary/10 via-card to-card p-6 sm:p-8 mb-8 shadow-sm">
-            <div className="absolute top-0 end-0 -translate-y-1/4 translate-x-1/4 w-60 h-60 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-card p-6 sm:p-8 mb-8 shadow-sm">
             <div className="relative z-10 flex flex-col gap-3">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 text-primary text-xs font-semibold w-fit">
                 <Sparkles className="w-3.5 h-3.5" />
@@ -488,7 +486,7 @@ Server = https://mirror.parchlinux.ir/$repo/$arch
 
         {/* Community Banner */}
         <section>
-          <div className="rounded-3xl border border-primary/20 bg-linear-to-b from-card to-secondary/40 p-8 sm:p-10 text-center relative overflow-hidden shadow-sm">
+          <div className="rounded-3xl border border-primary/20 bg-card p-8 sm:p-10 text-center relative overflow-hidden shadow-sm">
             <div className="inline-flex p-3 rounded-2xl bg-primary/15 text-primary mb-4">
               <MessageSquare className="w-6 h-6" />
             </div>

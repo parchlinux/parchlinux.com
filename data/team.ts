@@ -216,6 +216,18 @@ const team = [
       },
     ],
   },
+  {
+    name: "Mohammad Mehdi Azizi",
+    job: "Contributor",
+    image: "https://avatars.githubusercontent.com/u/121211931?v=4",
+    links: [
+      {
+        github: "https://github.com/TheGreatAzizi",
+        twitter: "https://x.com/the_azzi",
+        website: "https://theazizi.ir",
+      },
+    ],
+  },
 ];
 
 export default team;

@@ -25,7 +25,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
 
   return (
     <>
-      <div className="flex flex-col gap-12 h-full lg:px-0 md:px-8 sm:px-6 px-4">
+      <div className="flex flex-col gap-12 h-full md:px-8 sm:px-6 px-4">
         <AnniversaryBanner />
         <HeadSection />
         <div className="flex flex-col gap-24">
@@ -40,7 +40,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
               </h2>
             }
             description={
-              <p className="text-justify md:text-sm text-xs font-light">
+              <p className="md:text-sm text-xs font-light">
                 {t("workDescription")}
               </p>
             }
@@ -59,7 +59,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
               </h2>
             }
             description={
-              <p className="text-justify md:text-sm text-xs font-light">
+              <p className="md:text-sm text-xs font-light">
                 {t("codingDescription")}
               </p>
             }
@@ -80,7 +80,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
               </h2>
             }
             description={
-              <p className="text-justify md:text-sm text-xs font-light">
+              <p className="md:text-sm text-xs font-light">
                 {t("chooseDescription")}
               </p>
             }
@@ -99,7 +99,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
               </h2>
             }
             description={
-              <p className="text-justify md:text-sm text-xs font-light">
+              <p className="md:text-sm text-xs font-light">
                 {t("updateDescription")}
               </p>
             }
@@ -116,7 +116,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
               </h2>
             }
             description={
-              <p className="text-justify md:text-sm text-xs font-light">
+              <p className="md:text-sm text-xs font-light">
                 {t("aurDescription")}
               </p>
             }
@@ -125,7 +125,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
             reverse
           />
           <div className="container max-w-7xl mx-auto">
-            <p className="font-bold text-zinc-400 text-justify lg:text-sm text-xs">
+            <p className="font-bold text-zinc-400 lg:text-sm text-xs">
               {t("aurNote")}
             </p>
           </div>
@@ -141,7 +141,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
               </h2>
             }
             description={
-              <p className="text-justify md:text-sm text-xs font-light">
+              <p className="md:text-sm text-xs font-light">
                 {t("pacmanDescription")}
               </p>
             }

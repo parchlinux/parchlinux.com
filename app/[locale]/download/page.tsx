@@ -100,7 +100,7 @@ export default function Download({ params }: PageProps<"/[locale]">) {
       </section>
 
       {/* Community & Forum Callout */}
-      <section className="rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/10 via-background to-parch-blue/10 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <section className="rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="space-y-2 text-center md:text-start">
           <div className="inline-flex items-center gap-2 text-primary font-semibold text-sm">
             <MessageSquare size={16} />

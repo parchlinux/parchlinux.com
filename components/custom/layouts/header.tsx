@@ -55,7 +55,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <nav className="hidden md:flex items-center gap-4 xl:gap-8">
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-8">
           <Link
             href={`/${locale}/features`}
             className="text-sm font-medium hover:text-foreground/50 transition-colors"

@@ -121,7 +121,7 @@ export default function FeaturesPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="container mx-auto max-w-7xl lg:px-0 md:px-8 sm:px-6 px-4 py-8 flex flex-col gap-16">
+      <div className="container mx-auto max-w-7xl md:px-8 sm:px-6 px-4 py-8 flex flex-col gap-16">
         {/* Hero Section */}
         <div className="flex flex-col items-center text-center gap-5 max-w-3xl mx-auto pt-6">
           <Badge

@@ -87,42 +87,42 @@ export default function GuidelinesPage({ params }: Props) {
     {
       key: "patient",
       icon: Sparkles,
-      color: "from-teal-500/20 to-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30",
+      color: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30",
       accentBg: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300",
       num: "01",
     },
     {
       key: "welcoming",
       icon: Users,
-      color: "from-blue-500/20 to-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/30",
+      color: "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/30",
       accentBg: "bg-cyan-500/10 text-cyan-700 dark:text-cyan-300",
       num: "02",
     },
     {
       key: "considerate",
       icon: Globe2,
-      color: "from-sky-500/20 to-indigo-500/10 text-sky-600 dark:text-sky-400 border-sky-500/30",
+      color: "bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/30",
       accentBg: "bg-sky-500/10 text-sky-700 dark:text-sky-300",
       num: "03",
     },
     {
       key: "respectful",
       icon: Scale,
-      color: "from-indigo-500/20 to-purple-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/30",
+      color: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/30",
       accentBg: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300",
       num: "04",
     },
     {
       key: "kind",
       icon: MessageSquareHeart,
-      color: "from-emerald-500/20 to-teal-500/10 text-teal-600 dark:text-teal-400 border-teal-500/30",
+      color: "bg-teal-500/10 text-teal-600 dark:text-teal-400 border-teal-500/30",
       accentBg: "bg-teal-500/10 text-teal-700 dark:text-teal-300",
       num: "05",
     },
     {
       key: "understanding",
       icon: Lightbulb,
-      color: "from-amber-500/20 to-orange-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30",
+      color: "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30",
       accentBg: "bg-amber-500/10 text-amber-700 dark:text-amber-300",
       num: "06",
     },
@@ -176,7 +176,6 @@ export default function GuidelinesPage({ params }: Props) {
       />
 
       {/* Decorative ambient background glow */}
-      <div className="pointer-events-none absolute -top-24 start-1/2 -translate-x-1/2 w-[90vw] max-w-6xl h-96 bg-radial from-teal-500/10 via-sky-500/5 to-transparent blur-3xl -z-10" />
 
       <div className="container max-w-5xl mx-auto px-4 sm:px-6 md:px-8">
         {/* Hero Section */}
@@ -198,7 +197,6 @@ export default function GuidelinesPage({ params }: Props) {
         {/* Welcome & Open-Door Card */}
         <section className="mb-12">
           <Card className="border border-border/80 bg-card/75 backdrop-blur-md shadow-lg rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden">
-            <div className="absolute -top-12 -right-12 w-48 h-48 bg-primary/10 rounded-full blur-2xl pointer-events-none" />
             <CardContent className="p-0 flex flex-col gap-4 relative z-10">
               <div className="flex items-center gap-3">
                 <div className="p-2.5 rounded-xl bg-primary/15 text-primary">
@@ -217,7 +215,7 @@ export default function GuidelinesPage({ params }: Props) {
 
         {/* Scope & Application Notice */}
         <section className="mb-16">
-          <div className="rounded-2xl sm:rounded-3xl border border-sky-500/20 bg-linear-to-br from-sky-500/5 via-card to-card p-6 sm:p-8">
+          <div className="rounded-2xl sm:rounded-3xl border border-sky-500/20 bg-card p-6 sm:p-8">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2.5 rounded-xl bg-sky-500/15 text-sky-600 dark:text-sky-400">
                 <ShieldCheck className="w-5 h-5" />
@@ -256,7 +254,7 @@ export default function GuidelinesPage({ params }: Props) {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div
-                          className={`p-2.5 rounded-xl border bg-gradient-to-br ${item.color}`}
+                          className={`p-2.5 rounded-xl border ${item.color}`}
                         >
                           <Icon className="w-5 h-5" />
                         </div>
@@ -289,8 +287,7 @@ export default function GuidelinesPage({ params }: Props) {
 
         {/* Parch Cafe Spotlight */}
         <section className="mb-16 sm:mb-20">
-          <div className="relative overflow-hidden rounded-3xl border border-amber-500/30 bg-gradient-to-br from-amber-500/10 via-card to-card p-6 sm:p-10 shadow-lg">
-            <div className="absolute top-0 end-0 -translate-y-1/4 translate-x-1/4 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="relative overflow-hidden rounded-3xl border border-amber-500/30 bg-card p-6 sm:p-10 shadow-lg">
             <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="flex-1">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300 text-xs font-semibold mb-4">
@@ -308,7 +305,7 @@ export default function GuidelinesPage({ params }: Props) {
               <div className="shrink-0 flex items-center">
                 <Button
                   size="lg"
-                  className="rounded-full bg-linear-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-medium shadow-md hover:shadow-lg transition-all"
+                  className="rounded-full bg-parch text-white hover:text-white/80 font-medium shadow-md hover:shadow-lg transition-all"
                   asChild
                 >
                   <Link
@@ -391,7 +388,7 @@ export default function GuidelinesPage({ params }: Props) {
 
         {/* Closing / Call to Action */}
         <section>
-          <div className="rounded-3xl border border-primary/20 bg-linear-to-b from-card to-secondary/40 p-8 sm:p-12 text-center relative overflow-hidden shadow-sm">
+          <div className="rounded-3xl border border-primary/20 bg-card p-8 sm:p-12 text-center relative overflow-hidden shadow-sm">
             <div className="inline-flex p-3 rounded-2xl bg-primary/15 text-primary mb-4">
               <CheckCircle2 className="w-6 h-6" />
             </div>

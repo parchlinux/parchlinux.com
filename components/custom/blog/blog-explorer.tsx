@@ -76,7 +76,6 @@ export default function BlogExplorer({
     <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
       {featured && (
         <section className="blog-featured-shell relative overflow-hidden rounded-4xl border border-border/70 bg-card/70">
-          <div className="blog-featured-glow" aria-hidden="true" />
           <div className="grid min-h-107.5 grid-cols-1 lg:grid-cols-12">
             <div className="relative z-10 flex flex-col gap-12 p-6 sm:p-9 lg:col-span-7 lg:p-12">
               <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">

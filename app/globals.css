@@ -80,9 +80,13 @@
   --sidebar-ring: oklch(0.708 0 0);
   --parch-purple: oklch(0.5548 0.295064 300.6688);
   --parch-blue: oklch(0.6325 0.1882 253.02);
+  /* the brand green, deep enough for white text on it (4.7:1) and for text on white */
+  --parch-solid: oklch(0.54 0.118 174.2);
+  --parch-ink: var(--parch-solid);
 }
 
 .dark {
+  --parch-ink: var(--primary);
   --background: #020917;
   --foreground: oklch(0.985 0 0);
   --card: #1b2639;
@@ -126,7 +130,7 @@
 }
 
 .bg-parch {
-  background: linear-gradient(90deg, #21c796 15%, #0385ce 95%, #0d40bf 120%);
+  background: var(--parch-solid);
 }
 
 .bg-over {
@@ -134,9 +138,7 @@
 }
 
 .text-parch {
-  background: linear-gradient(150deg, #21c796 40%, #0385ce 85%, #0d40bf 120%);
-  color: transparent;
-  background-clip: text;
+  color: var(--parch-ink);
 }
 
 .bg-grid {
@@ -210,23 +212,6 @@
   isolation: isolate;
 }
 
-.blog-page::before,
-.blog-article-page::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: -8rem;
-  left: 50%;
-  width: min(92vw, 72rem);
-  height: 32rem;
-  transform: translateX(-50%);
-  background:
-    radial-gradient(circle at 28% 40%, rgba(33, 199, 150, 0.12), transparent 34%),
-    radial-gradient(circle at 72% 22%, rgba(3, 133, 206, 0.10), transparent 30%);
-  filter: blur(18px);
-  pointer-events: none;
-}
-
 .blog-featured-shell,
 .blog-story-card,
 .blog-newsletter,
@@ -245,15 +230,6 @@
   backdrop-filter: blur(14px);
 }
 
-.blog-featured-glow {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 12% 15%, rgba(33, 199, 150, 0.10), transparent 27%),
-    linear-gradient(120deg, transparent 30%, rgba(3, 133, 206, 0.04) 100%);
-}
-
 .blog-post-visual {
   position: relative;
   overflow: hidden;
@@ -261,21 +237,10 @@
   background-color: var(--secondary);
 }
 
-.blog-post-visual::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 4;
-  pointer-events: none;
-  background: linear-gradient(180deg, transparent 55%, rgba(2, 9, 23, 0.18));
-}
-
 .blog-post-visual--abstract {
   display: grid;
   place-items: center;
-  background:
-    linear-gradient(145deg, rgba(33, 199, 150, 0.18), rgba(3, 133, 206, 0.15) 54%, rgba(13, 64, 191, 0.10)),
-    var(--secondary);
+  background: color-mix(in oklab, var(--primary) 12%, var(--secondary));
 }
 
 .blog-post-visual--abstract::before {
@@ -320,11 +285,11 @@
   place-items: center;
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 1.7rem;
-  background: linear-gradient(145deg, rgba(33, 199, 150, 0.92), rgba(3, 133, 206, 0.92));
+  background: var(--parch-solid);
   color: white;
   font-size: 2rem;
   font-weight: 800;
-  box-shadow: 0 24px 65px -25px rgba(3, 133, 206, 0.8);
+  box-shadow: 0 18px 40px -24px rgba(2, 9, 23, 0.6);
   transform: rotate(-7deg);
 }
 
@@ -355,10 +320,7 @@
 }
 
 .blog-newsletter {
-  background:
-    radial-gradient(circle at 85% 20%, rgba(3, 133, 206, 0.11), transparent 30%),
-    radial-gradient(circle at 12% 100%, rgba(33, 199, 150, 0.12), transparent 35%),
-    color-mix(in oklab, var(--card) 82%, transparent);
+  background: color-mix(in oklab, var(--card) 82%, transparent);
 }
 
 .blog-newsletter-grid {

@@ -231,7 +231,7 @@ export default function Footer() {
                 </h3>
                 <ArrowUpRight size={16} aria-hidden="true" />
               </div>
-              <div className="flex md:gap-4 gap-3 mt-2">
+              <div className="flex flex-wrap justify-center sm:justify-start md:gap-4 gap-3 mt-2">
                 {socials.map((social) => (
                   <Link
                     key={social.label}

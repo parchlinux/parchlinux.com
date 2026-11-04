@@ -25,7 +25,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
 
   return (
     <>
-      <div className="flex flex-col gap-12 h-full lg:px-0 md:px-8 sm:px-6 px-4">
+      <div className="flex flex-col gap-12 h-full md:px-8 sm:px-6 px-4">
         <AnniversaryBanner />
         <HeadSection />
         <div className="flex flex-col gap-24">

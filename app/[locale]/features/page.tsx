@@ -121,7 +121,7 @@ export default function FeaturesPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="container mx-auto max-w-7xl lg:px-0 md:px-8 sm:px-6 px-4 py-8 flex flex-col gap-16">
+      <div className="container mx-auto max-w-7xl md:px-8 sm:px-6 px-4 py-8 flex flex-col gap-16">
         {/* Hero Section */}
         <div className="flex flex-col items-center text-center gap-5 max-w-3xl mx-auto pt-6">
           <Badge
@@ -228,7 +228,7 @@ export default function FeaturesPage({ params }: Props) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
             {/* Card 1: Zero Setup Friction */}
-            <Card className="border border-border/80 bg-gradient-to-b from-card to-secondary/15 hover:border-teal-500/40 transition-all shadow-sm">
+            <Card className="border border-border/80 bg-card hover:border-teal-500/40 transition-all shadow-sm">
               <CardContent className="p-6 sm:p-7 flex flex-col justify-between h-full gap-5">
                 <div className="flex flex-col gap-3.5">
                   <div className="w-12 h-12 rounded-xl bg-teal-500/15 text-teal-600 dark:text-teal-400 flex items-center justify-center">
@@ -250,7 +250,7 @@ export default function FeaturesPage({ params }: Props) {
             </Card>
 
             {/* Card 2: Unbreakable Rolling Release */}
-            <Card className="border border-border/80 bg-gradient-to-b from-card to-secondary/15 hover:border-purple-500/40 transition-all shadow-sm">
+            <Card className="border border-border/80 bg-card hover:border-purple-500/40 transition-all shadow-sm">
               <CardContent className="p-6 sm:p-7 flex flex-col justify-between h-full gap-5">
                 <div className="flex flex-col gap-3.5">
                   <div className="w-12 h-12 rounded-xl bg-purple-500/15 text-purple-500 flex items-center justify-center">
@@ -272,7 +272,7 @@ export default function FeaturesPage({ params }: Props) {
             </Card>
 
             {/* Card 3: ParchStore */}
-            <Card className="border border-border/80 bg-gradient-to-b from-card to-secondary/15 hover:border-blue-500/40 transition-all shadow-sm">
+            <Card className="border border-border/80 bg-card hover:border-blue-500/40 transition-all shadow-sm">
               <CardContent className="p-6 sm:p-7 flex flex-col justify-between h-full gap-5">
                 <div className="flex flex-col gap-3.5">
                   <div className="w-12 h-12 rounded-xl bg-blue-500/15 text-blue-500 flex items-center justify-center">
@@ -298,7 +298,7 @@ export default function FeaturesPage({ params }: Props) {
         {/* SECTION 2: Flagship Innovations: ParchStore, Immutable, Hamnava */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* ParchStore Feature Spotlight */}
-          <Card className="relative overflow-hidden border-primary/25 bg-gradient-to-br from-primary/10 via-card to-card hover:border-primary/50 transition-all shadow-sm">
+          <Card className="relative overflow-hidden border-primary/25 bg-card hover:border-primary/50 transition-all shadow-sm">
             <CardContent className="p-6 sm:p-8 flex flex-col justify-between h-full gap-6">
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
@@ -352,7 +352,7 @@ export default function FeaturesPage({ params }: Props) {
           </Card>
 
           {/* Parch Immutable */}
-          <Card className="relative overflow-hidden border-blue-500/25 bg-gradient-to-br from-blue-500/10 via-card to-card hover:border-blue-500/50 transition-all shadow-sm">
+          <Card className="relative overflow-hidden border-blue-500/25 bg-card hover:border-blue-500/50 transition-all shadow-sm">
             <CardContent className="p-6 sm:p-8 flex flex-col justify-between h-full gap-6">
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
@@ -409,7 +409,7 @@ export default function FeaturesPage({ params }: Props) {
         {/* Project Hamnava & Parch Kernel Manager */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Project Hamnava */}
-          <Card className="relative overflow-hidden border-emerald-500/25 bg-gradient-to-br from-emerald-500/10 via-card to-card hover:border-emerald-500/50 transition-all shadow-sm">
+          <Card className="relative overflow-hidden border-emerald-500/25 bg-card hover:border-emerald-500/50 transition-all shadow-sm">
             <CardContent className="p-6 sm:p-8 flex flex-col justify-between h-full gap-6">
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
@@ -463,7 +463,7 @@ export default function FeaturesPage({ params }: Props) {
           </Card>
 
           {/* Parch Kernel Manager */}
-          <Card className="relative overflow-hidden border-orange-500/25 bg-gradient-to-br from-orange-500/10 via-card to-card hover:border-orange-500/50 transition-all shadow-sm">
+          <Card className="relative overflow-hidden border-orange-500/25 bg-card hover:border-orange-500/50 transition-all shadow-sm">
             <CardContent className="p-6 sm:p-8 flex flex-col justify-between h-full gap-6">
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
@@ -707,7 +707,7 @@ export default function FeaturesPage({ params }: Props) {
         </div>
 
         {/* SECTION 5: Engaging Call to Action */}
-        <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-primary/15 via-card to-card p-8 sm:p-12 text-center flex flex-col items-center gap-6 shadow-lg shadow-primary/5">
+        <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-card p-8 sm:p-12 text-center flex flex-col items-center gap-6 shadow-lg shadow-primary/5">
           <div className="w-16 h-16 rounded-2xl bg-primary/20 text-primary flex items-center justify-center shadow-inner">
             <Sparkles size={32} />
           </div>

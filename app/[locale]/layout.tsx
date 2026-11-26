@@ -7,6 +7,7 @@ import { setRequestLocale } from "next-intl/server";
 import { Saira } from "next/font/google";
 import localFont from "next/font/local";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import "../globals.css";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/custom/layouts/app-sidebar";
@@ -121,6 +122,21 @@ export default async function LocaleLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }}
         />
+        <Script id="matomo-analytics" strategy="afterInteractive">
+          {`
+            var _paq = window._paq = window._paq || [];
+            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+              var u="//analytics.parchlinux.com/";
+              _paq.push(['setTrackerUrl', u+'matomo.php']);
+              _paq.push(['setSiteId', '1']);
+              var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+              g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+            })();
+          `}
+        </Script>
       </head>
       <body
         suppressHydrationWarning

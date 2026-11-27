@@ -12,7 +12,7 @@ export default function AnniversaryBanner() {
   return (
     <div className="container max-w-7xl mx-auto">
       <Link
-        href={`/${locale}/blog/one-month-in-parch-september-2026`}
+        href={`/${locale}/blog/pastor-0-4-0-release`}
         className="group relative flex flex-col sm:flex-row items-center justify-between gap-4 overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-r from-primary/15 via-primary/5 to-primary/15 p-4 sm:p-5 backdrop-blur-md shadow-lg shadow-primary/5 transition-all duration-300 hover:border-primary/60 hover:shadow-primary/10 hover:scale-[1.005]"
       >
         <div className="flex items-center gap-3.5 sm:gap-4 text-center sm:text-start">

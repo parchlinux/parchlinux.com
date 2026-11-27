@@ -118,29 +118,30 @@ export default function ImageGallery({ images, caption }: ImageGalleryProps) {
         className={`grid ${gridColsClass} gap-3 sm:gap-4 p-3 rounded-2xl border border-border/70 bg-card/40`}
       >
         {images.map((img, idx) => (
-          <button
-            key={`${img.src}-${idx}`}
-            type="button"
-            onClick={() => openLightbox(idx)}
-            className="group relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-border/60 bg-muted/40 cursor-zoom-in transition-all duration-300 hover:border-primary/50 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary/50"
-            aria-label={`View image ${idx + 1} of ${images.length}: ${img.alt}`}
-          >
-            <img
-              src={img.src}
-              alt={img.alt}
-              title={img.title}
-              loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 sm:p-3 pointer-events-none">
-              <span className="line-clamp-1 text-left text-[11px] font-medium text-white drop-shadow">
-                {img.title || img.alt || `Image ${idx + 1}`}
-              </span>
-            </div>
-            <div className="absolute top-2 right-2 rounded-md bg-black/60 px-1.5 py-0.5 text-[10px] font-mono text-white/90 backdrop-blur-sm">
-              {idx + 1}/{images.length}
-            </div>
-          </button>
+          <figure key={`${img.src}-${idx}`} className="flex flex-col">
+            <button
+              type="button"
+              onClick={() => openLightbox(idx)}
+              className="group relative aspect-video w-full overflow-hidden rounded-xl border border-border/60 bg-muted/20 cursor-zoom-in transition-all duration-300 hover:border-primary/50 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary/50"
+              aria-label={`View image ${idx + 1} of ${images.length}: ${img.alt}`}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                title={img.title}
+                loading="lazy"
+                className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              />
+              <div className="absolute top-2 right-2 rounded-md bg-black/60 px-1.5 py-0.5 text-[10px] font-mono text-white/90 backdrop-blur-sm">
+                {idx + 1}/{images.length}
+              </div>
+            </button>
+            {!caption && (img.title || img.alt) && (
+              <figcaption className="mt-2 px-1 text-center text-xs leading-5 text-muted-foreground">
+                {img.title || img.alt}
+              </figcaption>
+            )}
+          </figure>
         ))}
       </div>
       {caption && (

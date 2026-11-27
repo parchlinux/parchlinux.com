@@ -1,9 +1,9 @@
 {
   "AnniversaryBanner": {
     "badge": "New Release",
-    "title": "🚀 Parch Hyprland RC is Here!",
-    "description": "Explore the new Parch Store, Hyprland RC, Parch Lite preview, and September 2026 highlights.",
-    "cta": "Read the story"
+    "title": "Parch Store 0.4.0 Release",
+    "description": "Parch Doctor maintenance tools, .deb package installer and converter, AppImage management, and full Arabic localization.",
+    "cta": "Read release notes"
   },
   "HeadSection": {
     "title": "We have a <ready>ready-to-go</ready> OS!",
